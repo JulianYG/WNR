@@ -76,7 +76,7 @@ int main(int argc, char *argv[])
 {
     FILE *fp;
 
-    fp = fopen(argv[0], "r");
+    fp = fopen(argv[1], "r");
 
     fseek(fp, 0, SEEK_END);
     long file_len = ftell(fp);
