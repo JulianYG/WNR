@@ -121,8 +121,10 @@ int main(int argc, char *argv[])
 
     in_len = (lzo_uint) file_len;
 
-
-    lzo_memset(in, *buffer, in_len);
+    for (int i = 0; i < in_len; ++i) {
+      lzo_memset(in + i, buffer[i], sizeof(buffer[i]));
+    }
+    
 
 
 
