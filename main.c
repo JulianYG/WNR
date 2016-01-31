@@ -67,15 +67,15 @@
 #define UART_TX_BUF_SIZE                256                                         /**< UART TX buffer size. */
 #define UART_RX_BUF_SIZE                256                                         /**< UART RX buffer size. */
 
-#define BUFFER_MAX_SIZE									2048																				/**< Data buffer max size. */
+#define BUFFER_MAX_SIZE					2048																				/**< Data buffer max size. */
 
 static ble_nus_t                        m_nus;                                      /**< Structure to identify the Nordic UART Service. */
 static uint16_t                         m_conn_handle = BLE_CONN_HANDLE_INVALID;    /**< Handle of the current connection. */
 
 static ble_uuid_t                       m_adv_uuids[] = {{BLE_UUID_NUS_SERVICE, NUS_SERVICE_UUID_TYPE}};  /**< Universally unique service identifier. */
 
-static data_buffer											d_buf;	/**< The data buffer to store incoming bluetooth data. */
-static data_buffer											compress_buf;	/**< The data buffer to store compressed bluetoth data. */
+static data_buffer					    d_buf;	                                    /**< The data buffer to store incoming bluetooth data. */
+static data_buffer						compress_buf;	                            /**< The data buffer to store compressed bluetoth data. */
 
 /**@brief Function for assert macro callback.
  *
@@ -137,17 +137,20 @@ static void gap_params_init(void)
 static void nus_data_handler(ble_nus_t * p_nus, uint8_t * p_data, uint16_t length)
 {
 	uint8_t data2Send[20];
-	
+	// only store data into the data bufer
 	if (buffer_in(&d_buf, p_data) == BUFFER_FULL) {
-			buffer_compress(&d_buf, &compress_buf);
-			// first compress it
-			buffer_free(&d_buf);
-			buffer_init(&d_buf, BUFFER_MAX_SIZE, sizeof(uint8_t));
-			buffer_in(&d_buf, p_data);
-	}		// if buffer full, then reset the buffer
+        /* 
+         * If buffer full, compress it and reset. Assuming compression is deep copy..
+         */
+		buffer_compress(&d_buf, &compress_buf);
+		buffer_free(&d_buf);
+		buffer_init(&d_buf, BUFFER_MAX_SIZE, sizeof(uint8_t));
+		buffer_in(&d_buf, p_data);
+	}	// if buffer full, then reset the buffer
 
 	for(int i = 5; i > 0; i--) {  // can only send 5; should use 6
 		for (int j = 0; j < 20; ++j) {
+            // only send data from the compression buffer, not exceeding limit of 20
 			if(buffer_poll(&compress_buf, &data2Send[j]) != BUFFER_SUCCESS)
 				break;
 		}	// poll contents from data buffer to the BLE sending queue
@@ -543,8 +546,9 @@ int main(void)
     uint8_t  start_string[] = START_STRING;
     
     // Initialize.
-		buffer_init(&d_buf, BUFFER_MAX_SIZE, sizeof(uint8_t));
-		buffer_init(&compress_buf, BUFFER_MAX_SIZE, sizeof(uint8_t));
+	buffer_init(&d_buf, 1864, sizeof(uint8_t));
+    // use 1864 to avoid overflow of compression buffer with limited size
+	buffer_init(&compress_buf, BUFFER_MAX_SIZE, sizeof(uint8_t));
 	
     APP_TIMER_INIT(APP_TIMER_PRESCALER, APP_TIMER_MAX_TIMERS, APP_TIMER_OP_QUEUE_SIZE, false);
     uart_init();
