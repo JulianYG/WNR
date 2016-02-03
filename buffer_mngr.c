@@ -30,11 +30,10 @@ int buffer_manager_handler(buffer_manager* bm, wnr_data *item)
 		buffer_manager_send(&toSend);
 
 		// then keep pushing in the rest (pointer arithmetic)
-		buffer_compress(item->data + k, item->size - k, &bm->c_buf[item->channel_num]);
+		if (buffer_compress(item->data + k, item->size - k, &bm->c_buf[item->channel_num]) != BUFFER_SUCCESS)
+			return -1;
 		// just let it be lost if still not successful
 	}
-     
-		return -1;
 		// if buffer full, then reset the buffer
 
 	wnr_data toSend = {.data = bm->c_buf[item->channel_num].buffer, 
