@@ -21,6 +21,9 @@ void buffer_manager_free(buffer_manager* bm)
 
 int buffer_manager_handler(buffer_manager* bm, wnr_data *item)
 {	
+	for (int i = 0; i < item->size; i++) {
+		printf("My data before compression is %d\n", item->data[i]);
+	}
 	int k = buffer_compress(item->data, item->size, &bm->c_buf[item->channel_num]);
 	if (k != BUFFER_SUCCESS) {
 		// if not successful, first send out all remaining data

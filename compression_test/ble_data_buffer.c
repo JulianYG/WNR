@@ -27,10 +27,7 @@ void buffer_init(data_buffer *db, size_t maxCap, size_t sz)
   	// if(db->buffer == NULL)
    //  	show_error();	// handle error
   	
-
     db->buffer_end = (char *)db->buffer + maxCap * sz;
-
-
   	db->cap = maxCap;
   	db->item_cnt = 0;
   	db->item_size = sz;
@@ -95,7 +92,7 @@ int buffer_compress(uint8_t *db, size_t length, data_buffer *cb)
   printf("Out len after is %zu\n", (size_t) out_len);
   // push the compressed data into compression buffer
   for (int k = 0; k < out_len; ++k) {
-    printf("My compressed data is %u\n", (unsigned char) out[k]);
+    // printf("My compressed data is %u\n", (unsigned char) out[k]);
     if (buffer_in(cb, &out[k]) != BUFFER_SUCCESS)
       // when buffer full
       return k;
