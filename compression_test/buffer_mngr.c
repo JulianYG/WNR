@@ -25,7 +25,7 @@ int buffer_manager_handler(buffer_manager* bm, wnr_data *item)
 	if (k != BUFFER_SUCCESS) {
 		// if not successful, first send out all remaining data
 		wnr_data toSend = {.data = bm->c_buf[item->channel_num].buffer, 
-			.size = sizeof(bm->c_buf[item->channel_num]), .channel_num = item->channel_num};
+			.size = bm->c_buf[item->channel_num].item_cnt, .channel_num = item->channel_num};
 	
 		buffer_manager_send(&toSend);
 
@@ -39,7 +39,7 @@ int buffer_manager_handler(buffer_manager* bm, wnr_data *item)
 		// if buffer full, then reset the buffer
 
 	wnr_data toSend = {.data = bm->c_buf[item->channel_num].buffer, 
-		.size = sizeof(bm->c_buf[item->channel_num]), .channel_num = item->channel_num};
+		.size = bm->c_buf[item->channel_num].item_cnt, .channel_num = item->channel_num};
 	
 	buffer_manager_send(&toSend);
 
@@ -48,8 +48,10 @@ int buffer_manager_handler(buffer_manager* bm, wnr_data *item)
 
 int buffer_manager_send(wnr_data *packet)
 {
-	
-
+	for (int i = 0; i < packet->size; i++) {
+		printf("My data after compression is: %u\n", (unsigned char) packet->data[i]);
+	}
+	printf("My size after compression is: %zu\n", packet->size);
 	// start polling
 
 	// for (int i = 0; i < 20; ++i) {

@@ -7,23 +7,23 @@
 int main(void)
 {
 	
-	int *a = malloc(sizeof(int) * 20);
+	uint8_t *a = malloc(sizeof(int) * 250);
 	
-	for (int i = 0; i < 20; i ++) {
-		a[i] = i + 1;
+	for (uint8_t i = 0; i < 120; i ++) {
+		a[i] = i * 2;
 	}
+
+	// for (uint8_t i = 101; i < 250; i ++) {
+	// 	a[i] = 2;
+	// }
 
 //	data_buffer db = {};
 	buffer_manager bm = {};
 
-	wnr_data sample = {};
+	wnr_data sample = {.data = a, .size = 250, .channel_num = 12};
 
 	buffer_manager_init(&bm, 1024, 1, 16);
-
 	buffer_manager_handler(&bm, &sample);
-
-
-
 
 	// buffer_init(&db, 10, sizeof(int));
 
@@ -46,5 +46,6 @@ int main(void)
 	// buffer_free(&db);
 	// free(r);
 	 free(a);
+	 buffer_manager_free(&bm);
 }
 
