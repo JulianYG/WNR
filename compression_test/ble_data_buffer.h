@@ -22,16 +22,15 @@ typedef struct data_buffer
 	void *tail;	// pointer to the tail
 } data_buffer;
 
-
-// typedef struct wnr_data 
-// {
-// 	uint8_t *data;
-// 	int size;
-// 	int channel_num;
-// }	wnr_data;
+typedef struct wnr_data 
+{
+	uint8_t *data;
+	size_t size;
+	int channel_num;
+} wnr_data;
 
 void buffer_init(data_buffer *db, size_t maxCap, size_t sz);
 void buffer_free(data_buffer *db);
 int buffer_in(data_buffer *db, const void *item);
 int buffer_poll(data_buffer *db, void *item);
-int buffer_compress(data_buffer *db, data_buffer *cb);
+int buffer_compress(uint8_t *db, size_t length, data_buffer *cb);

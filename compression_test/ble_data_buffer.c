@@ -43,26 +43,21 @@ void buffer_init(data_buffer *db, size_t maxCap, size_t sz)
 void buffer_free(data_buffer *db)
 {
   free(db->buffer);
-	// free(db->buffer_end);
-	// free(db->head);
-	// free(db->tail);
-	// // clear out other fields too, just to be safe
-	// free(db);
 }
 
 /** Insert data into the buffer.*/ // is it really cyclic?
 int buffer_in(data_buffer *db, const void *item)
-{	
-    if(db->item_cnt == db->cap) {				
+{ 
+    if(db->item_cnt == db->cap) {       
         return BUFFER_FULL;// handle error
-	}
+  }
 
     memcpy(db->head, item, db->item_size);
     db->head = (char*)db->head + db->item_size;
     if(db->head == db->buffer_end)
         db->head = db->buffer;
     db->item_cnt++;
-	 return BUFFER_SUCCESS;
+   return BUFFER_SUCCESS;
 }
 
 /** Pop out data from buffer. */
@@ -75,30 +70,30 @@ int buffer_poll(data_buffer *db, void *item)
     if(db->tail == db->buffer_end)
         db->tail = db->buffer;
     db->item_cnt--;
-	  return BUFFER_SUCCESS;
+    return BUFFER_SUCCESS;
 }
 
 /** The core of compression. */
-int buffer_compress(data_buffer *db, data_buffer *cb)
+int buffer_compress(uint8_t *db, size_t length, data_buffer *cb)
 {
-	lzo_uint in_len = db->item_cnt * db->item_size;
-	// the input length is the total size of data buffer
-	lzo_uint out_len = in_len + in_len / 16 + 64 + 3;
-	// preparing extra space for output compression buffer
-	unsigned char __LZO_MMODEL in[in_len];
-	// unsigned char is also 8 bits
-	unsigned char __LZO_MMODEL out[out_len];
-	// initialize pointers for compression input/output
-	for (int j = 0; j < db->item_cnt; ++j) {
-		if(buffer_poll(db, &in[j]) != BUFFER_SUCCESS)
-			// feed data into compression input until exhausted
-			break;
-	}
-	lzo1x_1_compress(in, in_len, out, &out_len, wrkmem);
-	for (int k = 0; k < out_len; ++k) {
-		if (buffer_in(cb, out[k]) != BUFFER_SUCCESS)
-			// when buffer full
-			return BUFFER_FULL;
-	}
+  lzo_uint in_len = (lzo_uint) sizeof(uint8_t) * length;
+  // the input length is the total size of data buffer
+  lzo_uint out_len = in_len + in_len / 16 + 64 + 3;
+  // preparing extra space for output compression buffer
+  // unsigned char is also 8 bits
+  unsigned char __LZO_MMODEL out[out_len];
+  // initialize pointers for compression input/output
+  // for (int j = 0; j < db->item_cnt; ++j) {
+  //  if(buffer_poll(db, &in[j]) != BUFFER_SUCCESS)
+  //    // feed data into compression input until exhausted
+  //    break;
+  // }
+  lzo1x_1_compress(db, in_len, out, &out_len, wrkmem);
+  // push the compressed data into compression buffer
+  for (int k = 0; k < out_len; ++k) {
+    if (buffer_in(cb, &out[k]) != BUFFER_SUCCESS)
+      // when buffer full
+      return k;
+  }
   return BUFFER_SUCCESS;
 }
