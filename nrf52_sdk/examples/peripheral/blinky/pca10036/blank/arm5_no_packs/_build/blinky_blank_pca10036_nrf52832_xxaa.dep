@@ -1,0 +1,48 @@
+Dependencies for Project 'blinky_blank_pca10036', Target 'nrf52832_xxaa': (DO NOT MODIFY !)
+F (..\..\..\main.c)(0x569AB4FB)(-c --cpu Cortex-M4.fp -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I..\..\.. -I..\..\..\..\..\bsp -I..\..\..\..\..\..\components\drivers_nrf\delay -I..\..\..\..\..\..\components\drivers_nrf\hal -I..\..\..\..\..\..\components\device -I..\..\..\..\..\..\components\toolchain --c99-I C:\Users\stephen\Desktop\spring_2016\senior_design\ble\sdk\examples\peripheral\blinky\pca10036\blank\arm5_no_packs\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.0.3\Device\Include-I C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.2\Device\Include-D__UVISION_VERSION="517" -D_RTE_ -DNRF52 -DBSP_DEFINES_ONLY -DBOARD_PCA10036 -DCONFIG_GPIO_AS_PINRESET -DNRF52-o .\_build\main.o --omf_browse .\_build\main.crf --depend .\_build\main.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x55DBE246)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55DBE250)
+I (..\..\..\..\..\..\components\drivers_nrf\delay\nrf_delay.h)(0x561F527F)
+I (..\..\..\..\..\..\components\device\nrf.h)(0x561F5297)
+I (..\..\..\..\..\..\components\device\nrf52.h)(0x5640769B)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cm4.h)(0x53FCE8AA)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmInstr.h)(0x53FFA97A)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmFunc.h)(0x53FFA97A)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmSimd.h)(0x53FCE8AA)
+I (..\..\..\..\..\..\components\toolchain\system_nrf52.h)(0x561F5297)
+I (..\..\..\..\..\..\components\device\nrf52_bitfields.h)(0x5640769B)
+I (..\..\..\..\..\..\components\device\nrf51_to_nrf52.h)(0x561F5297)
+I (..\..\..\..\..\..\components\device\compiler_abstraction.h)(0x561F5297)
+I (..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h)(0x561F527F)
+I (..\..\..\..\..\bsp\boards.h)(0x561F5280)
+I (..\..\..\..\..\bsp\pca10036.h)(0x561F5280)
+F (..\..\..\Abstract.txt)(0x561F5281)()
+F (..\..\..\license.txt)(0x561F52A7)()
+F (..\..\..\..\..\..\components\drivers_nrf\delay\nrf_delay.c)(0x561F527F)(-c --cpu Cortex-M4.fp -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I..\..\.. -I..\..\..\..\..\bsp -I..\..\..\..\..\..\components\drivers_nrf\delay -I..\..\..\..\..\..\components\drivers_nrf\hal -I..\..\..\..\..\..\components\device -I..\..\..\..\..\..\components\toolchain --c99-I C:\Users\stephen\Desktop\spring_2016\senior_design\ble\sdk\examples\peripheral\blinky\pca10036\blank\arm5_no_packs\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.0.3\Device\Include-I C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.2\Device\Include-D__UVISION_VERSION="517" -D_RTE_ -DNRF52 -DBSP_DEFINES_ONLY -DBOARD_PCA10036 -DCONFIG_GPIO_AS_PINRESET -DNRF52-o .\_build\nrf_delay.o --omf_browse .\_build\nrf_delay.crf --depend .\_build\nrf_delay.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x55DBE246)
+I (..\..\..\..\..\..\components\device\compiler_abstraction.h)(0x561F5297)
+I (..\..\..\..\..\..\components\device\nrf.h)(0x561F5297)
+I (..\..\..\..\..\..\components\device\nrf52.h)(0x5640769B)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cm4.h)(0x53FCE8AA)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55DBE250)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmInstr.h)(0x53FFA97A)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmFunc.h)(0x53FFA97A)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmSimd.h)(0x53FCE8AA)
+I (..\..\..\..\..\..\components\toolchain\system_nrf52.h)(0x561F5297)
+I (..\..\..\..\..\..\components\device\nrf52_bitfields.h)(0x5640769B)
+I (..\..\..\..\..\..\components\device\nrf51_to_nrf52.h)(0x561F5297)
+I (..\..\..\..\..\..\components\drivers_nrf\delay\nrf_delay.h)(0x561F527F)
+F (RTE\Device\nRF52832_xxAA\arm_startup_nrf52.s)(0x557EF438)(--cpu Cortex-M4.fp --pd "__EVAL SETA 1" -g --apcs=interwork --pd "__MICROLIB SETA 1"-I C:\Users\stephen\Desktop\spring_2016\senior_design\ble\sdk\examples\peripheral\blinky\pca10036\blank\arm5_no_packs\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.0.3\Device\Include-I C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.2\Device\Include--pd "__UVISION_VERSION SETA 517" --pd "_RTE_ SETA 1" --pd "NRF52 SETA 1" --pd "BSP_DEFINES_ONLY SETA 1" --pd "BOARD_PCA10036 SETA 1" --pd "CONFIG_GPIO_AS_PINRESET SETA 1" --pd "NRF52 SETA 1"--list .\_build\arm_startup_nrf52.lst --xref -o .\_build\arm_startup_nrf52.o --depend .\_build\arm_startup_nrf52.d)
+F (RTE\Device\nRF52832_xxAA\system_nrf52.c)(0x557EF438)(-c --cpu Cortex-M4.fp -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I..\..\.. -I..\..\..\..\..\bsp -I..\..\..\..\..\..\components\drivers_nrf\delay -I..\..\..\..\..\..\components\drivers_nrf\hal -I..\..\..\..\..\..\components\device -I..\..\..\..\..\..\components\toolchain --c99-I C:\Users\stephen\Desktop\spring_2016\senior_design\ble\sdk\examples\peripheral\blinky\pca10036\blank\arm5_no_packs\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.0.3\Device\Include-I C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.2\Device\Include-D__UVISION_VERSION="517" -D_RTE_ -DNRF52 -DBSP_DEFINES_ONLY -DBOARD_PCA10036 -DCONFIG_GPIO_AS_PINRESET -DNRF52-o .\_build\system_nrf52.o --omf_browse .\_build\system_nrf52.crf --depend .\_build\system_nrf52.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55DBE250)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x55DBE246)
+I (..\..\..\..\..\..\components\device\nrf.h)(0x561F5297)
+I (..\..\..\..\..\..\components\device\nrf52.h)(0x5640769B)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cm4.h)(0x53FCE8AA)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmInstr.h)(0x53FFA97A)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmFunc.h)(0x53FFA97A)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmSimd.h)(0x53FCE8AA)
+I (..\..\..\..\..\..\components\toolchain\system_nrf52.h)(0x561F5297)
+I (..\..\..\..\..\..\components\device\nrf52_bitfields.h)(0x5640769B)
+I (..\..\..\..\..\..\components\device\nrf51_to_nrf52.h)(0x561F5297)
+I (..\..\..\..\..\..\components\device\compiler_abstraction.h)(0x561F5297)
