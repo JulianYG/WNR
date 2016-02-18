@@ -13,7 +13,7 @@
 #include "app_uart.h"
 #include "app_fifo.h"
 #include "nrf_drv_uart.h"
-
+#include "minilzo.h"
 
 static __INLINE uint32_t fifo_length(app_fifo_t * const fifo)
 {
@@ -23,7 +23,6 @@ static __INLINE uint32_t fifo_length(app_fifo_t * const fifo)
 
 #define FIFO_LENGTH(F) fifo_length(&F)              /**< Macro to calculate length of a FIFO. */
 
-
 static app_uart_event_handler_t   m_event_handler;            /**< Event handler function. */
 static uint8_t tx_buffer[1];
 static uint8_t tx_tmp;
@@ -32,6 +31,18 @@ static uint8_t rx_buffer[1];
 static app_fifo_t                  m_rx_fifo;                               /**< RX FIFO buffer for storing data received on the UART until the application fetches them using app_uart_get(). */
 static app_fifo_t                  m_tx_fifo;                               /**< TX FIFO buffer for storing data to be transmitted on the UART when TXD is ready. Data is put to the buffer on using app_uart_put(). */
 
+#define BUFFER_ALLOC(var, size) \
+		uint8_t var [size]
+#define CNT_ASSIGN(var, val) \
+		unsigned int var = val
+
+#define HEAP_ALLOC(var,size) \
+    lzo_align_t __LZO_MMODEL var [ ((size) + (sizeof(lzo_align_t) - 1)) / sizeof(lzo_align_t) ]
+
+static HEAP_ALLOC(wrkmem, LZO1X_1_MEM_COMPRESS);
+static BUFFER_ALLOC(data_buf, 65536);
+static CNT_ASSIGN(buffer_count, 0);
+		
 void uart_event_handler(nrf_drv_uart_event_t * p_event, void* p_context)
 {
     app_uart_evt_t app_uart_event;
@@ -87,7 +98,6 @@ uint32_t app_uart_init(const app_uart_comm_params_t * p_comm_params,
                              app_irq_priority_t       irq_priority)
 {
     uint32_t err_code;
-
     m_event_handler = event_handler;
 
     if (p_buffers == NULL)
@@ -128,7 +138,7 @@ uint32_t app_uart_init(const app_uart_comm_params_t * p_comm_params,
     {
         return err_code;
     }
-
+		
     nrf_drv_uart_rx_enable();
     return nrf_drv_uart_rx(rx_buffer,1);
 }
@@ -155,6 +165,32 @@ uint32_t app_uart_flush(void)
 uint32_t app_uart_get(uint8_t * p_byte)
 {
     return app_fifo_get(&m_rx_fifo, p_byte);
+}
+
+uint32_t app_uart_compress(uint8_t byte)
+{
+    if (buffer_count >= 65536) {
+        lzo_uint in_len = (lzo_uint) sizeof(uint8_t) * 65536;
+      // the input length is the total size of data buffer
+        lzo_uint out_len = in_len + in_len / 16 + 64 + 3;
+    // preparing extra space for output compression buffer
+    // unsigned char is also 8 bits
+  
+        unsigned char __LZO_MMODEL out[out_len];
+
+        lzo1x_1_compress(data_buf, in_len, out, &out_len, wrkmem);
+
+        for (long i = 0; i < out_len; i++) {
+            if (app_uart_put(out[i]) != NRF_SUCCESS) {
+                return NRF_ERROR_NOT_SUPPORTED;
+            }
+        }
+        buffer_count = 0;
+    }
+    data_buf[buffer_count] = byte;
+    buffer_count++;
+
+    return NRF_SUCCESS;
 }
 
 uint32_t app_uart_put(uint8_t byte)
