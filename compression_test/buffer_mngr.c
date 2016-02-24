@@ -24,6 +24,7 @@ int buffer_manager_handler(buffer_manager* bm, wnr_data *item)
 	// for (int i = 0; i < item->size; i++) {
 	// 	printf("My data before compression is %d\n", item->data[i]);
 	// }
+
 	int k = buffer_compress(item->data, item->size, &bm->c_buf[item->channel_num]);
 	if (k != BUFFER_SUCCESS) {
 		// if not successful, first send out all remaining data
@@ -55,6 +56,7 @@ int buffer_manager_send(wnr_data *packet)
 	// for (int i = 0; i < packet->size; i++) {
 	// 	printf("My data after compression is: %u\n", (unsigned char) packet->data[i]);
 	// }
+	
 	printf("My size after compression is: %zu\n, and my channel number is %d.\n", packet->size, packet->channel_num);
 	// start polling
 	// for (int i = 0; i < 20; ++i) {
