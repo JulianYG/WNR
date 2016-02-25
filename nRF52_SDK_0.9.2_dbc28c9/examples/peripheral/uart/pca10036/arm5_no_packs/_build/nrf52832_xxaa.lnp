@@ -9,6 +9,8 @@
 ".\_build\app_util_platform.o"
 ".\_build\nrf_assert.o"
 ".\_build\retarget.o"
+".\_build\heatshrink_encoder.o"
+"C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Lib\ARM\arm_cortexM4lf_math.lib"
 ".\_build\arm_startup_nrf52.o"
 ".\_build\system_nrf52.o"
 --library_type=microlib --strict --scatter ".\_build\nrf52832_xxaa.sct"

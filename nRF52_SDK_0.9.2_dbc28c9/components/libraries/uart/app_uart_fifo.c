@@ -13,7 +13,8 @@
 #include "app_uart.h"
 #include "app_fifo.h"
 #include "nrf_drv_uart.h"
-#include "minilzo.h"
+#include <stdio.h>
+#include <string.h>
 
 static __INLINE uint32_t fifo_length(app_fifo_t * const fifo)
 {
@@ -26,7 +27,7 @@ static __INLINE uint32_t fifo_length(app_fifo_t * const fifo)
 static app_uart_event_handler_t   m_event_handler;            /**< Event handler function. */
 static uint8_t tx_buffer[1];
 static uint8_t tx_tmp;
-static uint8_t rx_buffer[1];
+static uint8_t rx_buffer[8];
 
 static app_fifo_t                  m_rx_fifo;                               /**< RX FIFO buffer for storing data received on the UART until the application fetches them using app_uart_get(). */
 static app_fifo_t                  m_tx_fifo;                               /**< TX FIFO buffer for storing data to be transmitted on the UART when TXD is ready. Data is put to the buffer on using app_uart_put(). */
@@ -36,11 +37,7 @@ static app_fifo_t                  m_tx_fifo;                               /**<
 #define CNT_ASSIGN(var, val) \
 		unsigned int var = val
 
-#define HEAP_ALLOC(var,size) \
-    lzo_align_t __LZO_MMODEL var [ ((size) + (sizeof(lzo_align_t) - 1)) / sizeof(lzo_align_t) ]
-
-static HEAP_ALLOC(wrkmem, LZO1X_1_MEM_COMPRESS);
-static BUFFER_ALLOC(data_buf, 65536);
+static BUFFER_ALLOC(data_buf, 64);
 static CNT_ASSIGN(buffer_count, 0);
 		
 void uart_event_handler(nrf_drv_uart_event_t * p_event, void* p_context)
@@ -140,7 +137,7 @@ uint32_t app_uart_init(const app_uart_comm_params_t * p_comm_params,
     }
 		
     nrf_drv_uart_rx_enable();
-    return nrf_drv_uart_rx(rx_buffer,1);
+    return nrf_drv_uart_rx(rx_buffer,8);
 }
 
 uint32_t app_uart_flush(void)
@@ -169,23 +166,42 @@ uint32_t app_uart_get(uint8_t * p_byte)
 
 uint32_t app_uart_compress(uint8_t byte)
 {
-    if (buffer_count >= 65536) {
-        lzo_uint in_len = (lzo_uint) sizeof(uint8_t) * 65536;
-      // the input length is the total size of data buffer
-        lzo_uint out_len = in_len + in_len / 16 + 64 + 3;
-    // preparing extra space for output compression buffer
-    // unsigned char is also 8 bits
-  
-        unsigned char __LZO_MMODEL out[out_len];
-
-        lzo1x_1_compress(data_buf, in_len, out, &out_len, wrkmem);
-
-        for (long i = 0; i < out_len; i++) {
-            if (app_uart_put(out[i]) != NRF_SUCCESS) {
-                return NRF_ERROR_NOT_SUPPORTED;
-            }
-        }
-        buffer_count = 0;
+//		printf("%uhh", byte);
+    if (buffer_count >= 64) {
+			heatshrink_encoder *hse = heatshrink_encoder_alloc(10, 3);
+			size_t comp_sz = 64 + (64 / 2) + 4;
+			uint8_t *comp = malloc(comp_sz);
+			memset(comp, 0, comp_sz);
+			size_t count = 0;
+			uint32_t sunk = 0;
+			uint32_t polled = 0;
+			
+			while (sunk < 64) {
+        heatshrink_encoder_sink(hse, &data_buf[sunk], 64 - sunk, &count);
+        sunk += count;
+				printf("sunk %zu", sunk);
+				if (sunk == 64)
+				heatshrink_encoder_finish(hse);
+				
+        HSE_poll_res pres;
+        do {                    /* "turn the crank" */
+            pres = heatshrink_encoder_poll(hse, &comp[polled], comp_sz - polled, &count);
+            polled += count;
+        } while (pres == HSER_POLL_MORE);
+			}
+	  		printf("%zu", polled);
+      for (int i = 0; i < polled; i++) {
+					printf("%comp uhh", comp[i]);
+          while (app_uart_put(comp[i]) != NRF_SUCCESS) {
+          //    return NRF_ERROR_NOT_SUPPORTED;
+          }
+      }
+			
+      buffer_count = 0;
+//			if (sunk == 64) {
+//					heatshrink_encoder_finish(hse);
+//			}
+			heatshrink_encoder_free(hse);
     }
     data_buf[buffer_count] = byte;
     buffer_count++;

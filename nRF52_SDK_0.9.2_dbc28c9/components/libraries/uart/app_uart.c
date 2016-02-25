@@ -12,6 +12,8 @@
 
 #include "app_uart.h"
 #include "nrf_drv_uart.h"
+#include "ble_data_buffer.h"
+#include "buffer_mngr.h"
 
 static uint8_t tx_buffer[1];
 static uint8_t rx_buffer[1];
@@ -78,6 +80,8 @@ uint32_t app_uart_init(const app_uart_comm_params_t * p_comm_params,
     }
 
     nrf_drv_uart_rx_enable();
+  }
+
     return nrf_drv_uart_rx(rx_buffer,1);
 }
 

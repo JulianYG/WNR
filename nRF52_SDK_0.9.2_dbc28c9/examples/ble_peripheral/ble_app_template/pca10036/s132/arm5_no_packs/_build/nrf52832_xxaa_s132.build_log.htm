@@ -1,0 +1,116 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: µVision V5.17.0.0
+Copyright (C) 2015 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: Julian Gao, Rice University, LIC=----
+ 
+Tool Versions:
+Toolchain:       MDK-Lite  Version: 5.17
+Toolchain Path:  C:\Keil_v5\ARM\ARMCC\Bin
+C Compiler:      Armcc.exe V5.06 update 1 (build 61)
+Assembler:       Armasm.exe V5.06 update 1 (build 61)
+Linker/Locator:  ArmLink.exe V5.06 update 1 (build 61)
+Library Manager: ArmAr.exe V5.06 update 1 (build 61)
+Hex Converter:   FromElf.exe V5.06 update 1 (build 61)
+CPU DLL:         
+Dialog DLL:      
+Target DLL:      Segger\JL2CM3.dll V2.99.16.0
+Dialog DLL:      TCM.DLL V1.14.6.0
+ 
+<h2>Project:</h2>
+C:\Users\JulianYGao\Downloads\nRF52_SDK_0.9.2_dbc28c9\examples\ble_peripheral\ble_app_template\pca10036\s132\arm5_no_packs\ble_app_template_s132_pca10036.uvprojx
+Project File Date:  02/14/2016
+
+<h2>Output:</h2>
+*** Using Compiler 'V5.06 update 1 (build 61)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
+Build target 'nrf52832_xxaa_s132'
+compiling ble_advdata.c...
+compiling bsp.c...
+compiling main.c...
+compiling ble_advertising.c...
+compiling ble_conn_params.c...
+compiling ble_srv_common.c...
+compiling nrf_delay.c...
+compiling nrf_drv_common.c...
+compiling app_uart.c...
+..\..\..\..\..\..\components\libraries\util\ble_data_buffer.h(14): error:  #101: "data_buffer" has already been declared in the current scope
+  typedef struct data_buffer
+..\..\..\..\..\..\components\libraries\util\ble_data_buffer.h(23): error:  #256: invalid redeclaration of type name "data_buffer" (declared at line 23)
+  } data_buffer;
+..\..\..\..\..\..\components\libraries\util\ble_data_buffer.h(25): error:  #101: "wnr_data" has already been declared in the current scope
+  typedef struct wnr_data 
+..\..\..\..\..\..\components\libraries\util\ble_data_buffer.h(30): error:  #256: invalid redeclaration of type name "wnr_data" (declared at line 30)
+  } wnr_data;
+..\..\..\..\..\..\components\libraries\util\ble_data_buffer.h(32): error:  #147-D: declaration is incompatible with "void buffer_init(data_buffer *, size_t, size_t)" (declared at line 32)
+  void buffer_init(data_buffer *db, size_t maxCap, size_t sz);
+..\..\..\..\..\..\components\libraries\util\ble_data_buffer.h(33): error:  #147-D: declaration is incompatible with "void buffer_free(data_buffer *)" (declared at line 33)
+  void buffer_free(data_buffer *db);
+..\..\..\..\..\..\components\libraries\util\ble_data_buffer.h(34): error:  #147-D: declaration is incompatible with "int buffer_in(data_buffer *, const void *)" (declared at line 34)
+  int buffer_in(data_buffer *db, const void *item);
+..\..\..\..\..\..\components\libraries\util\ble_data_buffer.h(35): error:  #147-D: declaration is incompatible with "int buffer_poll(data_buffer *, void *)" (declared at line 35)
+  int buffer_poll(data_buffer *db, void *item);
+..\..\..\..\..\..\components\libraries\util\ble_data_buffer.h(36): error:  #147-D: declaration is incompatible with "int buffer_compress(uint8_t *, size_t, data_buffer *)" (declared at line 36)
+  int buffer_compress(uint8_t *db, size_t length, data_buffer *cb);
+..\..\..\..\..\..\components\libraries\uart\app_uart.c(83): warning:  #940-D: missing return statement at end of non-void function "app_uart_init"
+    }
+..\..\..\..\..\..\components\libraries\uart\app_uart.c(85): error:  #169: expected a declaration
+      return nrf_drv_uart_rx(rx_buffer,1);
+..\..\..\..\..\..\components\libraries\uart\app_uart.c(86): error:  #169: expected a declaration
+  }
+..\..\..\..\..\..\components\libraries\uart\app_uart.c(125): warning: At end of source:  #12-D: parsing restarts here after previous syntax error
+..\..\..\..\..\..\components\libraries\uart\app_uart.c(18): warning:  #177-D: variable "tx_buffer" was declared but never referenced
+  static uint8_t tx_buffer[1];
+..\..\..\..\..\..\components\libraries\uart\app_uart.c: 3 warnings, 11 errors
+compiling nrf_drv_gpiote.c...
+compiling nrf_drv_uart.c...
+compiling pstorage.c...
+compiling app_button.c...
+compiling app_error.c...
+compiling app_timer_appsh.c...
+compiling app_scheduler.c...
+compiling nrf_assert.c...
+compiling app_trace.c...
+compiling app_timer.c...
+assembling arm_startup_nrf52.s...
+compiling retarget.c...
+compiling softdevice_handler.c...
+compiling system_nrf52.c...
+".\_build\nrf52832_xxaa_s132.axf" - 11 Error(s), 3 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: ARM
+                http://www.keil.com/pack/ARM.CMSIS.4.2.0.pack
+                ARM::CMSIS:CORE:3.40.0
+                CMSIS (Cortex Microcontroller Software Interface Standard)
+   * Component: CORE Version: 3.40.0
+
+Package Vendor: NordicSemiconductor
+                http://developer.nordicsemi.com/nRF51_SDK/pieces/nRF_DeviceFamilyPack/NordicSemiconductor.nRF_DeviceFamilyPack.8.0.3.pack
+                NordicSemiconductor::Device:Startup:8.0.3
+                Nordic Semiconductor nRF ARM devices Device Family Pack.
+   * Component: Startup Version: 8.0.3
+
+<h2>Collection of Component include folders:</h2>
+  C:\Users\JulianYGao\Downloads\nRF52_SDK_0.9.2_dbc28c9\examples\ble_peripheral\ble_app_template\pca10036\s132\arm5_no_packs\RTE
+  C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include
+  C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.0.3\Device\Include
+  C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.2\Device\Include
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: ARM::CMSIS:CORE:3.40.0
+      Source file:   CMSIS\UserCodeTemplates\ARM\ITM_Retarget.c
+
+   * Component: NordicSemiconductor::Device:Startup:8.0.3
+      Source file:   Device\Source\arm\arm_startup_nrf52.s
+      Source file:   Device\Source\system_nrf52.c
+      Include file:  Device\Include\system_nrf52.h
+Target not created.
+Build Time Elapsed:  00:00:10
+</pre>
+</body>
+</html>

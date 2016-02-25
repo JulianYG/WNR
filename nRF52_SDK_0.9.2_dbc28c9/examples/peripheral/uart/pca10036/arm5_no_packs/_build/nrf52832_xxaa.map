@@ -6,21 +6,31 @@ Section Cross References
 
     main.o(i.main) refers to app_uart_fifo.o(i.app_uart_init) for app_uart_init
     main.o(i.main) refers to app_error.o(i.app_error_handler) for app_error_handler
-    main.o(i.main) refers to printfb.o(i.__0printf$bare) for __2printf
+    main.o(i.main) refers to printf4.o(i.__0printf$4) for __2printf
     main.o(i.main) refers to app_uart_fifo.o(i.app_uart_get) for app_uart_get
-    main.o(i.main) refers to app_uart_fifo.o(i.app_uart_put) for app_uart_put
+    main.o(i.main) refers to app_uart_fifo.o(i.app_uart_compress) for app_uart_compress
     main.o(i.main) refers to main.o(.constdata) for .constdata
     main.o(i.main) refers to main.o(.data) for .data
-    main.o(i.main) refers to main.o(.bss) for .bss
     main.o(i.main) refers to main.o(i.uart_error_handle) for uart_error_handle
     main.o(i.uart_error_handle) refers to app_error.o(i.app_error_handler) for app_error_handler
     app_uart_fifo.o(i.app_uart_close) refers to nrf_drv_uart.o(i.nrf_drv_uart_uninit) for nrf_drv_uart_uninit
+    app_uart_fifo.o(i.app_uart_compress) refers to heatshrink_encoder.o(i.heatshrink_encoder_alloc) for heatshrink_encoder_alloc
+    app_uart_fifo.o(i.app_uart_compress) refers to malloc.o(i.malloc) for malloc
+    app_uart_fifo.o(i.app_uart_compress) refers to memseta.o(.text) for __aeabi_memclr
+    app_uart_fifo.o(i.app_uart_compress) refers to heatshrink_encoder.o(i.heatshrink_encoder_sink) for heatshrink_encoder_sink
+    app_uart_fifo.o(i.app_uart_compress) refers to printf4.o(i.__0printf$4) for __2printf
+    app_uart_fifo.o(i.app_uart_compress) refers to heatshrink_encoder.o(i.heatshrink_encoder_finish) for heatshrink_encoder_finish
+    app_uart_fifo.o(i.app_uart_compress) refers to heatshrink_encoder.o(i.heatshrink_encoder_poll) for heatshrink_encoder_poll
+    app_uart_fifo.o(i.app_uart_compress) refers to app_uart_fifo.o(i.app_uart_put) for app_uart_put
+    app_uart_fifo.o(i.app_uart_compress) refers to heatshrink_encoder.o(i.heatshrink_encoder_free) for heatshrink_encoder_free
+    app_uart_fifo.o(i.app_uart_compress) refers to app_uart_fifo.o(.data) for .data
+    app_uart_fifo.o(i.app_uart_compress) refers to app_uart_fifo.o(.bss) for .bss
     app_uart_fifo.o(i.app_uart_flush) refers to app_fifo.o(i.app_fifo_flush) for app_fifo_flush
     app_uart_fifo.o(i.app_uart_flush) refers to app_uart_fifo.o(.bss) for .bss
     app_uart_fifo.o(i.app_uart_get) refers to app_fifo.o(i.app_fifo_get) for app_fifo_get
     app_uart_fifo.o(i.app_uart_get) refers to app_uart_fifo.o(.bss) for .bss
     app_uart_fifo.o(i.app_uart_init) refers to app_fifo.o(i.app_fifo_init) for app_fifo_init
-    app_uart_fifo.o(i.app_uart_init) refers to memcpya.o(.text) for __aeabi_memcpy4
+    app_uart_fifo.o(i.app_uart_init) refers to memmovea.o(.text) for __aeabi_memcpy4
     app_uart_fifo.o(i.app_uart_init) refers to nrf_drv_uart.o(i.nrf_drv_uart_init) for nrf_drv_uart_init
     app_uart_fifo.o(i.app_uart_init) refers to nrf_drv_uart.o(i.nrf_drv_uart_rx_enable) for nrf_drv_uart_rx_enable
     app_uart_fifo.o(i.app_uart_init) refers to nrf_drv_uart.o(i.nrf_drv_uart_rx) for nrf_drv_uart_rx
@@ -84,6 +94,24 @@ Section Cross References
     app_util_platform.o(i.critical_region_exit) refers to app_util_platform.o(.data) for .data
     retarget.o(i.fgetc) refers to app_uart_fifo.o(i.app_uart_get) for app_uart_get
     retarget.o(i.fputc) refers to app_uart_fifo.o(i.app_uart_put) for app_uart_put
+    heatshrink_encoder.o(i.add_tag_bit) refers to heatshrink_encoder.o(i.push_bits) for push_bits
+    heatshrink_encoder.o(i.heatshrink_encoder_alloc) refers to malloc.o(i.malloc) for malloc
+    heatshrink_encoder.o(i.heatshrink_encoder_alloc) refers to heatshrink_encoder.o(i.heatshrink_encoder_reset) for heatshrink_encoder_reset
+    heatshrink_encoder.o(i.heatshrink_encoder_alloc) refers to malloc.o(i.free) for free
+    heatshrink_encoder.o(i.heatshrink_encoder_free) refers to malloc.o(i.free) for free
+    heatshrink_encoder.o(i.heatshrink_encoder_poll) refers to memseta.o(.text) for __aeabi_memset
+    heatshrink_encoder.o(i.heatshrink_encoder_poll) refers to heatshrink_encoder.o(i.st_step_search) for st_step_search
+    heatshrink_encoder.o(i.heatshrink_encoder_poll) refers to heatshrink_encoder.o(i.can_take_byte) for can_take_byte
+    heatshrink_encoder.o(i.heatshrink_encoder_poll) refers to heatshrink_encoder.o(i.add_tag_bit) for add_tag_bit
+    heatshrink_encoder.o(i.heatshrink_encoder_poll) refers to heatshrink_encoder.o(i.push_bits) for push_bits
+    heatshrink_encoder.o(i.heatshrink_encoder_poll) refers to heatshrink_encoder.o(i.push_outgoing_bits) for push_outgoing_bits
+    heatshrink_encoder.o(i.heatshrink_encoder_poll) refers to memmovea.o(.text) for __aeabi_memmove
+    heatshrink_encoder.o(i.heatshrink_encoder_reset) refers to memseta.o(.text) for __aeabi_memclr4
+    heatshrink_encoder.o(i.heatshrink_encoder_sink) refers to heatshrink_encoder.o(i.get_input_offset) for get_input_offset
+    heatshrink_encoder.o(i.heatshrink_encoder_sink) refers to memmovea.o(.text) for __aeabi_memcpy
+    heatshrink_encoder.o(i.push_outgoing_bits) refers to heatshrink_encoder.o(i.push_bits) for push_bits
+    heatshrink_encoder.o(i.st_step_search) refers to heatshrink_encoder.o(i.get_input_offset) for get_input_offset
+    heatshrink_encoder.o(i.st_step_search) refers to heatshrink_encoder.o(i.find_longest_match) for find_longest_match
     arm_startup_nrf52.o(RESET) refers to arm_startup_nrf52.o(STACK) for __initial_sp
     arm_startup_nrf52.o(RESET) refers to arm_startup_nrf52.o(.text) for Reset_Handler
     arm_startup_nrf52.o(RESET) refers to nrf_drv_uart.o(i.UARTE0_UART0_IRQHandler) for UARTE0_UART0_IRQHandler
@@ -334,6 +362,38 @@ Section Cross References
     printfa.o(i._printf_pre_padding) refers (Special) to iusefp.o(.text) for __I$use$fp
     printfa.o(i._snputc) refers (Special) to iusefp.o(.text) for __I$use$fp
     printfa.o(i._sputc) refers (Special) to iusefp.o(.text) for __I$use$fp
+    malloc.o(i.free) refers to mvars.o(.data) for __microlib_freelist
+    malloc.o(i.malloc) refers to mvars.o(.data) for __microlib_freelist_initialised
+    malloc.o(i.malloc) refers to mvars.o(.data) for __microlib_freelist
+    malloc.o(i.malloc) refers to arm_startup_nrf52.o(HEAP) for __heap_base
+    mallocr.o(i.__free$realloc) refers to mvars.o(.data) for __microlib_freelist
+    mallocr.o(i.__malloc$realloc) refers to mallocr.o(i.internal_alloc) for internal_alloc
+    mallocr.o(i.__malloc$realloc) refers to mvars.o(.data) for __microlib_freelist_initialised
+    mallocr.o(i.__malloc$realloc) refers to arm_startup_nrf52.o(HEAP) for __heap_base
+    mallocr.o(i.__malloc$realloc) refers to mvars.o(.data) for __microlib_freelist
+    mallocr.o(i.internal_alloc) refers to memmovea.o(.text) for __aeabi_memcpy
+    mallocr.o(i.internal_alloc) refers to mvars.o(.data) for __microlib_freelist
+    mallocr.o(i.realloc) refers to mallocr.o(i.__free$realloc) for __free$realloc
+    mallocr.o(i.realloc) refers to mallocr.o(i.internal_alloc) for internal_alloc
+    mallocr.o(i.realloc) refers to mallocr.o(i.__malloc$realloc) for __malloc$realloc
+    mallocr.o(i.realloc) refers to mvars.o(.data) for __microlib_freelist
+    malloca.o(i.__aligned_malloc) refers to mvars.o(.data) for __microlib_freelist_initialised
+    malloca.o(i.__aligned_malloc) refers to mvars.o(.data) for __microlib_freelist
+    malloca.o(i.__aligned_malloc) refers to arm_startup_nrf52.o(HEAP) for __heap_base
+    malloca.o(i.__free$memalign) refers to mvars.o(.data) for __microlib_freelist
+    malloca.o(i.__malloc$memalign) refers to malloca.o(i.__aligned_malloc) for __aligned_malloc
+    mallocra.o(i.__aligned_malloc$realloc) refers to mallocra.o(i.internal_alloc) for internal_alloc
+    mallocra.o(i.__aligned_malloc$realloc) refers to mvars.o(.data) for __microlib_freelist_initialised
+    mallocra.o(i.__aligned_malloc$realloc) refers to arm_startup_nrf52.o(HEAP) for __heap_base
+    mallocra.o(i.__aligned_malloc$realloc) refers to mvars.o(.data) for __microlib_freelist
+    mallocra.o(i.__free$realloc$memalign) refers to mvars.o(.data) for __microlib_freelist
+    mallocra.o(i.__malloc$realloc$memalign) refers to mallocra.o(i.__aligned_malloc$realloc) for __aligned_malloc$realloc
+    mallocra.o(i.__realloc$memalign) refers to mallocra.o(i.__free$realloc$memalign) for __free$realloc$memalign
+    mallocra.o(i.__realloc$memalign) refers to mallocra.o(i.internal_alloc) for internal_alloc
+    mallocra.o(i.__realloc$memalign) refers to mallocra.o(i.__malloc$realloc$memalign) for __malloc$realloc$memalign
+    mallocra.o(i.__realloc$memalign) refers to mvars.o(.data) for __microlib_freelist
+    mallocra.o(i.internal_alloc) refers to memmovea.o(.text) for __aeabi_memcpy
+    mallocra.o(i.internal_alloc) refers to mvars.o(.data) for __microlib_freelist
     entry2.o(.ARM.Collect$$$$00000001) refers to entry2.o(.ARM.Collect$$$$00002712) for __lit__00000000
     entry2.o(.ARM.Collect$$$$00002712) refers to arm_startup_nrf52.o(STACK) for __initial_sp
     entry2.o(__vectab_stack_and_reset_area) refers to arm_startup_nrf52.o(STACK) for __initial_sp
@@ -401,7 +461,6 @@ Removing Unused input sections from the image.
     Removing retarget.o(.rrx_text), (6 bytes).
     Removing retarget.o(i.fgetc), (18 bytes).
     Removing retarget.o(.data), (4 bytes).
-    Removing arm_startup_nrf52.o(HEAP), (8192 bytes).
     Removing system_nrf52.o(.rev16_text), (4 bytes).
     Removing system_nrf52.o(.revsh_text), (4 bytes).
     Removing system_nrf52.o(.rrx_text), (6 bytes).
@@ -413,7 +472,7 @@ Removing Unused input sections from the image.
     Removing cdrcmple.o(.text), (48 bytes).
     Removing depilogue.o(.text), (186 bytes).
 
-53 unused section(s) (total 10108 bytes) removed from the image.
+52 unused section(s) (total 1916 bytes) removed from the image.
 
 ==============================================================================
 
@@ -426,35 +485,44 @@ Image Symbol Table
     RESET                                    0x00000000   Section     1024  arm_startup_nrf52.o(RESET)
     ../clib/microlib/division.c              0x00000000   Number         0  uldiv.o ABSOLUTE
     ../clib/microlib/division.c              0x00000000   Number         0  uidiv.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10b.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10a.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11a.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry5.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8b.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry2.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8a.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11b.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11b.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9b.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7b.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry.o ABSOLUTE
-    ../clib/microlib/longlong.c              0x00000000   Number         0  llshl.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry5.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry2.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8b.o ABSOLUTE
     ../clib/microlib/longlong.c              0x00000000   Number         0  llsshr.o ABSOLUTE
     ../clib/microlib/longlong.c              0x00000000   Number         0  llushr.o ABSOLUTE
-    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf8.o ABSOLUTE
+    ../clib/microlib/longlong.c              0x00000000   Number         0  llshl.o ABSOLUTE
+    ../clib/microlib/malloc/malloc.c         0x00000000   Number         0  malloca.o ABSOLUTE
+    ../clib/microlib/malloc/malloc.c         0x00000000   Number         0  malloc.o ABSOLUTE
+    ../clib/microlib/malloc/malloc.c         0x00000000   Number         0  mallocr.o ABSOLUTE
+    ../clib/microlib/malloc/malloc.c         0x00000000   Number         0  mallocra.o ABSOLUTE
+    ../clib/microlib/malloc/mvars.c          0x00000000   Number         0  mvars.o ABSOLUTE
     ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf6.o ABSOLUTE
-    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printfa.o ABSOLUTE
-    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf5.o ABSOLUTE
-    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf4.o ABSOLUTE
-    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf3.o ABSOLUTE
-    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf1.o ABSOLUTE
-    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf0.o ABSOLUTE
     ../clib/microlib/printf/printf.c         0x00000000   Number         0  printfb.o ABSOLUTE
+    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf1.o ABSOLUTE
+    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf5.o ABSOLUTE
+    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf3.o ABSOLUTE
     ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf2.o ABSOLUTE
+    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf4.o ABSOLUTE
+    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf0.o ABSOLUTE
+    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printfa.o ABSOLUTE
+    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf8.o ABSOLUTE
     ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf7.o ABSOLUTE
+    ../clib/microlib/printf/stubs.s          0x00000000   Number         0  stubs.o ABSOLUTE
+    ../clib/microlib/string/memcpy.c         0x00000000   Number         0  memmovea.o ABSOLUTE
     ../clib/microlib/string/memcpy.c         0x00000000   Number         0  memcpyb.o ABSOLUTE
+    ../clib/microlib/string/memcpy.c         0x00000000   Number         0  memmoveb.o ABSOLUTE
     ../clib/microlib/string/memcpy.c         0x00000000   Number         0  memcpya.o ABSOLUTE
+    ../clib/microlib/string/memset.c         0x00000000   Number         0  memseta.o ABSOLUTE
     ../clib/microlib/stubs.s                 0x00000000   Number         0  iusefp.o ABSOLUTE
     ../fplib/microlib/fpadd.c                0x00000000   Number         0  dadd.o ABSOLUTE
     ../fplib/microlib/fpdiv.c                0x00000000   Number         0  ddiv.o ABSOLUTE
@@ -469,6 +537,7 @@ Image Symbol Table
     ..\..\..\..\..\components\libraries\uart\retarget.c 0x00000000   Number         0  retarget.o ABSOLUTE
     ..\..\..\..\..\components\libraries\util\app_error.c 0x00000000   Number         0  app_error.o ABSOLUTE
     ..\..\..\..\..\components\libraries\util\app_util_platform.c 0x00000000   Number         0  app_util_platform.o ABSOLUTE
+    ..\..\..\..\..\components\libraries\util\heatshrink_encoder.c 0x00000000   Number         0  heatshrink_encoder.o ABSOLUTE
     ..\..\..\..\..\components\libraries\util\nrf_assert.c 0x00000000   Number         0  nrf_assert.o ABSOLUTE
     ..\..\main.c                             0x00000000   Number         0  main.o ABSOLUTE
     ..\\..\\..\\..\\..\\components\\drivers_nrf\\common\\nrf_drv_common.c 0x00000000   Number         0  nrf_drv_common.o ABSOLUTE
@@ -498,76 +567,107 @@ Image Symbol Table
     __lit__00000000                          0x00000410   Data           4  entry2.o(.ARM.Collect$$$$00002712)
     .text                                    0x00000414   Section       36  arm_startup_nrf52.o(.text)
     $v0                                      0x00000414   Number         0  arm_startup_nrf52.o(.text)
-    .text                                    0x00000438   Section        0  memcpya.o(.text)
-    .text                                    0x0000045c   Section       36  init.o(.text)
-    i.SystemInit                             0x00000480   Section        0  system_nrf52.o(i.SystemInit)
-    i.UARTE0_UART0_IRQHandler                0x000005a0   Section        0  nrf_drv_uart.o(i.UARTE0_UART0_IRQHandler)
-    i.__0printf$bare                         0x00000710   Section        0  printfb.o(i.__0printf$bare)
-    i.__scatterload_copy                     0x00000720   Section       14  handlers.o(i.__scatterload_copy)
-    i.__scatterload_null                     0x0000072e   Section        2  handlers.o(i.__scatterload_null)
-    i.__scatterload_zeroinit                 0x00000730   Section       14  handlers.o(i.__scatterload_zeroinit)
-    i._printf_core                           0x0000073e   Section        0  printfb.o(i._printf_core)
-    _printf_core                             0x0000073f   Thumb Code    34  printfb.o(i._printf_core)
-    i.app_error_handler                      0x00000760   Section        0  app_error.o(i.app_error_handler)
-    i.app_fifo_get                           0x00000780   Section        0  app_fifo.o(i.app_fifo_get)
-    i.app_fifo_init                          0x000007a2   Section        0  app_fifo.o(i.app_fifo_init)
-    i.app_fifo_put                           0x000007c2   Section        0  app_fifo.o(i.app_fifo_put)
-    i.app_uart_get                           0x000007e4   Section        0  app_uart_fifo.o(i.app_uart_get)
-    i.app_uart_init                          0x000007f0   Section        0  app_uart_fifo.o(i.app_uart_init)
-    i.app_uart_put                           0x0000088c   Section        0  app_uart_fifo.o(i.app_uart_put)
-    i.apply_config                           0x000008b8   Section        0  nrf_drv_uart.o(i.apply_config)
-    apply_config                             0x000008b9   Thumb Code   108  nrf_drv_uart.o(i.apply_config)
-    i.fputc                                  0x00000930   Section        0  retarget.o(i.fputc)
-    i.main                                   0x00000940   Section        0  main.o(i.main)
-    i.nrf_drv_common_irq_enable              0x000009fc   Section        0  nrf_drv_common.o(i.nrf_drv_common_irq_enable)
-    i.nrf_drv_uart_init                      0x00000a34   Section        0  nrf_drv_uart.o(i.nrf_drv_uart_init)
-    i.nrf_drv_uart_rx                        0x00000aa4   Section        0  nrf_drv_uart.o(i.nrf_drv_uart_rx)
-    i.nrf_drv_uart_rx_enable                 0x00000bc8   Section        0  nrf_drv_uart.o(i.nrf_drv_uart_rx_enable)
-    i.nrf_drv_uart_tx                        0x00000be0   Section        0  nrf_drv_uart.o(i.nrf_drv_uart_tx)
-    i.nrf_gpio_cfg                           0x00000cc8   Section        0  nrf_drv_uart.o(i.nrf_gpio_cfg)
-    nrf_gpio_cfg                             0x00000cc9   Thumb Code    34  nrf_drv_uart.o(i.nrf_gpio_cfg)
-    i.nrf_gpio_cfg_input                     0x00000cea   Section        0  nrf_drv_uart.o(i.nrf_gpio_cfg_input)
-    nrf_gpio_cfg_input                       0x00000ceb   Thumb Code    18  nrf_drv_uart.o(i.nrf_gpio_cfg_input)
-    i.nrf_gpio_cfg_output                    0x00000cfc   Section        0  nrf_drv_uart.o(i.nrf_gpio_cfg_output)
-    nrf_gpio_cfg_output                      0x00000cfd   Thumb Code    20  nrf_drv_uart.o(i.nrf_gpio_cfg_output)
-    i.nrf_uart_event_check                   0x00000d10   Section        0  nrf_drv_uart.o(i.nrf_uart_event_check)
-    nrf_uart_event_check                     0x00000d11   Thumb Code    10  nrf_drv_uart.o(i.nrf_uart_event_check)
-    i.nrf_uarte_event_check                  0x00000d1a   Section        0  nrf_drv_uart.o(i.nrf_uarte_event_check)
-    nrf_uarte_event_check                    0x00000d1b   Thumb Code    10  nrf_drv_uart.o(i.nrf_uarte_event_check)
-    i.rx_byte                                0x00000d24   Section        0  nrf_drv_uart.o(i.rx_byte)
-    rx_byte                                  0x00000d25   Thumb Code    28  nrf_drv_uart.o(i.rx_byte)
-    i.rx_done_event                          0x00000d48   Section        0  nrf_drv_uart.o(i.rx_done_event)
-    rx_done_event                            0x00000d49   Thumb Code    32  nrf_drv_uart.o(i.rx_done_event)
-    i.rx_enable                              0x00000d6c   Section        0  nrf_drv_uart.o(i.rx_enable)
-    rx_enable                                0x00000d6d   Thumb Code    18  nrf_drv_uart.o(i.rx_enable)
-    i.tx_byte                                0x00000d84   Section        0  nrf_drv_uart.o(i.tx_byte)
-    tx_byte                                  0x00000d85   Thumb Code    28  nrf_drv_uart.o(i.tx_byte)
-    i.tx_done_event                          0x00000da8   Section        0  nrf_drv_uart.o(i.tx_done_event)
-    tx_done_event                            0x00000da9   Thumb Code    30  nrf_drv_uart.o(i.tx_done_event)
-    i.uart_error_handle                      0x00000dcc   Section        0  main.o(i.uart_error_handle)
-    i.uart_event_handler                     0x00000de4   Section        0  app_uart_fifo.o(i.uart_event_handler)
-    .constdata                               0x00000e74   Section       12  main.o(.constdata)
-    .constdata                               0x00000e80   Section       32  app_uart_fifo.o(.constdata)
-    .constdata                               0x00000ea0   Section       32  nrf_drv_uart.o(.constdata)
-    m_default_config                         0x00000ea0   Data          32  nrf_drv_uart.o(.constdata)
-    .data                                    0x20000000   Section        1  main.o(.data)
-    rx_buf                                   0x20000000   Data           1  main.o(.data)
-    .data                                    0x20000004   Section        8  app_uart_fifo.o(.data)
-    tx_buffer                                0x20000004   Data           1  app_uart_fifo.o(.data)
-    tx_tmp                                   0x20000005   Data           1  app_uart_fifo.o(.data)
-    rx_buffer                                0x20000006   Data           1  app_uart_fifo.o(.data)
-    m_event_handler                          0x20000008   Data           4  app_uart_fifo.o(.data)
-    .data                                    0x2000000c   Section        4  retarget.o(.data)
-    .data                                    0x20000010   Section        4  system_nrf52.o(.data)
-    __tagsym$$used                           0x20000010   Number         0  system_nrf52.o(.data)
-    .bss                                     0x20000014   Section      256  main.o(.bss)
-    tx_buf                                   0x20000014   Data         256  main.o(.bss)
-    .bss                                     0x20000114   Section       32  app_uart_fifo.o(.bss)
-    m_rx_fifo                                0x20000114   Data          16  app_uart_fifo.o(.bss)
-    m_tx_fifo                                0x20000124   Data          16  app_uart_fifo.o(.bss)
-    .bss                                     0x20000134   Section       24  nrf_drv_uart.o(.bss)
-    m_cb                                     0x20000134   Data          24  nrf_drv_uart.o(.bss)
-    STACK                                    0x20000150   Section     8192  arm_startup_nrf52.o(STACK)
+    .text                                    0x00000438   Section        0  memmovea.o(.text)
+    .text                                    0x00000478   Section        0  memseta.o(.text)
+    .text                                    0x0000049c   Section        0  uldiv.o(.text)
+    .text                                    0x00000500   Section       36  init.o(.text)
+    .text                                    0x00000524   Section        0  llshl.o(.text)
+    .text                                    0x00000542   Section        0  llushr.o(.text)
+    i.SystemInit                             0x00000564   Section        0  system_nrf52.o(i.SystemInit)
+    i.UARTE0_UART0_IRQHandler                0x00000684   Section        0  nrf_drv_uart.o(i.UARTE0_UART0_IRQHandler)
+    i.__0printf$4                            0x000007f4   Section        0  printf4.o(i.__0printf$4)
+    i.__scatterload_copy                     0x00000814   Section       14  handlers.o(i.__scatterload_copy)
+    i.__scatterload_null                     0x00000822   Section        2  handlers.o(i.__scatterload_null)
+    i.__scatterload_zeroinit                 0x00000824   Section       14  handlers.o(i.__scatterload_zeroinit)
+    i._printf_core                           0x00000834   Section        0  printf4.o(i._printf_core)
+    _printf_core                             0x00000835   Thumb Code   552  printf4.o(i._printf_core)
+    i.add_tag_bit                            0x00000a60   Section        0  heatshrink_encoder.o(i.add_tag_bit)
+    add_tag_bit                              0x00000a61   Thumb Code     8  heatshrink_encoder.o(i.add_tag_bit)
+    i.app_error_handler                      0x00000a68   Section        0  app_error.o(i.app_error_handler)
+    i.app_fifo_get                           0x00000a88   Section        0  app_fifo.o(i.app_fifo_get)
+    i.app_fifo_init                          0x00000aaa   Section        0  app_fifo.o(i.app_fifo_init)
+    i.app_fifo_put                           0x00000aca   Section        0  app_fifo.o(i.app_fifo_put)
+    i.app_uart_compress                      0x00000aec   Section        0  app_uart_fifo.o(i.app_uart_compress)
+    i.app_uart_get                           0x00000bcc   Section        0  app_uart_fifo.o(i.app_uart_get)
+    i.app_uart_init                          0x00000bd8   Section        0  app_uart_fifo.o(i.app_uart_init)
+    i.app_uart_put                           0x00000c74   Section        0  app_uart_fifo.o(i.app_uart_put)
+    i.apply_config                           0x00000ca0   Section        0  nrf_drv_uart.o(i.apply_config)
+    apply_config                             0x00000ca1   Thumb Code   108  nrf_drv_uart.o(i.apply_config)
+    i.can_take_byte                          0x00000d18   Section        0  heatshrink_encoder.o(i.can_take_byte)
+    can_take_byte                            0x00000d19   Thumb Code    18  heatshrink_encoder.o(i.can_take_byte)
+    i.find_longest_match                     0x00000d2c   Section        0  heatshrink_encoder.o(i.find_longest_match)
+    find_longest_match                       0x00000d2d   Thumb Code   138  heatshrink_encoder.o(i.find_longest_match)
+    i.fputc                                  0x00000db6   Section        0  retarget.o(i.fputc)
+    i.free                                   0x00000dc4   Section        0  malloc.o(i.free)
+    i.get_input_offset                       0x00000e14   Section        0  heatshrink_encoder.o(i.get_input_offset)
+    get_input_offset                         0x00000e15   Thumb Code    10  heatshrink_encoder.o(i.get_input_offset)
+    i.heatshrink_encoder_alloc               0x00000e1e   Section        0  heatshrink_encoder.o(i.heatshrink_encoder_alloc)
+    i.heatshrink_encoder_finish              0x00000e6c   Section        0  heatshrink_encoder.o(i.heatshrink_encoder_finish)
+    i.heatshrink_encoder_free                0x00000e92   Section        0  heatshrink_encoder.o(i.heatshrink_encoder_free)
+    i.heatshrink_encoder_poll                0x00000ea6   Section        0  heatshrink_encoder.o(i.heatshrink_encoder_poll)
+    i.heatshrink_encoder_reset               0x0000106a   Section        0  heatshrink_encoder.o(i.heatshrink_encoder_reset)
+    i.heatshrink_encoder_sink                0x00001094   Section        0  heatshrink_encoder.o(i.heatshrink_encoder_sink)
+    i.main                                   0x00001104   Section        0  main.o(i.main)
+    i.malloc                                 0x000011b8   Section        0  malloc.o(i.malloc)
+    i.nrf_drv_common_irq_enable              0x00001224   Section        0  nrf_drv_common.o(i.nrf_drv_common_irq_enable)
+    i.nrf_drv_uart_init                      0x0000125c   Section        0  nrf_drv_uart.o(i.nrf_drv_uart_init)
+    i.nrf_drv_uart_rx                        0x000012cc   Section        0  nrf_drv_uart.o(i.nrf_drv_uart_rx)
+    i.nrf_drv_uart_rx_enable                 0x000013f0   Section        0  nrf_drv_uart.o(i.nrf_drv_uart_rx_enable)
+    i.nrf_drv_uart_tx                        0x00001408   Section        0  nrf_drv_uart.o(i.nrf_drv_uart_tx)
+    i.nrf_gpio_cfg                           0x000014f0   Section        0  nrf_drv_uart.o(i.nrf_gpio_cfg)
+    nrf_gpio_cfg                             0x000014f1   Thumb Code    34  nrf_drv_uart.o(i.nrf_gpio_cfg)
+    i.nrf_gpio_cfg_input                     0x00001512   Section        0  nrf_drv_uart.o(i.nrf_gpio_cfg_input)
+    nrf_gpio_cfg_input                       0x00001513   Thumb Code    18  nrf_drv_uart.o(i.nrf_gpio_cfg_input)
+    i.nrf_gpio_cfg_output                    0x00001524   Section        0  nrf_drv_uart.o(i.nrf_gpio_cfg_output)
+    nrf_gpio_cfg_output                      0x00001525   Thumb Code    20  nrf_drv_uart.o(i.nrf_gpio_cfg_output)
+    i.nrf_uart_event_check                   0x00001538   Section        0  nrf_drv_uart.o(i.nrf_uart_event_check)
+    nrf_uart_event_check                     0x00001539   Thumb Code    10  nrf_drv_uart.o(i.nrf_uart_event_check)
+    i.nrf_uarte_event_check                  0x00001542   Section        0  nrf_drv_uart.o(i.nrf_uarte_event_check)
+    nrf_uarte_event_check                    0x00001543   Thumb Code    10  nrf_drv_uart.o(i.nrf_uarte_event_check)
+    i.push_bits                              0x0000154c   Section        0  heatshrink_encoder.o(i.push_bits)
+    push_bits                                0x0000154d   Thumb Code   100  heatshrink_encoder.o(i.push_bits)
+    i.push_outgoing_bits                     0x000015b0   Section        0  heatshrink_encoder.o(i.push_outgoing_bits)
+    push_outgoing_bits                       0x000015b1   Thumb Code    48  heatshrink_encoder.o(i.push_outgoing_bits)
+    i.rx_byte                                0x000015e0   Section        0  nrf_drv_uart.o(i.rx_byte)
+    rx_byte                                  0x000015e1   Thumb Code    28  nrf_drv_uart.o(i.rx_byte)
+    i.rx_done_event                          0x00001604   Section        0  nrf_drv_uart.o(i.rx_done_event)
+    rx_done_event                            0x00001605   Thumb Code    32  nrf_drv_uart.o(i.rx_done_event)
+    i.rx_enable                              0x00001628   Section        0  nrf_drv_uart.o(i.rx_enable)
+    rx_enable                                0x00001629   Thumb Code    18  nrf_drv_uart.o(i.rx_enable)
+    i.st_step_search                         0x00001640   Section        0  heatshrink_encoder.o(i.st_step_search)
+    st_step_search                           0x00001641   Thumb Code   130  heatshrink_encoder.o(i.st_step_search)
+    i.tx_byte                                0x000016c4   Section        0  nrf_drv_uart.o(i.tx_byte)
+    tx_byte                                  0x000016c5   Thumb Code    28  nrf_drv_uart.o(i.tx_byte)
+    i.tx_done_event                          0x000016e8   Section        0  nrf_drv_uart.o(i.tx_done_event)
+    tx_done_event                            0x000016e9   Thumb Code    30  nrf_drv_uart.o(i.tx_done_event)
+    i.uart_error_handle                      0x0000170c   Section        0  main.o(i.uart_error_handle)
+    i.uart_event_handler                     0x00001724   Section        0  app_uart_fifo.o(i.uart_event_handler)
+    .constdata                               0x000017b4   Section       12  main.o(.constdata)
+    .constdata                               0x000017c0   Section       32  app_uart_fifo.o(.constdata)
+    .constdata                               0x000017e0   Section       32  nrf_drv_uart.o(.constdata)
+    m_default_config                         0x000017e0   Data          32  nrf_drv_uart.o(.constdata)
+    .data                                    0x20002800   Section        2  main.o(.data)
+    rx_buf                                   0x20002800   Data           1  main.o(.data)
+    tx_buf                                   0x20002801   Data           1  main.o(.data)
+    .data                                    0x20002804   Section       20  app_uart_fifo.o(.data)
+    tx_buffer                                0x20002804   Data           1  app_uart_fifo.o(.data)
+    tx_tmp                                   0x20002805   Data           1  app_uart_fifo.o(.data)
+    buffer_count                             0x20002808   Data           4  app_uart_fifo.o(.data)
+    m_event_handler                          0x2000280c   Data           4  app_uart_fifo.o(.data)
+    rx_buffer                                0x20002810   Data           8  app_uart_fifo.o(.data)
+    .data                                    0x20002818   Section        4  retarget.o(.data)
+    .data                                    0x2000281c   Section        4  system_nrf52.o(.data)
+    __tagsym$$used                           0x2000281c   Number         0  system_nrf52.o(.data)
+    .data                                    0x20002820   Section        4  mvars.o(.data)
+    .data                                    0x20002824   Section        4  mvars.o(.data)
+    .bss                                     0x20002828   Section       96  app_uart_fifo.o(.bss)
+    m_rx_fifo                                0x20002828   Data          16  app_uart_fifo.o(.bss)
+    m_tx_fifo                                0x20002838   Data          16  app_uart_fifo.o(.bss)
+    data_buf                                 0x20002848   Data          64  app_uart_fifo.o(.bss)
+    .bss                                     0x20002888   Section       24  nrf_drv_uart.o(.bss)
+    m_cb                                     0x20002888   Data          24  nrf_drv_uart.o(.bss)
+    HEAP                                     0x200028a0   Section     8192  arm_startup_nrf52.o(HEAP)
+    STACK                                    0x200048a0   Section     8192  arm_startup_nrf52.o(STACK)
 
     Global Symbols
 
@@ -576,6 +676,47 @@ Image Symbol Table
     BuildAttributes$$THM_ISAv4$E$P$D$K$B$S$7EM$VFPi3$EXTD16$VFPS$VFMA$PE$A:L22UL41UL21$X:L11$S22US41US21$IEEE1$IW$USESV6$~STKCKD$USESV7$~SHL$OSPACE$ROPI$EBA8$MICROLIB$REQ8$PRES8$EABIv2 0x00000000   Number         0  anon$$obj.o ABSOLUTE
     __ARM_use_no_argv                        0x00000000   Number         0  main.o ABSOLUTE
     __Vectors                                0x00000000   Data           4  arm_startup_nrf52.o(RESET)
+    _printf_a                                0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_c                                0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_charcount                        0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_d                                0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_e                                0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_f                                0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_flags                            0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_fp_dec                           0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_fp_hex                           0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_g                                0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_i                                0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_int_dec                          0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_l                                0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_lc                               0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_ll                               0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_lld                              0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_lli                              0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_llo                              0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_llu                              0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_llx                              0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_longlong_dec                     0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_longlong_hex                     0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_longlong_oct                     0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_ls                               0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_mbtowc                           0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_n                                0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_o                                0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_p                                0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_percent                          0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_pre_padding                      0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_return_value                     0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_s                                0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_sizespec                         0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_str                              0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_truncate_signed                  0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_truncate_unsigned                0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_u                                0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_wc                               0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_wctomb                           0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_widthprec                        0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_x                                0x00000000   Number         0  stubs.o ABSOLUTE
     __cpp_initialize__aeabi_                  - Undefined Weak Reference
     __cxa_finalize                            - Undefined Weak Reference
     __decompress                              - Undefined Weak Reference
@@ -636,40 +777,68 @@ Image Symbol Table
     TIMER3_IRQHandler                        0x0000042d   Thumb Code     0  arm_startup_nrf52.o(.text)
     TIMER4_IRQHandler                        0x0000042d   Thumb Code     0  arm_startup_nrf52.o(.text)
     WDT_IRQHandler                           0x0000042d   Thumb Code     0  arm_startup_nrf52.o(.text)
-    __aeabi_memcpy                           0x00000439   Thumb Code    36  memcpya.o(.text)
-    __aeabi_memcpy4                          0x00000439   Thumb Code     0  memcpya.o(.text)
-    __aeabi_memcpy8                          0x00000439   Thumb Code     0  memcpya.o(.text)
-    __scatterload                            0x0000045d   Thumb Code    28  init.o(.text)
-    __scatterload_rt2                        0x0000045d   Thumb Code     0  init.o(.text)
-    SystemInit                               0x00000481   Thumb Code   254  system_nrf52.o(i.SystemInit)
-    UARTE0_UART0_IRQHandler                  0x000005a1   Thumb Code   360  nrf_drv_uart.o(i.UARTE0_UART0_IRQHandler)
-    __0printf$bare                           0x00000711   Thumb Code     8  printfb.o(i.__0printf$bare)
-    __1printf$bare                           0x00000711   Thumb Code     0  printfb.o(i.__0printf$bare)
-    __2printf                                0x00000711   Thumb Code     0  printfb.o(i.__0printf$bare)
-    __scatterload_copy                       0x00000721   Thumb Code    14  handlers.o(i.__scatterload_copy)
-    __scatterload_null                       0x0000072f   Thumb Code     2  handlers.o(i.__scatterload_null)
-    __scatterload_zeroinit                   0x00000731   Thumb Code    14  handlers.o(i.__scatterload_zeroinit)
-    app_error_handler                        0x00000761   Thumb Code    24  app_error.o(i.app_error_handler)
-    app_fifo_get                             0x00000781   Thumb Code    34  app_fifo.o(i.app_fifo_get)
-    app_fifo_init                            0x000007a3   Thumb Code    32  app_fifo.o(i.app_fifo_init)
-    app_fifo_put                             0x000007c3   Thumb Code    34  app_fifo.o(i.app_fifo_put)
-    app_uart_get                             0x000007e5   Thumb Code     8  app_uart_fifo.o(i.app_uart_get)
-    app_uart_init                            0x000007f1   Thumb Code   138  app_uart_fifo.o(i.app_uart_init)
-    app_uart_put                             0x0000088d   Thumb Code    34  app_uart_fifo.o(i.app_uart_put)
-    fputc                                    0x00000931   Thumb Code    14  retarget.o(i.fputc)
-    main                                     0x00000941   Thumb Code   144  main.o(i.main)
-    nrf_drv_common_irq_enable                0x000009fd   Thumb Code    56  nrf_drv_common.o(i.nrf_drv_common_irq_enable)
-    nrf_drv_uart_init                        0x00000a35   Thumb Code    90  nrf_drv_uart.o(i.nrf_drv_uart_init)
-    nrf_drv_uart_rx                          0x00000aa5   Thumb Code   284  nrf_drv_uart.o(i.nrf_drv_uart_rx)
-    nrf_drv_uart_rx_enable                   0x00000bc9   Thumb Code    20  nrf_drv_uart.o(i.nrf_drv_uart_rx_enable)
-    nrf_drv_uart_tx                          0x00000be1   Thumb Code   224  nrf_drv_uart.o(i.nrf_drv_uart_tx)
-    uart_error_handle                        0x00000dcd   Thumb Code    22  main.o(i.uart_error_handle)
-    uart_event_handler                       0x00000de5   Thumb Code   136  app_uart_fifo.o(i.uart_event_handler)
-    Region$$Table$$Base                      0x00000ec0   Number         0  anon$$obj.o(Region$$Table)
-    Region$$Table$$Limit                     0x00000ee0   Number         0  anon$$obj.o(Region$$Table)
-    __stdout                                 0x2000000c   Data           4  retarget.o(.data)
-    SystemCoreClock                          0x20000010   Data           4  system_nrf52.o(.data)
-    __initial_sp                             0x20002150   Data           0  arm_startup_nrf52.o(STACK)
+    ___aeabi_memcpy8$move                    0x00000439   Thumb Code     0  memmovea.o(.text)
+    __aeabi_memcpy                           0x00000439   Thumb Code    64  memmovea.o(.text)
+    __aeabi_memcpy4                          0x00000439   Thumb Code     0  memmovea.o(.text)
+    __aeabi_memmove                          0x00000439   Thumb Code     0  memmovea.o(.text)
+    __aeabi_memmove4                         0x00000439   Thumb Code     0  memmovea.o(.text)
+    __aeabi_memmove8                         0x00000439   Thumb Code     0  memmovea.o(.text)
+    __aeabi_memset                           0x00000479   Thumb Code    14  memseta.o(.text)
+    __aeabi_memset4                          0x00000479   Thumb Code     0  memseta.o(.text)
+    __aeabi_memset8                          0x00000479   Thumb Code     0  memseta.o(.text)
+    __aeabi_memclr                           0x00000487   Thumb Code     4  memseta.o(.text)
+    __aeabi_memclr4                          0x00000487   Thumb Code     0  memseta.o(.text)
+    __aeabi_memclr8                          0x00000487   Thumb Code     0  memseta.o(.text)
+    _memset$wrapper                          0x0000048b   Thumb Code    18  memseta.o(.text)
+    __aeabi_uldivmod                         0x0000049d   Thumb Code    98  uldiv.o(.text)
+    __scatterload                            0x00000501   Thumb Code    28  init.o(.text)
+    __scatterload_rt2                        0x00000501   Thumb Code     0  init.o(.text)
+    __aeabi_llsl                             0x00000525   Thumb Code    30  llshl.o(.text)
+    _ll_shift_l                              0x00000525   Thumb Code     0  llshl.o(.text)
+    __aeabi_llsr                             0x00000543   Thumb Code    32  llushr.o(.text)
+    _ll_ushift_r                             0x00000543   Thumb Code     0  llushr.o(.text)
+    SystemInit                               0x00000565   Thumb Code   254  system_nrf52.o(i.SystemInit)
+    UARTE0_UART0_IRQHandler                  0x00000685   Thumb Code   360  nrf_drv_uart.o(i.UARTE0_UART0_IRQHandler)
+    __0printf$4                              0x000007f5   Thumb Code    22  printf4.o(i.__0printf$4)
+    __1printf$4                              0x000007f5   Thumb Code     0  printf4.o(i.__0printf$4)
+    __2printf                                0x000007f5   Thumb Code     0  printf4.o(i.__0printf$4)
+    __scatterload_copy                       0x00000815   Thumb Code    14  handlers.o(i.__scatterload_copy)
+    __scatterload_null                       0x00000823   Thumb Code     2  handlers.o(i.__scatterload_null)
+    __scatterload_zeroinit                   0x00000825   Thumb Code    14  handlers.o(i.__scatterload_zeroinit)
+    app_error_handler                        0x00000a69   Thumb Code    24  app_error.o(i.app_error_handler)
+    app_fifo_get                             0x00000a89   Thumb Code    34  app_fifo.o(i.app_fifo_get)
+    app_fifo_init                            0x00000aab   Thumb Code    32  app_fifo.o(i.app_fifo_init)
+    app_fifo_put                             0x00000acb   Thumb Code    34  app_fifo.o(i.app_fifo_put)
+    app_uart_compress                        0x00000aed   Thumb Code   188  app_uart_fifo.o(i.app_uart_compress)
+    app_uart_get                             0x00000bcd   Thumb Code     8  app_uart_fifo.o(i.app_uart_get)
+    app_uart_init                            0x00000bd9   Thumb Code   138  app_uart_fifo.o(i.app_uart_init)
+    app_uart_put                             0x00000c75   Thumb Code    34  app_uart_fifo.o(i.app_uart_put)
+    fputc                                    0x00000db7   Thumb Code    14  retarget.o(i.fputc)
+    free                                     0x00000dc5   Thumb Code    76  malloc.o(i.free)
+    heatshrink_encoder_alloc                 0x00000e1f   Thumb Code    78  heatshrink_encoder.o(i.heatshrink_encoder_alloc)
+    heatshrink_encoder_finish                0x00000e6d   Thumb Code    38  heatshrink_encoder.o(i.heatshrink_encoder_finish)
+    heatshrink_encoder_free                  0x00000e93   Thumb Code    20  heatshrink_encoder.o(i.heatshrink_encoder_free)
+    heatshrink_encoder_poll                  0x00000ea7   Thumb Code   452  heatshrink_encoder.o(i.heatshrink_encoder_poll)
+    heatshrink_encoder_reset                 0x0000106b   Thumb Code    42  heatshrink_encoder.o(i.heatshrink_encoder_reset)
+    heatshrink_encoder_sink                  0x00001095   Thumb Code   112  heatshrink_encoder.o(i.heatshrink_encoder_sink)
+    main                                     0x00001105   Thumb Code   140  main.o(i.main)
+    malloc                                   0x000011b9   Thumb Code    92  malloc.o(i.malloc)
+    nrf_drv_common_irq_enable                0x00001225   Thumb Code    56  nrf_drv_common.o(i.nrf_drv_common_irq_enable)
+    nrf_drv_uart_init                        0x0000125d   Thumb Code    90  nrf_drv_uart.o(i.nrf_drv_uart_init)
+    nrf_drv_uart_rx                          0x000012cd   Thumb Code   284  nrf_drv_uart.o(i.nrf_drv_uart_rx)
+    nrf_drv_uart_rx_enable                   0x000013f1   Thumb Code    20  nrf_drv_uart.o(i.nrf_drv_uart_rx_enable)
+    nrf_drv_uart_tx                          0x00001409   Thumb Code   224  nrf_drv_uart.o(i.nrf_drv_uart_tx)
+    uart_error_handle                        0x0000170d   Thumb Code    22  main.o(i.uart_error_handle)
+    uart_event_handler                       0x00001725   Thumb Code   136  app_uart_fifo.o(i.uart_event_handler)
+    Region$$Table$$Base                      0x00001800   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x00001820   Number         0  anon$$obj.o(Region$$Table)
+    __stdout                                 0x20002818   Data           4  retarget.o(.data)
+    SystemCoreClock                          0x2000281c   Data           4  system_nrf52.o(.data)
+    __microlib_freelist                      0x20002820   Data           4  mvars.o(.data)
+    __microlib_freelist_initialised          0x20002824   Data           4  mvars.o(.data)
+    __heap_base                              0x200028a0   Data           0  arm_startup_nrf52.o(HEAP)
+    __heap_limit                             0x200048a0   Data           0  arm_startup_nrf52.o(HEAP)
+    __initial_sp                             0x200068a0   Data           0  arm_startup_nrf52.o(STACK)
 
 
 
@@ -679,81 +848,106 @@ Memory Map of the image
 
   Image Entry point : 0x00000401
 
-  Load Region LR_IROM1 (Base: 0x00000000, Size: 0x00000ef4, Max: 0x00080000, ABSOLUTE)
+  Load Region LR_IROM1 (Base: 0x00000000, Size: 0x00001848, Max: 0x00004000, ABSOLUTE)
 
-    Execution Region ER_IROM1 (Base: 0x00000000, Size: 0x00000ee0, Max: 0x00080000, ABSOLUTE)
-
-    Base Addr    Size         Type   Attr      Idx    E Section Name        Object
-
-    0x00000000   0x00000400   Data   RO          570    RESET               arm_startup_nrf52.o
-    0x00000400   0x00000000   Code   RO          611  * .ARM.Collect$$$$00000000  mc_w.l(entry.o)
-    0x00000400   0x00000004   Code   RO          878    .ARM.Collect$$$$00000001  mc_w.l(entry2.o)
-    0x00000404   0x00000004   Code   RO          881    .ARM.Collect$$$$00000004  mc_w.l(entry5.o)
-    0x00000408   0x00000000   Code   RO          883    .ARM.Collect$$$$00000008  mc_w.l(entry7b.o)
-    0x00000408   0x00000000   Code   RO          885    .ARM.Collect$$$$0000000A  mc_w.l(entry8b.o)
-    0x00000408   0x00000008   Code   RO          886    .ARM.Collect$$$$0000000B  mc_w.l(entry9a.o)
-    0x00000410   0x00000000   Code   RO          888    .ARM.Collect$$$$0000000D  mc_w.l(entry10a.o)
-    0x00000410   0x00000000   Code   RO          890    .ARM.Collect$$$$0000000F  mc_w.l(entry11a.o)
-    0x00000410   0x00000004   Code   RO          879    .ARM.Collect$$$$00002712  mc_w.l(entry2.o)
-    0x00000414   0x00000024   Code   RO          571    .text               arm_startup_nrf52.o
-    0x00000438   0x00000024   Code   RO          614    .text               mc_w.l(memcpya.o)
-    0x0000045c   0x00000024   Code   RO          907    .text               mc_w.l(init.o)
-    0x00000480   0x00000120   Code   RO          579    i.SystemInit        system_nrf52.o
-    0x000005a0   0x00000170   Code   RO          263    i.UARTE0_UART0_IRQHandler  nrf_drv_uart.o
-    0x00000710   0x00000010   Code   RO          619    i.__0printf$bare    mc_w.l(printfb.o)
-    0x00000720   0x0000000e   Code   RO          919    i.__scatterload_copy  mc_w.l(handlers.o)
-    0x0000072e   0x00000002   Code   RO          920    i.__scatterload_null  mc_w.l(handlers.o)
-    0x00000730   0x0000000e   Code   RO          921    i.__scatterload_zeroinit  mc_w.l(handlers.o)
-    0x0000073e   0x00000022   Code   RO          626    i._printf_core      mc_w.l(printfb.o)
-    0x00000760   0x00000020   Code   RO          434    i.app_error_handler  app_error.o
-    0x00000780   0x00000022   Code   RO          460    i.app_fifo_get      app_fifo.o
-    0x000007a2   0x00000020   Code   RO          461    i.app_fifo_init     app_fifo.o
-    0x000007c2   0x00000022   Code   RO          462    i.app_fifo_put      app_fifo.o
-    0x000007e4   0x0000000c   Code   RO          115    i.app_uart_get      app_uart_fifo.o
-    0x000007f0   0x0000009c   Code   RO          116    i.app_uart_init     app_uart_fifo.o
-    0x0000088c   0x0000002c   Code   RO          117    i.app_uart_put      app_uart_fifo.o
-    0x000008b8   0x00000078   Code   RO          264    i.apply_config      nrf_drv_uart.o
-    0x00000930   0x0000000e   Code   RO          534    i.fputc             retarget.o
-    0x0000093e   0x00000002   PAD
-    0x00000940   0x000000bc   Code   RO            5    i.main              main.o
-    0x000009fc   0x00000038   Code   RO          226    i.nrf_drv_common_irq_enable  nrf_drv_common.o
-    0x00000a34   0x00000070   Code   RO          266    i.nrf_drv_uart_init  nrf_drv_uart.o
-    0x00000aa4   0x00000124   Code   RO          267    i.nrf_drv_uart_rx   nrf_drv_uart.o
-    0x00000bc8   0x00000018   Code   RO          270    i.nrf_drv_uart_rx_enable  nrf_drv_uart.o
-    0x00000be0   0x000000e8   Code   RO          271    i.nrf_drv_uart_tx   nrf_drv_uart.o
-    0x00000cc8   0x00000022   Code   RO          274    i.nrf_gpio_cfg      nrf_drv_uart.o
-    0x00000cea   0x00000012   Code   RO          276    i.nrf_gpio_cfg_input  nrf_drv_uart.o
-    0x00000cfc   0x00000014   Code   RO          277    i.nrf_gpio_cfg_output  nrf_drv_uart.o
-    0x00000d10   0x0000000a   Code   RO          278    i.nrf_uart_event_check  nrf_drv_uart.o
-    0x00000d1a   0x0000000a   Code   RO          279    i.nrf_uarte_event_check  nrf_drv_uart.o
-    0x00000d24   0x00000024   Code   RO          281    i.rx_byte           nrf_drv_uart.o
-    0x00000d48   0x00000024   Code   RO          282    i.rx_done_event     nrf_drv_uart.o
-    0x00000d6c   0x00000018   Code   RO          283    i.rx_enable         nrf_drv_uart.o
-    0x00000d84   0x00000024   Code   RO          284    i.tx_byte           nrf_drv_uart.o
-    0x00000da8   0x00000024   Code   RO          285    i.tx_done_event     nrf_drv_uart.o
-    0x00000dcc   0x00000016   Code   RO            6    i.uart_error_handle  main.o
-    0x00000de2   0x00000002   PAD
-    0x00000de4   0x00000090   Code   RO          118    i.uart_event_handler  app_uart_fifo.o
-    0x00000e74   0x0000000c   Data   RO            8    .constdata          main.o
-    0x00000e80   0x00000020   Data   RO          120    .constdata          app_uart_fifo.o
-    0x00000ea0   0x00000020   Data   RO          287    .constdata          nrf_drv_uart.o
-    0x00000ec0   0x00000020   Data   RO          917    Region$$Table       anon$$obj.o
-
-
-    Execution Region RW_IRAM1 (Base: 0x20000000, Size: 0x00002150, Max: 0x00008000, ABSOLUTE)
+    Execution Region ER_IROM1 (Base: 0x00000000, Size: 0x00001820, Max: 0x00004000, ABSOLUTE)
 
     Base Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x20000000   0x00000001   Data   RW            9    .data               main.o
-    0x20000001   0x00000003   PAD
-    0x20000004   0x00000008   Data   RW          121    .data               app_uart_fifo.o
-    0x2000000c   0x00000004   Data   RW          535    .data               retarget.o
-    0x20000010   0x00000004   Data   RW          580    .data               system_nrf52.o
-    0x20000014   0x00000100   Zero   RW            7    .bss                main.o
-    0x20000114   0x00000020   Zero   RW          119    .bss                app_uart_fifo.o
-    0x20000134   0x00000018   Zero   RW          286    .bss                nrf_drv_uart.o
-    0x2000014c   0x00000004   PAD
-    0x20000150   0x00002000   Zero   RW          568    STACK               arm_startup_nrf52.o
+    0x00000000   0x00000400   Data   RO          691    RESET               arm_startup_nrf52.o
+    0x00000400   0x00000000   Code   RO          732  * .ARM.Collect$$$$00000000  mc_w.l(entry.o)
+    0x00000400   0x00000004   Code   RO         1034    .ARM.Collect$$$$00000001  mc_w.l(entry2.o)
+    0x00000404   0x00000004   Code   RO         1037    .ARM.Collect$$$$00000004  mc_w.l(entry5.o)
+    0x00000408   0x00000000   Code   RO         1039    .ARM.Collect$$$$00000008  mc_w.l(entry7b.o)
+    0x00000408   0x00000000   Code   RO         1041    .ARM.Collect$$$$0000000A  mc_w.l(entry8b.o)
+    0x00000408   0x00000008   Code   RO         1042    .ARM.Collect$$$$0000000B  mc_w.l(entry9a.o)
+    0x00000410   0x00000000   Code   RO         1044    .ARM.Collect$$$$0000000D  mc_w.l(entry10a.o)
+    0x00000410   0x00000000   Code   RO         1046    .ARM.Collect$$$$0000000F  mc_w.l(entry11a.o)
+    0x00000410   0x00000004   Code   RO         1035    .ARM.Collect$$$$00002712  mc_w.l(entry2.o)
+    0x00000414   0x00000024   Code   RO          692    .text               arm_startup_nrf52.o
+    0x00000438   0x00000040   Code   RO          737    .text               mc_w.l(memmovea.o)
+    0x00000478   0x00000024   Code   RO          739    .text               mc_w.l(memseta.o)
+    0x0000049c   0x00000062   Code   RO         1050    .text               mc_w.l(uldiv.o)
+    0x000004fe   0x00000002   PAD
+    0x00000500   0x00000024   Code   RO         1065    .text               mc_w.l(init.o)
+    0x00000524   0x0000001e   Code   RO         1067    .text               mc_w.l(llshl.o)
+    0x00000542   0x00000020   Code   RO         1069    .text               mc_w.l(llushr.o)
+    0x00000562   0x00000002   PAD
+    0x00000564   0x00000120   Code   RO          700    i.SystemInit        system_nrf52.o
+    0x00000684   0x00000170   Code   RO          287    i.UARTE0_UART0_IRQHandler  nrf_drv_uart.o
+    0x000007f4   0x00000020   Code   RO          856    i.__0printf$4       mc_w.l(printf4.o)
+    0x00000814   0x0000000e   Code   RO         1077    i.__scatterload_copy  mc_w.l(handlers.o)
+    0x00000822   0x00000002   Code   RO         1078    i.__scatterload_null  mc_w.l(handlers.o)
+    0x00000824   0x0000000e   Code   RO         1079    i.__scatterload_zeroinit  mc_w.l(handlers.o)
+    0x00000832   0x00000002   PAD
+    0x00000834   0x0000022c   Code   RO          863    i._printf_core      mc_w.l(printf4.o)
+    0x00000a60   0x00000008   Code   RO          609    i.add_tag_bit       heatshrink_encoder.o
+    0x00000a68   0x00000020   Code   RO          455    i.app_error_handler  app_error.o
+    0x00000a88   0x00000022   Code   RO          481    i.app_fifo_get      app_fifo.o
+    0x00000aaa   0x00000020   Code   RO          482    i.app_fifo_init     app_fifo.o
+    0x00000aca   0x00000022   Code   RO          483    i.app_fifo_put      app_fifo.o
+    0x00000aec   0x000000e0   Code   RO          125    i.app_uart_compress  app_uart_fifo.o
+    0x00000bcc   0x0000000c   Code   RO          127    i.app_uart_get      app_uart_fifo.o
+    0x00000bd8   0x0000009c   Code   RO          128    i.app_uart_init     app_uart_fifo.o
+    0x00000c74   0x0000002c   Code   RO          129    i.app_uart_put      app_uart_fifo.o
+    0x00000ca0   0x00000078   Code   RO          288    i.apply_config      nrf_drv_uart.o
+    0x00000d18   0x00000012   Code   RO          610    i.can_take_byte     heatshrink_encoder.o
+    0x00000d2a   0x00000002   PAD
+    0x00000d2c   0x0000008a   Code   RO          611    i.find_longest_match  heatshrink_encoder.o
+    0x00000db6   0x0000000e   Code   RO          575    i.fputc             retarget.o
+    0x00000dc4   0x00000050   Code   RO         1006    i.free              mc_w.l(malloc.o)
+    0x00000e14   0x0000000a   Code   RO          612    i.get_input_offset  heatshrink_encoder.o
+    0x00000e1e   0x0000004e   Code   RO          613    i.heatshrink_encoder_alloc  heatshrink_encoder.o
+    0x00000e6c   0x00000026   Code   RO          614    i.heatshrink_encoder_finish  heatshrink_encoder.o
+    0x00000e92   0x00000014   Code   RO          615    i.heatshrink_encoder_free  heatshrink_encoder.o
+    0x00000ea6   0x000001c4   Code   RO          616    i.heatshrink_encoder_poll  heatshrink_encoder.o
+    0x0000106a   0x0000002a   Code   RO          617    i.heatshrink_encoder_reset  heatshrink_encoder.o
+    0x00001094   0x00000070   Code   RO          618    i.heatshrink_encoder_sink  heatshrink_encoder.o
+    0x00001104   0x000000b4   Code   RO            5    i.main              main.o
+    0x000011b8   0x0000006c   Code   RO         1007    i.malloc            mc_w.l(malloc.o)
+    0x00001224   0x00000038   Code   RO          250    i.nrf_drv_common_irq_enable  nrf_drv_common.o
+    0x0000125c   0x00000070   Code   RO          290    i.nrf_drv_uart_init  nrf_drv_uart.o
+    0x000012cc   0x00000124   Code   RO          291    i.nrf_drv_uart_rx   nrf_drv_uart.o
+    0x000013f0   0x00000018   Code   RO          294    i.nrf_drv_uart_rx_enable  nrf_drv_uart.o
+    0x00001408   0x000000e8   Code   RO          295    i.nrf_drv_uart_tx   nrf_drv_uart.o
+    0x000014f0   0x00000022   Code   RO          298    i.nrf_gpio_cfg      nrf_drv_uart.o
+    0x00001512   0x00000012   Code   RO          300    i.nrf_gpio_cfg_input  nrf_drv_uart.o
+    0x00001524   0x00000014   Code   RO          301    i.nrf_gpio_cfg_output  nrf_drv_uart.o
+    0x00001538   0x0000000a   Code   RO          302    i.nrf_uart_event_check  nrf_drv_uart.o
+    0x00001542   0x0000000a   Code   RO          303    i.nrf_uarte_event_check  nrf_drv_uart.o
+    0x0000154c   0x00000064   Code   RO          619    i.push_bits         heatshrink_encoder.o
+    0x000015b0   0x00000030   Code   RO          620    i.push_outgoing_bits  heatshrink_encoder.o
+    0x000015e0   0x00000024   Code   RO          305    i.rx_byte           nrf_drv_uart.o
+    0x00001604   0x00000024   Code   RO          306    i.rx_done_event     nrf_drv_uart.o
+    0x00001628   0x00000018   Code   RO          307    i.rx_enable         nrf_drv_uart.o
+    0x00001640   0x00000082   Code   RO          621    i.st_step_search    heatshrink_encoder.o
+    0x000016c2   0x00000002   PAD
+    0x000016c4   0x00000024   Code   RO          308    i.tx_byte           nrf_drv_uart.o
+    0x000016e8   0x00000024   Code   RO          309    i.tx_done_event     nrf_drv_uart.o
+    0x0000170c   0x00000016   Code   RO            6    i.uart_error_handle  main.o
+    0x00001722   0x00000002   PAD
+    0x00001724   0x00000090   Code   RO          130    i.uart_event_handler  app_uart_fifo.o
+    0x000017b4   0x0000000c   Data   RO            7    .constdata          main.o
+    0x000017c0   0x00000020   Data   RO          132    .constdata          app_uart_fifo.o
+    0x000017e0   0x00000020   Data   RO          311    .constdata          nrf_drv_uart.o
+    0x00001800   0x00000020   Data   RO         1075    Region$$Table       anon$$obj.o
+
+
+    Execution Region RW_IRAM1 (Base: 0x20002800, Size: 0x000040a0, Max: 0x00022500, ABSOLUTE)
+
+    Base Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x20002800   0x00000002   Data   RW            8    .data               main.o
+    0x20002802   0x00000002   PAD
+    0x20002804   0x00000014   Data   RW          133    .data               app_uart_fifo.o
+    0x20002818   0x00000004   Data   RW          576    .data               retarget.o
+    0x2000281c   0x00000004   Data   RW          701    .data               system_nrf52.o
+    0x20002820   0x00000004   Data   RW         1052    .data               mc_w.l(mvars.o)
+    0x20002824   0x00000004   Data   RW         1053    .data               mc_w.l(mvars.o)
+    0x20002828   0x00000060   Zero   RW          131    .bss                app_uart_fifo.o
+    0x20002888   0x00000018   Zero   RW          310    .bss                nrf_drv_uart.o
+    0x200028a0   0x00002000   Zero   RW          690    HEAP                arm_startup_nrf52.o
+    0x200048a0   0x00002000   Zero   RW          689    STACK               arm_startup_nrf52.o
 
 
 ==============================================================================
@@ -764,19 +958,20 @@ Image component sizes
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
 
         32          8          0          0          0      27659   app_error.o
-       100          0          0          0          0       3034   app_fifo.o
-       356         40         32          8         32      11507   app_uart_fifo.o
-        36         10       1024          0       8192        872   arm_startup_nrf52.o
-       210         44         12          1        256      40903   main.o
+       100          0          0          0          0       4526   app_fifo.o
+       580         76         32         20         96      13455   app_uart_fifo.o
+        36         10       1024          0      16384        872   arm_startup_nrf52.o
+      1194         10          0          0          0      14932   heatshrink_encoder.o
+       202         40         12          2          0      42847   main.o
         56          0          0          0          0      27343   nrf_drv_common.o
       1408         94         32          0         24      29007   nrf_drv_uart.o
         14          0          0          4          0       2802   retarget.o
        288         34          0          4          0       2083   system_nrf52.o
 
     ----------------------------------------------------------------------
-      2504        230       1132         20       8508     145210   Object Totals
+      3916        272       1132         32      16504     165526   Object Totals
          0          0         32          0          0          0   (incl. Generated)
-         4          0          0          3          4          0   (incl. Padding)
+         6          0          0          2          0          0   (incl. Padding)
 
     ----------------------------------------------------------------------
 
@@ -792,21 +987,27 @@ Image component sizes
          8          4          0          0          0          0   entry9a.o
         30          0          0          0          0          0   handlers.o
         36          8          0          0          0         68   init.o
-        36          0          0          0          0         68   memcpya.o
-        50          8          0          0          0        152   printfb.o
+        30          0          0          0          0         68   llshl.o
+        32          0          0          0          0         68   llushr.o
+       188         20          0          0          0        160   malloc.o
+        64          0          0          0          0         76   memmovea.o
+        36          0          0          0          0        108   memseta.o
+         0          0          0          8          0          0   mvars.o
+       588         14          0          0          0        184   printf4.o
+        98          0          0          0          0         92   uldiv.o
 
     ----------------------------------------------------------------------
-       172         24          0          0          0        288   Library Totals
-         0          0          0          0          0          0   (incl. Padding)
+      1128         50          0          8          0        824   Library Totals
+         6          0          0          0          0          0   (incl. Padding)
 
     ----------------------------------------------------------------------
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Library Name
 
-       172         24          0          0          0        288   mc_w.l
+      1122         50          0          8          0        824   mc_w.l
 
     ----------------------------------------------------------------------
-       172         24          0          0          0        288   Library Totals
+      1128         50          0          8          0        824   Library Totals
 
     ----------------------------------------------------------------------
 
@@ -815,15 +1016,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-      2676        254       1132         20       8508     143050   Grand Totals
-      2676        254       1132         20       8508     143050   ELF Image Totals
-      2676        254       1132         20          0          0   ROM Totals
+      5044        322       1132         40      16504     162290   Grand Totals
+      5044        322       1132         40      16504     162290   ELF Image Totals
+      5044        322       1132         40          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                 3808 (   3.72kB)
-    Total RW  Size (RW Data + ZI Data)              8528 (   8.33kB)
-    Total ROM Size (Code + RO Data + RW Data)       3828 (   3.74kB)
+    Total RO  Size (Code + RO Data)                 6176 (   6.03kB)
+    Total RW  Size (RW Data + ZI Data)             16544 (  16.16kB)
+    Total ROM Size (Code + RO Data + RW Data)       6216 (   6.07kB)
 
 ==============================================================================
 

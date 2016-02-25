@@ -14,5 +14,9 @@
 .\_build\retarget.o: ..\..\..\..\..\components\toolchain\system_nrf52.h
 .\_build\retarget.o: ..\..\..\..\..\components\device\nrf52_bitfields.h
 .\_build\retarget.o: ..\..\..\..\..\components\device\nrf51_to_nrf52.h
+.\_build\retarget.o: ..\..\..\..\..\components\libraries\util\heatshrink_encoder.h
+.\_build\retarget.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+.\_build\retarget.o: ..\..\..\..\..\components\libraries\util\heatshrink_common.h
+.\_build\retarget.o: ..\..\..\..\..\components\libraries\util\heatshrink_config.h
 .\_build\retarget.o: ..\..\..\..\..\components\libraries\util\nordic_common.h
 .\_build\retarget.o: ..\..\..\..\..\components\drivers_nrf\nrf_soc_nosd\nrf_error.h

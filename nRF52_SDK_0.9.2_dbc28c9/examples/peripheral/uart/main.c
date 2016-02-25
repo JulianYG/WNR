@@ -32,7 +32,7 @@
 //#define ENABLE_LOOPBACK_TEST  /**< if defined, then this example will be a loopback test, which means that TX should be connected to RX to get data loopback. */
 
 #define MAX_TEST_DATA_BYTES     (15U)                /**< max number of test bytes to be used for tx and rx. */
-#define UART_TX_BUF_SIZE 256                         /**< UART TX buffer size. */
+#define UART_TX_BUF_SIZE 1                         /**< UART TX buffer size. */
 #define UART_RX_BUF_SIZE 1                           /**< UART RX buffer size. */
 
 void uart_error_handle(app_uart_evt_t * p_event)
@@ -98,6 +98,7 @@ static void uart_loopback_test()
  */
 int main(void)
 {
+//		printf("\n\r Entering main: \n\r");
     LEDS_CONFIGURE(LEDS_MASK);
     LEDS_OFF(LEDS_MASK);
     uint32_t err_code;
@@ -109,7 +110,7 @@ int main(void)
           CTS_PIN_NUMBER,
           APP_UART_FLOW_CONTROL_ENABLED,
           false,
-          UART_BAUDRATE_BAUDRATE_Baud38400
+          UART_BAUDRATE_BAUDRATE_Baud38400 //38400
       };
 
     APP_UART_FIFO_INIT(&comm_params,

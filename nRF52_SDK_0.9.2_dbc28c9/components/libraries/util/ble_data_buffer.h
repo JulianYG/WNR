@@ -5,7 +5,10 @@
 //#include "app_error.h"
 //#include "nrf.h"
 //#include "bsp.h"
-#include "minilzo.h"
+#include "heatshrink.h"
+#include "heatshrink_config.h"
+#include "heatshrink_common.h"
+#include "heatshrink_encoder.h"
 
 #define BUFFER_EMPTY 1
 #define BUFFER_SUCCESS 0

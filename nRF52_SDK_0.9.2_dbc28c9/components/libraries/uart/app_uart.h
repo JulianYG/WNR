@@ -25,6 +25,7 @@
 #include <stdint.h>
 #include <stdbool.h>
 #include "app_util_platform.h"
+#include "heatshrink_encoder.h"
 
 #define  UART_PIN_DISCONNECTED 0xFFFFFFFF /**< Value indicating that no pin is connected to this UART register. */
 
@@ -204,6 +205,12 @@ uint32_t app_uart_get(uint8_t * p_byte);
  *                            is high for a long period and the buffer fills up.
  */
 uint32_t app_uart_put(uint8_t byte);
+
+/**@brief Compressed the RX data and send it byte by byte from TX
+ *
+ * @retval  NRF_SUCCESS  Flushing completed (Current implementation will always succeed).
+ */
+uint32_t app_uart_compress(uint8_t byte);
 
 /**@brief Function for flushing the RX and TX buffers (Only valid if FIFO is used).
  *        This function does nothing if FIFO is not used.
