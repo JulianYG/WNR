@@ -1,0 +1,1 @@
+gcc run.c heatshrink_encoder.c heatshrink_decoder.c -o testrun

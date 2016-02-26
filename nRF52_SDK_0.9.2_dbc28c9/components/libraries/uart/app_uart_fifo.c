@@ -177,7 +177,7 @@ uint32_t app_uart_compress(uint8_t byte)
 			uint32_t polled = 0;
 			
 			while (sunk < 64) {
-        heatshrink_encoder_sink(hse, &data_buf[sunk], 64 - sunk, &count);
+        heatshrink_encoder_sink(hse, &data_buf, 64 - sunk, &count);
         sunk += count;
 				printf("sunk %zu", sunk);
 				if (sunk == 64)
