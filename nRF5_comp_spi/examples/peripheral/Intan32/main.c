@@ -76,7 +76,8 @@ typedef enum
     END_OF_TEST_SEQUENCE
 } spi_master_ex_state_t;
 
-typedef enum{
+typedef enum
+{
 	CALIBRATE,
 	CLEAR,
 	WRITE,

@@ -9,7 +9,7 @@ int main()
 //};
 
 	for (int i = 0; i < 128; i++) {
-		data_buf[i] = i % 15;
+		data_buf[i] = 1;
 	}
 
 	heatshrink_encoder *hse = heatshrink_encoder_alloc(10, 3);
