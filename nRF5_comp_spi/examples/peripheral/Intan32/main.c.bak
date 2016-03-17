@@ -34,7 +34,9 @@
 #include "nordic_common.h"
 #include "nrf.h"
 
-#include "ble_data_buffer.h"
+#include "heatshrink_encoder.h"
+#include "heatshrink_decoder.h"
+#include "heatshrink_config.h"
 
 /********************************** DATA ACQUISITION DEFINITIONS ************************************************/
 
@@ -99,10 +101,7 @@ static const nrf_drv_spi_t m_spi_master_0 = NRF_DRV_SPI_INSTANCE(0);
 
 #define NUM_DATA_BUFFERS 2                                                     /**<Number of data buffers to use> */
 #define DATA_BUF_SIZE 	(2048U)                                                /**<buffer size for each data buffer.> */
-#define TRANSMISSION_BUF_SIZE 	(DATA_BUF_SIZE + (DATA_BUF_SIZE / 2) + 4)          /**<buffer size for the transmission buffer.> */
-
-static data_buffer db = {};
-
+#define TRANSMISSION_BUF_SIZE 	(DATA_BUF_SIZE + (DATA_BUF_SIZE/2) + 4)          /**<buffer size for the transmission buffer.> */
 
 static uint8_t *transmission_buffer;                                           /**<Buffer for storing and sending the compressed data>*/
 static uint8_t *data_buffers[NUM_DATA_BUFFERS];                                /**<Buffers for storing data>*/
@@ -276,14 +275,7 @@ void spi_master_0_event_handler(nrf_drv_spi_evt_type_t* event)
     {
 			  // Transfer complete; store in buffer.
         case NRF_DRV_SPI_EVENT_DONE:
-            
             nrf_drv_spi_uninit(&m_spi_master_0);
-            
-            if (buffer_in(&db, m_rx_data_spi[0]) == BUFFER_FULL) {
-              buffer_compress(&db, &db->cap, transmission_buffer);
-            }
-
-
 
             //err_code = bsp_indication_set(BSP_INDICATE_RCV_OK);
             //APP_ERROR_CHECK(err_code);*/
@@ -423,7 +415,6 @@ void bsp_configuration()
     err_code = bsp_init(BSP_INIT_LED, APP_TIMER_TICKS(100, APP_TIMER_PRESCALER), NULL);
     APP_ERROR_CHECK(err_code);
 }
-
 void intan_setup(void){
 	int setup_reg[13] = {1,2,4,8,9,10,11,12,13,14,15,16,17};
 	int setup_data[13] = {ADC_bias & 0x3F, MUX_bias, ADC_twoscomp, RH1_DAC1,RH1_DAC2,RH2_DAC1,RH2_DAC2,RL_DAC1,((RL_DAC3 << 6) + RL_DAC2),0xFF,0xFF,0xFF,0xFF};
@@ -570,9 +561,6 @@ int main(void)
     APP_ERROR_CHECK(err_code);
 
 		intan_setup();
-
-    // initialize the buffer 
-    buffer_init(&db, DATA_BUF_SIZE, sizeof(uint8_t));
 
     for (;;)
     {

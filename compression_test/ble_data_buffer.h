@@ -2,10 +2,12 @@
 #include <stdint.h>
 #include <stdlib.h>
 #include <string.h>
-//#include "app_error.h"
-//#include "nrf.h"
-//#include "bsp.h"
-#include "minilzo.h"
+#include "app_error.h"
+#include "nrf.h"
+#include "bsp.h"
+#include "heatshrink_encoder.h"
+#include "heatshrink_decoder.h"
+#include "heatshrink_config.h"
 
 #define BUFFER_EMPTY 1
 #define BUFFER_SUCCESS 0
@@ -29,8 +31,10 @@ typedef struct wnr_data
 	int channel_num;
 } wnr_data;
 
+static heatshrink_encoder hse;
+
 void buffer_init(data_buffer *db, size_t maxCap, size_t sz);
 void buffer_free(data_buffer *db);
 int buffer_in(data_buffer *db, const void *item);
 int buffer_poll(data_buffer *db, void *item);
-int buffer_compress(uint8_t *db, size_t length, data_buffer *cb);
+int buffer_compress(uint8_t *db, size_t length, uint8_t *cb);
