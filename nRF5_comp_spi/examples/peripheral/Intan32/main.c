@@ -102,16 +102,15 @@ static const nrf_drv_spi_t m_spi_master_0 = NRF_DRV_SPI_INSTANCE(0);
 #define TRANSMISSION_BUF_SIZE 	(DATA_BUF_SIZE + (DATA_BUF_SIZE / 2) + 4)          /**<buffer size for the transmission buffer.> */
 
 static data_buffer db = {};
-
+static int intan_convert_channel = 0;
 
 static uint8_t *transmission_buffer;                                           /**<Buffer for storing and sending the compressed data>*/
-static uint8_t *data_buffers[NUM_DATA_BUFFERS];                                /**<Buffers for storing data>*/
-static bool buffers_ready[NUM_DATA_BUFFERS];                                   /**<At each index, stores whether or not the buffer is full of raw data>*/
-static uint8_t active_buffer = 0;                                              /**<Buffer index that is currently storing incoming data>*/
-static uint16_t ab_capacity = DATA_BUF_SIZE;                                   /**<How much more space is left in the active buffer>*/
+//static uint8_t *data_buffers[NUM_DATA_BUFFERS];                                /**<Buffers for storing data>*/
+//static bool buffers_ready[NUM_DATA_BUFFERS];                                   /**<At each index, stores whether or not the buffer is full of raw data>*/
+//static uint8_t active_buffer = 0;                                              /**<Buffer index that is currently storing incoming data>*/
+//static uint16_t ab_capacity = DATA_BUF_SIZE;                                   /**<How much more space is left in the active buffer>*/
 
-static bool compression_in_progress = false;                                   /**<Flag for whether or not is in progress>*/
-
+//static bool compression_in_progress = false;                                   /**<Flag for whether or not is in progress>*/
 static heatshrink_encoder hse;
 
 /********************************** DATA ACQUISITION PROTOTYPE ************************************************/
@@ -255,7 +254,6 @@ void uart_error_handle(app_uart_evt_t * p_event)
 void app_error_handler_main(uint32_t error_code, uint32_t line_num, const uint8_t * p_file_name)
 {
     UNUSED_VARIABLE(bsp_indication_set(BSP_INDICATE_FATAL_ERROR));
-
     for (;;)
     {
         // No implementation needed.
@@ -280,7 +278,11 @@ void spi_master_0_event_handler(nrf_drv_spi_evt_type_t* event)
             nrf_drv_spi_uninit(&m_spi_master_0);
             
             if (buffer_in(&db, m_rx_data_spi[0]) == BUFFER_FULL) {
-              buffer_compress(&db, &db->cap, transmission_buffer);
+              if (buffer_compress(&db, &db->item_cnt, transmission_buffer) != BUFFER_SUCCESS) {
+                buffer_reset(&db);  
+              }
+              intan_convert_channel++;
+              intan_convert_channel = intan_convert_channel % 32;
             }
 
 
@@ -289,43 +291,44 @@ void spi_master_0_event_handler(nrf_drv_spi_evt_type_t* event)
             //APP_ERROR_CHECK(err_code);*/
 				
 				    // All buffers are in use; The just acquired data will be lost.
-				    if(buffers_ready[active_buffer])
-						{
-							  printf("All buffers full; new data dumped.\r\n");
-						}
+				    
+      //       if(buffers_ready[active_buffer])
+						// {
+						// 	  printf("All buffers full; new data dumped.\r\n");
+						// }
 						
 						// Still have space to store data.
-						else
-						{
+						// else
+						// {
 							// Current buffer still has space
-							if(ab_capacity > 0)
-							{
-								*(data_buffers[active_buffer] + DATA_BUF_SIZE - ab_capacity) = m_rx_data_spi[0];
+							// if(ab_capacity > 0)
+							// {
+							// 	*(data_buffers[active_buffer] + DATA_BUF_SIZE - ab_capacity) = m_rx_data_spi[0];
 								
 								// Buffer is filled after this storage.  Set the next buffer as active.  Call compression, if compression is not in progress.
-								if(--ab_capacity == 0)
-								{
-									c_buff = active_buffer;
-									if(active_buffer == NUM_DATA_BUFFERS - 1)
-									{
-										active_buffer = 0;
-									}
+						// 		if(--ab_capacity == 0)
+						// 		{
+						// 			c_buff = active_buffer;
+						// 			if(active_buffer == NUM_DATA_BUFFERS - 1)
+						// 			{
+						// 				active_buffer = 0;
+						// 			}
 									
-									else
-									{
-										active_buffer++;
-									}
-									buffers_ready[active_buffer] = true;
-									ab_capacity = DATA_BUF_SIZE;
+						// 			else
+						// 			{
+						// 				active_buffer++;
+						// 			}
+						// 			buffers_ready[active_buffer] = true;
+						// 			ab_capacity = DATA_BUF_SIZE;
 									
-									if(!compression_in_progress)
-									{
-										compression_in_progress = true;
-										compress(c_buff, DATA_BUF_SIZE);
-									}
-								}
-							}
-						}
+						// 			if(!compression_in_progress)
+						// 			{
+						// 				compression_in_progress = true;
+						// 				compress(c_buff, DATA_BUF_SIZE);
+						// 			}
+						// 		}
+						// 	}
+						// }
 
             m_transfer_completed = true;
             break;
@@ -444,106 +447,104 @@ void intan_setup(void){
     	intan_dummy(m_tx_data_spi, m_rx_data_spi);
     	switch_state();
     	//nrf_delay_ms(DELAY_MS);
-  
     }
 }
 
 /********************************** COMPRESSION FUNCTIONS ************************************************/
 
-int ASSERT(COND){
-  if (!(COND)) return -1;
-}
+// int ASSERT(COND){
+//   if (!(COND)) return -1;
+// }
 
-int ASSERT_EQ(COND1,COND2){
-  if (COND1 != COND2) return -1;
-}
+// int ASSERT_EQ(COND1,COND2){
+//   if (COND1 != COND2) return -1;
+// }
 
-/** Initialize compression variables, buffers, etc.*/
-void compression_init(void)
-{
-	transmission_buffer = malloc(TRANSMISSION_BUF_SIZE);
-	if(transmission_buffer == NULL)
-	{
-		printf("Transmission buffer malloc failed \r\n");
-	}
+// /** Initialize compression variables, buffers, etc.*/
+// void compression_init(void)
+// {
+// 	transmission_buffer = malloc(TRANSMISSION_BUF_SIZE);
+// 	if(transmission_buffer == NULL)
+// 	{
+// 		printf("Transmission buffer malloc failed \r\n");
+// 	}
 	
-	memset(transmission_buffer, 0, TRANSMISSION_BUF_SIZE);
-	for(int i = 0; i < NUM_DATA_BUFFERS; i++)
-	{
-		data_buffers[i] = malloc(DATA_BUF_SIZE);
+// 	memset(transmission_buffer, 0, TRANSMISSION_BUF_SIZE);
+// 	for(int i = 0; i < NUM_DATA_BUFFERS; i++)
+// 	{
+// 		data_buffers[i] = malloc(DATA_BUF_SIZE);
 		
-		if(data_buffers[i] == NULL)
-		{
-			printf("Data buffer %d malloc failed \r\n", i);
-		}
+// 		if(data_buffers[i] == NULL)
+// 		{
+// 			printf("Data buffer %d malloc failed \r\n", i);
+// 		}
 
-		memset(data_buffers[i], 0, DATA_BUF_SIZE);
-		buffers_ready[i] = false;
-	}
-}
+// 		memset(data_buffers[i], 0, DATA_BUF_SIZE);
+// 		buffers_ready[i] = false;
+// 	}
+// }
 
-void compress(uint32_t buf, uint32_t size)
-{
-	  size_t count = 0;
-    uint32_t sunk = 0;
-    uint32_t polled = 0;
-	  uint32_t next_buff;
+// void compress(uint32_t buf, uint32_t size)
+// {
+// 	  size_t count = 0;
+//     uint32_t sunk = 0;
+//     uint32_t polled = 0;
+// 	  uint32_t next_buff;
 	
-	  // Compression in progress.
-	  compression_in_progress = true;
+// 	  // Compression in progress.
+// 	  compression_in_progress = true;
 	
-	  // Clear encoder state machine
-	  heatshrink_encoder_reset(&hse);
+// 	  // Clear encoder state machine
+// 	  heatshrink_encoder_reset(&hse);
 	
-    while (sunk < size) {
-        ASSERT(heatshrink_encoder_sink(&hse, &(data_buffers[buf][sunk]), size - sunk, &count) >= 0);
-        sunk += count;
-        if (sunk == size) {
-            ASSERT_EQ(HSER_FINISH_MORE, heatshrink_encoder_finish(&hse));
-        }
+//     while (sunk < size) {
+//         ASSERT(heatshrink_encoder_sink(&hse, &(data_buffers[buf][sunk]), size - sunk, &count) >= 0);
+//         sunk += count;
+//         if (sunk == size) {
+//             ASSERT_EQ(HSER_FINISH_MORE, heatshrink_encoder_finish(&hse));
+//         }
 
-        HSE_poll_res pres;
-        do {                    /* "turn the crank" */
-            pres = heatshrink_encoder_poll(&hse, &transmission_buffer[polled], TRANSMISSION_BUF_SIZE - polled, &count);
-            ASSERT(pres >= 0);
-            polled += count;
-        } while (pres == HSER_POLL_MORE);
-        ASSERT_EQ(HSER_POLL_EMPTY, pres);
-        if (polled >= TRANSMISSION_BUF_SIZE) {
-					printf("compression should never expand that muchr\r\n"); 
-				}
-        if (sunk == size) {
-            ASSERT_EQ(HSER_FINISH_DONE, heatshrink_encoder_finish(&hse));
-        }
-    }
+//         HSE_poll_res pres;
+//         do {                    /* "turn the crank" */
+//             pres = heatshrink_encoder_poll(&hse, &transmission_buffer[polled], TRANSMISSION_BUF_SIZE - polled, &count);
+//             ASSERT(pres >= 0);
+//             polled += count;
+//         } while (pres == HSER_POLL_MORE);
+//         ASSERT_EQ(HSER_POLL_EMPTY, pres);
+//         if (polled >= TRANSMISSION_BUF_SIZE) {
+// 					printf("compression should never expand that muchr\r\n"); 
+// 				}
+//         if (sunk == size) {
+//             ASSERT_EQ(HSER_FINISH_DONE, heatshrink_encoder_finish(&hse));
+//         }
+//     }
 		
-	// Check if the next buffer is ready.  If so, begin compression.
-	if(buf == NUM_DATA_BUFFERS - 1)
-	{
-		next_buff = 0;
-	}
+// 	// Check if the next buffer is ready.  If so, begin compression.
+// 	if(buf == NUM_DATA_BUFFERS - 1)
+// 	{
+// 		next_buff = 0;
+// 	}
 	
-	else
-	{
-		next_buff = buf + 1;
-	}
+// 	else
+// 	{
+// 		next_buff = buf + 1;
+// 	}
 	
-	if(buffers_ready[next_buff])
-	{
-		compress(next_buff, DATA_BUF_SIZE);
-	}
+// 	if(buffers_ready[next_buff])
+// 	{
+// 		compress(next_buff, DATA_BUF_SIZE);
+// 	}
 	
-	else
-	{
-		compression_in_progress = false;
-	}
-}
+// 	else
+// 	{
+// 		compression_in_progress = false;
+// 	}
+// }
 
 /** @brief Function for main application entry.
  */
 int main(void)
 {
-	static int intan_convert_channel = 0;
     // Setup bsp module.
     bsp_configuration();
 
@@ -581,8 +582,10 @@ int main(void)
             m_transfer_completed = false;
 
             intan_convert(m_tx_data_spi, m_rx_data_spi,intan_convert_channel);
-            intan_convert_channel ++;
-            intan_convert_channel = intan_convert_channel % 32;
+    
+    //        intan_convert_channel ++;
+    //       intan_convert_channel = intan_convert_channel % 32;
+    
             //print m_rx_data_spi results
             switch_state();
 					  for (int i; i< RX_MSG_LENGTH; i++){

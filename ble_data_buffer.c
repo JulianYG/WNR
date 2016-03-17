@@ -31,12 +31,9 @@ void buffer_init(data_buffer *db, size_t maxCap, size_t sz)
 }
 
 
-void buffer_reset(data_buffer *db)
+void buffer_clear(data_buffer *db)
 {
-  db->item_cnt = 0;
-  db->head = db->buffer;
-  db->tail = db->buffer;
-  db->buffer_end = (char *)db->buffer + maxCap * sz;
+  
 }
 
 /** Empty and reset the buffer. */
@@ -100,13 +97,13 @@ int buffer_compress(uint8_t *db, size_t length, uint8_t *comp)
         if (polled >= comp_sz) {
           printf("compression should never expand that muchr\r\n"); 
           show_error(); 
-          return BUFFER_ERROR;
+          return -1;
         }
         if (sunk == input_size) {
             ASSERT_EQ(HSER_FINISH_DONE, heatshrink_encoder_finish(&hse));
         }
     }
-  buffer_reset(db);
+  buffer_
   return BUFFER_SUCCESS;
 }
 
