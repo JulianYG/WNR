@@ -1,406 +1,438 @@
 Dependencies for Project 'spi_master_pca10036', Target 'nrf52832_xxaa': (DO NOT MODIFY !)
-F (..\..\main.c)(0x56E1B3CC)(-c --cpu Cortex-M4.fp -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I..\..\config\spi_master_pca10036 -I..\..\config -I..\.. -I..\..\..\..\bsp -I..\..\..\..\..\components\drivers_nrf\spi_master -I..\..\..\..\..\components\drivers_nrf\config -I..\..\..\..\..\components\libraries\button -I..\..\..\..\..\components\drivers_nrf\gpiote -I..\..\..\..\..\components\libraries\util -I..\..\..\..\..\components\drivers_nrf\common -I..\..\..\..\..\components\drivers_nrf\hal -I..\..\..\..\..\components\device -I..\..\..\..\..\components\toolchain -I..\..\..\..\..\components\libraries\timer -I..\..\..\..\..\components\drivers_nrf\delay -I..\..\..\..\..\components\drivers_nrf\nrf_soc_nosd -I..\..\..\..\..\components\libraries\uart -I..\..\..\..\..\components\libraries\fifo -I..\..\..\..\..\components\drivers_nrf\uart -I..\..\..\..\..\components\drivers_nrf\uart -I..\..\..\..\..\examples\peripheral\Intan32\heatshrink\heatshrink --c99-I C:\Users\stephen\Desktop\spring_2016\senior_design\ble\nRF5_comp_spi\examples\peripheral\Intan32\pca10036\arm5_no_packs\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.0.3\Device\Include-I C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.2\Device\Include-D__UVISION_VERSION="517" -D_RTE_ -DNRF52 -DBOARD_PCA10036 -DCONFIG_GPIO_AS_PINRESET -DNRF52 -DSWI_DISABLE0-o .\_build\main.o --omf_browse .\_build\main.crf --depend .\_build\main.d)
-I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x55DBE248)
-I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x55DBE248)
-I (..\..\..\..\..\components\drivers_nrf\delay\nrf_delay.h)(0x5673E748)
-I (..\..\..\..\..\components\device\nrf.h)(0x5673E754)
-I (..\..\..\..\..\components\device\nrf52.h)(0x5673E754)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cm4.h)(0x53FCE8AA)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55DBE250)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmInstr.h)(0x53FFA97A)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmFunc.h)(0x53FFA97A)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmSimd.h)(0x53FCE8AA)
-I (..\..\..\..\..\components\toolchain\system_nrf52.h)(0x5673E755)
-I (..\..\..\..\..\components\device\nrf52_bitfields.h)(0x5673E755)
-I (..\..\..\..\..\components\device\nrf51_to_nrf52.h)(0x5673E755)
-I (..\..\..\..\..\components\device\compiler_abstraction.h)(0x5673E755)
-I (..\..\..\..\..\components\libraries\util\app_error.h)(0x5673E749)
-I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x55DBE246)
-I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x55DBE246)
-I (..\..\..\..\..\components\libraries\util\sdk_errors.h)(0x5673E749)
-I (..\..\..\..\..\components\drivers_nrf\nrf_soc_nosd\nrf_error.h)(0x5673E748)
-I (..\..\..\..\..\components\libraries\util\nordic_common.h)(0x5673E749)
-I (..\..\..\..\..\components\libraries\util\app_util_platform.h)(0x5673E749)
-I (..\..\..\..\..\components\libraries\uart\app_uart.h)(0x5673E749)
-I (..\..\..\..\..\components\drivers_nrf\spi_master\nrf_drv_spi.h)(0x5673E748)
-I (..\..\config\spi_master_pca10036\nrf_drv_config.h)(0x56A836A8)
-I (..\..\..\..\..\components\drivers_nrf\config\nrf_drv_config_validation.h)(0x5673E748)
-I (..\..\..\..\..\components\drivers_nrf\hal\nrf_spi.h)(0x5673E748)
-I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x55DBE24E)
-I (..\..\..\..\..\components\drivers_nrf\hal\nrf_spim.h)(0x5673E748)
-I (..\..\..\..\bsp\bsp.h)(0x5673E74A)
-I (..\..\..\..\bsp\boards.h)(0x5673E74A)
-I (..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h)(0x5673E748)
-I (..\..\..\..\bsp\pca10036.h)(0x5673E74A)
-I (..\..\..\..\..\components\libraries\button\app_button.h)(0x5673E749)
-I (..\..\..\..\..\components\libraries\timer\app_timer.h)(0x5673E749)
-I (..\..\..\..\..\components\libraries\util\app_util.h)(0x5673E749)
-I (..\..\..\..\..\examples\peripheral\Intan32\heatshrink\heatshrink\heatshrink_encoder.h)(0x5666B6E2)
-I (..\..\..\..\..\examples\peripheral\Intan32\heatshrink\heatshrink\heatshrink_common.h)(0x5666B6E2)
-I (..\..\..\..\..\examples\peripheral\Intan32\heatshrink\heatshrink\heatshrink_config.h)(0x56CED408)
-I (..\..\..\..\..\examples\peripheral\Intan32\heatshrink\heatshrink\heatshrink_decoder.h)(0x5666B6E2)
-F (..\..\..\..\bsp\bsp.c)(0x5673E74A)(-c --cpu Cortex-M4.fp -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I..\..\config\spi_master_pca10036 -I..\..\config -I..\.. -I..\..\..\..\bsp -I..\..\..\..\..\components\drivers_nrf\spi_master -I..\..\..\..\..\components\drivers_nrf\config -I..\..\..\..\..\components\libraries\button -I..\..\..\..\..\components\drivers_nrf\gpiote -I..\..\..\..\..\components\libraries\util -I..\..\..\..\..\components\drivers_nrf\common -I..\..\..\..\..\components\drivers_nrf\hal -I..\..\..\..\..\components\device -I..\..\..\..\..\components\toolchain -I..\..\..\..\..\components\libraries\timer -I..\..\..\..\..\components\drivers_nrf\delay -I..\..\..\..\..\components\drivers_nrf\nrf_soc_nosd -I..\..\..\..\..\components\libraries\uart -I..\..\..\..\..\components\libraries\fifo -I..\..\..\..\..\components\drivers_nrf\uart -I..\..\..\..\..\components\drivers_nrf\uart -I..\..\..\..\..\examples\peripheral\Intan32\heatshrink\heatshrink --c99-I C:\Users\stephen\Desktop\spring_2016\senior_design\ble\nRF5_comp_spi\examples\peripheral\Intan32\pca10036\arm5_no_packs\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.0.3\Device\Include-I C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.2\Device\Include-D__UVISION_VERSION="517" -D_RTE_ -DNRF52 -DBOARD_PCA10036 -DCONFIG_GPIO_AS_PINRESET -DNRF52 -DSWI_DISABLE0-o .\_build\bsp.o --omf_browse .\_build\bsp.crf --depend .\_build\bsp.d)
-I (..\..\..\..\bsp\bsp.h)(0x5673E74A)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55DBE250)
-I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x55DBE246)
-I (..\..\..\..\bsp\boards.h)(0x5673E74A)
-I (..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h)(0x5673E748)
-I (..\..\..\..\..\components\device\nrf.h)(0x5673E754)
-I (..\..\..\..\..\components\device\nrf52.h)(0x5673E754)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cm4.h)(0x53FCE8AA)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmInstr.h)(0x53FFA97A)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmFunc.h)(0x53FFA97A)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmSimd.h)(0x53FCE8AA)
-I (..\..\..\..\..\components\toolchain\system_nrf52.h)(0x5673E755)
-I (..\..\..\..\..\components\device\nrf52_bitfields.h)(0x5673E755)
-I (..\..\..\..\..\components\device\nrf51_to_nrf52.h)(0x5673E755)
-I (..\..\..\..\..\components\device\compiler_abstraction.h)(0x5673E755)
-I (..\..\..\..\bsp\pca10036.h)(0x5673E74A)
-I (..\..\..\..\..\components\libraries\button\app_button.h)(0x5673E749)
-I (..\..\..\..\..\components\libraries\util\app_error.h)(0x5673E749)
-I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x55DBE246)
-I (..\..\..\..\..\components\libraries\util\sdk_errors.h)(0x5673E749)
-I (..\..\..\..\..\components\drivers_nrf\nrf_soc_nosd\nrf_error.h)(0x5673E748)
-I (..\..\..\..\..\components\libraries\util\nordic_common.h)(0x5673E749)
-I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x55DBE24E)
-I (..\..\..\..\..\components\libraries\timer\app_timer.h)(0x5673E749)
-I (..\..\..\..\..\components\libraries\util\app_util.h)(0x5673E749)
-F (..\..\Abstract.txt)(0x561F52A8)()
-F (..\..\license.txt)(0x561F52A8)()
-F (..\..\..\..\..\components\drivers_nrf\delay\nrf_delay.c)(0x5673E748)(-c --cpu Cortex-M4.fp -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I..\..\config\spi_master_pca10036 -I..\..\config -I..\.. -I..\..\..\..\bsp -I..\..\..\..\..\components\drivers_nrf\spi_master -I..\..\..\..\..\components\drivers_nrf\config -I..\..\..\..\..\components\libraries\button -I..\..\..\..\..\components\drivers_nrf\gpiote -I..\..\..\..\..\components\libraries\util -I..\..\..\..\..\components\drivers_nrf\common -I..\..\..\..\..\components\drivers_nrf\hal -I..\..\..\..\..\components\device -I..\..\..\..\..\components\toolchain -I..\..\..\..\..\components\libraries\timer -I..\..\..\..\..\components\drivers_nrf\delay -I..\..\..\..\..\components\drivers_nrf\nrf_soc_nosd -I..\..\..\..\..\components\libraries\uart -I..\..\..\..\..\components\libraries\fifo -I..\..\..\..\..\components\drivers_nrf\uart -I..\..\..\..\..\components\drivers_nrf\uart -I..\..\..\..\..\examples\peripheral\Intan32\heatshrink\heatshrink --c99-I C:\Users\stephen\Desktop\spring_2016\senior_design\ble\nRF5_comp_spi\examples\peripheral\Intan32\pca10036\arm5_no_packs\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.0.3\Device\Include-I C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.2\Device\Include-D__UVISION_VERSION="517" -D_RTE_ -DNRF52 -DBOARD_PCA10036 -DCONFIG_GPIO_AS_PINRESET -DNRF52 -DSWI_DISABLE0-o .\_build\nrf_delay.o --omf_browse .\_build\nrf_delay.crf --depend .\_build\nrf_delay.d)
-I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x55DBE246)
-I (..\..\..\..\..\components\device\compiler_abstraction.h)(0x5673E755)
-I (..\..\..\..\..\components\device\nrf.h)(0x5673E754)
-I (..\..\..\..\..\components\device\nrf52.h)(0x5673E754)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cm4.h)(0x53FCE8AA)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55DBE250)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmInstr.h)(0x53FFA97A)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmFunc.h)(0x53FFA97A)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmSimd.h)(0x53FCE8AA)
-I (..\..\..\..\..\components\toolchain\system_nrf52.h)(0x5673E755)
-I (..\..\..\..\..\components\device\nrf52_bitfields.h)(0x5673E755)
-I (..\..\..\..\..\components\device\nrf51_to_nrf52.h)(0x5673E755)
-I (..\..\..\..\..\components\drivers_nrf\delay\nrf_delay.h)(0x5673E748)
-F (..\..\..\..\..\components\drivers_nrf\common\nrf_drv_common.c)(0x5673E748)(-c --cpu Cortex-M4.fp -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I..\..\config\spi_master_pca10036 -I..\..\config -I..\.. -I..\..\..\..\bsp -I..\..\..\..\..\components\drivers_nrf\spi_master -I..\..\..\..\..\components\drivers_nrf\config -I..\..\..\..\..\components\libraries\button -I..\..\..\..\..\components\drivers_nrf\gpiote -I..\..\..\..\..\components\libraries\util -I..\..\..\..\..\components\drivers_nrf\common -I..\..\..\..\..\components\drivers_nrf\hal -I..\..\..\..\..\components\device -I..\..\..\..\..\components\toolchain -I..\..\..\..\..\components\libraries\timer -I..\..\..\..\..\components\drivers_nrf\delay -I..\..\..\..\..\components\drivers_nrf\nrf_soc_nosd -I..\..\..\..\..\components\libraries\uart -I..\..\..\..\..\components\libraries\fifo -I..\..\..\..\..\components\drivers_nrf\uart -I..\..\..\..\..\components\drivers_nrf\uart -I..\..\..\..\..\examples\peripheral\Intan32\heatshrink\heatshrink --c99-I C:\Users\stephen\Desktop\spring_2016\senior_design\ble\nRF5_comp_spi\examples\peripheral\Intan32\pca10036\arm5_no_packs\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.0.3\Device\Include-I C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.2\Device\Include-D__UVISION_VERSION="517" -D_RTE_ -DNRF52 -DBOARD_PCA10036 -DCONFIG_GPIO_AS_PINRESET -DNRF52 -DSWI_DISABLE0-o .\_build\nrf_drv_common.o --omf_browse .\_build\nrf_drv_common.crf --depend .\_build\nrf_drv_common.d)
-I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x55DBE24E)
-I (..\..\..\..\..\components\drivers_nrf\common\nrf_drv_common.h)(0x5673E748)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55DBE250)
-I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x55DBE246)
-I (..\..\..\..\..\components\device\nrf.h)(0x5673E754)
-I (..\..\..\..\..\components\device\nrf52.h)(0x5673E754)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cm4.h)(0x53FCE8AA)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmInstr.h)(0x53FFA97A)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmFunc.h)(0x53FFA97A)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmSimd.h)(0x53FCE8AA)
-I (..\..\..\..\..\components\toolchain\system_nrf52.h)(0x5673E755)
-I (..\..\..\..\..\components\device\nrf52_bitfields.h)(0x5673E755)
-I (..\..\..\..\..\components\device\nrf51_to_nrf52.h)(0x5673E755)
-I (..\..\..\..\..\components\device\compiler_abstraction.h)(0x5673E755)
-I (..\..\..\..\..\components\libraries\util\sdk_errors.h)(0x5673E749)
-I (..\..\..\..\..\components\drivers_nrf\nrf_soc_nosd\nrf_error.h)(0x5673E748)
-I (..\..\config\spi_master_pca10036\nrf_drv_config.h)(0x56A836A8)
-I (..\..\..\..\..\components\drivers_nrf\config\nrf_drv_config_validation.h)(0x5673E748)
-I (..\..\..\..\..\components\libraries\util\nrf_assert.h)(0x5673E749)
-I (..\..\..\..\..\components\libraries\util\app_error.h)(0x5673E749)
-I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x55DBE246)
-I (..\..\..\..\..\components\libraries\util\nordic_common.h)(0x5673E749)
-I (..\..\..\..\..\components\libraries\util\app_util_platform.h)(0x5673E749)
-F (..\..\..\..\..\components\drivers_nrf\gpiote\nrf_drv_gpiote.c)(0x5673E748)(-c --cpu Cortex-M4.fp -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I..\..\config\spi_master_pca10036 -I..\..\config -I..\.. -I..\..\..\..\bsp -I..\..\..\..\..\components\drivers_nrf\spi_master -I..\..\..\..\..\components\drivers_nrf\config -I..\..\..\..\..\components\libraries\button -I..\..\..\..\..\components\drivers_nrf\gpiote -I..\..\..\..\..\components\libraries\util -I..\..\..\..\..\components\drivers_nrf\common -I..\..\..\..\..\components\drivers_nrf\hal -I..\..\..\..\..\components\device -I..\..\..\..\..\components\toolchain -I..\..\..\..\..\components\libraries\timer -I..\..\..\..\..\components\drivers_nrf\delay -I..\..\..\..\..\components\drivers_nrf\nrf_soc_nosd -I..\..\..\..\..\components\libraries\uart -I..\..\..\..\..\components\libraries\fifo -I..\..\..\..\..\components\drivers_nrf\uart -I..\..\..\..\..\components\drivers_nrf\uart -I..\..\..\..\..\examples\peripheral\Intan32\heatshrink\heatshrink --c99-I C:\Users\stephen\Desktop\spring_2016\senior_design\ble\nRF5_comp_spi\examples\peripheral\Intan32\pca10036\arm5_no_packs\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.0.3\Device\Include-I C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.2\Device\Include-D__UVISION_VERSION="517" -D_RTE_ -DNRF52 -DBOARD_PCA10036 -DCONFIG_GPIO_AS_PINRESET -DNRF52 -DSWI_DISABLE0-o .\_build\nrf_drv_gpiote.o --omf_browse .\_build\nrf_drv_gpiote.crf --depend .\_build\nrf_drv_gpiote.d)
-I (..\..\..\..\..\components\drivers_nrf\gpiote\nrf_drv_gpiote.h)(0x5673E748)
-I (..\..\..\..\..\components\drivers_nrf\hal\nrf_gpiote.h)(0x5673E748)
-I (..\..\..\..\..\components\device\nrf.h)(0x5673E754)
-I (..\..\..\..\..\components\device\nrf52.h)(0x5673E754)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cm4.h)(0x53FCE8AA)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55DBE250)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmInstr.h)(0x53FFA97A)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmFunc.h)(0x53FFA97A)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmSimd.h)(0x53FCE8AA)
-I (..\..\..\..\..\components\toolchain\system_nrf52.h)(0x5673E755)
-I (..\..\..\..\..\components\device\nrf52_bitfields.h)(0x5673E755)
-I (..\..\..\..\..\components\device\nrf51_to_nrf52.h)(0x5673E755)
-I (..\..\..\..\..\components\device\compiler_abstraction.h)(0x5673E755)
-I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x55DBE24E)
-I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x55DBE246)
-I (..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h)(0x5673E748)
-I (..\..\config\spi_master_pca10036\nrf_drv_config.h)(0x56A836A8)
-I (..\..\..\..\..\components\drivers_nrf\config\nrf_drv_config_validation.h)(0x5673E748)
-I (..\..\..\..\..\components\libraries\util\sdk_errors.h)(0x5673E749)
-I (..\..\..\..\..\components\drivers_nrf\nrf_soc_nosd\nrf_error.h)(0x5673E748)
-I (..\..\..\..\..\components\drivers_nrf\common\nrf_drv_common.h)(0x5673E748)
-I (..\..\..\..\..\components\libraries\util\app_util_platform.h)(0x5673E749)
-I (..\..\..\..\..\components\libraries\util\nrf_assert.h)(0x5673E749)
-I (..\..\..\..\..\components\libraries\util\app_error.h)(0x5673E749)
-I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x55DBE246)
-I (..\..\..\..\..\components\libraries\util\nordic_common.h)(0x5673E749)
-F (..\..\..\..\..\components\drivers_nrf\spi_master\nrf_drv_spi.c)(0x5673E748)(-c --cpu Cortex-M4.fp -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I..\..\config\spi_master_pca10036 -I..\..\config -I..\.. -I..\..\..\..\bsp -I..\..\..\..\..\components\drivers_nrf\spi_master -I..\..\..\..\..\components\drivers_nrf\config -I..\..\..\..\..\components\libraries\button -I..\..\..\..\..\components\drivers_nrf\gpiote -I..\..\..\..\..\components\libraries\util -I..\..\..\..\..\components\drivers_nrf\common -I..\..\..\..\..\components\drivers_nrf\hal -I..\..\..\..\..\components\device -I..\..\..\..\..\components\toolchain -I..\..\..\..\..\components\libraries\timer -I..\..\..\..\..\components\drivers_nrf\delay -I..\..\..\..\..\components\drivers_nrf\nrf_soc_nosd -I..\..\..\..\..\components\libraries\uart -I..\..\..\..\..\components\libraries\fifo -I..\..\..\..\..\components\drivers_nrf\uart -I..\..\..\..\..\components\drivers_nrf\uart -I..\..\..\..\..\examples\peripheral\Intan32\heatshrink\heatshrink --c99-I C:\Users\stephen\Desktop\spring_2016\senior_design\ble\nRF5_comp_spi\examples\peripheral\Intan32\pca10036\arm5_no_packs\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.0.3\Device\Include-I C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.2\Device\Include-D__UVISION_VERSION="517" -D_RTE_ -DNRF52 -DBOARD_PCA10036 -DCONFIG_GPIO_AS_PINRESET -DNRF52 -DSWI_DISABLE0-o .\_build\nrf_drv_spi.o --omf_browse .\_build\nrf_drv_spi.crf --depend .\_build\nrf_drv_spi.d)
-I (..\..\..\..\..\components\drivers_nrf\spi_master\nrf_drv_spi.h)(0x5673E748)
-I (..\..\..\..\..\components\libraries\util\nordic_common.h)(0x5673E749)
-I (..\..\config\spi_master_pca10036\nrf_drv_config.h)(0x56A836A8)
-I (..\..\..\..\..\components\drivers_nrf\config\nrf_drv_config_validation.h)(0x5673E748)
-I (..\..\..\..\..\components\drivers_nrf\hal\nrf_spi.h)(0x5673E748)
-I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x55DBE24E)
-I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x55DBE246)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55DBE250)
-I (..\..\..\..\..\components\device\nrf.h)(0x5673E754)
-I (..\..\..\..\..\components\device\nrf52.h)(0x5673E754)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cm4.h)(0x53FCE8AA)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmInstr.h)(0x53FFA97A)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmFunc.h)(0x53FFA97A)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmSimd.h)(0x53FCE8AA)
-I (..\..\..\..\..\components\toolchain\system_nrf52.h)(0x5673E755)
-I (..\..\..\..\..\components\device\nrf52_bitfields.h)(0x5673E755)
-I (..\..\..\..\..\components\device\nrf51_to_nrf52.h)(0x5673E755)
-I (..\..\..\..\..\components\device\compiler_abstraction.h)(0x5673E755)
-I (..\..\..\..\..\components\drivers_nrf\hal\nrf_spim.h)(0x5673E748)
-I (..\..\..\..\..\components\libraries\util\sdk_errors.h)(0x5673E749)
-I (..\..\..\..\..\components\drivers_nrf\nrf_soc_nosd\nrf_error.h)(0x5673E748)
-I (..\..\..\..\..\components\drivers_nrf\common\nrf_drv_common.h)(0x5673E748)
-I (..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h)(0x5673E748)
-I (..\..\..\..\..\components\libraries\util\nrf_assert.h)(0x5673E749)
-I (..\..\..\..\..\components\libraries\util\app_error.h)(0x5673E749)
-I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x55DBE246)
-I (..\..\..\..\..\components\libraries\util\app_util_platform.h)(0x5673E749)
-F (..\..\..\..\..\components\drivers_nrf\uart\nrf_drv_uart.c)(0x5673E748)(-c --cpu Cortex-M4.fp -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I..\..\config\spi_master_pca10036 -I..\..\config -I..\.. -I..\..\..\..\bsp -I..\..\..\..\..\components\drivers_nrf\spi_master -I..\..\..\..\..\components\drivers_nrf\config -I..\..\..\..\..\components\libraries\button -I..\..\..\..\..\components\drivers_nrf\gpiote -I..\..\..\..\..\components\libraries\util -I..\..\..\..\..\components\drivers_nrf\common -I..\..\..\..\..\components\drivers_nrf\hal -I..\..\..\..\..\components\device -I..\..\..\..\..\components\toolchain -I..\..\..\..\..\components\libraries\timer -I..\..\..\..\..\components\drivers_nrf\delay -I..\..\..\..\..\components\drivers_nrf\nrf_soc_nosd -I..\..\..\..\..\components\libraries\uart -I..\..\..\..\..\components\libraries\fifo -I..\..\..\..\..\components\drivers_nrf\uart -I..\..\..\..\..\components\drivers_nrf\uart -I..\..\..\..\..\examples\peripheral\Intan32\heatshrink\heatshrink --c99-I C:\Users\stephen\Desktop\spring_2016\senior_design\ble\nRF5_comp_spi\examples\peripheral\Intan32\pca10036\arm5_no_packs\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.0.3\Device\Include-I C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.2\Device\Include-D__UVISION_VERSION="517" -D_RTE_ -DNRF52 -DBOARD_PCA10036 -DCONFIG_GPIO_AS_PINRESET -DNRF52 -DSWI_DISABLE0-o .\_build\nrf_drv_uart.o --omf_browse .\_build\nrf_drv_uart.crf --depend .\_build\nrf_drv_uart.d)
-I (..\..\..\..\..\components\drivers_nrf\uart\nrf_drv_uart.h)(0x5673E748)
-I (..\..\..\..\..\components\drivers_nrf\hal\nrf_uart.h)(0x5673E748)
-I (..\..\..\..\..\components\device\nrf.h)(0x5673E754)
-I (..\..\..\..\..\components\device\nrf52.h)(0x5673E754)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cm4.h)(0x53FCE8AA)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55DBE250)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmInstr.h)(0x53FFA97A)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmFunc.h)(0x53FFA97A)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmSimd.h)(0x53FCE8AA)
-I (..\..\..\..\..\components\toolchain\system_nrf52.h)(0x5673E755)
-I (..\..\..\..\..\components\device\nrf52_bitfields.h)(0x5673E755)
-I (..\..\..\..\..\components\device\nrf51_to_nrf52.h)(0x5673E755)
-I (..\..\..\..\..\components\device\compiler_abstraction.h)(0x5673E755)
-I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x55DBE24E)
-I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x55DBE246)
-I (..\..\..\..\..\components\drivers_nrf\hal\nrf_uarte.h)(0x5673E748)
-I (..\..\..\..\..\components\libraries\util\sdk_errors.h)(0x5673E749)
-I (..\..\..\..\..\components\drivers_nrf\nrf_soc_nosd\nrf_error.h)(0x5673E748)
-I (..\..\config\spi_master_pca10036\nrf_drv_config.h)(0x56A836A8)
-I (..\..\..\..\..\components\drivers_nrf\config\nrf_drv_config_validation.h)(0x5673E748)
-I (..\..\..\..\..\components\libraries\util\nrf_assert.h)(0x5673E749)
-I (..\..\..\..\..\components\libraries\util\app_error.h)(0x5673E749)
-I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x55DBE246)
-I (..\..\..\..\..\components\libraries\util\nordic_common.h)(0x5673E749)
-I (..\..\..\..\..\components\drivers_nrf\common\nrf_drv_common.h)(0x5673E748)
-I (..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h)(0x5673E748)
-I (..\..\..\..\..\components\libraries\util\app_util_platform.h)(0x5673E749)
-F (..\..\..\..\..\components\libraries\uart\app_uart_fifo.c)(0x5673E749)(-c --cpu Cortex-M4.fp -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I..\..\config\spi_master_pca10036 -I..\..\config -I..\.. -I..\..\..\..\bsp -I..\..\..\..\..\components\drivers_nrf\spi_master -I..\..\..\..\..\components\drivers_nrf\config -I..\..\..\..\..\components\libraries\button -I..\..\..\..\..\components\drivers_nrf\gpiote -I..\..\..\..\..\components\libraries\util -I..\..\..\..\..\components\drivers_nrf\common -I..\..\..\..\..\components\drivers_nrf\hal -I..\..\..\..\..\components\device -I..\..\..\..\..\components\toolchain -I..\..\..\..\..\components\libraries\timer -I..\..\..\..\..\components\drivers_nrf\delay -I..\..\..\..\..\components\drivers_nrf\nrf_soc_nosd -I..\..\..\..\..\components\libraries\uart -I..\..\..\..\..\components\libraries\fifo -I..\..\..\..\..\components\drivers_nrf\uart -I..\..\..\..\..\components\drivers_nrf\uart -I..\..\..\..\..\examples\peripheral\Intan32\heatshrink\heatshrink --c99-I C:\Users\stephen\Desktop\spring_2016\senior_design\ble\nRF5_comp_spi\examples\peripheral\Intan32\pca10036\arm5_no_packs\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.0.3\Device\Include-I C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.2\Device\Include-D__UVISION_VERSION="517" -D_RTE_ -DNRF52 -DBOARD_PCA10036 -DCONFIG_GPIO_AS_PINRESET -DNRF52 -DSWI_DISABLE0-o .\_build\app_uart_fifo.o --omf_browse .\_build\app_uart_fifo.crf --depend .\_build\app_uart_fifo.d)
-I (..\..\..\..\..\components\libraries\uart\app_uart.h)(0x5673E749)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55DBE250)
-I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x55DBE246)
-I (..\..\..\..\..\components\libraries\util\app_util_platform.h)(0x5673E749)
-I (..\..\..\..\..\components\device\compiler_abstraction.h)(0x5673E755)
-I (..\..\..\..\..\components\device\nrf.h)(0x5673E754)
-I (..\..\..\..\..\components\device\nrf52.h)(0x5673E754)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cm4.h)(0x53FCE8AA)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmInstr.h)(0x53FFA97A)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmFunc.h)(0x53FFA97A)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmSimd.h)(0x53FCE8AA)
-I (..\..\..\..\..\components\toolchain\system_nrf52.h)(0x5673E755)
-I (..\..\..\..\..\components\device\nrf52_bitfields.h)(0x5673E755)
-I (..\..\..\..\..\components\device\nrf51_to_nrf52.h)(0x5673E755)
-I (..\..\..\..\..\components\libraries\fifo\app_fifo.h)(0x5673E749)
-I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x55DBE248)
-I (..\..\..\..\..\components\drivers_nrf\uart\nrf_drv_uart.h)(0x5673E748)
-I (..\..\..\..\..\components\drivers_nrf\hal\nrf_uart.h)(0x5673E748)
-I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x55DBE24E)
-I (..\..\..\..\..\components\drivers_nrf\hal\nrf_uarte.h)(0x5673E748)
-I (..\..\..\..\..\components\libraries\util\sdk_errors.h)(0x5673E749)
-I (..\..\..\..\..\components\drivers_nrf\nrf_soc_nosd\nrf_error.h)(0x5673E748)
-I (..\..\config\spi_master_pca10036\nrf_drv_config.h)(0x56A836A8)
-I (..\..\..\..\..\components\drivers_nrf\config\nrf_drv_config_validation.h)(0x5673E748)
-I (..\..\..\..\..\components\libraries\util\nrf_assert.h)(0x5673E749)
-I (..\..\..\..\..\components\libraries\util\app_error.h)(0x5673E749)
-I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x55DBE246)
-I (..\..\..\..\..\components\libraries\util\nordic_common.h)(0x5673E749)
-I (..\..\..\..\..\components\libraries\util\sdk_common.h)(0x5673E749)
-I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x55DBE248)
-I (..\..\..\..\..\components\libraries\util\sdk_os.h)(0x5673E749)
-I (..\..\..\..\..\components\libraries\util\app_util.h)(0x5673E749)
-F (..\..\..\..\..\components\libraries\button\app_button.c)(0x5673E749)(-c --cpu Cortex-M4.fp -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I..\..\config\spi_master_pca10036 -I..\..\config -I..\.. -I..\..\..\..\bsp -I..\..\..\..\..\components\drivers_nrf\spi_master -I..\..\..\..\..\components\drivers_nrf\config -I..\..\..\..\..\components\libraries\button -I..\..\..\..\..\components\drivers_nrf\gpiote -I..\..\..\..\..\components\libraries\util -I..\..\..\..\..\components\drivers_nrf\common -I..\..\..\..\..\components\drivers_nrf\hal -I..\..\..\..\..\components\device -I..\..\..\..\..\components\toolchain -I..\..\..\..\..\components\libraries\timer -I..\..\..\..\..\components\drivers_nrf\delay -I..\..\..\..\..\components\drivers_nrf\nrf_soc_nosd -I..\..\..\..\..\components\libraries\uart -I..\..\..\..\..\components\libraries\fifo -I..\..\..\..\..\components\drivers_nrf\uart -I..\..\..\..\..\components\drivers_nrf\uart -I..\..\..\..\..\examples\peripheral\Intan32\heatshrink\heatshrink --c99-I C:\Users\stephen\Desktop\spring_2016\senior_design\ble\nRF5_comp_spi\examples\peripheral\Intan32\pca10036\arm5_no_packs\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.0.3\Device\Include-I C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.2\Device\Include-D__UVISION_VERSION="517" -D_RTE_ -DNRF52 -DBOARD_PCA10036 -DCONFIG_GPIO_AS_PINRESET -DNRF52 -DSWI_DISABLE0-o .\_build\app_button.o --omf_browse .\_build\app_button.crf --depend .\_build\app_button.d)
-I (..\..\..\..\..\components\libraries\button\app_button.h)(0x5673E749)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55DBE250)
-I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x55DBE246)
-I (..\..\..\..\..\components\device\nrf.h)(0x5673E754)
-I (..\..\..\..\..\components\device\nrf52.h)(0x5673E754)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cm4.h)(0x53FCE8AA)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmInstr.h)(0x53FFA97A)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmFunc.h)(0x53FFA97A)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmSimd.h)(0x53FCE8AA)
-I (..\..\..\..\..\components\toolchain\system_nrf52.h)(0x5673E755)
-I (..\..\..\..\..\components\device\nrf52_bitfields.h)(0x5673E755)
-I (..\..\..\..\..\components\device\nrf51_to_nrf52.h)(0x5673E755)
-I (..\..\..\..\..\components\device\compiler_abstraction.h)(0x5673E755)
-I (..\..\..\..\..\components\libraries\util\app_error.h)(0x5673E749)
-I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x55DBE246)
-I (..\..\..\..\..\components\libraries\util\sdk_errors.h)(0x5673E749)
-I (..\..\..\..\..\components\drivers_nrf\nrf_soc_nosd\nrf_error.h)(0x5673E748)
-I (..\..\..\..\..\components\libraries\util\nordic_common.h)(0x5673E749)
-I (..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h)(0x5673E748)
-I (..\..\..\..\..\components\libraries\timer\app_timer.h)(0x5673E749)
-I (..\..\..\..\..\components\libraries\util\app_util.h)(0x5673E749)
-I (..\..\..\..\..\components\drivers_nrf\gpiote\nrf_drv_gpiote.h)(0x5673E748)
-I (..\..\..\..\..\components\drivers_nrf\hal\nrf_gpiote.h)(0x5673E748)
-I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x55DBE24E)
-I (..\..\config\spi_master_pca10036\nrf_drv_config.h)(0x56A836A8)
-I (..\..\..\..\..\components\drivers_nrf\config\nrf_drv_config_validation.h)(0x5673E748)
-I (..\..\..\..\..\components\libraries\util\nrf_assert.h)(0x5673E749)
-I (..\..\..\..\..\components\libraries\util\sdk_common.h)(0x5673E749)
-I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x55DBE248)
-I (..\..\..\..\..\components\libraries\util\sdk_os.h)(0x5673E749)
-F (..\..\..\..\..\components\libraries\util\app_error.c)(0x5673E749)(-c --cpu Cortex-M4.fp -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I..\..\config\spi_master_pca10036 -I..\..\config -I..\.. -I..\..\..\..\bsp -I..\..\..\..\..\components\drivers_nrf\spi_master -I..\..\..\..\..\components\drivers_nrf\config -I..\..\..\..\..\components\libraries\button -I..\..\..\..\..\components\drivers_nrf\gpiote -I..\..\..\..\..\components\libraries\util -I..\..\..\..\..\components\drivers_nrf\common -I..\..\..\..\..\components\drivers_nrf\hal -I..\..\..\..\..\components\device -I..\..\..\..\..\components\toolchain -I..\..\..\..\..\components\libraries\timer -I..\..\..\..\..\components\drivers_nrf\delay -I..\..\..\..\..\components\drivers_nrf\nrf_soc_nosd -I..\..\..\..\..\components\libraries\uart -I..\..\..\..\..\components\libraries\fifo -I..\..\..\..\..\components\drivers_nrf\uart -I..\..\..\..\..\components\drivers_nrf\uart -I..\..\..\..\..\examples\peripheral\Intan32\heatshrink\heatshrink --c99-I C:\Users\stephen\Desktop\spring_2016\senior_design\ble\nRF5_comp_spi\examples\peripheral\Intan32\pca10036\arm5_no_packs\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.0.3\Device\Include-I C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.2\Device\Include-D__UVISION_VERSION="517" -D_RTE_ -DNRF52 -DBOARD_PCA10036 -DCONFIG_GPIO_AS_PINRESET -DNRF52 -DSWI_DISABLE0-o .\_build\app_error.o --omf_browse .\_build\app_error.crf --depend .\_build\app_error.d)
-I (..\..\..\..\..\components\device\nrf.h)(0x5673E754)
-I (..\..\..\..\..\components\device\nrf52.h)(0x5673E754)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cm4.h)(0x53FCE8AA)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55DBE250)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmInstr.h)(0x53FFA97A)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmFunc.h)(0x53FFA97A)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmSimd.h)(0x53FCE8AA)
-I (..\..\..\..\..\components\toolchain\system_nrf52.h)(0x5673E755)
-I (..\..\..\..\..\components\device\nrf52_bitfields.h)(0x5673E755)
-I (..\..\..\..\..\components\device\nrf51_to_nrf52.h)(0x5673E755)
-I (..\..\..\..\..\components\device\compiler_abstraction.h)(0x5673E755)
-I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x55DBE246)
-I (..\..\..\..\..\components\libraries\util\app_error.h)(0x5673E749)
-I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x55DBE246)
-I (..\..\..\..\..\components\libraries\util\sdk_errors.h)(0x5673E749)
-I (..\..\..\..\..\components\drivers_nrf\nrf_soc_nosd\nrf_error.h)(0x5673E748)
-I (..\..\..\..\..\components\libraries\util\nordic_common.h)(0x5673E749)
-I (..\..\..\..\..\components\libraries\util\nrf_log.h)(0x5673E749)
-I (C:\Keil_v5\ARM\ARMCC\include\stdarg.h)(0x55DBE24E)
-I (..\..\..\..\..\components\libraries\util\app_util.h)(0x5673E749)
-F (..\..\..\..\..\components\libraries\timer\app_timer.c)(0x5673E749)(-c --cpu Cortex-M4.fp -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I..\..\config\spi_master_pca10036 -I..\..\config -I..\.. -I..\..\..\..\bsp -I..\..\..\..\..\components\drivers_nrf\spi_master -I..\..\..\..\..\components\drivers_nrf\config -I..\..\..\..\..\components\libraries\button -I..\..\..\..\..\components\drivers_nrf\gpiote -I..\..\..\..\..\components\libraries\util -I..\..\..\..\..\components\drivers_nrf\common -I..\..\..\..\..\components\drivers_nrf\hal -I..\..\..\..\..\components\device -I..\..\..\..\..\components\toolchain -I..\..\..\..\..\components\libraries\timer -I..\..\..\..\..\components\drivers_nrf\delay -I..\..\..\..\..\components\drivers_nrf\nrf_soc_nosd -I..\..\..\..\..\components\libraries\uart -I..\..\..\..\..\components\libraries\fifo -I..\..\..\..\..\components\drivers_nrf\uart -I..\..\..\..\..\components\drivers_nrf\uart -I..\..\..\..\..\examples\peripheral\Intan32\heatshrink\heatshrink --c99-I C:\Users\stephen\Desktop\spring_2016\senior_design\ble\nRF5_comp_spi\examples\peripheral\Intan32\pca10036\arm5_no_packs\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.0.3\Device\Include-I C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.2\Device\Include-D__UVISION_VERSION="517" -D_RTE_ -DNRF52 -DBOARD_PCA10036 -DCONFIG_GPIO_AS_PINRESET -DNRF52 -DSWI_DISABLE0-o .\_build\app_timer.o --omf_browse .\_build\app_timer.crf --depend .\_build\app_timer.d)
-I (..\..\..\..\..\components\libraries\timer\app_timer.h)(0x5673E749)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55DBE250)
-I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x55DBE246)
-I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x55DBE246)
-I (..\..\..\..\..\components\libraries\util\app_error.h)(0x5673E749)
-I (..\..\..\..\..\components\device\nrf.h)(0x5673E754)
-I (..\..\..\..\..\components\device\nrf52.h)(0x5673E754)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cm4.h)(0x53FCE8AA)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmInstr.h)(0x53FFA97A)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmFunc.h)(0x53FFA97A)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmSimd.h)(0x53FCE8AA)
-I (..\..\..\..\..\components\toolchain\system_nrf52.h)(0x5673E755)
-I (..\..\..\..\..\components\device\nrf52_bitfields.h)(0x5673E755)
-I (..\..\..\..\..\components\device\nrf51_to_nrf52.h)(0x5673E755)
-I (..\..\..\..\..\components\device\compiler_abstraction.h)(0x5673E755)
-I (..\..\..\..\..\components\libraries\util\sdk_errors.h)(0x5673E749)
-I (..\..\..\..\..\components\drivers_nrf\nrf_soc_nosd\nrf_error.h)(0x5673E748)
-I (..\..\..\..\..\components\libraries\util\nordic_common.h)(0x5673E749)
-I (..\..\..\..\..\components\libraries\util\app_util.h)(0x5673E749)
-I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x55DBE248)
-I (..\..\..\..\..\components\drivers_nrf\nrf_soc_nosd\nrf_soc.h)(0x5673E748)
-I (..\..\..\..\..\components\drivers_nrf\delay\nrf_delay.h)(0x5673E748)
-I (..\..\..\..\..\components\libraries\util\app_util_platform.h)(0x5673E749)
-I (..\..\..\..\..\components\libraries\util\sdk_common.h)(0x5673E749)
-I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x55DBE248)
-I (..\..\..\..\..\components\libraries\util\sdk_os.h)(0x5673E749)
-I (..\..\..\..\..\components\libraries\util\sdk_macros.h)(0x5673E749)
-F (..\..\..\..\..\components\libraries\util\app_util_platform.c)(0x5673E749)(-c --cpu Cortex-M4.fp -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I..\..\config\spi_master_pca10036 -I..\..\config -I..\.. -I..\..\..\..\bsp -I..\..\..\..\..\components\drivers_nrf\spi_master -I..\..\..\..\..\components\drivers_nrf\config -I..\..\..\..\..\components\libraries\button -I..\..\..\..\..\components\drivers_nrf\gpiote -I..\..\..\..\..\components\libraries\util -I..\..\..\..\..\components\drivers_nrf\common -I..\..\..\..\..\components\drivers_nrf\hal -I..\..\..\..\..\components\device -I..\..\..\..\..\components\toolchain -I..\..\..\..\..\components\libraries\timer -I..\..\..\..\..\components\drivers_nrf\delay -I..\..\..\..\..\components\drivers_nrf\nrf_soc_nosd -I..\..\..\..\..\components\libraries\uart -I..\..\..\..\..\components\libraries\fifo -I..\..\..\..\..\components\drivers_nrf\uart -I..\..\..\..\..\components\drivers_nrf\uart -I..\..\..\..\..\examples\peripheral\Intan32\heatshrink\heatshrink --c99-I C:\Users\stephen\Desktop\spring_2016\senior_design\ble\nRF5_comp_spi\examples\peripheral\Intan32\pca10036\arm5_no_packs\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.0.3\Device\Include-I C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.2\Device\Include-D__UVISION_VERSION="517" -D_RTE_ -DNRF52 -DBOARD_PCA10036 -DCONFIG_GPIO_AS_PINRESET -DNRF52 -DSWI_DISABLE0-o .\_build\app_util_platform.o --omf_browse .\_build\app_util_platform.crf --depend .\_build\app_util_platform.d)
-I (..\..\..\..\..\components\libraries\util\app_util_platform.h)(0x5673E749)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55DBE250)
-I (..\..\..\..\..\components\device\compiler_abstraction.h)(0x5673E755)
-I (..\..\..\..\..\components\device\nrf.h)(0x5673E754)
-I (..\..\..\..\..\components\device\nrf52.h)(0x5673E754)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cm4.h)(0x53FCE8AA)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmInstr.h)(0x53FFA97A)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmFunc.h)(0x53FFA97A)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmSimd.h)(0x53FCE8AA)
-I (..\..\..\..\..\components\toolchain\system_nrf52.h)(0x5673E755)
-I (..\..\..\..\..\components\device\nrf52_bitfields.h)(0x5673E755)
-I (..\..\..\..\..\components\device\nrf51_to_nrf52.h)(0x5673E755)
-F (..\..\..\..\..\components\libraries\util\nrf_assert.c)(0x5673E749)(-c --cpu Cortex-M4.fp -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I..\..\config\spi_master_pca10036 -I..\..\config -I..\.. -I..\..\..\..\bsp -I..\..\..\..\..\components\drivers_nrf\spi_master -I..\..\..\..\..\components\drivers_nrf\config -I..\..\..\..\..\components\libraries\button -I..\..\..\..\..\components\drivers_nrf\gpiote -I..\..\..\..\..\components\libraries\util -I..\..\..\..\..\components\drivers_nrf\common -I..\..\..\..\..\components\drivers_nrf\hal -I..\..\..\..\..\components\device -I..\..\..\..\..\components\toolchain -I..\..\..\..\..\components\libraries\timer -I..\..\..\..\..\components\drivers_nrf\delay -I..\..\..\..\..\components\drivers_nrf\nrf_soc_nosd -I..\..\..\..\..\components\libraries\uart -I..\..\..\..\..\components\libraries\fifo -I..\..\..\..\..\components\drivers_nrf\uart -I..\..\..\..\..\components\drivers_nrf\uart -I..\..\..\..\..\examples\peripheral\Intan32\heatshrink\heatshrink --c99-I C:\Users\stephen\Desktop\spring_2016\senior_design\ble\nRF5_comp_spi\examples\peripheral\Intan32\pca10036\arm5_no_packs\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.0.3\Device\Include-I C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.2\Device\Include-D__UVISION_VERSION="517" -D_RTE_ -DNRF52 -DBOARD_PCA10036 -DCONFIG_GPIO_AS_PINRESET -DNRF52 -DSWI_DISABLE0-o .\_build\nrf_assert.o --omf_browse .\_build\nrf_assert.crf --depend .\_build\nrf_assert.d)
-I (..\..\..\..\..\components\libraries\util\nrf_assert.h)(0x5673E749)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55DBE250)
-I (..\..\..\..\..\components\device\nrf.h)(0x5673E754)
-I (..\..\..\..\..\components\device\nrf52.h)(0x5673E754)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cm4.h)(0x53FCE8AA)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmInstr.h)(0x53FFA97A)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmFunc.h)(0x53FFA97A)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmSimd.h)(0x53FCE8AA)
-I (..\..\..\..\..\components\toolchain\system_nrf52.h)(0x5673E755)
-I (..\..\..\..\..\components\device\nrf52_bitfields.h)(0x5673E755)
-I (..\..\..\..\..\components\device\nrf51_to_nrf52.h)(0x5673E755)
-I (..\..\..\..\..\components\device\compiler_abstraction.h)(0x5673E755)
-I (..\..\..\..\..\components\libraries\util\app_error.h)(0x5673E749)
-I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x55DBE246)
-I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x55DBE246)
-I (..\..\..\..\..\components\libraries\util\sdk_errors.h)(0x5673E749)
-I (..\..\..\..\..\components\drivers_nrf\nrf_soc_nosd\nrf_error.h)(0x5673E748)
-I (..\..\..\..\..\components\libraries\util\nordic_common.h)(0x5673E749)
-F (..\..\..\..\..\components\libraries\fifo\app_fifo.c)(0x5673E749)(-c --cpu Cortex-M4.fp -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I..\..\config\spi_master_pca10036 -I..\..\config -I..\.. -I..\..\..\..\bsp -I..\..\..\..\..\components\drivers_nrf\spi_master -I..\..\..\..\..\components\drivers_nrf\config -I..\..\..\..\..\components\libraries\button -I..\..\..\..\..\components\drivers_nrf\gpiote -I..\..\..\..\..\components\libraries\util -I..\..\..\..\..\components\drivers_nrf\common -I..\..\..\..\..\components\drivers_nrf\hal -I..\..\..\..\..\components\device -I..\..\..\..\..\components\toolchain -I..\..\..\..\..\components\libraries\timer -I..\..\..\..\..\components\drivers_nrf\delay -I..\..\..\..\..\components\drivers_nrf\nrf_soc_nosd -I..\..\..\..\..\components\libraries\uart -I..\..\..\..\..\components\libraries\fifo -I..\..\..\..\..\components\drivers_nrf\uart -I..\..\..\..\..\components\drivers_nrf\uart -I..\..\..\..\..\examples\peripheral\Intan32\heatshrink\heatshrink --c99-I C:\Users\stephen\Desktop\spring_2016\senior_design\ble\nRF5_comp_spi\examples\peripheral\Intan32\pca10036\arm5_no_packs\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.0.3\Device\Include-I C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.2\Device\Include-D__UVISION_VERSION="517" -D_RTE_ -DNRF52 -DBOARD_PCA10036 -DCONFIG_GPIO_AS_PINRESET -DNRF52 -DSWI_DISABLE0-o .\_build\app_fifo.o --omf_browse .\_build\app_fifo.crf --depend .\_build\app_fifo.d)
-I (..\..\..\..\..\components\libraries\fifo\app_fifo.h)(0x5673E749)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55DBE250)
-I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x55DBE248)
-I (..\..\..\..\..\components\libraries\util\sdk_common.h)(0x5673E749)
-I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x55DBE246)
-I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x55DBE248)
-I (..\..\..\..\..\components\libraries\util\nordic_common.h)(0x5673E749)
-I (..\..\..\..\..\components\device\compiler_abstraction.h)(0x5673E755)
-I (..\..\..\..\..\components\libraries\util\sdk_os.h)(0x5673E749)
-I (..\..\..\..\..\components\libraries\util\sdk_errors.h)(0x5673E749)
-I (..\..\..\..\..\components\drivers_nrf\nrf_soc_nosd\nrf_error.h)(0x5673E748)
-I (..\..\..\..\..\components\libraries\util\app_util.h)(0x5673E749)
-I (..\..\..\..\..\components\device\nrf.h)(0x5673E754)
-I (..\..\..\..\..\components\device\nrf52.h)(0x5673E754)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cm4.h)(0x53FCE8AA)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmInstr.h)(0x53FFA97A)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmFunc.h)(0x53FFA97A)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmSimd.h)(0x53FCE8AA)
-I (..\..\..\..\..\components\toolchain\system_nrf52.h)(0x5673E755)
-I (..\..\..\..\..\components\device\nrf52_bitfields.h)(0x5673E755)
-I (..\..\..\..\..\components\device\nrf51_to_nrf52.h)(0x5673E755)
-F (..\..\..\..\..\components\libraries\uart\retarget.c)(0x5673E749)(-c --cpu Cortex-M4.fp -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I..\..\config\spi_master_pca10036 -I..\..\config -I..\.. -I..\..\..\..\bsp -I..\..\..\..\..\components\drivers_nrf\spi_master -I..\..\..\..\..\components\drivers_nrf\config -I..\..\..\..\..\components\libraries\button -I..\..\..\..\..\components\drivers_nrf\gpiote -I..\..\..\..\..\components\libraries\util -I..\..\..\..\..\components\drivers_nrf\common -I..\..\..\..\..\components\drivers_nrf\hal -I..\..\..\..\..\components\device -I..\..\..\..\..\components\toolchain -I..\..\..\..\..\components\libraries\timer -I..\..\..\..\..\components\drivers_nrf\delay -I..\..\..\..\..\components\drivers_nrf\nrf_soc_nosd -I..\..\..\..\..\components\libraries\uart -I..\..\..\..\..\components\libraries\fifo -I..\..\..\..\..\components\drivers_nrf\uart -I..\..\..\..\..\components\drivers_nrf\uart -I..\..\..\..\..\examples\peripheral\Intan32\heatshrink\heatshrink --c99-I C:\Users\stephen\Desktop\spring_2016\senior_design\ble\nRF5_comp_spi\examples\peripheral\Intan32\pca10036\arm5_no_packs\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.0.3\Device\Include-I C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.2\Device\Include-D__UVISION_VERSION="517" -D_RTE_ -DNRF52 -DBOARD_PCA10036 -DCONFIG_GPIO_AS_PINRESET -DNRF52 -DSWI_DISABLE0-o .\_build\retarget.o --omf_browse .\_build\retarget.crf --depend .\_build\retarget.d)
-I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x55DBE246)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55DBE250)
-I (..\..\..\..\..\components\libraries\uart\app_uart.h)(0x5673E749)
-I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x55DBE246)
-I (..\..\..\..\..\components\libraries\util\app_util_platform.h)(0x5673E749)
-I (..\..\..\..\..\components\device\compiler_abstraction.h)(0x5673E755)
-I (..\..\..\..\..\components\device\nrf.h)(0x5673E754)
-I (..\..\..\..\..\components\device\nrf52.h)(0x5673E754)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cm4.h)(0x53FCE8AA)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmInstr.h)(0x53FFA97A)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmFunc.h)(0x53FFA97A)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmSimd.h)(0x53FCE8AA)
-I (..\..\..\..\..\components\toolchain\system_nrf52.h)(0x5673E755)
-I (..\..\..\..\..\components\device\nrf52_bitfields.h)(0x5673E755)
-I (..\..\..\..\..\components\device\nrf51_to_nrf52.h)(0x5673E755)
-I (..\..\..\..\..\components\libraries\util\nordic_common.h)(0x5673E749)
-I (..\..\..\..\..\components\drivers_nrf\nrf_soc_nosd\nrf_error.h)(0x5673E748)
-F (..\..\heatshrink\heatshrink\heatshrink_decoder.c)(0x5666B6E2)(-c --cpu Cortex-M4.fp -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I..\..\config\spi_master_pca10036 -I..\..\config -I..\.. -I..\..\..\..\bsp -I..\..\..\..\..\components\drivers_nrf\spi_master -I..\..\..\..\..\components\drivers_nrf\config -I..\..\..\..\..\components\libraries\button -I..\..\..\..\..\components\drivers_nrf\gpiote -I..\..\..\..\..\components\libraries\util -I..\..\..\..\..\components\drivers_nrf\common -I..\..\..\..\..\components\drivers_nrf\hal -I..\..\..\..\..\components\device -I..\..\..\..\..\components\toolchain -I..\..\..\..\..\components\libraries\timer -I..\..\..\..\..\components\drivers_nrf\delay -I..\..\..\..\..\components\drivers_nrf\nrf_soc_nosd -I..\..\..\..\..\components\libraries\uart -I..\..\..\..\..\components\libraries\fifo -I..\..\..\..\..\components\drivers_nrf\uart -I..\..\..\..\..\components\drivers_nrf\uart -I..\..\..\..\..\examples\peripheral\Intan32\heatshrink\heatshrink --c99-I C:\Users\stephen\Desktop\spring_2016\senior_design\ble\nRF5_comp_spi\examples\peripheral\Intan32\pca10036\arm5_no_packs\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.0.3\Device\Include-I C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.2\Device\Include-D__UVISION_VERSION="517" -D_RTE_ -DNRF52 -DBOARD_PCA10036 -DCONFIG_GPIO_AS_PINRESET -DNRF52 -DSWI_DISABLE0-o .\_build\heatshrink_decoder.o --omf_browse .\_build\heatshrink_decoder.crf --depend .\_build\heatshrink_decoder.d)
-I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x55DBE248)
-I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x55DBE248)
-I (..\..\heatshrink\heatshrink\heatshrink_decoder.h)(0x5666B6E2)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55DBE250)
-I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x55DBE24E)
-I (..\..\heatshrink\heatshrink\heatshrink_common.h)(0x5666B6E2)
-I (..\..\heatshrink\heatshrink\heatshrink_config.h)(0x56CED408)
-F (..\..\heatshrink\heatshrink\heatshrink_encoder.c)(0x5666B6E2)(-c --cpu Cortex-M4.fp -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I..\..\config\spi_master_pca10036 -I..\..\config -I..\.. -I..\..\..\..\bsp -I..\..\..\..\..\components\drivers_nrf\spi_master -I..\..\..\..\..\components\drivers_nrf\config -I..\..\..\..\..\components\libraries\button -I..\..\..\..\..\components\drivers_nrf\gpiote -I..\..\..\..\..\components\libraries\util -I..\..\..\..\..\components\drivers_nrf\common -I..\..\..\..\..\components\drivers_nrf\hal -I..\..\..\..\..\components\device -I..\..\..\..\..\components\toolchain -I..\..\..\..\..\components\libraries\timer -I..\..\..\..\..\components\drivers_nrf\delay -I..\..\..\..\..\components\drivers_nrf\nrf_soc_nosd -I..\..\..\..\..\components\libraries\uart -I..\..\..\..\..\components\libraries\fifo -I..\..\..\..\..\components\drivers_nrf\uart -I..\..\..\..\..\components\drivers_nrf\uart -I..\..\..\..\..\examples\peripheral\Intan32\heatshrink\heatshrink --c99-I C:\Users\stephen\Desktop\spring_2016\senior_design\ble\nRF5_comp_spi\examples\peripheral\Intan32\pca10036\arm5_no_packs\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.0.3\Device\Include-I C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.2\Device\Include-D__UVISION_VERSION="517" -D_RTE_ -DNRF52 -DBOARD_PCA10036 -DCONFIG_GPIO_AS_PINRESET -DNRF52 -DSWI_DISABLE0-o .\_build\heatshrink_encoder.o --omf_browse .\_build\heatshrink_encoder.crf --depend .\_build\heatshrink_encoder.d)
-I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x55DBE248)
-I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x55DBE248)
-I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x55DBE246)
-I (..\..\heatshrink\heatshrink\heatshrink_encoder.h)(0x5666B6E2)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55DBE250)
-I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x55DBE24E)
-I (..\..\heatshrink\heatshrink\heatshrink_common.h)(0x5666B6E2)
-I (..\..\heatshrink\heatshrink\heatshrink_config.h)(0x56CED408)
-F (RTE\Device\nRF52832_xxAA\arm_startup_nrf52.s)(0x557EF438)(--cpu Cortex-M4.fp --pd "__EVAL SETA 1" -g --apcs=interwork --pd "__MICROLIB SETA 1"-I C:\Users\stephen\Desktop\spring_2016\senior_design\ble\nRF5_comp_spi\examples\peripheral\Intan32\pca10036\arm5_no_packs\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.0.3\Device\Include-I C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.2\Device\Include--pd "__UVISION_VERSION SETA 517" --pd "_RTE_ SETA 1" --pd "NRF52 SETA 1" --pd "BOARD_PCA10036 SETA 1" --pd "CONFIG_GPIO_AS_PINRESET SETA 1" --pd "NRF52 SETA 1" --pd "SWI_DISABLE0 SETA 1"--list .\_build\arm_startup_nrf52.lst --xref -o .\_build\arm_startup_nrf52.o --depend .\_build\arm_startup_nrf52.d)
-F (RTE\Device\nRF52832_xxAA\system_nrf52.c)(0x557EF438)(-c --cpu Cortex-M4.fp -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I..\..\config\spi_master_pca10036 -I..\..\config -I..\.. -I..\..\..\..\bsp -I..\..\..\..\..\components\drivers_nrf\spi_master -I..\..\..\..\..\components\drivers_nrf\config -I..\..\..\..\..\components\libraries\button -I..\..\..\..\..\components\drivers_nrf\gpiote -I..\..\..\..\..\components\libraries\util -I..\..\..\..\..\components\drivers_nrf\common -I..\..\..\..\..\components\drivers_nrf\hal -I..\..\..\..\..\components\device -I..\..\..\..\..\components\toolchain -I..\..\..\..\..\components\libraries\timer -I..\..\..\..\..\components\drivers_nrf\delay -I..\..\..\..\..\components\drivers_nrf\nrf_soc_nosd -I..\..\..\..\..\components\libraries\uart -I..\..\..\..\..\components\libraries\fifo -I..\..\..\..\..\components\drivers_nrf\uart -I..\..\..\..\..\components\drivers_nrf\uart -I..\..\..\..\..\examples\peripheral\Intan32\heatshrink\heatshrink --c99-I C:\Users\stephen\Desktop\spring_2016\senior_design\ble\nRF5_comp_spi\examples\peripheral\Intan32\pca10036\arm5_no_packs\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.0.3\Device\Include-I C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.2\Device\Include-D__UVISION_VERSION="517" -D_RTE_ -DNRF52 -DBOARD_PCA10036 -DCONFIG_GPIO_AS_PINRESET -DNRF52 -DSWI_DISABLE0-o .\_build\system_nrf52.o --omf_browse .\_build\system_nrf52.crf --depend .\_build\system_nrf52.d)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55DBE250)
-I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x55DBE246)
-I (..\..\..\..\..\components\device\nrf.h)(0x5673E754)
-I (..\..\..\..\..\components\device\nrf52.h)(0x5673E754)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cm4.h)(0x53FCE8AA)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmInstr.h)(0x53FFA97A)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmFunc.h)(0x53FFA97A)
-I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmSimd.h)(0x53FCE8AA)
-I (..\..\..\..\..\components\toolchain\system_nrf52.h)(0x5673E755)
-I (..\..\..\..\..\components\device\nrf52_bitfields.h)(0x5673E755)
-I (..\..\..\..\..\components\device\nrf51_to_nrf52.h)(0x5673E755)
-I (..\..\..\..\..\components\device\compiler_abstraction.h)(0x5673E755)
+F (..\..\main.c)(0x56EADE4E)(-c --cpu Cortex-M4.fp -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I..\..\config\spi_master_pca10036 -I..\..\config -I..\.. -I..\..\..\..\bsp -I..\..\..\..\..\components\drivers_nrf\spi_master -I..\..\..\..\..\components\drivers_nrf\config -I..\..\..\..\..\components\libraries\button -I..\..\..\..\..\components\drivers_nrf\gpiote -I..\..\..\..\..\components\libraries\util -I..\..\..\..\..\components\drivers_nrf\common -I..\..\..\..\..\components\drivers_nrf\hal -I..\..\..\..\..\components\device -I..\..\..\..\..\components\toolchain -I..\..\..\..\..\components\libraries\timer -I..\..\..\..\..\components\drivers_nrf\delay -I..\..\..\..\..\components\drivers_nrf\nrf_soc_nosd -I..\..\..\..\..\components\libraries\uart -I..\..\..\..\..\components\libraries\fifo -I..\..\..\..\..\components\drivers_nrf\uart -I..\..\..\..\..\components\drivers_nrf\uart -I..\..\..\..\..\examples\peripheral\Intan32\heatshrink\heatshrink -I..\..\..\Intan32 --c99-I "E:\ELEC 494\WNR\nRF5_comp_spi\examples\peripheral\Intan32\pca10036\arm5_no_packs\RTE"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.0.3\Device\Include-I C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.2\Device\Include-D__UVISION_VERSION="517" -D_RTE_ -DNRF52 -DBOARD_PCA10036 -DCONFIG_GPIO_AS_PINRESET -DNRF52 -DSWI_DISABLE0-o .\_build\main.o --omf_browse .\_build\main.crf --depend .\_build\main.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x55DBF058)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x55DBF058)
+I (..\..\..\..\..\components\drivers_nrf\delay\nrf_delay.h)(0x56E4870A)
+I (..\..\..\..\..\components\device\nrf.h)(0x56E4870A)
+I (..\..\..\..\..\components\device\nrf52.h)(0x56E4870A)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cm4.h)(0x53FCF6BA)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55DBF060)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmInstr.h)(0x53FFB78A)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmFunc.h)(0x53FFB78A)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmSimd.h)(0x53FCF6BA)
+I (..\..\..\..\..\components\toolchain\system_nrf52.h)(0x56E48710)
+I (..\..\..\..\..\components\device\nrf52_bitfields.h)(0x56E4870A)
+I (..\..\..\..\..\components\device\nrf51_to_nrf52.h)(0x56E4870A)
+I (..\..\..\..\..\components\device\compiler_abstraction.h)(0x56E4870A)
+I (..\..\..\..\..\components\libraries\util\app_error.h)(0x56E4870E)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x55DBF056)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x55DBF056)
+I (..\..\..\..\..\components\libraries\util\sdk_errors.h)(0x56E4870E)
+I (..\..\..\..\..\components\drivers_nrf\nrf_soc_nosd\nrf_error.h)(0x56E4870C)
+I (..\..\..\..\..\components\libraries\util\nordic_common.h)(0x56E4870E)
+I (..\..\..\..\..\components\libraries\util\app_util_platform.h)(0x56E4870E)
+I (..\..\..\..\..\components\libraries\uart\app_uart.h)(0x56E4870E)
+I (..\..\..\..\..\components\drivers_nrf\spi_master\nrf_drv_spi.h)(0x56E4870C)
+I (..\..\config\spi_master_pca10036\nrf_drv_config.h)(0x56E48746)
+I (..\..\..\..\..\components\drivers_nrf\config\nrf_drv_config_validation.h)(0x56E4870A)
+I (..\..\..\..\..\components\drivers_nrf\hal\nrf_spi.h)(0x56E4870C)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x55DBF05E)
+I (..\..\..\..\..\components\drivers_nrf\hal\nrf_spim.h)(0x56E4870C)
+I (..\..\..\..\bsp\bsp.h)(0x56E48740)
+I (..\..\..\..\bsp\boards.h)(0x56E48740)
+I (..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h)(0x56E4870C)
+I (..\..\..\..\bsp\pca10036.h)(0x56E48740)
+I (..\..\..\..\..\components\libraries\button\app_button.h)(0x56E4870C)
+I (..\..\..\..\..\components\libraries\timer\app_timer.h)(0x56E4870E)
+I (..\..\..\..\..\components\libraries\util\app_util.h)(0x56E4870E)
+I (..\..\..\..\..\examples\peripheral\Intan32\heatshrink\heatshrink\ble_data_buffer.h)(0x56EADED6)
+I (..\..\..\..\..\examples\peripheral\Intan32\heatshrink\heatshrink\heatshrink_encoder.h)(0x56E48746)
+I (..\..\..\..\..\examples\peripheral\Intan32\heatshrink\heatshrink\heatshrink_common.h)(0x56E48746)
+I (..\..\..\..\..\examples\peripheral\Intan32\heatshrink\heatshrink\heatshrink_config.h)(0x56E48746)
+I (..\..\..\..\..\examples\peripheral\Intan32\heatshrink\heatshrink\heatshrink_decoder.h)(0x56E48746)
+F (..\..\..\..\bsp\bsp.c)(0x56E48740)(-c --cpu Cortex-M4.fp -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I..\..\config\spi_master_pca10036 -I..\..\config -I..\.. -I..\..\..\..\bsp -I..\..\..\..\..\components\drivers_nrf\spi_master -I..\..\..\..\..\components\drivers_nrf\config -I..\..\..\..\..\components\libraries\button -I..\..\..\..\..\components\drivers_nrf\gpiote -I..\..\..\..\..\components\libraries\util -I..\..\..\..\..\components\drivers_nrf\common -I..\..\..\..\..\components\drivers_nrf\hal -I..\..\..\..\..\components\device -I..\..\..\..\..\components\toolchain -I..\..\..\..\..\components\libraries\timer -I..\..\..\..\..\components\drivers_nrf\delay -I..\..\..\..\..\components\drivers_nrf\nrf_soc_nosd -I..\..\..\..\..\components\libraries\uart -I..\..\..\..\..\components\libraries\fifo -I..\..\..\..\..\components\drivers_nrf\uart -I..\..\..\..\..\components\drivers_nrf\uart -I..\..\..\..\..\examples\peripheral\Intan32\heatshrink\heatshrink -I..\..\..\Intan32 --c99-I "E:\ELEC 494\WNR\nRF5_comp_spi\examples\peripheral\Intan32\pca10036\arm5_no_packs\RTE"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.0.3\Device\Include-I C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.2\Device\Include-D__UVISION_VERSION="517" -D_RTE_ -DNRF52 -DBOARD_PCA10036 -DCONFIG_GPIO_AS_PINRESET -DNRF52 -DSWI_DISABLE0-o .\_build\bsp.o --omf_browse .\_build\bsp.crf --depend .\_build\bsp.d)
+I (..\..\..\..\bsp\bsp.h)(0x56E48740)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55DBF060)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x55DBF056)
+I (..\..\..\..\bsp\boards.h)(0x56E48740)
+I (..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h)(0x56E4870C)
+I (..\..\..\..\..\components\device\nrf.h)(0x56E4870A)
+I (..\..\..\..\..\components\device\nrf52.h)(0x56E4870A)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cm4.h)(0x53FCF6BA)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmInstr.h)(0x53FFB78A)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmFunc.h)(0x53FFB78A)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmSimd.h)(0x53FCF6BA)
+I (..\..\..\..\..\components\toolchain\system_nrf52.h)(0x56E48710)
+I (..\..\..\..\..\components\device\nrf52_bitfields.h)(0x56E4870A)
+I (..\..\..\..\..\components\device\nrf51_to_nrf52.h)(0x56E4870A)
+I (..\..\..\..\..\components\device\compiler_abstraction.h)(0x56E4870A)
+I (..\..\..\..\bsp\pca10036.h)(0x56E48740)
+I (..\..\..\..\..\components\libraries\button\app_button.h)(0x56E4870C)
+I (..\..\..\..\..\components\libraries\util\app_error.h)(0x56E4870E)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x55DBF056)
+I (..\..\..\..\..\components\libraries\util\sdk_errors.h)(0x56E4870E)
+I (..\..\..\..\..\components\drivers_nrf\nrf_soc_nosd\nrf_error.h)(0x56E4870C)
+I (..\..\..\..\..\components\libraries\util\nordic_common.h)(0x56E4870E)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x55DBF05E)
+I (..\..\..\..\..\components\libraries\timer\app_timer.h)(0x56E4870E)
+I (..\..\..\..\..\components\libraries\util\app_util.h)(0x56E4870E)
+F (..\..\Abstract.txt)(0x56E48746)()
+F (..\..\license.txt)(0x56E48746)()
+F (..\..\..\..\..\components\drivers_nrf\delay\nrf_delay.c)(0x56E4870A)(-c --cpu Cortex-M4.fp -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I..\..\config\spi_master_pca10036 -I..\..\config -I..\.. -I..\..\..\..\bsp -I..\..\..\..\..\components\drivers_nrf\spi_master -I..\..\..\..\..\components\drivers_nrf\config -I..\..\..\..\..\components\libraries\button -I..\..\..\..\..\components\drivers_nrf\gpiote -I..\..\..\..\..\components\libraries\util -I..\..\..\..\..\components\drivers_nrf\common -I..\..\..\..\..\components\drivers_nrf\hal -I..\..\..\..\..\components\device -I..\..\..\..\..\components\toolchain -I..\..\..\..\..\components\libraries\timer -I..\..\..\..\..\components\drivers_nrf\delay -I..\..\..\..\..\components\drivers_nrf\nrf_soc_nosd -I..\..\..\..\..\components\libraries\uart -I..\..\..\..\..\components\libraries\fifo -I..\..\..\..\..\components\drivers_nrf\uart -I..\..\..\..\..\components\drivers_nrf\uart -I..\..\..\..\..\examples\peripheral\Intan32\heatshrink\heatshrink -I..\..\..\Intan32 --c99-I "E:\ELEC 494\WNR\nRF5_comp_spi\examples\peripheral\Intan32\pca10036\arm5_no_packs\RTE"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.0.3\Device\Include-I C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.2\Device\Include-D__UVISION_VERSION="517" -D_RTE_ -DNRF52 -DBOARD_PCA10036 -DCONFIG_GPIO_AS_PINRESET -DNRF52 -DSWI_DISABLE0-o .\_build\nrf_delay.o --omf_browse .\_build\nrf_delay.crf --depend .\_build\nrf_delay.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x55DBF056)
+I (..\..\..\..\..\components\device\compiler_abstraction.h)(0x56E4870A)
+I (..\..\..\..\..\components\device\nrf.h)(0x56E4870A)
+I (..\..\..\..\..\components\device\nrf52.h)(0x56E4870A)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cm4.h)(0x53FCF6BA)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55DBF060)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmInstr.h)(0x53FFB78A)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmFunc.h)(0x53FFB78A)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmSimd.h)(0x53FCF6BA)
+I (..\..\..\..\..\components\toolchain\system_nrf52.h)(0x56E48710)
+I (..\..\..\..\..\components\device\nrf52_bitfields.h)(0x56E4870A)
+I (..\..\..\..\..\components\device\nrf51_to_nrf52.h)(0x56E4870A)
+I (..\..\..\..\..\components\drivers_nrf\delay\nrf_delay.h)(0x56E4870A)
+F (..\..\..\..\..\components\drivers_nrf\common\nrf_drv_common.c)(0x56E4870A)(-c --cpu Cortex-M4.fp -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I..\..\config\spi_master_pca10036 -I..\..\config -I..\.. -I..\..\..\..\bsp -I..\..\..\..\..\components\drivers_nrf\spi_master -I..\..\..\..\..\components\drivers_nrf\config -I..\..\..\..\..\components\libraries\button -I..\..\..\..\..\components\drivers_nrf\gpiote -I..\..\..\..\..\components\libraries\util -I..\..\..\..\..\components\drivers_nrf\common -I..\..\..\..\..\components\drivers_nrf\hal -I..\..\..\..\..\components\device -I..\..\..\..\..\components\toolchain -I..\..\..\..\..\components\libraries\timer -I..\..\..\..\..\components\drivers_nrf\delay -I..\..\..\..\..\components\drivers_nrf\nrf_soc_nosd -I..\..\..\..\..\components\libraries\uart -I..\..\..\..\..\components\libraries\fifo -I..\..\..\..\..\components\drivers_nrf\uart -I..\..\..\..\..\components\drivers_nrf\uart -I..\..\..\..\..\examples\peripheral\Intan32\heatshrink\heatshrink -I..\..\..\Intan32 --c99-I "E:\ELEC 494\WNR\nRF5_comp_spi\examples\peripheral\Intan32\pca10036\arm5_no_packs\RTE"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.0.3\Device\Include-I C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.2\Device\Include-D__UVISION_VERSION="517" -D_RTE_ -DNRF52 -DBOARD_PCA10036 -DCONFIG_GPIO_AS_PINRESET -DNRF52 -DSWI_DISABLE0-o .\_build\nrf_drv_common.o --omf_browse .\_build\nrf_drv_common.crf --depend .\_build\nrf_drv_common.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x55DBF05E)
+I (..\..\..\..\..\components\drivers_nrf\common\nrf_drv_common.h)(0x56E4870A)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55DBF060)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x55DBF056)
+I (..\..\..\..\..\components\device\nrf.h)(0x56E4870A)
+I (..\..\..\..\..\components\device\nrf52.h)(0x56E4870A)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cm4.h)(0x53FCF6BA)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmInstr.h)(0x53FFB78A)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmFunc.h)(0x53FFB78A)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmSimd.h)(0x53FCF6BA)
+I (..\..\..\..\..\components\toolchain\system_nrf52.h)(0x56E48710)
+I (..\..\..\..\..\components\device\nrf52_bitfields.h)(0x56E4870A)
+I (..\..\..\..\..\components\device\nrf51_to_nrf52.h)(0x56E4870A)
+I (..\..\..\..\..\components\device\compiler_abstraction.h)(0x56E4870A)
+I (..\..\..\..\..\components\libraries\util\sdk_errors.h)(0x56E4870E)
+I (..\..\..\..\..\components\drivers_nrf\nrf_soc_nosd\nrf_error.h)(0x56E4870C)
+I (..\..\config\spi_master_pca10036\nrf_drv_config.h)(0x56E48746)
+I (..\..\..\..\..\components\drivers_nrf\config\nrf_drv_config_validation.h)(0x56E4870A)
+I (..\..\..\..\..\components\libraries\util\nrf_assert.h)(0x56E4870E)
+I (..\..\..\..\..\components\libraries\util\app_error.h)(0x56E4870E)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x55DBF056)
+I (..\..\..\..\..\components\libraries\util\nordic_common.h)(0x56E4870E)
+I (..\..\..\..\..\components\libraries\util\app_util_platform.h)(0x56E4870E)
+F (..\..\..\..\..\components\drivers_nrf\gpiote\nrf_drv_gpiote.c)(0x56E4870A)(-c --cpu Cortex-M4.fp -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I..\..\config\spi_master_pca10036 -I..\..\config -I..\.. -I..\..\..\..\bsp -I..\..\..\..\..\components\drivers_nrf\spi_master -I..\..\..\..\..\components\drivers_nrf\config -I..\..\..\..\..\components\libraries\button -I..\..\..\..\..\components\drivers_nrf\gpiote -I..\..\..\..\..\components\libraries\util -I..\..\..\..\..\components\drivers_nrf\common -I..\..\..\..\..\components\drivers_nrf\hal -I..\..\..\..\..\components\device -I..\..\..\..\..\components\toolchain -I..\..\..\..\..\components\libraries\timer -I..\..\..\..\..\components\drivers_nrf\delay -I..\..\..\..\..\components\drivers_nrf\nrf_soc_nosd -I..\..\..\..\..\components\libraries\uart -I..\..\..\..\..\components\libraries\fifo -I..\..\..\..\..\components\drivers_nrf\uart -I..\..\..\..\..\components\drivers_nrf\uart -I..\..\..\..\..\examples\peripheral\Intan32\heatshrink\heatshrink -I..\..\..\Intan32 --c99-I "E:\ELEC 494\WNR\nRF5_comp_spi\examples\peripheral\Intan32\pca10036\arm5_no_packs\RTE"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.0.3\Device\Include-I C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.2\Device\Include-D__UVISION_VERSION="517" -D_RTE_ -DNRF52 -DBOARD_PCA10036 -DCONFIG_GPIO_AS_PINRESET -DNRF52 -DSWI_DISABLE0-o .\_build\nrf_drv_gpiote.o --omf_browse .\_build\nrf_drv_gpiote.crf --depend .\_build\nrf_drv_gpiote.d)
+I (..\..\..\..\..\components\drivers_nrf\gpiote\nrf_drv_gpiote.h)(0x56E4870A)
+I (..\..\..\..\..\components\drivers_nrf\hal\nrf_gpiote.h)(0x56E4870C)
+I (..\..\..\..\..\components\device\nrf.h)(0x56E4870A)
+I (..\..\..\..\..\components\device\nrf52.h)(0x56E4870A)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cm4.h)(0x53FCF6BA)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55DBF060)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmInstr.h)(0x53FFB78A)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmFunc.h)(0x53FFB78A)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmSimd.h)(0x53FCF6BA)
+I (..\..\..\..\..\components\toolchain\system_nrf52.h)(0x56E48710)
+I (..\..\..\..\..\components\device\nrf52_bitfields.h)(0x56E4870A)
+I (..\..\..\..\..\components\device\nrf51_to_nrf52.h)(0x56E4870A)
+I (..\..\..\..\..\components\device\compiler_abstraction.h)(0x56E4870A)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x55DBF05E)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x55DBF056)
+I (..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h)(0x56E4870C)
+I (..\..\config\spi_master_pca10036\nrf_drv_config.h)(0x56E48746)
+I (..\..\..\..\..\components\drivers_nrf\config\nrf_drv_config_validation.h)(0x56E4870A)
+I (..\..\..\..\..\components\libraries\util\sdk_errors.h)(0x56E4870E)
+I (..\..\..\..\..\components\drivers_nrf\nrf_soc_nosd\nrf_error.h)(0x56E4870C)
+I (..\..\..\..\..\components\drivers_nrf\common\nrf_drv_common.h)(0x56E4870A)
+I (..\..\..\..\..\components\libraries\util\app_util_platform.h)(0x56E4870E)
+I (..\..\..\..\..\components\libraries\util\nrf_assert.h)(0x56E4870E)
+I (..\..\..\..\..\components\libraries\util\app_error.h)(0x56E4870E)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x55DBF056)
+I (..\..\..\..\..\components\libraries\util\nordic_common.h)(0x56E4870E)
+F (..\..\..\..\..\components\drivers_nrf\spi_master\nrf_drv_spi.c)(0x56E4870C)(-c --cpu Cortex-M4.fp -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I..\..\config\spi_master_pca10036 -I..\..\config -I..\.. -I..\..\..\..\bsp -I..\..\..\..\..\components\drivers_nrf\spi_master -I..\..\..\..\..\components\drivers_nrf\config -I..\..\..\..\..\components\libraries\button -I..\..\..\..\..\components\drivers_nrf\gpiote -I..\..\..\..\..\components\libraries\util -I..\..\..\..\..\components\drivers_nrf\common -I..\..\..\..\..\components\drivers_nrf\hal -I..\..\..\..\..\components\device -I..\..\..\..\..\components\toolchain -I..\..\..\..\..\components\libraries\timer -I..\..\..\..\..\components\drivers_nrf\delay -I..\..\..\..\..\components\drivers_nrf\nrf_soc_nosd -I..\..\..\..\..\components\libraries\uart -I..\..\..\..\..\components\libraries\fifo -I..\..\..\..\..\components\drivers_nrf\uart -I..\..\..\..\..\components\drivers_nrf\uart -I..\..\..\..\..\examples\peripheral\Intan32\heatshrink\heatshrink -I..\..\..\Intan32 --c99-I "E:\ELEC 494\WNR\nRF5_comp_spi\examples\peripheral\Intan32\pca10036\arm5_no_packs\RTE"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.0.3\Device\Include-I C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.2\Device\Include-D__UVISION_VERSION="517" -D_RTE_ -DNRF52 -DBOARD_PCA10036 -DCONFIG_GPIO_AS_PINRESET -DNRF52 -DSWI_DISABLE0-o .\_build\nrf_drv_spi.o --omf_browse .\_build\nrf_drv_spi.crf --depend .\_build\nrf_drv_spi.d)
+I (..\..\..\..\..\components\drivers_nrf\spi_master\nrf_drv_spi.h)(0x56E4870C)
+I (..\..\..\..\..\components\libraries\util\nordic_common.h)(0x56E4870E)
+I (..\..\config\spi_master_pca10036\nrf_drv_config.h)(0x56E48746)
+I (..\..\..\..\..\components\drivers_nrf\config\nrf_drv_config_validation.h)(0x56E4870A)
+I (..\..\..\..\..\components\drivers_nrf\hal\nrf_spi.h)(0x56E4870C)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x55DBF05E)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x55DBF056)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55DBF060)
+I (..\..\..\..\..\components\device\nrf.h)(0x56E4870A)
+I (..\..\..\..\..\components\device\nrf52.h)(0x56E4870A)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cm4.h)(0x53FCF6BA)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmInstr.h)(0x53FFB78A)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmFunc.h)(0x53FFB78A)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmSimd.h)(0x53FCF6BA)
+I (..\..\..\..\..\components\toolchain\system_nrf52.h)(0x56E48710)
+I (..\..\..\..\..\components\device\nrf52_bitfields.h)(0x56E4870A)
+I (..\..\..\..\..\components\device\nrf51_to_nrf52.h)(0x56E4870A)
+I (..\..\..\..\..\components\device\compiler_abstraction.h)(0x56E4870A)
+I (..\..\..\..\..\components\drivers_nrf\hal\nrf_spim.h)(0x56E4870C)
+I (..\..\..\..\..\components\libraries\util\sdk_errors.h)(0x56E4870E)
+I (..\..\..\..\..\components\drivers_nrf\nrf_soc_nosd\nrf_error.h)(0x56E4870C)
+I (..\..\..\..\..\components\drivers_nrf\common\nrf_drv_common.h)(0x56E4870A)
+I (..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h)(0x56E4870C)
+I (..\..\..\..\..\components\libraries\util\nrf_assert.h)(0x56E4870E)
+I (..\..\..\..\..\components\libraries\util\app_error.h)(0x56E4870E)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x55DBF056)
+I (..\..\..\..\..\components\libraries\util\app_util_platform.h)(0x56E4870E)
+F (..\..\..\..\..\components\drivers_nrf\uart\nrf_drv_uart.c)(0x56E4870C)(-c --cpu Cortex-M4.fp -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I..\..\config\spi_master_pca10036 -I..\..\config -I..\.. -I..\..\..\..\bsp -I..\..\..\..\..\components\drivers_nrf\spi_master -I..\..\..\..\..\components\drivers_nrf\config -I..\..\..\..\..\components\libraries\button -I..\..\..\..\..\components\drivers_nrf\gpiote -I..\..\..\..\..\components\libraries\util -I..\..\..\..\..\components\drivers_nrf\common -I..\..\..\..\..\components\drivers_nrf\hal -I..\..\..\..\..\components\device -I..\..\..\..\..\components\toolchain -I..\..\..\..\..\components\libraries\timer -I..\..\..\..\..\components\drivers_nrf\delay -I..\..\..\..\..\components\drivers_nrf\nrf_soc_nosd -I..\..\..\..\..\components\libraries\uart -I..\..\..\..\..\components\libraries\fifo -I..\..\..\..\..\components\drivers_nrf\uart -I..\..\..\..\..\components\drivers_nrf\uart -I..\..\..\..\..\examples\peripheral\Intan32\heatshrink\heatshrink -I..\..\..\Intan32 --c99-I "E:\ELEC 494\WNR\nRF5_comp_spi\examples\peripheral\Intan32\pca10036\arm5_no_packs\RTE"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.0.3\Device\Include-I C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.2\Device\Include-D__UVISION_VERSION="517" -D_RTE_ -DNRF52 -DBOARD_PCA10036 -DCONFIG_GPIO_AS_PINRESET -DNRF52 -DSWI_DISABLE0-o .\_build\nrf_drv_uart.o --omf_browse .\_build\nrf_drv_uart.crf --depend .\_build\nrf_drv_uart.d)
+I (..\..\..\..\..\components\drivers_nrf\uart\nrf_drv_uart.h)(0x56E4870C)
+I (..\..\..\..\..\components\drivers_nrf\hal\nrf_uart.h)(0x56E4870C)
+I (..\..\..\..\..\components\device\nrf.h)(0x56E4870A)
+I (..\..\..\..\..\components\device\nrf52.h)(0x56E4870A)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cm4.h)(0x53FCF6BA)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55DBF060)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmInstr.h)(0x53FFB78A)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmFunc.h)(0x53FFB78A)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmSimd.h)(0x53FCF6BA)
+I (..\..\..\..\..\components\toolchain\system_nrf52.h)(0x56E48710)
+I (..\..\..\..\..\components\device\nrf52_bitfields.h)(0x56E4870A)
+I (..\..\..\..\..\components\device\nrf51_to_nrf52.h)(0x56E4870A)
+I (..\..\..\..\..\components\device\compiler_abstraction.h)(0x56E4870A)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x55DBF05E)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x55DBF056)
+I (..\..\..\..\..\components\drivers_nrf\hal\nrf_uarte.h)(0x56E4870C)
+I (..\..\..\..\..\components\libraries\util\sdk_errors.h)(0x56E4870E)
+I (..\..\..\..\..\components\drivers_nrf\nrf_soc_nosd\nrf_error.h)(0x56E4870C)
+I (..\..\config\spi_master_pca10036\nrf_drv_config.h)(0x56E48746)
+I (..\..\..\..\..\components\drivers_nrf\config\nrf_drv_config_validation.h)(0x56E4870A)
+I (..\..\..\..\..\components\libraries\util\nrf_assert.h)(0x56E4870E)
+I (..\..\..\..\..\components\libraries\util\app_error.h)(0x56E4870E)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x55DBF056)
+I (..\..\..\..\..\components\libraries\util\nordic_common.h)(0x56E4870E)
+I (..\..\..\..\..\components\drivers_nrf\common\nrf_drv_common.h)(0x56E4870A)
+I (..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h)(0x56E4870C)
+I (..\..\..\..\..\components\libraries\util\app_util_platform.h)(0x56E4870E)
+F (..\..\..\..\..\components\libraries\uart\app_uart_fifo.c)(0x56E4870E)(-c --cpu Cortex-M4.fp -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I..\..\config\spi_master_pca10036 -I..\..\config -I..\.. -I..\..\..\..\bsp -I..\..\..\..\..\components\drivers_nrf\spi_master -I..\..\..\..\..\components\drivers_nrf\config -I..\..\..\..\..\components\libraries\button -I..\..\..\..\..\components\drivers_nrf\gpiote -I..\..\..\..\..\components\libraries\util -I..\..\..\..\..\components\drivers_nrf\common -I..\..\..\..\..\components\drivers_nrf\hal -I..\..\..\..\..\components\device -I..\..\..\..\..\components\toolchain -I..\..\..\..\..\components\libraries\timer -I..\..\..\..\..\components\drivers_nrf\delay -I..\..\..\..\..\components\drivers_nrf\nrf_soc_nosd -I..\..\..\..\..\components\libraries\uart -I..\..\..\..\..\components\libraries\fifo -I..\..\..\..\..\components\drivers_nrf\uart -I..\..\..\..\..\components\drivers_nrf\uart -I..\..\..\..\..\examples\peripheral\Intan32\heatshrink\heatshrink -I..\..\..\Intan32 --c99-I "E:\ELEC 494\WNR\nRF5_comp_spi\examples\peripheral\Intan32\pca10036\arm5_no_packs\RTE"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.0.3\Device\Include-I C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.2\Device\Include-D__UVISION_VERSION="517" -D_RTE_ -DNRF52 -DBOARD_PCA10036 -DCONFIG_GPIO_AS_PINRESET -DNRF52 -DSWI_DISABLE0-o .\_build\app_uart_fifo.o --omf_browse .\_build\app_uart_fifo.crf --depend .\_build\app_uart_fifo.d)
+I (..\..\..\..\..\components\libraries\uart\app_uart.h)(0x56E4870E)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55DBF060)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x55DBF056)
+I (..\..\..\..\..\components\libraries\util\app_util_platform.h)(0x56E4870E)
+I (..\..\..\..\..\components\device\compiler_abstraction.h)(0x56E4870A)
+I (..\..\..\..\..\components\device\nrf.h)(0x56E4870A)
+I (..\..\..\..\..\components\device\nrf52.h)(0x56E4870A)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cm4.h)(0x53FCF6BA)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmInstr.h)(0x53FFB78A)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmFunc.h)(0x53FFB78A)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmSimd.h)(0x53FCF6BA)
+I (..\..\..\..\..\components\toolchain\system_nrf52.h)(0x56E48710)
+I (..\..\..\..\..\components\device\nrf52_bitfields.h)(0x56E4870A)
+I (..\..\..\..\..\components\device\nrf51_to_nrf52.h)(0x56E4870A)
+I (..\..\..\..\..\components\libraries\fifo\app_fifo.h)(0x56E4870C)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x55DBF058)
+I (..\..\..\..\..\components\drivers_nrf\uart\nrf_drv_uart.h)(0x56E4870C)
+I (..\..\..\..\..\components\drivers_nrf\hal\nrf_uart.h)(0x56E4870C)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x55DBF05E)
+I (..\..\..\..\..\components\drivers_nrf\hal\nrf_uarte.h)(0x56E4870C)
+I (..\..\..\..\..\components\libraries\util\sdk_errors.h)(0x56E4870E)
+I (..\..\..\..\..\components\drivers_nrf\nrf_soc_nosd\nrf_error.h)(0x56E4870C)
+I (..\..\config\spi_master_pca10036\nrf_drv_config.h)(0x56E48746)
+I (..\..\..\..\..\components\drivers_nrf\config\nrf_drv_config_validation.h)(0x56E4870A)
+I (..\..\..\..\..\components\libraries\util\nrf_assert.h)(0x56E4870E)
+I (..\..\..\..\..\components\libraries\util\app_error.h)(0x56E4870E)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x55DBF056)
+I (..\..\..\..\..\components\libraries\util\nordic_common.h)(0x56E4870E)
+I (..\..\..\..\..\components\libraries\util\sdk_common.h)(0x56E4870E)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x55DBF058)
+I (..\..\..\..\..\components\libraries\util\sdk_os.h)(0x56E4870E)
+I (..\..\..\..\..\components\libraries\util\app_util.h)(0x56E4870E)
+F (..\..\..\..\..\components\libraries\button\app_button.c)(0x56E4870C)(-c --cpu Cortex-M4.fp -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I..\..\..\Intan32 -I..\..\config\spi_master_pca10036 -I..\..\config -I..\.. -I..\..\..\..\bsp -I..\..\..\..\..\components\drivers_nrf\spi_master -I..\..\..\..\..\components\drivers_nrf\config -I..\..\..\..\..\components\libraries\button -I..\..\..\..\..\components\drivers_nrf\gpiote -I..\..\..\..\..\components\libraries\util -I..\..\..\..\..\components\drivers_nrf\common -I..\..\..\..\..\components\drivers_nrf\hal -I..\..\..\..\..\components\device -I..\..\..\..\..\components\toolchain -I..\..\..\..\..\components\libraries\timer -I..\..\..\..\..\components\drivers_nrf\delay -I..\..\..\..\..\components\drivers_nrf\nrf_soc_nosd -I..\..\..\..\..\components\libraries\uart -I..\..\..\..\..\components\libraries\fifo -I..\..\..\..\..\components\drivers_nrf\uart -I..\..\..\..\..\components\drivers_nrf\uart -I..\..\..\..\..\examples\peripheral\Intan32\heatshrink\heatshrink -I..\..\..\Intan32 --c99-I "E:\ELEC 494\WNR\nRF5_comp_spi\examples\peripheral\Intan32\pca10036\arm5_no_packs\RTE"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.0.3\Device\Include-I C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.2\Device\Include-D__UVISION_VERSION="517" -D_RTE_ -DNRF52 -DBOARD_PCA10036 -DCONFIG_GPIO_AS_PINRESET -DNRF52 -DSWI_DISABLE0-o .\_build\app_button.o --omf_browse .\_build\app_button.crf --depend .\_build\app_button.d)
+I (..\..\..\..\..\components\libraries\button\app_button.h)(0x56E4870C)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55DBF060)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x55DBF056)
+I (..\..\..\..\..\components\device\nrf.h)(0x56E4870A)
+I (..\..\..\..\..\components\device\nrf52.h)(0x56E4870A)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cm4.h)(0x53FCF6BA)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmInstr.h)(0x53FFB78A)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmFunc.h)(0x53FFB78A)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmSimd.h)(0x53FCF6BA)
+I (..\..\..\..\..\components\toolchain\system_nrf52.h)(0x56E48710)
+I (..\..\..\..\..\components\device\nrf52_bitfields.h)(0x56E4870A)
+I (..\..\..\..\..\components\device\nrf51_to_nrf52.h)(0x56E4870A)
+I (..\..\..\..\..\components\device\compiler_abstraction.h)(0x56E4870A)
+I (..\..\..\..\..\components\libraries\util\app_error.h)(0x56E4870E)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x55DBF056)
+I (..\..\..\..\..\components\libraries\util\sdk_errors.h)(0x56E4870E)
+I (..\..\..\..\..\components\drivers_nrf\nrf_soc_nosd\nrf_error.h)(0x56E4870C)
+I (..\..\..\..\..\components\libraries\util\nordic_common.h)(0x56E4870E)
+I (..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h)(0x56E4870C)
+I (..\..\..\..\..\components\libraries\timer\app_timer.h)(0x56E4870E)
+I (..\..\..\..\..\components\libraries\util\app_util.h)(0x56E4870E)
+I (..\..\..\..\..\components\drivers_nrf\gpiote\nrf_drv_gpiote.h)(0x56E4870A)
+I (..\..\..\..\..\components\drivers_nrf\hal\nrf_gpiote.h)(0x56E4870C)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x55DBF05E)
+I (..\..\config\spi_master_pca10036\nrf_drv_config.h)(0x56E48746)
+I (..\..\..\..\..\components\drivers_nrf\config\nrf_drv_config_validation.h)(0x56E4870A)
+I (..\..\..\..\..\components\libraries\util\nrf_assert.h)(0x56E4870E)
+I (..\..\..\..\..\components\libraries\util\sdk_common.h)(0x56E4870E)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x55DBF058)
+I (..\..\..\..\..\components\libraries\util\sdk_os.h)(0x56E4870E)
+F (..\..\..\..\..\components\libraries\util\app_error.c)(0x56E4870E)(-c --cpu Cortex-M4.fp -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I..\..\..\Intan32 -I..\..\config\spi_master_pca10036 -I..\..\config -I..\.. -I..\..\..\..\bsp -I..\..\..\..\..\components\drivers_nrf\spi_master -I..\..\..\..\..\components\drivers_nrf\config -I..\..\..\..\..\components\libraries\button -I..\..\..\..\..\components\drivers_nrf\gpiote -I..\..\..\..\..\components\libraries\util -I..\..\..\..\..\components\drivers_nrf\common -I..\..\..\..\..\components\drivers_nrf\hal -I..\..\..\..\..\components\device -I..\..\..\..\..\components\toolchain -I..\..\..\..\..\components\libraries\timer -I..\..\..\..\..\components\drivers_nrf\delay -I..\..\..\..\..\components\drivers_nrf\nrf_soc_nosd -I..\..\..\..\..\components\libraries\uart -I..\..\..\..\..\components\libraries\fifo -I..\..\..\..\..\components\drivers_nrf\uart -I..\..\..\..\..\components\drivers_nrf\uart -I..\..\..\..\..\examples\peripheral\Intan32\heatshrink\heatshrink -I..\..\..\Intan32 --c99-I "E:\ELEC 494\WNR\nRF5_comp_spi\examples\peripheral\Intan32\pca10036\arm5_no_packs\RTE"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.0.3\Device\Include-I C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.2\Device\Include-D__UVISION_VERSION="517" -D_RTE_ -DNRF52 -DBOARD_PCA10036 -DCONFIG_GPIO_AS_PINRESET -DNRF52 -DSWI_DISABLE0-o .\_build\app_error.o --omf_browse .\_build\app_error.crf --depend .\_build\app_error.d)
+I (..\..\..\..\..\components\device\nrf.h)(0x56E4870A)
+I (..\..\..\..\..\components\device\nrf52.h)(0x56E4870A)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cm4.h)(0x53FCF6BA)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55DBF060)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmInstr.h)(0x53FFB78A)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmFunc.h)(0x53FFB78A)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmSimd.h)(0x53FCF6BA)
+I (..\..\..\..\..\components\toolchain\system_nrf52.h)(0x56E48710)
+I (..\..\..\..\..\components\device\nrf52_bitfields.h)(0x56E4870A)
+I (..\..\..\..\..\components\device\nrf51_to_nrf52.h)(0x56E4870A)
+I (..\..\..\..\..\components\device\compiler_abstraction.h)(0x56E4870A)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x55DBF056)
+I (..\..\..\..\..\components\libraries\util\app_error.h)(0x56E4870E)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x55DBF056)
+I (..\..\..\..\..\components\libraries\util\sdk_errors.h)(0x56E4870E)
+I (..\..\..\..\..\components\drivers_nrf\nrf_soc_nosd\nrf_error.h)(0x56E4870C)
+I (..\..\..\..\..\components\libraries\util\nordic_common.h)(0x56E4870E)
+I (..\..\..\..\..\components\libraries\util\nrf_log.h)(0x56E4870E)
+I (C:\Keil_v5\ARM\ARMCC\include\stdarg.h)(0x55DBF05E)
+I (..\..\..\..\..\components\libraries\util\app_util.h)(0x56E4870E)
+F (..\..\..\..\..\components\libraries\timer\app_timer.c)(0x56E4870E)(-c --cpu Cortex-M4.fp -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I..\..\..\Intan32 -I..\..\config\spi_master_pca10036 -I..\..\config -I..\.. -I..\..\..\..\bsp -I..\..\..\..\..\components\drivers_nrf\spi_master -I..\..\..\..\..\components\drivers_nrf\config -I..\..\..\..\..\components\libraries\button -I..\..\..\..\..\components\drivers_nrf\gpiote -I..\..\..\..\..\components\libraries\util -I..\..\..\..\..\components\drivers_nrf\common -I..\..\..\..\..\components\drivers_nrf\hal -I..\..\..\..\..\components\device -I..\..\..\..\..\components\toolchain -I..\..\..\..\..\components\libraries\timer -I..\..\..\..\..\components\drivers_nrf\delay -I..\..\..\..\..\components\drivers_nrf\nrf_soc_nosd -I..\..\..\..\..\components\libraries\uart -I..\..\..\..\..\components\libraries\fifo -I..\..\..\..\..\components\drivers_nrf\uart -I..\..\..\..\..\components\drivers_nrf\uart -I..\..\..\..\..\examples\peripheral\Intan32\heatshrink\heatshrink -I..\..\..\Intan32 --c99-I "E:\ELEC 494\WNR\nRF5_comp_spi\examples\peripheral\Intan32\pca10036\arm5_no_packs\RTE"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.0.3\Device\Include-I C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.2\Device\Include-D__UVISION_VERSION="517" -D_RTE_ -DNRF52 -DBOARD_PCA10036 -DCONFIG_GPIO_AS_PINRESET -DNRF52 -DSWI_DISABLE0-o .\_build\app_timer.o --omf_browse .\_build\app_timer.crf --depend .\_build\app_timer.d)
+I (..\..\..\..\..\components\libraries\timer\app_timer.h)(0x56E4870E)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55DBF060)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x55DBF056)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x55DBF056)
+I (..\..\..\..\..\components\libraries\util\app_error.h)(0x56E4870E)
+I (..\..\..\..\..\components\device\nrf.h)(0x56E4870A)
+I (..\..\..\..\..\components\device\nrf52.h)(0x56E4870A)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cm4.h)(0x53FCF6BA)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmInstr.h)(0x53FFB78A)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmFunc.h)(0x53FFB78A)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmSimd.h)(0x53FCF6BA)
+I (..\..\..\..\..\components\toolchain\system_nrf52.h)(0x56E48710)
+I (..\..\..\..\..\components\device\nrf52_bitfields.h)(0x56E4870A)
+I (..\..\..\..\..\components\device\nrf51_to_nrf52.h)(0x56E4870A)
+I (..\..\..\..\..\components\device\compiler_abstraction.h)(0x56E4870A)
+I (..\..\..\..\..\components\libraries\util\sdk_errors.h)(0x56E4870E)
+I (..\..\..\..\..\components\drivers_nrf\nrf_soc_nosd\nrf_error.h)(0x56E4870C)
+I (..\..\..\..\..\components\libraries\util\nordic_common.h)(0x56E4870E)
+I (..\..\..\..\..\components\libraries\util\app_util.h)(0x56E4870E)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x55DBF058)
+I (..\..\..\..\..\components\drivers_nrf\nrf_soc_nosd\nrf_soc.h)(0x56E4870C)
+I (..\..\..\..\..\components\drivers_nrf\delay\nrf_delay.h)(0x56E4870A)
+I (..\..\..\..\..\components\libraries\util\app_util_platform.h)(0x56E4870E)
+I (..\..\..\..\..\components\libraries\util\sdk_common.h)(0x56E4870E)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x55DBF058)
+I (..\..\..\..\..\components\libraries\util\sdk_os.h)(0x56E4870E)
+I (..\..\..\..\..\components\libraries\util\sdk_macros.h)(0x56E4870E)
+F (..\..\..\..\..\components\libraries\util\app_util_platform.c)(0x56E4870E)(-c --cpu Cortex-M4.fp -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I..\..\..\Intan32 -I..\..\config\spi_master_pca10036 -I..\..\config -I..\.. -I..\..\..\..\bsp -I..\..\..\..\..\components\drivers_nrf\spi_master -I..\..\..\..\..\components\drivers_nrf\config -I..\..\..\..\..\components\libraries\button -I..\..\..\..\..\components\drivers_nrf\gpiote -I..\..\..\..\..\components\libraries\util -I..\..\..\..\..\components\drivers_nrf\common -I..\..\..\..\..\components\drivers_nrf\hal -I..\..\..\..\..\components\device -I..\..\..\..\..\components\toolchain -I..\..\..\..\..\components\libraries\timer -I..\..\..\..\..\components\drivers_nrf\delay -I..\..\..\..\..\components\drivers_nrf\nrf_soc_nosd -I..\..\..\..\..\components\libraries\uart -I..\..\..\..\..\components\libraries\fifo -I..\..\..\..\..\components\drivers_nrf\uart -I..\..\..\..\..\components\drivers_nrf\uart -I..\..\..\..\..\examples\peripheral\Intan32\heatshrink\heatshrink -I..\..\..\Intan32 --c99-I "E:\ELEC 494\WNR\nRF5_comp_spi\examples\peripheral\Intan32\pca10036\arm5_no_packs\RTE"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.0.3\Device\Include-I C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.2\Device\Include-D__UVISION_VERSION="517" -D_RTE_ -DNRF52 -DBOARD_PCA10036 -DCONFIG_GPIO_AS_PINRESET -DNRF52 -DSWI_DISABLE0-o .\_build\app_util_platform.o --omf_browse .\_build\app_util_platform.crf --depend .\_build\app_util_platform.d)
+I (..\..\..\..\..\components\libraries\util\app_util_platform.h)(0x56E4870E)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55DBF060)
+I (..\..\..\..\..\components\device\compiler_abstraction.h)(0x56E4870A)
+I (..\..\..\..\..\components\device\nrf.h)(0x56E4870A)
+I (..\..\..\..\..\components\device\nrf52.h)(0x56E4870A)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cm4.h)(0x53FCF6BA)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmInstr.h)(0x53FFB78A)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmFunc.h)(0x53FFB78A)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmSimd.h)(0x53FCF6BA)
+I (..\..\..\..\..\components\toolchain\system_nrf52.h)(0x56E48710)
+I (..\..\..\..\..\components\device\nrf52_bitfields.h)(0x56E4870A)
+I (..\..\..\..\..\components\device\nrf51_to_nrf52.h)(0x56E4870A)
+F (..\..\..\..\..\components\libraries\util\nrf_assert.c)(0x56E4870E)(-c --cpu Cortex-M4.fp -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I..\..\..\Intan32 -I..\..\config\spi_master_pca10036 -I..\..\config -I..\.. -I..\..\..\..\bsp -I..\..\..\..\..\components\drivers_nrf\spi_master -I..\..\..\..\..\components\drivers_nrf\config -I..\..\..\..\..\components\libraries\button -I..\..\..\..\..\components\drivers_nrf\gpiote -I..\..\..\..\..\components\libraries\util -I..\..\..\..\..\components\drivers_nrf\common -I..\..\..\..\..\components\drivers_nrf\hal -I..\..\..\..\..\components\device -I..\..\..\..\..\components\toolchain -I..\..\..\..\..\components\libraries\timer -I..\..\..\..\..\components\drivers_nrf\delay -I..\..\..\..\..\components\drivers_nrf\nrf_soc_nosd -I..\..\..\..\..\components\libraries\uart -I..\..\..\..\..\components\libraries\fifo -I..\..\..\..\..\components\drivers_nrf\uart -I..\..\..\..\..\components\drivers_nrf\uart -I..\..\..\..\..\examples\peripheral\Intan32\heatshrink\heatshrink -I..\..\..\Intan32 --c99-I "E:\ELEC 494\WNR\nRF5_comp_spi\examples\peripheral\Intan32\pca10036\arm5_no_packs\RTE"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.0.3\Device\Include-I C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.2\Device\Include-D__UVISION_VERSION="517" -D_RTE_ -DNRF52 -DBOARD_PCA10036 -DCONFIG_GPIO_AS_PINRESET -DNRF52 -DSWI_DISABLE0-o .\_build\nrf_assert.o --omf_browse .\_build\nrf_assert.crf --depend .\_build\nrf_assert.d)
+I (..\..\..\..\..\components\libraries\util\nrf_assert.h)(0x56E4870E)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55DBF060)
+I (..\..\..\..\..\components\device\nrf.h)(0x56E4870A)
+I (..\..\..\..\..\components\device\nrf52.h)(0x56E4870A)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cm4.h)(0x53FCF6BA)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmInstr.h)(0x53FFB78A)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmFunc.h)(0x53FFB78A)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmSimd.h)(0x53FCF6BA)
+I (..\..\..\..\..\components\toolchain\system_nrf52.h)(0x56E48710)
+I (..\..\..\..\..\components\device\nrf52_bitfields.h)(0x56E4870A)
+I (..\..\..\..\..\components\device\nrf51_to_nrf52.h)(0x56E4870A)
+I (..\..\..\..\..\components\device\compiler_abstraction.h)(0x56E4870A)
+I (..\..\..\..\..\components\libraries\util\app_error.h)(0x56E4870E)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x55DBF056)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x55DBF056)
+I (..\..\..\..\..\components\libraries\util\sdk_errors.h)(0x56E4870E)
+I (..\..\..\..\..\components\drivers_nrf\nrf_soc_nosd\nrf_error.h)(0x56E4870C)
+I (..\..\..\..\..\components\libraries\util\nordic_common.h)(0x56E4870E)
+F (..\..\..\..\..\components\libraries\fifo\app_fifo.c)(0x56E4870C)(-c --cpu Cortex-M4.fp -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I..\..\..\Intan32 -I..\..\config\spi_master_pca10036 -I..\..\config -I..\.. -I..\..\..\..\bsp -I..\..\..\..\..\components\drivers_nrf\spi_master -I..\..\..\..\..\components\drivers_nrf\config -I..\..\..\..\..\components\libraries\button -I..\..\..\..\..\components\drivers_nrf\gpiote -I..\..\..\..\..\components\libraries\util -I..\..\..\..\..\components\drivers_nrf\common -I..\..\..\..\..\components\drivers_nrf\hal -I..\..\..\..\..\components\device -I..\..\..\..\..\components\toolchain -I..\..\..\..\..\components\libraries\timer -I..\..\..\..\..\components\drivers_nrf\delay -I..\..\..\..\..\components\drivers_nrf\nrf_soc_nosd -I..\..\..\..\..\components\libraries\uart -I..\..\..\..\..\components\libraries\fifo -I..\..\..\..\..\components\drivers_nrf\uart -I..\..\..\..\..\components\drivers_nrf\uart -I..\..\..\..\..\examples\peripheral\Intan32\heatshrink\heatshrink -I..\..\..\Intan32 --c99-I "E:\ELEC 494\WNR\nRF5_comp_spi\examples\peripheral\Intan32\pca10036\arm5_no_packs\RTE"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.0.3\Device\Include-I C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.2\Device\Include-D__UVISION_VERSION="517" -D_RTE_ -DNRF52 -DBOARD_PCA10036 -DCONFIG_GPIO_AS_PINRESET -DNRF52 -DSWI_DISABLE0-o .\_build\app_fifo.o --omf_browse .\_build\app_fifo.crf --depend .\_build\app_fifo.d)
+I (..\..\..\..\..\components\libraries\fifo\app_fifo.h)(0x56E4870C)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55DBF060)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x55DBF058)
+I (..\..\..\..\..\components\libraries\util\sdk_common.h)(0x56E4870E)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x55DBF056)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x55DBF058)
+I (..\..\..\..\..\components\libraries\util\nordic_common.h)(0x56E4870E)
+I (..\..\..\..\..\components\device\compiler_abstraction.h)(0x56E4870A)
+I (..\..\..\..\..\components\libraries\util\sdk_os.h)(0x56E4870E)
+I (..\..\..\..\..\components\libraries\util\sdk_errors.h)(0x56E4870E)
+I (..\..\..\..\..\components\drivers_nrf\nrf_soc_nosd\nrf_error.h)(0x56E4870C)
+I (..\..\..\..\..\components\libraries\util\app_util.h)(0x56E4870E)
+I (..\..\..\..\..\components\device\nrf.h)(0x56E4870A)
+I (..\..\..\..\..\components\device\nrf52.h)(0x56E4870A)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cm4.h)(0x53FCF6BA)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmInstr.h)(0x53FFB78A)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmFunc.h)(0x53FFB78A)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmSimd.h)(0x53FCF6BA)
+I (..\..\..\..\..\components\toolchain\system_nrf52.h)(0x56E48710)
+I (..\..\..\..\..\components\device\nrf52_bitfields.h)(0x56E4870A)
+I (..\..\..\..\..\components\device\nrf51_to_nrf52.h)(0x56E4870A)
+F (..\..\..\..\..\components\libraries\uart\retarget.c)(0x56E4870E)(-c --cpu Cortex-M4.fp -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I..\..\..\Intan32 -I..\..\config\spi_master_pca10036 -I..\..\config -I..\.. -I..\..\..\..\bsp -I..\..\..\..\..\components\drivers_nrf\spi_master -I..\..\..\..\..\components\drivers_nrf\config -I..\..\..\..\..\components\libraries\button -I..\..\..\..\..\components\drivers_nrf\gpiote -I..\..\..\..\..\components\libraries\util -I..\..\..\..\..\components\drivers_nrf\common -I..\..\..\..\..\components\drivers_nrf\hal -I..\..\..\..\..\components\device -I..\..\..\..\..\components\toolchain -I..\..\..\..\..\components\libraries\timer -I..\..\..\..\..\components\drivers_nrf\delay -I..\..\..\..\..\components\drivers_nrf\nrf_soc_nosd -I..\..\..\..\..\components\libraries\uart -I..\..\..\..\..\components\libraries\fifo -I..\..\..\..\..\components\drivers_nrf\uart -I..\..\..\..\..\components\drivers_nrf\uart -I..\..\..\..\..\examples\peripheral\Intan32\heatshrink\heatshrink -I..\..\..\Intan32 --c99-I "E:\ELEC 494\WNR\nRF5_comp_spi\examples\peripheral\Intan32\pca10036\arm5_no_packs\RTE"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.0.3\Device\Include-I C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.2\Device\Include-D__UVISION_VERSION="517" -D_RTE_ -DNRF52 -DBOARD_PCA10036 -DCONFIG_GPIO_AS_PINRESET -DNRF52 -DSWI_DISABLE0-o .\_build\retarget.o --omf_browse .\_build\retarget.crf --depend .\_build\retarget.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x55DBF056)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55DBF060)
+I (..\..\..\..\..\components\libraries\uart\app_uart.h)(0x56E4870E)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x55DBF056)
+I (..\..\..\..\..\components\libraries\util\app_util_platform.h)(0x56E4870E)
+I (..\..\..\..\..\components\device\compiler_abstraction.h)(0x56E4870A)
+I (..\..\..\..\..\components\device\nrf.h)(0x56E4870A)
+I (..\..\..\..\..\components\device\nrf52.h)(0x56E4870A)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cm4.h)(0x53FCF6BA)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmInstr.h)(0x53FFB78A)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmFunc.h)(0x53FFB78A)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmSimd.h)(0x53FCF6BA)
+I (..\..\..\..\..\components\toolchain\system_nrf52.h)(0x56E48710)
+I (..\..\..\..\..\components\device\nrf52_bitfields.h)(0x56E4870A)
+I (..\..\..\..\..\components\device\nrf51_to_nrf52.h)(0x56E4870A)
+I (..\..\..\..\..\components\libraries\util\nordic_common.h)(0x56E4870E)
+I (..\..\..\..\..\components\drivers_nrf\nrf_soc_nosd\nrf_error.h)(0x56E4870C)
+F (..\..\heatshrink\heatshrink\heatshrink_decoder.c)(0x56E48746)(-c --cpu Cortex-M4.fp -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I..\..\config\spi_master_pca10036 -I..\..\config -I..\.. -I..\..\..\..\bsp -I..\..\..\..\..\components\drivers_nrf\spi_master -I..\..\..\..\..\components\drivers_nrf\config -I..\..\..\..\..\components\libraries\button -I..\..\..\..\..\components\drivers_nrf\gpiote -I..\..\..\..\..\components\libraries\util -I..\..\..\..\..\components\drivers_nrf\common -I..\..\..\..\..\components\drivers_nrf\hal -I..\..\..\..\..\components\device -I..\..\..\..\..\components\toolchain -I..\..\..\..\..\components\libraries\timer -I..\..\..\..\..\components\drivers_nrf\delay -I..\..\..\..\..\components\drivers_nrf\nrf_soc_nosd -I..\..\..\..\..\components\libraries\uart -I..\..\..\..\..\components\libraries\fifo -I..\..\..\..\..\components\drivers_nrf\uart -I..\..\..\..\..\components\drivers_nrf\uart -I..\..\..\..\..\examples\peripheral\Intan32\heatshrink\heatshrink -I..\..\..\Intan32 --c99-I "E:\ELEC 494\WNR\nRF5_comp_spi\examples\peripheral\Intan32\pca10036\arm5_no_packs\RTE"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.0.3\Device\Include-I C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.2\Device\Include-D__UVISION_VERSION="517" -D_RTE_ -DNRF52 -DBOARD_PCA10036 -DCONFIG_GPIO_AS_PINRESET -DNRF52 -DSWI_DISABLE0-o .\_build\heatshrink_decoder.o --omf_browse .\_build\heatshrink_decoder.crf --depend .\_build\heatshrink_decoder.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x55DBF058)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x55DBF058)
+I (..\..\heatshrink\heatshrink\heatshrink_decoder.h)(0x56E48746)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55DBF060)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x55DBF05E)
+I (..\..\heatshrink\heatshrink\heatshrink_common.h)(0x56E48746)
+I (..\..\heatshrink\heatshrink\heatshrink_config.h)(0x56E48746)
+F (..\..\heatshrink\heatshrink\heatshrink_encoder.c)(0x56E48746)(-c --cpu Cortex-M4.fp -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I..\..\config\spi_master_pca10036 -I..\..\config -I..\.. -I..\..\..\..\bsp -I..\..\..\..\..\components\drivers_nrf\spi_master -I..\..\..\..\..\components\drivers_nrf\config -I..\..\..\..\..\components\libraries\button -I..\..\..\..\..\components\drivers_nrf\gpiote -I..\..\..\..\..\components\libraries\util -I..\..\..\..\..\components\drivers_nrf\common -I..\..\..\..\..\components\drivers_nrf\hal -I..\..\..\..\..\components\device -I..\..\..\..\..\components\toolchain -I..\..\..\..\..\components\libraries\timer -I..\..\..\..\..\components\drivers_nrf\delay -I..\..\..\..\..\components\drivers_nrf\nrf_soc_nosd -I..\..\..\..\..\components\libraries\uart -I..\..\..\..\..\components\libraries\fifo -I..\..\..\..\..\components\drivers_nrf\uart -I..\..\..\..\..\components\drivers_nrf\uart -I..\..\..\..\..\examples\peripheral\Intan32\heatshrink\heatshrink -I..\..\..\Intan32 --c99-I "E:\ELEC 494\WNR\nRF5_comp_spi\examples\peripheral\Intan32\pca10036\arm5_no_packs\RTE"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.0.3\Device\Include-I C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.2\Device\Include-D__UVISION_VERSION="517" -D_RTE_ -DNRF52 -DBOARD_PCA10036 -DCONFIG_GPIO_AS_PINRESET -DNRF52 -DSWI_DISABLE0-o .\_build\heatshrink_encoder.o --omf_browse .\_build\heatshrink_encoder.crf --depend .\_build\heatshrink_encoder.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x55DBF058)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x55DBF058)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x55DBF056)
+I (..\..\heatshrink\heatshrink\heatshrink_encoder.h)(0x56E48746)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55DBF060)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x55DBF05E)
+I (..\..\heatshrink\heatshrink\heatshrink_common.h)(0x56E48746)
+I (..\..\heatshrink\heatshrink\heatshrink_config.h)(0x56E48746)
+F (..\..\heatshrink\heatshrink\ble_data_buffer.c)(0x56EADEE0)(-c --cpu Cortex-M4.fp -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I..\..\config\spi_master_pca10036 -I..\..\config -I..\.. -I..\..\..\..\bsp -I..\..\..\..\..\components\drivers_nrf\spi_master -I..\..\..\..\..\components\drivers_nrf\config -I..\..\..\..\..\components\libraries\button -I..\..\..\..\..\components\drivers_nrf\gpiote -I..\..\..\..\..\components\libraries\util -I..\..\..\..\..\components\drivers_nrf\common -I..\..\..\..\..\components\drivers_nrf\hal -I..\..\..\..\..\components\device -I..\..\..\..\..\components\toolchain -I..\..\..\..\..\components\libraries\timer -I..\..\..\..\..\components\drivers_nrf\delay -I..\..\..\..\..\components\drivers_nrf\nrf_soc_nosd -I..\..\..\..\..\components\libraries\uart -I..\..\..\..\..\components\libraries\fifo -I..\..\..\..\..\components\drivers_nrf\uart -I..\..\..\..\..\components\drivers_nrf\uart -I..\..\..\..\..\examples\peripheral\Intan32\heatshrink\heatshrink -I..\..\..\Intan32 --c99-I "E:\ELEC 494\WNR\nRF5_comp_spi\examples\peripheral\Intan32\pca10036\arm5_no_packs\RTE"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.0.3\Device\Include-I C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.2\Device\Include-D__UVISION_VERSION="517" -D_RTE_ -DNRF52 -DBOARD_PCA10036 -DCONFIG_GPIO_AS_PINRESET -DNRF52 -DSWI_DISABLE0-o .\_build\ble_data_buffer.o --omf_browse .\_build\ble_data_buffer.crf --depend .\_build\ble_data_buffer.d)
+I (..\..\heatshrink\heatshrink\ble_data_buffer.h)(0x56EADED6)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x55DBF056)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55DBF060)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x55DBF058)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x55DBF058)
+I (..\..\..\..\..\components\libraries\util\app_error.h)(0x56E4870E)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x55DBF056)
+I (..\..\..\..\..\components\device\nrf.h)(0x56E4870A)
+I (..\..\..\..\..\components\device\nrf52.h)(0x56E4870A)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cm4.h)(0x53FCF6BA)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmInstr.h)(0x53FFB78A)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmFunc.h)(0x53FFB78A)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmSimd.h)(0x53FCF6BA)
+I (..\..\..\..\..\components\toolchain\system_nrf52.h)(0x56E48710)
+I (..\..\..\..\..\components\device\nrf52_bitfields.h)(0x56E4870A)
+I (..\..\..\..\..\components\device\nrf51_to_nrf52.h)(0x56E4870A)
+I (..\..\..\..\..\components\device\compiler_abstraction.h)(0x56E4870A)
+I (..\..\..\..\..\components\libraries\util\sdk_errors.h)(0x56E4870E)
+I (..\..\..\..\..\components\drivers_nrf\nrf_soc_nosd\nrf_error.h)(0x56E4870C)
+I (..\..\..\..\..\components\libraries\util\nordic_common.h)(0x56E4870E)
+I (..\..\..\..\bsp\bsp.h)(0x56E48740)
+I (..\..\..\..\bsp\boards.h)(0x56E48740)
+I (..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h)(0x56E4870C)
+I (..\..\..\..\bsp\pca10036.h)(0x56E48740)
+I (..\..\..\..\..\components\libraries\button\app_button.h)(0x56E4870C)
+I (..\..\heatshrink\heatshrink\heatshrink_encoder.h)(0x56E48746)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x55DBF05E)
+I (..\..\heatshrink\heatshrink\heatshrink_common.h)(0x56E48746)
+I (..\..\heatshrink\heatshrink\heatshrink_config.h)(0x56E48746)
+I (..\..\heatshrink\heatshrink\heatshrink_decoder.h)(0x56E48746)
+F (RTE\Device\nRF52832_xxAA\arm_startup_nrf52.s)(0x56E48748)(--cpu Cortex-M4.fp --pd "__EVAL SETA 1" -g --apcs=interwork --pd "__MICROLIB SETA 1"-I "E:\ELEC 494\WNR\nRF5_comp_spi\examples\peripheral\Intan32\pca10036\arm5_no_packs\RTE"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.0.3\Device\Include-I C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.2\Device\Include--pd "__UVISION_VERSION SETA 517" --pd "_RTE_ SETA 1" --pd "NRF52 SETA 1" --pd "BOARD_PCA10036 SETA 1" --pd "CONFIG_GPIO_AS_PINRESET SETA 1" --pd "NRF52 SETA 1" --pd "SWI_DISABLE0 SETA 1"--list .\_build\arm_startup_nrf52.lst --xref -o .\_build\arm_startup_nrf52.o --depend .\_build\arm_startup_nrf52.d)
+F (RTE\Device\nRF52832_xxAA\system_nrf52.c)(0x56E48748)(-c --cpu Cortex-M4.fp -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I..\..\config\spi_master_pca10036 -I..\..\config -I..\.. -I..\..\..\..\bsp -I..\..\..\..\..\components\drivers_nrf\spi_master -I..\..\..\..\..\components\drivers_nrf\config -I..\..\..\..\..\components\libraries\button -I..\..\..\..\..\components\drivers_nrf\gpiote -I..\..\..\..\..\components\libraries\util -I..\..\..\..\..\components\drivers_nrf\common -I..\..\..\..\..\components\drivers_nrf\hal -I..\..\..\..\..\components\device -I..\..\..\..\..\components\toolchain -I..\..\..\..\..\components\libraries\timer -I..\..\..\..\..\components\drivers_nrf\delay -I..\..\..\..\..\components\drivers_nrf\nrf_soc_nosd -I..\..\..\..\..\components\libraries\uart -I..\..\..\..\..\components\libraries\fifo -I..\..\..\..\..\components\drivers_nrf\uart -I..\..\..\..\..\components\drivers_nrf\uart -I..\..\..\..\..\examples\peripheral\Intan32\heatshrink\heatshrink -I..\..\..\Intan32 --c99-I "E:\ELEC 494\WNR\nRF5_comp_spi\examples\peripheral\Intan32\pca10036\arm5_no_packs\RTE"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.0.3\Device\Include-I C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.2\Device\Include-D__UVISION_VERSION="517" -D_RTE_ -DNRF52 -DBOARD_PCA10036 -DCONFIG_GPIO_AS_PINRESET -DNRF52 -DSWI_DISABLE0-o .\_build\system_nrf52.o --omf_browse .\_build\system_nrf52.crf --depend .\_build\system_nrf52.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55DBF060)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x55DBF056)
+I (..\..\..\..\..\components\device\nrf.h)(0x56E4870A)
+I (..\..\..\..\..\components\device\nrf52.h)(0x56E4870A)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cm4.h)(0x53FCF6BA)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmInstr.h)(0x53FFB78A)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmFunc.h)(0x53FFB78A)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmSimd.h)(0x53FCF6BA)
+I (..\..\..\..\..\components\toolchain\system_nrf52.h)(0x56E48710)
+I (..\..\..\..\..\components\device\nrf52_bitfields.h)(0x56E4870A)
+I (..\..\..\..\..\components\device\nrf51_to_nrf52.h)(0x56E4870A)
+I (..\..\..\..\..\components\device\compiler_abstraction.h)(0x56E4870A)

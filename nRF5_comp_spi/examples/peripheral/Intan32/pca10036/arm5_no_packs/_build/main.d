@@ -34,6 +34,7 @@
 .\_build\main.o: ..\..\..\..\..\components\libraries\button\app_button.h
 .\_build\main.o: ..\..\..\..\..\components\libraries\timer\app_timer.h
 .\_build\main.o: ..\..\..\..\..\components\libraries\util\app_util.h
+.\_build\main.o: ..\..\..\..\..\examples\peripheral\Intan32\heatshrink\heatshrink\ble_data_buffer.h
 .\_build\main.o: ..\..\..\..\..\examples\peripheral\Intan32\heatshrink\heatshrink\heatshrink_encoder.h
 .\_build\main.o: ..\..\..\..\..\examples\peripheral\Intan32\heatshrink\heatshrink\heatshrink_common.h
 .\_build\main.o: ..\..\..\..\..\examples\peripheral\Intan32\heatshrink\heatshrink\heatshrink_config.h

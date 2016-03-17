@@ -1,6 +1,13 @@
 #include "ble_data_buffer.h"
 
-// Assign working memory for compression alg
+
+int ASSERT(COND){
+  if (!(COND)) return -1;
+}
+
+int ASSERT_EQ(COND1,COND2){
+  if (COND1 != COND2) return -1;
+}
 
 static void show_error(void)
 {   
@@ -36,7 +43,7 @@ void buffer_reset(data_buffer *db)
   db->item_cnt = 0;
   db->head = db->buffer;
   db->tail = db->buffer;
-  db->buffer_end = (char *)db->buffer + maxCap * sz;
+  db->buffer_end = (char *)db->buffer + db->cap * db->item_size;
 }
 
 /** Empty and reset the buffer. */
@@ -76,17 +83,17 @@ int buffer_poll(data_buffer *db, void *item)
 /** The core of compression. */
 int buffer_compress(uint8_t *db, size_t length, uint8_t *comp)
 {
-  size_t comp_sz = (db->item_cnt + (db->item_cnt / 2) + 4) * db->item_size;
+  size_t comp_sz = length + length / 2 + 4;
   comp = malloc(comp_sz);
   memset(comp, 0, comp_sz);
   size_t count = 0;
   
   uint32_t sunk = 0;
   uint32_t polled = 0;
-  while (sunk < input_size) {
-      ASSERT(heatshrink_encoder_sink(&hse, &input[sunk], input_size - sunk, &count) >= 0);
+  while (sunk < length) {
+      ASSERT(heatshrink_encoder_sink(&hse, &db[sunk], length - sunk, &count) >= 0);
       sunk += count;
-        if (sunk == input_size) {
+        if (sunk == length) {
             ASSERT_EQ(HSER_FINISH_MORE, heatshrink_encoder_finish(&hse));
         }
 
@@ -102,11 +109,11 @@ int buffer_compress(uint8_t *db, size_t length, uint8_t *comp)
           show_error(); 
           return BUFFER_ERROR;
         }
-        if (sunk == input_size) {
+        if (sunk == length) {
             ASSERT_EQ(HSER_FINISH_DONE, heatshrink_encoder_finish(&hse));
         }
     }
-  buffer_reset(db);
+//  buffer_reset(db);
   return BUFFER_SUCCESS;
 }
 

@@ -16,6 +16,7 @@
 ".\_build\retarget.o"
 ".\_build\heatshrink_decoder.o"
 ".\_build\heatshrink_encoder.o"
+".\_build\ble_data_buffer.o"
 ".\_build\arm_startup_nrf52.o"
 ".\_build\system_nrf52.o"
 --library_type=microlib --strict --scatter ".\_build\nrf52832_xxaa.sct"

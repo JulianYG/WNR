@@ -13,7 +13,6 @@
 #include "app_fifo.h"
 #include "nrf_error.h"
 #include "app_util.h"
-#include "minilzo.h"
 
 static __INLINE uint32_t fifo_length(app_fifo_t * p_fifo)
 {

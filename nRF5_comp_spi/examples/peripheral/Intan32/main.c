@@ -33,7 +33,6 @@
 #include "app_timer.h"
 #include "nordic_common.h"
 #include "nrf.h"
-
 #include "ble_data_buffer.h"
 
 /********************************** DATA ACQUISITION DEFINITIONS ************************************************/
@@ -91,7 +90,7 @@ static uint8_t m_tx_data_spi[TX_MSG_LENGTH]; ///< SPI master TX buffer.
 static uint8_t m_rx_data_spi[RX_MSG_LENGTH]; ///< SPI master RX buffer.
 
 static volatile bool m_transfer_completed = true;
-static spi_master_ex_state_t m_spi_master_ex_state = (spi_master_ex_state_t)0;
+//static spi_master_ex_state_t m_spi_master_ex_state = (spi_master_ex_state_t)0;
 
 static const nrf_drv_spi_t m_spi_master_0 = NRF_DRV_SPI_INSTANCE(0);
 
@@ -101,7 +100,7 @@ static const nrf_drv_spi_t m_spi_master_0 = NRF_DRV_SPI_INSTANCE(0);
 #define DATA_BUF_SIZE 	(2048U)                                                /**<buffer size for each data buffer.> */
 #define TRANSMISSION_BUF_SIZE 	(DATA_BUF_SIZE + (DATA_BUF_SIZE / 2) + 4)          /**<buffer size for the transmission buffer.> */
 
-static data_buffer db = {};
+static data_buffer db = {0};
 static int intan_convert_channel = 0;
 
 static uint8_t *transmission_buffer;                                           /**<Buffer for storing and sending the compressed data>*/
@@ -267,8 +266,8 @@ void app_error_handler_main(uint32_t error_code, uint32_t line_num, const uint8_
  */
 void spi_master_0_event_handler(nrf_drv_spi_evt_type_t* event)
 {
-    uint32_t err_code = NRF_SUCCESS;
-	  uint32_t c_buff;   // Temporarily store the buffer index of the buffer ready to be compressed
+//    uint32_t err_code = NRF_SUCCESS;
+//	  uint32_t c_buff;   // Temporarily store the buffer index of the buffer ready to be compressed
 
     switch (*event)
     {
@@ -277,9 +276,10 @@ void spi_master_0_event_handler(nrf_drv_spi_evt_type_t* event)
             
             nrf_drv_spi_uninit(&m_spi_master_0);
             
-            if (buffer_in(&db, m_rx_data_spi[0]) == BUFFER_FULL) {
-              if (buffer_compress(&db, &db->item_cnt, transmission_buffer) != BUFFER_SUCCESS) {
-                buffer_reset(&db);  
+            if (buffer_in(&db, &m_rx_data_spi[0]) == BUFFER_FULL) {
+              if (buffer_compress(db.buffer, db.item_cnt, transmission_buffer) != BUFFER_SUCCESS) {
+             //   buffer_reset(&db);  
+								printf("Error compressing data!\n");
               }
               intan_convert_channel++;
               intan_convert_channel = intan_convert_channel % 32;
@@ -365,8 +365,8 @@ static void spi_master_init(nrf_drv_spi_t const * p_instance, bool lsb)
         config.mosi_pin = SPIM0_MOSI_PIN;
         config.miso_pin = SPIM0_MISO_PIN; // SS not initialized
 				config.ss_pin 	= SPIM0_SS_PIN;
-			  err_code = nrf_drv_spi_init(p_instance, &config,
-            spi_master_0_event_handler);
+//			  err_code = nrf_drv_spi_init(p_instance, &config,
+//            spi_master_0_event_handler);
     }
 
     APP_ERROR_CHECK(err_code);
