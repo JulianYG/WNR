@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\_build\nrf52832_xxaa.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\_build\nrf52832_xxaa.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060061: Last Updated: Tue Mar 22 00:17:49 2016
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060061: Last Updated: Tue Mar 22 00:30:29 2016
 <BR><P>
 <H3>Maximum Stack Usage =        668 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -518,7 +518,8 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_fifo_put
 <LI><a href="#[6e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_drv_uart_tx
 </UL>
-<BR>[Called By]<UL><LI><a href="#[2d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+<BR>[Called By]<UL><LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;buffer_compress
+<LI><a href="#[2d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 <LI><a href="#[30]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;fputc
 </UL>
 
@@ -549,10 +550,11 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[72]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;bsp_configuration
 </UL>
 
-<P><STRONG><a name="[76]"></a>buffer_compress</STRONG> (Thumb, 126 bytes, Stack size 40 bytes, ble_data_buffer.o(i.buffer_compress))
+<P><STRONG><a name="[76]"></a>buffer_compress</STRONG> (Thumb, 146 bytes, Stack size 40 bytes, ble_data_buffer.o(i.buffer_compress))
 <BR><BR>[Stack]<UL><LI>Max Depth = 660<LI>Call Chain = buffer_compress &rArr; heatshrink_encoder_poll &rArr; st_step_search &rArr; find_longest_match
 </UL>
-<BR>[Calls]<UL><LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;show_error
+<BR>[Calls]<UL><LI><a href="#[6d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_uart_put
+<LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;show_error
 <LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;heatshrink_encoder_sink
 <LI><a href="#[7a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;heatshrink_encoder_poll
 <LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;heatshrink_encoder_finish

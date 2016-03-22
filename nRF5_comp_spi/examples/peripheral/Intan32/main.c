@@ -270,13 +270,11 @@ void spi_master_0_event_handler(nrf_drv_spi_evt_type_t* event)
             nrf_drv_spi_uninit(&m_spi_master_0);
             if (buffer_in(&db, &m_rx_data_spi[0]) == BUFFER_FULL) {
               if (buffer_compress(db.buffer, db.item_cnt, transmission_buffer) != BUFFER_SUCCESS) {
-             //   buffer_reset(&db);  
-								printf("Error compressing data!\n");
+							//		buffer_reset(&db);  
+									printf("Error compressing data!\n");
               }
               intan_convert_channel++;
               intan_convert_channel = intan_convert_channel % 32;
-						//	printf("Now the channel num is %d", intan_convert_channel);
-						//		while(app_uart_put(intan_convert_channel + 65) != NRF_SUCCESS);
 						}
 
             m_transfer_completed = true;

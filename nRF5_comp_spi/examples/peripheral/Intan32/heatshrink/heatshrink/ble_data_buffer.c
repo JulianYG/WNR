@@ -90,13 +90,16 @@ int buffer_compress(uint8_t *db, size_t length, uint8_t *comp)
   
   uint32_t sunk = 0;
   uint32_t polled = 0;
+	
+	while(app_uart_put(78) != NRF_SUCCESS); // "N"
+	
   while (sunk < length) {
       ASSERT(heatshrink_encoder_sink(&hse, &db[sunk], length - sunk, &count) >= 0);
       sunk += count;
         if (sunk == length) {
             ASSERT_EQ(HSER_FINISH_MORE, heatshrink_encoder_finish(&hse));
         }
-
+				while(app_uart_put(79) != NRF_SUCCESS);
         HSE_poll_res pres;
         do {                    /* "turn the crank" */
             pres = heatshrink_encoder_poll(&hse, &comp[polled], comp_sz - polled, &count);
