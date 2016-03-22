@@ -1,5 +1,5 @@
 #include "ble_data_buffer.h"
-
+#include "app_uart.h"
 
 int ASSERT(COND){
   if (!(COND)) return -1;
@@ -21,6 +21,7 @@ static void show_error(void)
 /** Initialize the buffer by given pointer, maaximum capacity and element size. */
 void buffer_init(data_buffer *db, size_t maxCap, size_t sz)
 {
+//		while(app_uart_put(71) != NRF_SUCCESS);
     db->buffer = malloc(maxCap * sz);
 
     if(db->buffer == NULL)

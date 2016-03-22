@@ -29,3 +29,5 @@
 .\_build\ble_data_buffer.o: ..\..\heatshrink\heatshrink\heatshrink_common.h
 .\_build\ble_data_buffer.o: ..\..\heatshrink\heatshrink\heatshrink_config.h
 .\_build\ble_data_buffer.o: ..\..\heatshrink\heatshrink\heatshrink_decoder.h
+.\_build\ble_data_buffer.o: ..\..\..\..\..\components\libraries\uart\app_uart.h
+.\_build\ble_data_buffer.o: ..\..\..\..\..\components\libraries\util\app_util_platform.h

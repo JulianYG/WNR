@@ -577,22 +577,23 @@ ARM Macro Assembler    Page 9
               00000000 
               00000000 
 Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M4.fp --apcs=int
-erwork --depend=.\_build\arm_startup_nrf52.d -o.\_build\arm_startup_nrf52.o -I"
-E:\ELEC 494\WNR\nRF5_comp_spi\examples\peripheral\Intan32\pca10036\arm5_no_pack
-s\RTE" -IC:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include -IC:\Keil_v5\ARM\PAC
-K\NordicSemiconductor\nRF_DeviceFamilyPack\8.0.3\Device\Include -IC:\Keil_v5\AR
-M\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.2\Device\Include --predefin
-e="__EVAL SETA 1" --predefine="__MICROLIB SETA 1" --predefine="__UVISION_VERSIO
+erwork --depend=.\_build\arm_startup_nrf52.d -o.\_build\arm_startup_nrf52.o -IC
+:\Users\stephen\Desktop\spring_2016\senior_design\ble\git\nRF5_comp_spi\example
+s\peripheral\Intan32\pca10036\arm5_no_packs\RTE -IC:\Keil_v5\ARM\PACK\ARM\CMSIS
+\4.2.0\CMSIS\Include -IC:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamily
+Pack\8.0.3\Device\Include -IC:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceF
+amilyPack\8.3.2\Device\Include --predefine="__EVAL SETA 1" --predefine="__MICRO
 
 
 
 ARM Macro Assembler    Page 10 
 
 
-N SETA 517" --predefine="_RTE_ SETA 1" --predefine="NRF52 SETA 1" --predefine="
-BOARD_PCA10036 SETA 1" --predefine="CONFIG_GPIO_AS_PINRESET SETA 1" --predefine
-="NRF52 SETA 1" --predefine="SWI_DISABLE0 SETA 1" --list=.\_build\arm_startup_n
-rf52.lst RTE\Device\nRF52832_xxAA\arm_startup_nrf52.s
+LIB SETA 1" --predefine="__UVISION_VERSION SETA 517" --predefine="_RTE_ SETA 1"
+ --predefine="NRF52 SETA 1" --predefine="BOARD_PCA10036 SETA 1" --predefine="CO
+NFIG_GPIO_AS_PINRESET SETA 1" --predefine="NRF52 SETA 1" --predefine="SWI_DISAB
+LE0 SETA 1" --list=.\_build\arm_startup_nrf52.lst RTE\Device\nRF52832_xxAA\arm_
+startup_nrf52.s
 
 
 
