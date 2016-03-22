@@ -25,7 +25,6 @@ void buffer_init(data_buffer *db, size_t maxCap, size_t sz)
 
     if(db->buffer == NULL)
       show_error(); // handle error
-    
 
     db->buffer_end = (char *)db->buffer + maxCap * sz;
 

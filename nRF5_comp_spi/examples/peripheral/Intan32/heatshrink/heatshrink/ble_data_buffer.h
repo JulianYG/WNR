@@ -25,7 +25,7 @@ typedef struct data_buffer
 	void *tail;	// pointer to the tail
 } data_buffer;
 
-typedef struct wnr_data 
+typedef struct wnr_data
 {
 	uint8_t *data;
 	size_t size;

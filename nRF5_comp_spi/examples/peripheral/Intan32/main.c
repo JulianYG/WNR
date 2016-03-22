@@ -391,7 +391,6 @@ static void spi_send_recv(nrf_drv_spi_t const * p_instance,
     //APP_ERROR_CHECK(err_code);
 }
 
-
 /**@brief Function for executing and switching state.
  *
  */
@@ -441,12 +440,12 @@ void intan_setup(void){
     	
     }
     for (int j =0; j<2; j++){
-		while (!m_transfer_completed){};
-    	        
-    	m_transfer_completed = false;
-    	intan_dummy(m_tx_data_spi, m_rx_data_spi);
-    	switch_state();
-    	//nrf_delay_ms(DELAY_MS);
+  		while (!m_transfer_completed){};
+      	        
+      	m_transfer_completed = false;
+      	intan_dummy(m_tx_data_spi, m_rx_data_spi);
+      	switch_state();
+      	//nrf_delay_ms(DELAY_MS);
     }
 }
 
