@@ -1,0 +1,22 @@
+;#<FEEDBACK># ARM Linker, 5060061: Last Updated: Wed Mar 30 14:51:39 2016
+;VERSION 0.2
+;FILE arm_startup_nrf51.o
+;FILE main.o
+__asm___6_main_c_b9fff772____REV16 <= USED 0
+__asm___6_main_c_b9fff772____REVSH <= USED 0
+;FILE micro_esb.o
+__asm___11_micro_esb_c_01f93b7e____REV16 <= USED 0
+__asm___11_micro_esb_c_01f93b7e____REVSH <= USED 0
+uesb_disable <= USED 0
+uesb_flush_rx <= USED 0
+uesb_set_rf_channel <= USED 0
+uesb_set_tx_power <= USED 0
+uesb_start_rx <= USED 0
+uesb_start_tx <= USED 0
+uesb_stop_rx <= USED 0
+uesb_write_ack_payload <= USED 0
+uesb_write_tx_payload_noack <= USED 0
+;FILE system_nrf51.o
+SystemCoreClockUpdate <= USED 0
+__asm___14_system_nrf51_c_5d646a67____REV16 <= USED 0
+__asm___14_system_nrf51_c_5d646a67____REVSH <= USED 0

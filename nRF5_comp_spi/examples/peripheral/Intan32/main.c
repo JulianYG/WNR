@@ -418,7 +418,7 @@ int main(void)
 
     APP_UART_FIFO_INIT(&comm_params,
                          UART_RX_BUF_SIZE,
-                         UART_TX_BUF_SIZE,
+                          UART_TX_BUF_SIZE,
                          uart_error_handle,
                          APP_IRQ_PRIORITY_LOW,
                          err_code);
