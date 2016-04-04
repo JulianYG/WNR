@@ -167,6 +167,8 @@ void timers_init(void);
 void data_collection_timers_start(void);
 void sample_data(void);
 
+int send_data(uint8_t *data, int length);
+
 
 /********************************** COMPRESSION PROTOTYPE ************************************************/
 void compression_init(void);
@@ -673,6 +675,18 @@ void compress(uint32_t buf, uint32_t size)
 	// Finished compression.
 	buffers_ready[buf] = false;
 	printf("Buf %d compression done\r\n", buf);
+		
+	send_data(transmission_buffer, polled);
+		
+}
+
+int send_data(uint8_t *data, int length)
+{
+	for (int i = 0; i < length; ++i) {
+		tx_payload.data[i % 8] = data[i];
+		if (i > 0 && i % 8 == 0)
+			uesb_write_tx_payload(&tx_payload);
+	}
 }
 
 void sample_data(void)
@@ -883,7 +897,8 @@ int main(void)
 		if (uesb_init(&uesb_config)!= UESB_SUCCESS) {
 				printf("ESB init messed up\r\n");
 		}
-		
+		tx_payload.length = UESB_CORE_MAX_PAYLOAD_LENGTH;
+		tx_payload.pipe = 0;
 		
 		while(app_uart_put(66) != NRF_SUCCESS);
 			
