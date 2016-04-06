@@ -126,19 +126,19 @@ int main(void)
 
     while (true)
     {
-        uint8_t cr;
-        while(app_uart_get(&cr) != NRF_SUCCESS);
-        while(app_uart_put(cr) != NRF_SUCCESS);
+      //  uint8_t cr;
+     //   while(app_uart_get(&cr) != NRF_SUCCESS);
+        while(app_uart_put(65) != NRF_SUCCESS);
 
-        if (cr == 'q' || cr == 'Q')
-        {
-            printf(" \n\rExit!\n\r");
+     //   if (cr == 'q' || cr == 'Q')
+    //    {
+     //       printf(" \n\rExit!\n\r");
 
-            while (true)
-            {
+    //        while (true)
+     //       {
                 // Do nothing.
-            }
-        }
+     //       }
+      //  }
     }
 #else
 

@@ -1,0 +1,161 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: µVision V5.17.0.0
+Copyright (C) 2015 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: Julian Gao, Rice University, LIC=----
+ 
+Tool Versions:
+Toolchain:       MDK-Lite  Version: 5.17
+Toolchain Path:  C:\Keil_v5\ARM\ARMCC\Bin
+C Compiler:      Armcc.exe V5.06 update 1 (build 61)
+Assembler:       Armasm.exe V5.06 update 1 (build 61)
+Linker/Locator:  ArmLink.exe V5.06 update 1 (build 61)
+Library Manager: ArmAr.exe V5.06 update 1 (build 61)
+Hex Converter:   FromElf.exe V5.06 update 1 (build 61)
+CPU DLL:         
+Dialog DLL:      
+Target DLL:      Segger\JL2CM3.dll V2.99.16.0
+Dialog DLL:      TCM.DLL V1.14.6.0
+ 
+<h2>Project:</h2>
+E:\ELEC 494\WNR\nRF5_comp_spi\examples\ble_central\complete_peripheral\pca10040\s132\arm5_no_packs\ble_app_multilink_peripheral_s132_pca10040.uvprojx
+Project File Date:  04/06/2016
+
+<h2>Output:</h2>
+*** Using Compiler 'V5.06 update 1 (build 61)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
+Rebuild target 'nrf52832_xxaa_s132'
+compiling ble_advdata.c...
+compiling ble_advertising.c...
+compiling main.c...
+..\..\..\main.c(349): warning:  #177-D: variable "err_code" was declared but never referenced
+      uint32_t err_code = NRF_SUCCESS;
+..\..\..\main.c(444): warning:  #177-D: variable "err_code" was declared but never referenced
+      uint32_t err_code = NRF_SUCCESS;
+..\..\..\main.c(562): warning:  #167-D: argument of type "void (*)(nrf_drv_spi_evt_type_t *)" is incompatible with parameter of type "nrf_drv_spi_handler_t"
+  				spi_master_0_event_handler);    // EDIT: data collection spi handler
+..\..\..\main.c(606): warning:  #177-D: variable "err_code" was declared but never referenced
+      uint32_t err_code = NRF_SUCCESS;
+..\..\..\main.c(660): warning:  #1294-D: Old-style function ASSERTC
+  int ASSERTC(COND){
+..\..\..\main.c(660): warning:  #1079-D: standard requires that parameter "COND" be given a type by a subsequent declaration ("int" assumed)
+  int ASSERTC(COND){
+..\..\..\main.c(662): warning:  #940-D: missing return statement at end of non-void function "ASSERTC"
+  }
+..\..\..\main.c(664): warning:  #1294-D: Old-style function ASSERT_EQ
+  int ASSERT_EQ(COND1,COND2){
+..\..\..\main.c(664): warning:  #1079-D: standard requires that parameter "COND1" be given a type by a subsequent declaration ("int" assumed)
+  int ASSERT_EQ(COND1,COND2){
+..\..\..\main.c(664): warning:  #1079-D: standard requires that parameter "COND2" be given a type by a subsequent declaration ("int" assumed)
+  int ASSERT_EQ(COND1,COND2){
+..\..\..\main.c(666): warning:  #940-D: missing return statement at end of non-void function "ASSERT_EQ"
+  }
+..\..\..\main.c(1163): warning:  #177-D: variable "err_code" was declared but never referenced
+  	uint32_t err_code;
+..\..\..\main.c(1164): warning:  #177-D: variable "counter" was declared but never referenced
+  	uint32_t counter = 0;
+..\..\..\main.c(1244): warning:  #177-D: variable "err_code" was declared but never referenced
+      uint32_t err_code;
+..\..\..\main.c(1518): warning:  #177-D: variable "err_code" was declared but never referenced
+  {   uint32_t err_code;
+..\..\..\main.c(1700): warning:  #111-D: statement is unreachable
+  		power_manage();
+..\..\..\main.c(95): warning:  #550-D: variable "clear_to_send" was set but never used
+  static bool clear_to_send = false;
+..\..\..\main.c(144): warning:  #550-D: variable "m_intan_function" was set but never used
+  static intan_function m_intan_function = DUMMY; //initialize state for DUMMY
+..\..\..\main.c(151): warning:  #177-D: variable "m_spi_master_ex_state" was declared but never referenced
+  static spi_master_ex_state_t m_spi_master_ex_state = (spi_master_ex_state_t)0;
+..\..\..\main.c(252): warning:  #177-D: function "intan_calibrate" was declared but never referenced
+  static void intan_calibrate(uint8_t * const p_tx_buf,
+..\..\..\main.c(263): warning:  #177-D: function "intan_clear" was declared but never referenced
+  static void intan_clear(uint8_t * const p_tx_buf,
+..\..\..\main.c(775): warning:  #177-D: function "spi_intan_id_handler" was declared but never referenced
+  static void spi_intan_id_handler(void *pvParameter)
+..\..\..\main.c(876): warning:  #177-D: function "test_callback" was declared but never referenced
+  static void test_callback (void *pvParameter)
+..\..\..\main.c(1589): warning:  #177-D: function "ble_init_handler" was declared but never referenced
+  static void ble_init_handler(void* p_context)
+..\..\..\main.c: 24 warnings, 0 errors
+compiling ble_srv_common.c...
+compiling ble_conn_params.c...
+compiling app_uart_fifo.c...
+compiling nrf_delay.c...
+compiling device_manager_peripheral.c...
+compiling nrf_drv_common.c...
+compiling nrf_drv_gpiote.c...
+compiling nrf_drv_uart.c...
+compiling nrf_drv_clock.c...
+compiling pstorage.c...
+compiling RTT_Syscalls_KEIL.c...
+compiling SEGGER_RTT.c...
+compiling SEGGER_RTT_printf.c...
+compiling nrf_soc.c...
+compiling nrf_drv_spi.c...
+compiling app_trace.c...
+compiling app_error.c...
+compiling app_fifo.c...
+compiling nrf_assert.c...
+compiling retarget.c...
+compiling nrf_log.c...
+compiling app_util_platform.c...
+compiling heatshrink_decoder.c...
+compiling app_timer_freertos.c...
+compiling heatshrink_encoder.c...
+..\..\..\heatshrink\heatshrink_encoder.c(394): warning:  #111-D: statement is unreachable
+      (void)hse;
+..\..\..\heatshrink\heatshrink_encoder.c(399): warning:  #111-D: statement is unreachable
+      (void)hse;
+..\..\..\heatshrink\heatshrink_encoder.c: 2 warnings, 0 errors
+compiling softdevice_handler.c...
+compiling list.c...
+compiling croutine.c...
+compiling event_groups.c...
+compiling timers.c...
+compiling queue.c...
+compiling tasks.c...
+compiling port_cmsis.c...
+compiling heap_1.c...
+compiling port_cmsis_systick.c...
+assembling arm_startup_nrf52.s...
+compiling system_nrf52.c...
+compiling port.c...
+linking...
+Program Size: Code=25392 RO-data=1384 RW-data=368 ZI-data=31904  
+FromELF: creating hex file...
+".\_build\nrf52832_xxaa_s132.axf" - 0 Error(s), 26 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: ARM
+                http://www.keil.com/pack/ARM.CMSIS.4.5.0.pack
+                ARM::CMSIS:CORE:4.3.0
+                CMSIS (Cortex Microcontroller Software Interface Standard)
+   * Component: CORE Version: 4.3.0
+
+Package Vendor: NordicSemiconductor
+                http://developer.nordicsemi.com/nRF51_SDK/pieces/nRF_DeviceFamilyPack/NordicSemiconductor.nRF_DeviceFamilyPack.8.3.1.pack
+                NordicSemiconductor::Device:Startup:8.3.1
+                Nordic Semiconductor nRF ARM devices Device Family Pack.
+   * Component: Startup Version: 8.3.1
+
+<h2>Collection of Component include folders:</h2>
+  E:\ELEC 494\WNR\nRF5_comp_spi\examples\ble_central\complete_peripheral\pca10040\s132\arm5_no_packs\RTE
+  C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include
+  C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.1\Device\Include
+  C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.2\Device\Include
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: ARM::CMSIS:CORE:4.3.0
+
+   * Component: NordicSemiconductor::Device:Startup:8.3.1
+      Source file:   Device\Source\arm\arm_startup_nrf52.s
+      Source file:   Device\Source\system_nrf52.c
+      Include file:  Device\Include\system_nrf52.h
+Build Time Elapsed:  00:00:23
+</pre>
+</body>
+</html>
