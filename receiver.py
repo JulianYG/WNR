@@ -2,9 +2,9 @@ import time
 import serial
 import subprocess
 
-class PortReader(object):
+class PortReader:
 
-    def __init__(self, portStr='\\.\COM6'):
+    def __init__(self, portStr):
         """
         Initialize the serial port configurations
         """
@@ -24,14 +24,11 @@ class PortReader(object):
             self.ser.open()
 
     def readBytes(self, numOfBytes=20):
-         dataRead = ''
-         while self.ser.inWaiting() > 0:
-             dataRead += self.ser.read(1)
-             if len(dataRead) == numOfBytes:
-                 return dataRead
+        while self.ser.inWaiting() > 0:
+            return self.ser.read(numOfBytes)
 
     def readPacket(self):
-        packet = self.readBytes(20)
+        packet = self.readBytes()
         if packet is None:
             return ""
         else:
@@ -71,8 +68,8 @@ class PortReader(object):
             if (checkStamp - start) > runTime:
                 return
             packet = self.readPacket()
-            if debug = True:
-                print packet + "PACKET"
+            if debug == True:
+                print packet #+ "PACKET"
             if 'TKENDTKENDTKEND' in packet:
                 numBytes = int(packet[-4:-1])
                 self.sendData2Plot(bufferedData[:numBytes], packet[-5])
@@ -80,7 +77,7 @@ class PortReader(object):
             else:
                 bufferedData += packet
 
-portReader = PortReader()
+portReader = PortReader('/dev/tty.usbmodem1411')    # '\\.\\COM6'
 portReader.openPort()
 #while 1:
 #    print portReader.readPacket()
