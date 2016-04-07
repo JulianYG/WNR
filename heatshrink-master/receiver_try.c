@@ -7,6 +7,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <string.h>
+#include "greatest.h"
 #include "heatshrink_decoder.h"
 
 #define BAUDRATE B38400
@@ -17,9 +18,9 @@
 
 volatile int STOP = FALSE; 
 static heatshrink_decoder hsd;
-static void decode(uint8_t *data, int data_size);
+int decode_data(uint8_t *data, int data_size);
 
-void decode
+int decode_data
 (uint8_t * data, int sz)
 {   
     size_t count = 0;
@@ -29,26 +30,28 @@ void decode
     uint8_t *decomp = malloc(desz);
 
     while (sunk < sz) {
-        GREATEST_ASSERT(heatshrink_decoder_sink(&hsd, &data[sunk], sz - sunk, &count >= 0));
+    //    ASSERT(heatshrink_decoder_sink(&hsd, &data[sunk], sz - sunk, &count >= 0));
+        heatshrink_decoder_sink(&hsd, &data[sunk], sz - sunk, &count);
+
         sunk += count;
         
-        if (sunk == sz) {
-           GREATEST_ASSERT_EQ(HSDR_FINISH_MORE, heatshrink_decoder_finish(&hsd));
-        }
+   //     if (sunk == sz) {
+    //       ASSERT_EQ(HSDR_FINISH_MORE, heatshrink_decoder_finish(&hsd));
+   //     }
 
         HSD_poll_res pres;
         do {
             pres = heatshrink_decoder_poll(&hsd, &decomp[polled],
                 desz - polled, &count);
-            GREATEST_ASSERT(pres >= 0);
+    //        ASSERT(pres >= 0);
             polled += count;
 
         } while (pres == HSDR_POLL_MORE);
 
-        GREATEST_ASSERT_EQ(HSDR_POLL_EMPTY, pres);
+   //     ASSERT_EQ(HSDR_POLL_EMPTY, pres);
         if (sunk == sz) {
             HSD_finish_res fres = heatshrink_decoder_finish(&hsd);
-            GREATEST_ASSERT_EQ(HSDR_FINISH_DONE, fres);
+   //         ASSERT_EQ(HSDR_FINISH_DONE, fres);
         }
     }
     
@@ -97,7 +100,7 @@ int main
         }
         printf(" END\n");
         if (strstr(buf, "TKENDTKENDTKEND") != NULL) {
-            decode(buffered_data, buf[16] * 1000 + buf[17] * 100 + buf[18] * 10 + buf[19]);
+            decode_data(buffered_data, buf[16] * 1000 + buf[17] * 100 + buf[18] * 10 + buf[19]);
             for (int i = 0; i < 2048 + 1024 + 4; ++i) {
                 buffered_data[i] = 0;
             }
