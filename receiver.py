@@ -71,8 +71,8 @@ class PortReader:
             if debug == True:
                 print packet #+ "PACKET"
             if 'TKENDTKENDTKEND' in packet:
-                numBytes = int(packet[-4:-1])
-                self.sendData2Plot(bufferedData[:numBytes], packet[-5])
+                numBytes = 200#int(packet[-4:-1])
+                self.sendData2Plot(bufferedData[:numBytes], 0)#packet[-5])
                 bufferedData = ''
             else:
                 bufferedData += packet
