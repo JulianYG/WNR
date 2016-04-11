@@ -5,7 +5,7 @@
 #include <errno.h>   /* Error number definitions */
 #include <termios.h> /* POSIX terminal control definitions */
 #include <stdint.h>
-#define MODEMDEVICE "/dev/cu.usbmodem1411"
+#define MODEMDEVICE "/dev/tty.usbmodem1411"
 
 int read_port(int fd)
 {
@@ -17,7 +17,7 @@ int read_port(int fd)
     }
 
     for (int i = 0; i < 20; ++i) {
-        printf("%c", buffer[i]);  
+        printf("%hhu ", buffer[i]);  
 
     }
     printf("END\n");
@@ -26,7 +26,7 @@ int read_port(int fd)
 
 int main(void)
 {
-    int fd = open(MODEMDEVICE, O_RDONLY | O_NOCTTY);
+    int fd = open(MODEMDEVICE, O_RDONLY | O_NOCTTY | O_NONBLOCK);
     if (fd < 0) {
         fputs("Unable to open port /dev/tty.usbmodem1411 \n", stderr);
     }

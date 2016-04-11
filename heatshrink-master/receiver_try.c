@@ -30,28 +30,17 @@ int decode_data
     uint8_t *decomp = malloc(desz);
 
     while (sunk < sz) {
-    //    ASSERT(heatshrink_decoder_sink(&hsd, &data[sunk], sz - sunk, &count >= 0));
         heatshrink_decoder_sink(&hsd, &data[sunk], sz - sunk, &count);
-
         sunk += count;
-        
-   //     if (sunk == sz) {
-    //       ASSERT_EQ(HSDR_FINISH_MORE, heatshrink_decoder_finish(&hsd));
-   //     }
-
         HSD_poll_res pres;
-        do {
-            pres = heatshrink_decoder_poll(&hsd, &decomp[polled],
-                desz - polled, &count);
-    //        ASSERT(pres >= 0);
-            polled += count;
 
+        do {
+            pres = heatshrink_decoder_poll(&hsd, &decomp[polled], desz - polled, &count);
+            polled += count;
         } while (pres == HSDR_POLL_MORE);
 
-   //     ASSERT_EQ(HSDR_POLL_EMPTY, pres);
         if (sunk == sz) {
             HSD_finish_res fres = heatshrink_decoder_finish(&hsd);
-   //         ASSERT_EQ(HSDR_FINISH_DONE, fres);
         }
     }
     
@@ -66,7 +55,7 @@ int main
     struct termios oldtio, newtio;
     uint8_t buf[20];
 
-    fd = open(MODEMDEVICE, O_RDWR | O_NOCTTY); 
+    fd = open(MODEMDEVICE, O_RDWR | O_NOCTTY | O_NONBLOCK); 
 
     if (fd < 0) {
         perror(MODEMDEVICE); 
@@ -84,29 +73,31 @@ int main
     newtio.c_lflag = 0;
      
     newtio.c_cc[VTIME]    = 0;    /* inter-character timer unused */
-    newtio.c_cc[VMIN]     = 20;   /* blocking read until 5 chars received */
+    newtio.c_cc[VMIN]     = 20;   /* blocking read until 20 chars received */
 
     tcflush(fd, TCIFLUSH);
     tcsetattr(fd, TCSANOW, &newtio);
 
     uint8_t buffered_data[2048 + 1024 + 4];  /* Maximum of data packet sum length */
 
+    write(fd, "O", 1);
+
     while (STOP == FALSE) {       /* loop for input */
 
-        for (int i = 0; i < 20; ++i) {
-            buf[i] = 0;     /* Clean from last read first */
-            read(fd, &buf[i], 1);
-            printf("%hhu ", buf[i]);  
-        }
+        res = read(fd, buf, 19);
+        buf[res] = '\0';
+        printf("%s", buf);  
+        
         printf(" END\n");
-        if (strstr(buf, "TKENDTKENDTKEND") != NULL) {
-            decode_data(buffered_data, buf[16] * 1000 + buf[17] * 100 + buf[18] * 10 + buf[19]);
-            for (int i = 0; i < 2048 + 1024 + 4; ++i) {
-                buffered_data[i] = 0;
-            }
-        } else {
-            strcat(buffered_data, buf);
-        }
+        // if (strstr(buf, "BCD") != NULL) {
+        //     decode_data(buffered_data, buf[16] * 1000 + buf[17] * 100 + buf[18] * 10 + buf[19]);
+        //     printf("DATA OUT!!!");
+        //     for (int i = 0; i < 2048 + 1024 + 4; ++i) {
+        //         buffered_data[i] = 0;
+        //     }
+        // } else {
+        //     strcat(buffered_data, buf);
+        // }
     }
 
     tcsetattr(fd, TCSANOW, &oldtio);

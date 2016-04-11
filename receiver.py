@@ -24,8 +24,15 @@ class PortReader:
             self.ser.open()
 
     def readBytes(self, numOfBytes=20):
-        while self.ser.inWaiting() > 0:
-            return self.ser.read(numOfBytes)
+        bytearr = bytearray(numOfBytes)
+        cur = 0
+        while cur < numOfBytes:
+            read = self.ser.read(1)
+            if len(read) == 1:
+                bytearr[cur] = read[0]
+                cur += 1
+        return bytearr
+
 
     def readPacket(self):
         packet = self.readBytes()
@@ -69,17 +76,16 @@ class PortReader:
                 return
             packet = self.readPacket()
             if debug == True:
-                print packet #+ "PACKET"
+                print packet + "PACKET"
             if 'TKENDTKENDTKEND' in packet:
-                numBytes = 200#int(packet[-4:-1])
+                numBytes = 20 #int(packet[-4:-1])
                 self.sendData2Plot(bufferedData[:numBytes], 0)#packet[-5])
                 bufferedData = ''
             else:
                 bufferedData += packet
 
-portReader = PortReader('/dev/tty.usbmodem1411')    # '\\.\\COM6'
+portReader = PortReader('/dev/tty.usbmodem1411')    # '\\.\COM6'
 portReader.openPort()
-#while 1:
-#    print portReader.readPacket()
+
 portReader.run(debug=True)
 
