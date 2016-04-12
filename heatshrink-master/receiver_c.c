@@ -85,7 +85,7 @@ int main
    newtio.c_cc[VERASE]   = 0;     /* del */
    newtio.c_cc[VKILL]    = 0;     /* @ */
    newtio.c_cc[VEOF]     = 4;     /* Ctrl-d */
-   newtio.c_cc[VTIME]    = 10;     /* inter-character timer unused */
+   newtio.c_cc[VTIME]    = 0;     /* inter-character timer unused */
    newtio.c_cc[VMIN]     = 20;     /* blocking read until 1 character arrives */
    newtio.c_cc[VSWTC]    = 0;     /* '\0' */
    newtio.c_cc[VSTART]   = 0;     /* Ctrl-q */ 
@@ -117,11 +117,11 @@ int main
         subsequent reads will return the remaining chars. res will be set
         to the actual number of characters actually read */
 
-      
+        
         res = read(fd, buf, 255);
-        printf("%d\n", res); 
+
         for (int i = 0; i < 20; ++i) {
-          printf("%hhu ", buf[i]);  
+          printf("%c ", buf[i]);  
 
         }
 

@@ -36,9 +36,7 @@ class PortReader:
 
     def readPacket(self):
         packet = self.readBytes()
-        if packet is None:
-            return ""
-        else:
+        if packet is not "":
             return packet
 
     def test(self):
@@ -50,15 +48,14 @@ class PortReader:
         This function should call inline C program to use
         heatshrink to decompress the data and send for plot.
         """
-        process = subprocess.Popen("decoder", stdin=subprocess.PIPE, stdout=subprocess.PIPE, shell=True)
-        inpt, output = process.stdin, process.stdout
-        inpt.write(data2Send + ' ' + str(len(data2Send)))
-        print(output.read())
-        inpt.close()
-        output.close()
-        print "Received complete data " + data2Send, deviceNum
+        #process = subprocess.Popen("./decoder", stdin=subprocess.PIPE, stdout=subprocess.PIPE, shell=True)
+        #inpt, output = process.stdin, process.stdout
+        #inpt.write(data2Send + ' ' + str(len(data2Send)))
+        output = subprocess.check_output(["./decoder", str(data2Send), str(len(data2Send))], shell=True)
+        print "Decompressed byte array: " + str(output)
+        print "Received complete data " + data2Send, "Device num: " + str(deviceNum)
 
-    def run(self, runTime=float('inf'), debug=False):
+    def run(self, runTime=float('inf'), debug=False, delimiter=''):
         """
         Start running the data collection program. The
         data packets are coming in with 20 bytes data each,
@@ -69,23 +66,27 @@ class PortReader:
         bytes multiple of 20's.
         """
         start = time.time()
-        bufferedData = ''
+        bufferedData = bytearray([])
         while 1:
             checkStamp = time.time()
             if (checkStamp - start) > runTime:
                 return
             packet = self.readPacket()
             if debug == True:
-                print packet + "PACKET"
-            if 'TKENDTKENDTKEND' in packet:
+                if packet is not None:
+                    print packet + " PACKET"
+                else:
+                    print "Did not receive any packets!"
+            if delimiter in packet:# == packet[-len(delimiter):]:
                 numBytes = 20 #int(packet[-4:-1])
-                self.sendData2Plot(bufferedData[:numBytes], 0)#packet[-5])
-                bufferedData = ''
+                bufferedData += packet[:numBytes - len(delimiter)]
+                self.sendData2Plot(bufferedData, 0)#packet[-5])
+                bufferedData = bytearray([])
             else:
-                bufferedData += packet
+                if packet is not None:
+                    bufferedData += packet
 
 portReader = PortReader('/dev/tty.usbmodem1411')    # '\\.\COM6'
 portReader.openPort()
-
-portReader.run(debug=True)
+portReader.run(debug=True, delimiter='BCDEF')
 
