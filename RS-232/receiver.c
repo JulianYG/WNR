@@ -37,7 +37,6 @@ int main(void)
 
     uint8_t buf[21];
     uint8_t data[MAX_DATA_SIZE];
-    memset(data, 0, MAX_DATA_SIZE);	/* Initialize the array */
 
     char mode[] = {'8','N','1',0};
 
@@ -58,6 +57,11 @@ int main(void)
 		        }
 		    }
 
+		    if (arr_search("TKENDTKENDTKENDTKEND", 20, buf, n) > 0) {
+		    	printf("%s\n", "Starting reception...");
+		    	memset(data, 0, MAX_DATA_SIZE);	/* Initialize the array */
+		    }
+
 		    printf("Received %i bytes: %s\n", n, (char *) buf);
 	
 		    int pos = -1;
@@ -69,19 +73,20 @@ int main(void)
 		    	received_cnt += eff_len;
 		    	/* Discard the last five bytes of indicators*/
 		    	char size_num[2];
-
-		    	memcpy(size_num, buf + pos + 2, 2);
-		    	int size = (int) strtol(size_num, NULL, 2);
+		    	memcpy(size_num, buf + pos + 1, 2);
+		    	printf("%d ", size_num[0]);
+		    	printf("%d ", size_num[1]);
+		    	int size = (int) strtol(size_num, NULL, 16);
 		    	printf("%d\n", size);
 		    	decompress(data, size);
 		    	/* Clean up */
 		    	memset(data, 0, MAX_DATA_SIZE);
 		    	received_cnt = 0;	
 		    	/* Also need to store rest of the data to avoid loss */
-		    	uint8_t lost[n - eff_len - 5];
-		    	memcpy(lost, buf + pos + 1, n - pos - 1);
-		    	memcpy(data, lost, n - pos - 1);
-		    	received_cnt += n - pos - 1;
+		    	// uint8_t lost[n - eff_len - 5];
+		    	// memcpy(lost, buf + pos + 1, n - pos - 1);
+		    	// memcpy(data, lost, n - pos - 1);
+		    	// received_cnt += n - pos - 1;
 		    } else {	/* If regular data packets, store it*/
 		    	memcpy(data + received_cnt, buf, n);
 		    	received_cnt = received_cnt + n;
@@ -116,7 +121,7 @@ int main(void)
             pres = heatshrink_decoder_poll(&hsd, &decomp[polled],
                 decomp_sz - polled, &count);
             polled += count;
-            printf("%d", count);
+        //   printf("%d", count);
         } while (pres == HSDR_POLL_MORE);
         if (sunk == compressed_size) {
             HSD_finish_res fres = heatshrink_decoder_finish(&hsd);
