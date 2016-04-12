@@ -59,23 +59,29 @@ int main(void)
 		    }
 
 		    printf("Received %i bytes: %s\n", n, (char *) buf);
-
-		    if ((int pos = arr_search("BCDEF", 5, buf, n)) >= 0) {	/* If receiving the end of current compressed buffer, send & reinitialize */
-		    	int eff_len = pos - 5;
+	
+		    int pos = -1;
+		    if ((pos = arr_search("TKENDTKENDTKENDTKE", 18, buf, n)) >= 0) {	/* If receiving the end of current compressed buffer, send & reinitialize */
+		    	int eff_len = pos - 18 + 1;
 		    	uint8_t temp[eff_len];
 		    	memcpy(temp, buf, eff_len);
 		    	memcpy(data + received_cnt, temp, eff_len);
 		    	received_cnt += eff_len;
 		    	/* Discard the last five bytes of indicators*/
-		    	decompress(data, received_cnt);
+		    	char size_num[2];
+
+		    	memcpy(size_num, buf + pos + 2, 2);
+		    	int size = (int) strtol(size_num, NULL, 2);
+		    	printf("%d\n", size);
+		    	decompress(data, size);
 		    	/* Clean up */
 		    	memset(data, 0, MAX_DATA_SIZE);
 		    	received_cnt = 0;	
 		    	/* Also need to store rest of the data to avoid loss */
 		    	uint8_t lost[n - eff_len - 5];
-		    	memcpy(lost, buf + pos, n - pos);
-		    	memcpy(data, lost, n - pos);
-		    	received_cnt += n - pos;
+		    	memcpy(lost, buf + pos + 1, n - pos - 1);
+		    	memcpy(data, lost, n - pos - 1);
+		    	received_cnt += n - pos - 1;
 		    } else {	/* If regular data packets, store it*/
 		    	memcpy(data + received_cnt, buf, n);
 		    	received_cnt = received_cnt + n;
@@ -102,22 +108,18 @@ int main(void)
     uint32_t polled = 0;
 
     while (sunk < compressed_size) {
-        ASSERT(heatshrink_decoder_sink(&hsd, &input[sunk], compressed_size - sunk, &count) >= 0);
+        heatshrink_decoder_sink(&hsd, &input[sunk], compressed_size - sunk, &count);
         sunk += count;
-        if (sunk == compressed_size) {
-            ASSERT_EQ(HSDR_FINISH_MORE, heatshrink_decoder_finish(&hsd));
-        }
+
         HSD_poll_res pres;
         do {
             pres = heatshrink_decoder_poll(&hsd, &decomp[polled],
                 decomp_sz - polled, &count);
-            ASSERT(pres >= 0);
             polled += count;
+            printf("%d", count);
         } while (pres == HSDR_POLL_MORE);
-        ASSERT_EQ(HSDR_POLL_EMPTY, pres);
         if (sunk == compressed_size) {
             HSD_finish_res fres = heatshrink_decoder_finish(&hsd);
-            ASSERT_EQ(HSDR_FINISH_DONE, fres);
         }
     }
     for (int i = 0; i < polled; ++i) {
@@ -131,7 +133,7 @@ int arr_search(uint8_t *toSearch, int lenSearch, uint8_t *arr, int lenArr)
 	int pos_search = 0;
 	int pos_arr = 0;
 	/* Start the loop for search */
-	for (pos_arr = 0; pos_arr < lenArr - lenSearch; ++pos_arr) {
+	for (pos_arr = 0; pos_arr < lenArr + lenSearch; ++pos_arr) {
 		if (arr[pos_arr] == toSearch[pos_search]) {
 			++pos_search;
 			if (pos_search == lenSearch) {	/* Match case */
