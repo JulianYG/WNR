@@ -94,13 +94,9 @@ static int compress_and_expand_and_check(uint8_t *input, uint32_t input_size) {
     heatshrink_decoder_reset(&hsd);
     // allocate memory for before and after
     size_t comp_sz = input_size + (input_size/2) + 4;
-    size_t decomp_sz = input_size + (input_size/2) + 4;
     uint8_t *comp = malloc(comp_sz);
-    uint8_t *decomp = malloc(decomp_sz);
     if (comp == NULL) printf("malloc fail\r\n");
-    if (decomp == NULL) printf("malloc fail\r\n");
     memset(comp, 0, comp_sz);
-    memset(decomp, 0, decomp_sz);
 
     size_t count = 0;
 
@@ -129,63 +125,14 @@ static int compress_and_expand_and_check(uint8_t *input, uint32_t input_size) {
             ASSERT_EQ(HSER_FINISH_DONE, heatshrink_encoder_finish(&hse));
         }
     }
-
-    float compression_ratio  = (float)(input_size-polled)/(float)(input_size);
-
-    printf("in: %u compressed: %u ratio: %.2f \r\n", input_size, polled, compression_ratio);
-		for(int time_ctr = 0; time_ctr <10000; time_ctr ++);
-		for(int time_ctr = 0; time_ctr <100000; time_ctr ++);
-		for(int time_ctr = 0; time_ctr <100000; time_ctr ++);
-		for(int time_ctr = 0; time_ctr <100000; time_ctr ++);
-		for(int time_ctr = 0; time_ctr <100000; time_ctr ++);
-		for(int time_ctr = 0; time_ctr <100000; time_ctr ++);
-		
-    uint32_t compressed_size = polled;
-    sunk = 0;
-    polled = 0;
-    
-    while (sunk < compressed_size) {
-        ASSERT(heatshrink_decoder_sink(&hsd, &comp[sunk], compressed_size - sunk, &count) >= 0);
-        sunk += count;
-        if (sunk == compressed_size) {
-            ASSERT_EQ(HSDR_FINISH_MORE, heatshrink_decoder_finish(&hsd));
-        }
-
-        HSD_poll_res pres;
-        do {
-            pres = heatshrink_decoder_poll(&hsd, &decomp[polled],
-                decomp_sz - polled, &count);
-            ASSERT(pres >= 0);
-            polled += count;
-        } while (pres == HSDR_POLL_MORE);
-        ASSERT_EQ(HSDR_POLL_EMPTY, pres);
-        if (sunk == compressed_size) {
-            HSD_finish_res fres = heatshrink_decoder_finish(&hsd);
-            ASSERT_EQ(HSDR_FINISH_DONE, fres);
-        }
-
-        if (polled > input_size) {
-            printf("Decompressed data is larger than original input\r\n");
-            show_error();
-            return -1;
-        }
-    }
-    printf("decompressed: %u\r\n", polled);
-    if (polled != input_size) {
-        printf("Decompressed length does not match original input length\r\n");
-        show_error();
-        return -1;
-    }
-
-    for (size_t i=0; i<input_size; i++) {
-        if (input[i] != decomp[i]) {
-            printf("*** mismatch at %zd \r\n", i);
-						show_error();
-        }
-        ASSERT_EQ(input[i], decomp[i]);
-    }
+	for (int i = 0; i < polled; i++) {
+		while(app_uart_put(comp[i]) != NRF_SUCCESS);
+	//	for(int time_ctr = 0; time_ctr <100000; time_ctr ++);
+	}
+//	while(app_uart_put(13) != NRF_SUCCESS);
+	
+//	printf("%d", polled);
     free(comp);
-    free(decomp);
 }
 
 int pseudorandom_data_should_match(uint32_t size) {
@@ -225,35 +172,35 @@ int main(void)
 
     APP_ERROR_CHECK(err_code);
 
-    printf("\n\rStart: \n\r");
+  //  printf("\n\rStart: \n\r");
 		for(int time_ctr = 0; time_ctr <100000; time_ctr ++);
 
 
-    printf("INPUT_BUFFER_SIZE: %u\r\n", HEATSHRINK_STATIC_INPUT_BUFFER_SIZE);
-			for(int time_ctr = 0; time_ctr <100000; time_ctr ++);
-    printf("WINDOW_BITS: %u\r\n", HEATSHRINK_STATIC_WINDOW_BITS);
-			for(int time_ctr = 0; time_ctr <100000; time_ctr ++);
-    printf("LOOKAHEAD_BITS: %u\r\n", HEATSHRINK_STATIC_LOOKAHEAD_BITS);
-		for(int time_ctr = 0; time_ctr <100000; time_ctr ++);
-    printf("sizeof(heatshrink_encoder): %zd\r\n", sizeof(heatshrink_encoder));
-		for(int time_ctr = 0; time_ctr <100000; time_ctr ++);
-    printf("sizeof(heatshrink_decoder): %zd\r\n", sizeof(heatshrink_decoder));
-		for(int time_ctr = 0; time_ctr <100000; time_ctr ++);
+ //   printf("INPUT_BUFFER_SIZE: %u\r\n", HEATSHRINK_STATIC_INPUT_BUFFER_SIZE);
+	//		for(int time_ctr = 0; time_ctr <100000; time_ctr ++);
+  //  printf("WINDOW_BITS: %u\r\n", HEATSHRINK_STATIC_WINDOW_BITS);
+	//		for(int time_ctr = 0; time_ctr <100000; time_ctr ++);
+  //  printf("LOOKAHEAD_BITS: %u\r\n", HEATSHRINK_STATIC_LOOKAHEAD_BITS);
+	//	for(int time_ctr = 0; time_ctr <100000; time_ctr ++);
+ //   printf("sizeof(heatshrink_encoder): %zd\r\n", sizeof(heatshrink_encoder));
+	//	for(int time_ctr = 0; time_ctr <100000; time_ctr ++);
+ //   printf("sizeof(heatshrink_decoder): %zd\r\n", sizeof(heatshrink_decoder));
+	//	for(int time_ctr = 0; time_ctr <100000; time_ctr ++);
 			
-    for (uint32_t size=4; size < 2048; size <<= 1) {
-      pseudorandom_data_should_match(size);
-    }
-		printf("done\r\n");
+ //   for (uint32_t size=4; size < 2048; size <<= 1) {
+      pseudorandom_data_should_match(256);
+//    }
+//		printf("done\r\n");
     while(1);
 		
     while (true)
     {
         uint8_t cr;
-        while(app_uart_get(&cr) != NRF_SUCCESS);
+   //     while(app_uart_get(&cr) != NRF_SUCCESS);
 
         //uint8_t input[COMPRESSION_BUF_SIZE];
     	//fill_with_patient_data(input,size);
-
+				
         while(app_uart_put(cr) != NRF_SUCCESS);
 
         if (cr == 'q' || cr == 'Q')

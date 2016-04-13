@@ -1,0 +1,9 @@
+IROM1: 
+	- Start: 0x1B000
+	- Size: 0x65000
+	- Startup: yes
+
+IRAM1: 
+	- Start: 0x20001F00
+	- Size: 0x6100
+	- Noinit: not checked

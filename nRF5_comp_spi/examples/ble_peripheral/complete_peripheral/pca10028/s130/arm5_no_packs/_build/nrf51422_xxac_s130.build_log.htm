@@ -1,0 +1,1304 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: µVision V5.17.0.0
+Copyright (C) 2015 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: Julian Gao, Rice University, LIC=----
+ 
+Tool Versions:
+Toolchain:       MDK-Lite  Version: 5.17
+Toolchain Path:  C:\Keil_v5\ARM\ARMCC\Bin
+C Compiler:      Armcc.exe V5.06 update 1 (build 61)
+Assembler:       Armasm.exe V5.06 update 1 (build 61)
+Linker/Locator:  ArmLink.exe V5.06 update 1 (build 61)
+Library Manager: ArmAr.exe V5.06 update 1 (build 61)
+Hex Converter:   FromElf.exe V5.06 update 1 (build 61)
+CPU DLL:         
+Dialog DLL:      
+Target DLL:      Segger\JL2CM3.dll V2.99.16.0
+Dialog DLL:      TARMCM1.DLL V1.9.0.0
+ 
+<h2>Project:</h2>
+E:\ELEC 494\WNR\nRF5_comp_spi\examples\ble_central\complete_peripheral\pca10028\s130\arm5_no_packs\ble_app_multilink_peripheral_s130_pca10028.uvprojx
+Project File Date:  04/12/2016
+
+<h2>Output:</h2>
+*** Using Compiler 'V5.06 update 1 (build 61)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
+Rebuild target 'nrf51422_xxac_s130'
+compiling bsp_btn_ble.c...
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h(453): error:  #20: identifier "NRF_GPIO_Type" is undefined
+      
+RF_GPIO->PIN_CNF[pin_number] = ((uint32_t)dir   << GPIO_PIN_CNF_DIR_Pos)
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h(453): error:  #29: expected an expression
+      
+RF_GPIO->PIN_CNF[pin_number] = ((uint32_t)dir   << GPIO_PIN_CNF_DIR_Pos)
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h(453): error:  #18: expected a ")"
+      
+RF_GPIO->PIN_CNF[pin_number] = ((uint32_t)dir   << GPIO_PIN_CNF_DIR_Pos)
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h(496): error:  #20: identifier "NRF_GPIO_Type" is undefined
+      uint32_t cnf = 
+RF_GPIO->PIN_CNF[pin_number] & ~GPIO_PIN_CNF_INPUT_Msk;
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h(496): error:  #29: expected an expression
+      uint32_t cnf = 
+RF_GPIO->PIN_CNF[pin_number] & ~GPIO_PIN_CNF_INPUT_Msk;
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h(496): error:  #18: expected a ")"
+      uint32_t cnf = 
+RF_GPIO->PIN_CNF[pin_number] & ~GPIO_PIN_CNF_INPUT_Msk;
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h(497): error:  #29: expected an expression
+      
+RF_GPIO->PIN_CNF[pin_number] = cnf | (GPIO_PIN_CNF_INPUT_Connect << GPIO_PIN_CNF_INPUT_Pos);
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h(497): error:  #18: expected a ")"
+      
+RF_GPIO->PIN_CNF[pin_number] = cnf | (GPIO_PIN_CNF_INPUT_Connect << GPIO_PIN_CNF_INPUT_Pos);
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h(503): error:  #20: identifier "NRF_GPIO_Type" is undefined
+      uint32_t cnf = 
+RF_GPIO->PIN_CNF[pin_number] & ~GPIO_PIN_CNF_INPUT_Msk;
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h(503): error:  #29: expected an expression
+      uint32_t cnf = 
+RF_GPIO->PIN_CNF[pin_number] & ~GPIO_PIN_CNF_INPUT_Msk;
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h(503): error:  #18: expected a ")"
+      uint32_t cnf = 
+RF_GPIO->PIN_CNF[pin_number] & ~GPIO_PIN_CNF_INPUT_Msk;
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h(504): error:  #29: expected an expression
+      
+RF_GPIO->PIN_CNF[pin_number] = cnf | (GPIO_PIN_CNF_INPUT_Disconnect << GPIO_PIN_CNF_INPUT_Pos);
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h(504): error:  #18: expected a ")"
+      
+RF_GPIO->PIN_CNF[pin_number] = cnf | (GPIO_PIN_CNF_INPUT_Disconnect << GPIO_PIN_CNF_INPUT_Pos);
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h(522): error:  #20: identifier "NRF_GPIO_Type" is undefined
+      
+RF_GPIO->PIN_CNF[pin_number] &= ~GPIO_PIN_CNF_SENSE_Msk;
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h(522): error:  #29: expected an expression
+      
+RF_GPIO->PIN_CNF[pin_number] &= ~GPIO_PIN_CNF_SENSE_Msk;
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h(522): error:  #18: expected a ")"
+      
+RF_GPIO->PIN_CNF[pin_number] &= ~GPIO_PIN_CNF_SENSE_Msk;
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h(523): error:  #29: expected an expression
+      
+RF_GPIO->PIN_CNF[pin_number] |= (sense_config << GPIO_PIN_CNF_SENSE_Pos);
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h(523): error:  #18: expected a ")"
+      
+RF_GPIO->PIN_CNF[pin_number] |= (sense_config << GPIO_PIN_CNF_SENSE_Pos);
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h(540): error:  #20: identifier "NRF_GPIO_Type" is undefined
+          
+RF_GPIO->DIRSET = (1UL << pin_number);
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h(540): error:  #29: expected an expression
+          
+RF_GPIO->DIRSET = (1UL << pin_number);
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h(540): error:  #18: expected a ")"
+          
+RF_GPIO->DIRSET = (1UL << pin_number);
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h(546): error:  #20: identifier "NRF_GPIO_Type" is undefined
+      
+RF_GPIO->OUTSET = (1UL << pin_number);
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h(546): error:  #29: expected an expression
+      
+RF_GPIO->OUTSET = (1UL << pin_number);
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h(546): error:  #18: expected a ")"
+      
+RF_GPIO->OUTSET = (1UL << pin_number);
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h(551): error:  #20: identifier "NRF_GPIO_Type" is undefined
+      
+RF_GPIO->OUTSET = pin_mask;
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h(551): error:  #29: expected an expression
+      
+RF_GPIO->OUTSET = pin_mask;
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h(551): error:  #18: expected a ")"
+      
+RF_GPIO->OUTSET = pin_mask;
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h(556): error:  #20: identifier "NRF_GPIO_Type" is undefined
+      
+RF_GPIO->OUTCLR = (1UL << pin_number);
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h(556): error:  #29: expected an expression
+      
+RF_GPIO->OUTCLR = (1UL << pin_number);
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h(556): error:  #18: expected a ")"
+      
+RF_GPIO->OUTCLR = (1UL << pin_number);
+..\..\..\..\..\bsp\bsp_btn_ble.c: 0 warnings, 30 errors
+compiling bsp.c...
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h(453): error:  #20: identifier "NRF_GPIO_Type" is undefined
+      
+RF_GPIO->PIN_CNF[pin_number] = ((uint32_t)dir   << GPIO_PIN_CNF_DIR_Pos)
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h(453): error:  #29: expected an expression
+      
+RF_GPIO->PIN_CNF[pin_number] = ((uint32_t)dir   << GPIO_PIN_CNF_DIR_Pos)
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h(453): error:  #18: expected a ")"
+      
+RF_GPIO->PIN_CNF[pin_number] = ((uint32_t)dir   << GPIO_PIN_CNF_DIR_Pos)
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h(496): error:  #20: identifier "NRF_GPIO_Type" is undefined
+      uint32_t cnf = 
+RF_GPIO->PIN_CNF[pin_number] & ~GPIO_PIN_CNF_INPUT_Msk;
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h(496): error:  #29: expected an expression
+      uint32_t cnf = 
+RF_GPIO->PIN_CNF[pin_number] & ~GPIO_PIN_CNF_INPUT_Msk;
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h(496): error:  #18: expected a ")"
+      uint32_t cnf = 
+RF_GPIO->PIN_CNF[pin_number] & ~GPIO_PIN_CNF_INPUT_Msk;
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h(497): error:  #29: expected an expression
+      
+RF_GPIO->PIN_CNF[pin_number] = cnf | (GPIO_PIN_CNF_INPUT_Connect << GPIO_PIN_CNF_INPUT_Pos);
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h(497): error:  #18: expected a ")"
+      
+RF_GPIO->PIN_CNF[pin_number] = cnf | (GPIO_PIN_CNF_INPUT_Connect << GPIO_PIN_CNF_INPUT_Pos);
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h(503): error:  #20: identifier "NRF_GPIO_Type" is undefined
+      uint32_t cnf = 
+RF_GPIO->PIN_CNF[pin_number] & ~GPIO_PIN_CNF_INPUT_Msk;
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h(503): error:  #29: expected an expression
+      uint32_t cnf = 
+RF_GPIO->PIN_CNF[pin_number] & ~GPIO_PIN_CNF_INPUT_Msk;
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h(503): error:  #18: expected a ")"
+      uint32_t cnf = 
+RF_GPIO->PIN_CNF[pin_number] & ~GPIO_PIN_CNF_INPUT_Msk;
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h(504): error:  #29: expected an expression
+      
+RF_GPIO->PIN_CNF[pin_number] = cnf | (GPIO_PIN_CNF_INPUT_Disconnect << GPIO_PIN_CNF_INPUT_Pos);
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h(504): error:  #18: expected a ")"
+      
+RF_GPIO->PIN_CNF[pin_number] = cnf | (GPIO_PIN_CNF_INPUT_Disconnect << GPIO_PIN_CNF_INPUT_Pos);
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h(522): error:  #20: identifier "NRF_GPIO_Type" is undefined
+      
+RF_GPIO->PIN_CNF[pin_number] &= ~GPIO_PIN_CNF_SENSE_Msk;
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h(522): error:  #29: expected an expression
+      
+RF_GPIO->PIN_CNF[pin_number] &= ~GPIO_PIN_CNF_SENSE_Msk;
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h(522): error:  #18: expected a ")"
+      
+RF_GPIO->PIN_CNF[pin_number] &= ~GPIO_PIN_CNF_SENSE_Msk;
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h(523): error:  #29: expected an expression
+      
+RF_GPIO->PIN_CNF[pin_number] |= (sense_config << GPIO_PIN_CNF_SENSE_Pos);
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h(523): error:  #18: expected a ")"
+      
+RF_GPIO->PIN_CNF[pin_number] |= (sense_config << GPIO_PIN_CNF_SENSE_Pos);
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h(540): error:  #20: identifier "NRF_GPIO_Type" is undefined
+          
+RF_GPIO->DIRSET = (1UL << pin_number);
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h(540): error:  #29: expected an expression
+          
+RF_GPIO->DIRSET = (1UL << pin_number);
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h(540): error:  #18: expected a ")"
+          
+RF_GPIO->DIRSET = (1UL << pin_number);
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h(546): error:  #20: identifier "NRF_GPIO_Type" is undefined
+      
+RF_GPIO->OUTSET = (1UL << pin_number);
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h(546): error:  #29: expected an expression
+      
+RF_GPIO->OUTSET = (1UL << pin_number);
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h(546): error:  #18: expected a ")"
+      
+RF_GPIO->OUTSET = (1UL << pin_number);
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h(551): error:  #20: identifier "NRF_GPIO_Type" is undefined
+      
+RF_GPIO->OUTSET = pin_mask;
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h(551): error:  #29: expected an expression
+      
+RF_GPIO->OUTSET = pin_mask;
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h(551): error:  #18: expected a ")"
+      
+RF_GPIO->OUTSET = pin_mask;
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h(556): error:  #20: identifier "NRF_GPIO_Type" is undefined
+      
+RF_GPIO->OUTCLR = (1UL << pin_number);
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h(556): error:  #29: expected an expression
+      
+RF_GPIO->OUTCLR = (1UL << pin_number);
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h(556): error:  #18: expected a ")"
+      
+RF_GPIO->OUTCLR = (1UL << pin_number);
+..\..\..\..\..\bsp\bsp.c: 0 warnings, 30 errors
+compiling main.c...
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h(453): error:  #20: identifier "NRF_GPIO_Type" is undefined
+      
+RF_GPIO->PIN_CNF[pin_number] = ((uint32_t)dir   << GPIO_PIN_CNF_DIR_Pos)
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h(453): error:  #29: expected an expression
+      
+RF_GPIO->PIN_CNF[pin_number] = ((uint32_t)dir   << GPIO_PIN_CNF_DIR_Pos)
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h(453): error:  #18: expected a ")"
+      
+RF_GPIO->PIN_CNF[pin_number] = ((uint32_t)dir   << GPIO_PIN_CNF_DIR_Pos)
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h(496): error:  #20: identifier "NRF_GPIO_Type" is undefined
+      uint32_t cnf = 
+RF_GPIO->PIN_CNF[pin_number] & ~GPIO_PIN_CNF_INPUT_Msk;
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h(496): error:  #29: expected an expression
+      uint32_t cnf = 
+RF_GPIO->PIN_CNF[pin_number] & ~GPIO_PIN_CNF_INPUT_Msk;
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h(496): error:  #18: expected a ")"
+      uint32_t cnf = 
+RF_GPIO->PIN_CNF[pin_number] & ~GPIO_PIN_CNF_INPUT_Msk;
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h(497): error:  #29: expected an expression
+      
+RF_GPIO->PIN_CNF[pin_number] = cnf | (GPIO_PIN_CNF_INPUT_Connect << GPIO_PIN_CNF_INPUT_Pos);
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h(497): error:  #18: expected a ")"
+      
+RF_GPIO->PIN_CNF[pin_number] = cnf | (GPIO_PIN_CNF_INPUT_Connect << GPIO_PIN_CNF_INPUT_Pos);
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h(503): error:  #20: identifier "NRF_GPIO_Type" is undefined
+      uint32_t cnf = 
+RF_GPIO->PIN_CNF[pin_number] & ~GPIO_PIN_CNF_INPUT_Msk;
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h(503): error:  #29: expected an expression
+      uint32_t cnf = 
+RF_GPIO->PIN_CNF[pin_number] & ~GPIO_PIN_CNF_INPUT_Msk;
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h(503): error:  #18: expected a ")"
+      uint32_t cnf = 
+RF_GPIO->PIN_CNF[pin_number] & ~GPIO_PIN_CNF_INPUT_Msk;
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h(504): error:  #29: expected an expression
+      
+RF_GPIO->PIN_CNF[pin_number] = cnf | (GPIO_PIN_CNF_INPUT_Disconnect << GPIO_PIN_CNF_INPUT_Pos);
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h(504): error:  #18: expected a ")"
+      
+RF_GPIO->PIN_CNF[pin_number] = cnf | (GPIO_PIN_CNF_INPUT_Disconnect << GPIO_PIN_CNF_INPUT_Pos);
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h(522): error:  #20: identifier "NRF_GPIO_Type" is undefined
+      
+RF_GPIO->PIN_CNF[pin_number] &= ~GPIO_PIN_CNF_SENSE_Msk;
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h(522): error:  #29: expected an expression
+      
+RF_GPIO->PIN_CNF[pin_number] &= ~GPIO_PIN_CNF_SENSE_Msk;
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h(522): error:  #18: expected a ")"
+      
+RF_GPIO->PIN_CNF[pin_number] &= ~GPIO_PIN_CNF_SENSE_Msk;
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h(523): error:  #29: expected an expression
+      
+RF_GPIO->PIN_CNF[pin_number] |= (sense_config << GPIO_PIN_CNF_SENSE_Pos);
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h(523): error:  #18: expected a ")"
+      
+RF_GPIO->PIN_CNF[pin_number] |= (sense_config << GPIO_PIN_CNF_SENSE_Pos);
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h(540): error:  #20: identifier "NRF_GPIO_Type" is undefined
+          
+RF_GPIO->DIRSET = (1UL << pin_number);
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h(540): error:  #29: expected an expression
+          
+RF_GPIO->DIRSET = (1UL << pin_number);
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h(540): error:  #18: expected a ")"
+          
+RF_GPIO->DIRSET = (1UL << pin_number);
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h(546): error:  #20: identifier "NRF_GPIO_Type" is undefined
+      
+RF_GPIO->OUTSET = (1UL << pin_number);
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h(546): error:  #29: expected an expression
+      
+RF_GPIO->OUTSET = (1UL << pin_number);
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h(546): error:  #18: expected a ")"
+      
+RF_GPIO->OUTSET = (1UL << pin_number);
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h(551): error:  #20: identifier "NRF_GPIO_Type" is undefined
+      
+RF_GPIO->OUTSET = pin_mask;
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h(551): error:  #29: expected an expression
+      
+RF_GPIO->OUTSET = pin_mask;
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h(551): error:  #18: expected a ")"
+      
+RF_GPIO->OUTSET = pin_mask;
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h(556): error:  #20: identifier "NRF_GPIO_Type" is undefined
+      
+RF_GPIO->OUTCLR = (1UL << pin_number);
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h(556): error:  #29: expected an expression
+      
+RF_GPIO->OUTCLR = (1UL << pin_number);
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h(556): error:  #18: expected a ")"
+      
+RF_GPIO->OUTCLR = (1UL << pin_number);
+..\..\..\main.c: 0 warnings, 30 errors
+compiling ble_advertising.c...
+..\..\..\..\..\..\components\softdevice\s130\headers\nrf_soc.h(419): error:  #20: identifier "IRQn_Type" is undefined
+  
+VCALL(SD_NVIC_ENABLEIRQ, uint32_t, sd_nvic_EnableIRQ(IRQn_Type IRQn));
+..\..\..\..\..\..\components\softdevice\s130\headers\nrf_soc.h(419): error:  #1502: arguments for __svc or __svc_indirect function must have integral type
+  
+VCALL(SD_NVIC_ENABLEIRQ, uint32_t, sd_nvic_EnableIRQ(IRQn_Type IRQn));
+..\..\..\..\..\..\components\softdevice\s130\headers\nrf_soc.h(431): error:  #20: identifier "IRQn_Type" is undefined
+  
+VCALL(SD_NVIC_DISABLEIRQ, uint32_t, sd_nvic_DisableIRQ(IRQn_Type IRQn));
+..\..\..\..\..\..\components\softdevice\s130\headers\nrf_soc.h(431): error:  #1502: arguments for __svc or __svc_indirect function must have integral type
+  
+VCALL(SD_NVIC_DISABLEIRQ, uint32_t, sd_nvic_DisableIRQ(IRQn_Type IRQn));
+..\..\..\..\..\..\components\softdevice\s130\headers\nrf_soc.h(444): error:  #20: identifier "IRQn_Type" is undefined
+  
+VCALL(SD_NVIC_GETPENDINGIRQ, uint32_t, sd_nvic_GetPendingIRQ(IRQn_Type IRQn, uint32_t * p_pending_irq));
+..\..\..\..\..\..\components\softdevice\s130\headers\nrf_soc.h(444): error:  #1502: arguments for __svc or __svc_indirect function must have integral type
+  
+VCALL(SD_NVIC_GETPENDINGIRQ, uint32_t, sd_nvic_GetPendingIRQ(IRQn_Type IRQn, uint32_t * p_pending_irq));
+..\..\..\..\..\..\components\softdevice\s130\headers\nrf_soc.h(456): error:  #20: identifier "IRQn_Type" is undefined
+  
+VCALL(SD_NVIC_SETPENDINGIRQ, uint32_t, sd_nvic_SetPendingIRQ(IRQn_Type IRQn));
+..\..\..\..\..\..\components\softdevice\s130\headers\nrf_soc.h(456): error:  #1502: arguments for __svc or __svc_indirect function must have integral type
+  
+VCALL(SD_NVIC_SETPENDINGIRQ, uint32_t, sd_nvic_SetPendingIRQ(IRQn_Type IRQn));
+..\..\..\..\..\..\components\softdevice\s130\headers\nrf_soc.h(468): error:  #20: identifier "IRQn_Type" is undefined
+  
+VCALL(SD_NVIC_CLEARPENDINGIRQ, uint32_t, sd_nvic_ClearPendingIRQ(IRQn_Type IRQn));
+..\..\..\..\..\..\components\softdevice\s130\headers\nrf_soc.h(468): error:  #1502: arguments for __svc or __svc_indirect function must have integral type
+  
+VCALL(SD_NVIC_CLEARPENDINGIRQ, uint32_t, sd_nvic_ClearPendingIRQ(IRQn_Type IRQn));
+..\..\..\..\..\..\components\softdevice\s130\headers\nrf_soc.h(483): error:  #20: identifier "IRQn_Type" is undefined
+  
+VCALL(SD_NVIC_SETPRIORITY, uint32_t, sd_nvic_SetPriority(IRQn_Type IRQn, nrf_app_irq_priority_t priority));
+..\..\..\..\..\..\components\softdevice\s130\headers\nrf_soc.h(483): error:  #1502: arguments for __svc or __svc_indirect function must have integral type
+  
+VCALL(SD_NVIC_SETPRIORITY, uint32_t, sd_nvic_SetPriority(IRQn_Type IRQn, nrf_app_irq_priority_t priority));
+..\..\..\..\..\..\components\softdevice\s130\headers\nrf_soc.h(496): error:  #20: identifier "IRQn_Type" is undefined
+  
+VCALL(SD_NVIC_GETPRIORITY, uint32_t, sd_nvic_GetPriority(IRQn_Type IRQn, nrf_app_irq_priority_t * p_priority));
+..\..\..\..\..\..\components\softdevice\s130\headers\nrf_soc.h(496): error:  #1502: arguments for __svc or __svc_indirect function must have integral type
+  
+VCALL(SD_NVIC_GETPRIORITY, uint32_t, sd_nvic_GetPriority(IRQn_Type IRQn, nrf_app_irq_priority_t * p_priority));
+..\..\..\config\pstorage_platform.h(27): error:  #20: identifier "NRF_FICR_Type" is undefined
+    return (uint16_t)
+RF_FICR->CODEPAGESIZE;
+..\..\..\config\pstorage_platform.h(27): error:  #29: expected an expression
+    return (uint16_t)
+RF_FICR->CODEPAGESIZE;
+..\..\..\config\pstorage_platform.h(27): error:  #18: expected a ")"
+    return (uint16_t)
+RF_FICR->CODEPAGESIZE;
+..\..\..\config\pstorage_platform.h(35): error:  #20: identifier "NRF_UICR_Type" is undefined
+     uint32_t bootloader_addr = 
+RF_UICR->NRFFW[0];
+..\..\..\config\pstorage_platform.h(35): error:  #29: expected an expression
+     uint32_t bootloader_addr = 
+RF_UICR->NRFFW[0];
+..\..\..\config\pstorage_platform.h(35): error:  #18: expected a ")"
+     uint32_t bootloader_addr = 
+RF_UICR->NRFFW[0];
+..\..\..\config\pstorage_platform.h(38): error:  #20: identifier "NRF_FICR_Type" is undefined
+             (bootloader_addr/ 
+STORAGE_FLASH_PAGE_SIZE) : 
+RF_FICR->CODESIZE);
+..\..\..\config\pstorage_platform.h(38): error:  #29: expected an expression
+             (bootloader_addr/ 
+STORAGE_FLASH_PAGE_SIZE) : 
+RF_FICR->CODESIZE);
+..\..\..\config\pstorage_platform.h(38): error:  #18: expected a ")"
+             (bootloader_addr/ 
+STORAGE_FLASH_PAGE_SIZE) : 
+RF_FICR->CODESIZE);
+..\..\..\..\..\..\components\ble\ble_advertising\ble_advertising.c: 0 warnings, 23 errors
+compiling ble_conn_params.c...
+compiling ble_advdata.c...
+compiling app_uart.c...
+..\..\..\..\..\..\components\softdevice\s130\headers\nrf_soc.h(419): error:  #20: identifier "IRQn_Type" is undefined
+  
+VCALL(SD_NVIC_ENABLEIRQ, uint32_t, sd_nvic_EnableIRQ(IRQn_Type IRQn));
+..\..\..\..\..\..\components\softdevice\s130\headers\nrf_soc.h(419): error:  #1502: arguments for __svc or __svc_indirect function must have integral type
+  
+VCALL(SD_NVIC_ENABLEIRQ, uint32_t, sd_nvic_EnableIRQ(IRQn_Type IRQn));
+..\..\..\..\..\..\components\softdevice\s130\headers\nrf_soc.h(431): error:  #20: identifier "IRQn_Type" is undefined
+  
+VCALL(SD_NVIC_DISABLEIRQ, uint32_t, sd_nvic_DisableIRQ(IRQn_Type IRQn));
+..\..\..\..\..\..\components\softdevice\s130\headers\nrf_soc.h(431): error:  #1502: arguments for __svc or __svc_indirect function must have integral type
+  
+VCALL(SD_NVIC_DISABLEIRQ, uint32_t, sd_nvic_DisableIRQ(IRQn_Type IRQn));
+..\..\..\..\..\..\components\softdevice\s130\headers\nrf_soc.h(444): error:  #20: identifier "IRQn_Type" is undefined
+  
+VCALL(SD_NVIC_GETPENDINGIRQ, uint32_t, sd_nvic_GetPendingIRQ(IRQn_Type IRQn, uint32_t * p_pending_irq));
+..\..\..\..\..\..\components\softdevice\s130\headers\nrf_soc.h(444): error:  #1502: arguments for __svc or __svc_indirect function must have integral type
+  
+VCALL(SD_NVIC_GETPENDINGIRQ, uint32_t, sd_nvic_GetPendingIRQ(IRQn_Type IRQn, uint32_t * p_pending_irq));
+..\..\..\..\..\..\components\softdevice\s130\headers\nrf_soc.h(456): error:  #20: identifier "IRQn_Type" is undefined
+  
+VCALL(SD_NVIC_SETPENDINGIRQ, uint32_t, sd_nvic_SetPendingIRQ(IRQn_Type IRQn));
+..\..\..\..\..\..\components\softdevice\s130\headers\nrf_soc.h(456): error:  #1502: arguments for __svc or __svc_indirect function must have integral type
+  
+VCALL(SD_NVIC_SETPENDINGIRQ, uint32_t, sd_nvic_SetPendingIRQ(IRQn_Type IRQn));
+..\..\..\..\..\..\components\softdevice\s130\headers\nrf_soc.h(468): error:  #20: identifier "IRQn_Type" is undefined
+  
+VCALL(SD_NVIC_CLEARPENDINGIRQ, uint32_t, sd_nvic_ClearPendingIRQ(IRQn_Type IRQn));
+..\..\..\..\..\..\components\softdevice\s130\headers\nrf_soc.h(468): error:  #1502: arguments for __svc or __svc_indirect function must have integral type
+  
+VCALL(SD_NVIC_CLEARPENDINGIRQ, uint32_t, sd_nvic_ClearPendingIRQ(IRQn_Type IRQn));
+..\..\..\..\..\..\components\softdevice\s130\headers\nrf_soc.h(483): error:  #20: identifier "IRQn_Type" is undefined
+  
+VCALL(SD_NVIC_SETPRIORITY, uint32_t, sd_nvic_SetPriority(IRQn_Type IRQn, nrf_app_irq_priority_t priority));
+..\..\..\..\..\..\components\softdevice\s130\headers\nrf_soc.h(483): error:  #1502: arguments for __svc or __svc_indirect function must have integral type
+  
+VCALL(SD_NVIC_SETPRIORITY, uint32_t, sd_nvic_SetPriority(IRQn_Type IRQn, nrf_app_irq_priority_t priority));
+..\..\..\..\..\..\components\softdevice\s130\headers\nrf_soc.h(496): error:  #20: identifier "IRQn_Type" is undefined
+  
+VCALL(SD_NVIC_GETPRIORITY, uint32_t, sd_nvic_GetPriority(IRQn_Type IRQn, nrf_app_irq_priority_t * p_priority));
+..\..\..\..\..\..\components\softdevice\s130\headers\nrf_soc.h(496): error:  #1502: arguments for __svc or __svc_indirect function must have integral type
+  
+VCALL(SD_NVIC_GETPRIORITY, uint32_t, sd_nvic_GetPriority(IRQn_Type IRQn, nrf_app_irq_priority_t * p_priority));
+..\..\..\..\..\..\components\libraries\util\app_util_platform.h(115): error:  #20: identifier "SCB_Type" is undefined
+      uint32_t isr_vector_num = (
+CB->ICSR & SCB_ICSR_VECTACTIVE_Msk);
+..\..\..\..\..\..\components\libraries\util\app_util_platform.h(115): error:  #29: expected an expression
+      uint32_t isr_vector_num = (
+CB->ICSR & SCB_ICSR_VECTACTIVE_Msk);
+..\..\..\..\..\..\components\libraries\util\app_util_platform.h(119): warning:  #223-D: function "NVIC_GetPriority" declared implicitly
+          return (NVIC_GetPriority((IRQn_Type)irq_type) & 0xFF);
+..\..\..\..\..\..\components\libraries\util\app_util_platform.h(119): error:  #20: identifier "IRQn_Type" is undefined
+          return (NVIC_GetPriority((IRQn_Type)irq_type) & 0xFF);
+..\..\..\..\..\..\components\libraries\util\app_util_platform.h(119): error:  #18: expected a ")"
+          return (NVIC_GetPriority((IRQn_Type)irq_type) & 0xFF);
+..\..\..\..\..\..\components\libraries\util\app_util_platform.h(118): warning:  #177-D: variable "irq_type" was declared but never referenced
+          int32_t irq_type = ((int32_t)isr_vector_num - EXTERNAL_INT_VECTOR_OFFSET);
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_uart.h(37): error:  #20: identifier "NRF_UART_Type" is undefined
+      NRF_UART_TASK_STARTRX = 
+ffsetof(NRF_UART_Type, TASKS_STARTRX), /**< Task for starting reception. */
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_uart.h(37): error:  #29: expected an expression
+      NRF_UART_TASK_STARTRX = 
+ffsetof(NRF_UART_Type, TASKS_STARTRX), /**< Task for starting reception. */
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_uart.h(37): error:  #18: expected a ")"
+      NRF_UART_TASK_STARTRX = 
+ffsetof(NRF_UART_Type, TASKS_STARTRX), /**< Task for starting reception. */
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_uart.h(38): error:  #29: expected an expression
+      NRF_UART_TASK_STOPRX  = 
+ffsetof(NRF_UART_Type, TASKS_STOPRX),  /**< Task for stopping reception. */
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_uart.h(38): error:  #18: expected a ")"
+      NRF_UART_TASK_STOPRX  = 
+ffsetof(NRF_UART_Type, TASKS_STOPRX),  /**< Task for stopping reception. */
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_uart.h(39): error:  #29: expected an expression
+      NRF_UART_TASK_STARTTX = 
+ffsetof(NRF_UART_Type, TASKS_STARTTX), /**< Task for starting transmission. */
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_uart.h(39): error:  #18: expected a ")"
+      NRF_UART_TASK_STARTTX = 
+ffsetof(NRF_UART_Type, TASKS_STARTTX), /**< Task for starting transmission. */
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_uart.h(40): error:  #29: expected an expression
+      NRF_UART_TASK_STOPTX  = 
+ffsetof(NRF_UART_Type, TASKS_STOPTX),  /**< Task for stopping transmission. */
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_uart.h(40): error:  #18: expected a ")"
+      NRF_UART_TASK_STOPTX  = 
+ffsetof(NRF_UART_Type, TASKS_STOPTX),  /**< Task for stopping transmission. */
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_uart.h(41): error:  #29: expected an expression
+      NRF_UART_TASK_SUSPEND = 
+ffsetof(NRF_UART_Type, TASKS_SUSPEND), /**< Task for suspending UART. */
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_uart.h(41): error:  #18: expected a ")"
+      NRF_UART_TASK_SUSPEND = 
+ffsetof(NRF_UART_Type, TASKS_SUSPEND), /**< Task for suspending UART. */
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_uart.h(52): error:  #29: expected an expression
+      NRF_UART_EVENT_CTS    = 
+ffsetof(NRF_UART_Type, EVENTS_CTS),   /**< Event from CTS line activation. */
+..\..\..\..\..\..\components\libraries\uart\app_uart.c: 2 warnings, 30 errors
+compiling device_manager_peripheral.c...
+..\..\..\config\pstorage_platform.h(27): error:  #20: identifier "NRF_FICR_Type" is undefined
+    return (uint16_t)
+RF_FICR->CODEPAGESIZE;
+..\..\..\config\pstorage_platform.h(27): error:  #29: expected an expression
+    return (uint16_t)
+RF_FICR->CODEPAGESIZE;
+..\..\..\config\pstorage_platform.h(27): error:  #18: expected a ")"
+    return (uint16_t)
+RF_FICR->CODEPAGESIZE;
+..\..\..\config\pstorage_platform.h(35): error:  #20: identifier "NRF_UICR_Type" is undefined
+     uint32_t bootloader_addr = 
+RF_UICR->NRFFW[0];
+..\..\..\config\pstorage_platform.h(35): error:  #29: expected an expression
+     uint32_t bootloader_addr = 
+RF_UICR->NRFFW[0];
+..\..\..\config\pstorage_platform.h(35): error:  #18: expected a ")"
+     uint32_t bootloader_addr = 
+RF_UICR->NRFFW[0];
+..\..\..\config\pstorage_platform.h(38): error:  #20: identifier "NRF_FICR_Type" is undefined
+             (bootloader_addr/ 
+STORAGE_FLASH_PAGE_SIZE) : 
+RF_FICR->CODESIZE);
+..\..\..\config\pstorage_platform.h(38): error:  #29: expected an expression
+             (bootloader_addr/ 
+STORAGE_FLASH_PAGE_SIZE) : 
+RF_FICR->CODESIZE);
+..\..\..\config\pstorage_platform.h(38): error:  #18: expected a ")"
+             (bootloader_addr/ 
+STORAGE_FLASH_PAGE_SIZE) : 
+RF_FICR->CODESIZE);
+..\..\..\..\..\..\components\ble\device_manager\device_manager_peripheral.c: 0 warnings, 9 errors
+compiling ble_srv_common.c...
+compiling nrf_delay.c...
+compiling nrf_drv_common.c...
+..\..\..\..\..\..\components\drivers_nrf\common\nrf_drv_common.h(103): error:  #20: identifier "IRQn_Type" is undefined
+  void nrf_drv_common_irq_enable(IRQn_Type IRQn, uint8_t priority);
+..\..\..\..\..\..\components\drivers_nrf\common\nrf_drv_common.h(110): error:  #20: identifier "IRQn_Type" is undefined
+  
+_STATIC_INLINE void nrf_drv_common_irq_disable(IRQn_Type IRQn);
+..\..\..\..\..\..\components\drivers_nrf\common\nrf_drv_common.h(150): error:  #20: identifier "IRQn_Type" is undefined
+  
+_STATIC_INLINE IRQn_Type nrf_drv_get_IRQn(void const * const pinst);
+..\..\..\..\..\..\components\drivers_nrf\common\nrf_drv_common.h(166): error:  #20: identifier "IRQn_Type" is undefined
+  
+_STATIC_INLINE void nrf_drv_common_irq_disable(IRQn_Type IRQn)
+..\..\..\..\..\..\components\drivers_nrf\common\nrf_drv_common.h(168): warning:  #223-D: function "NVIC_DisableIRQ" declared implicitly
+      NVIC_DisableIRQ(IRQn);
+..\..\..\..\..\..\components\drivers_nrf\common\nrf_drv_common.h(181): error:  #20: identifier "IRQn_Type" is undefined
+  
+_STATIC_INLINE IRQn_Type nrf_drv_get_IRQn(void const * const pinst)
+..\..\..\..\..\..\components\drivers_nrf\common\nrf_drv_common.h(184): error:  #20: identifier "IRQn_Type" is undefined
+      return (IRQn_Type) ret;
+..\..\..\..\..\..\components\drivers_nrf\common\nrf_drv_common.h(184): error:  #65: expected a ";"
+      return (IRQn_Type) ret;
+..\..\..\..\..\..\components\drivers_nrf\common\nrf_drv_common.h(183): warning:  #177-D: variable "ret" was declared but never referenced
+      uint8_t ret = (uint8_t)((uint32_t)pinst>>12U);
+..\..\..\..\..\..\components\softdevice\s130\headers\nrf_soc.h(419): error:  #20: identifier "IRQn_Type" is undefined
+  
+VCALL(SD_NVIC_ENABLEIRQ, uint32_t, sd_nvic_EnableIRQ(IRQn_Type IRQn));
+..\..\..\..\..\..\components\softdevice\s130\headers\nrf_soc.h(419): error:  #1502: arguments for __svc or __svc_indirect function must have integral type
+  
+VCALL(SD_NVIC_ENABLEIRQ, uint32_t, sd_nvic_EnableIRQ(IRQn_Type IRQn));
+..\..\..\..\..\..\components\softdevice\s130\headers\nrf_soc.h(431): error:  #20: identifier "IRQn_Type" is undefined
+  
+VCALL(SD_NVIC_DISABLEIRQ, uint32_t, sd_nvic_DisableIRQ(IRQn_Type IRQn));
+..\..\..\..\..\..\components\softdevice\s130\headers\nrf_soc.h(431): error:  #1502: arguments for __svc or __svc_indirect function must have integral type
+  
+VCALL(SD_NVIC_DISABLEIRQ, uint32_t, sd_nvic_DisableIRQ(IRQn_Type IRQn));
+..\..\..\..\..\..\components\softdevice\s130\headers\nrf_soc.h(444): error:  #20: identifier "IRQn_Type" is undefined
+  
+VCALL(SD_NVIC_GETPENDINGIRQ, uint32_t, sd_nvic_GetPendingIRQ(IRQn_Type IRQn, uint32_t * p_pending_irq));
+..\..\..\..\..\..\components\softdevice\s130\headers\nrf_soc.h(444): error:  #1502: arguments for __svc or __svc_indirect function must have integral type
+  
+VCALL(SD_NVIC_GETPENDINGIRQ, uint32_t, sd_nvic_GetPendingIRQ(IRQn_Type IRQn, uint32_t * p_pending_irq));
+..\..\..\..\..\..\components\softdevice\s130\headers\nrf_soc.h(456): error:  #20: identifier "IRQn_Type" is undefined
+  
+VCALL(SD_NVIC_SETPENDINGIRQ, uint32_t, sd_nvic_SetPendingIRQ(IRQn_Type IRQn));
+..\..\..\..\..\..\components\softdevice\s130\headers\nrf_soc.h(456): error:  #1502: arguments for __svc or __svc_indirect function must have integral type
+  
+VCALL(SD_NVIC_SETPENDINGIRQ, uint32_t, sd_nvic_SetPendingIRQ(IRQn_Type IRQn));
+..\..\..\..\..\..\components\softdevice\s130\headers\nrf_soc.h(468): error:  #20: identifier "IRQn_Type" is undefined
+  
+VCALL(SD_NVIC_CLEARPENDINGIRQ, uint32_t, sd_nvic_ClearPendingIRQ(IRQn_Type IRQn));
+..\..\..\..\..\..\components\softdevice\s130\headers\nrf_soc.h(468): error:  #1502: arguments for __svc or __svc_indirect function must have integral type
+  
+VCALL(SD_NVIC_CLEARPENDINGIRQ, uint32_t, sd_nvic_ClearPendingIRQ(IRQn_Type IRQn));
+..\..\..\..\..\..\components\softdevice\s130\headers\nrf_soc.h(483): error:  #20: identifier "IRQn_Type" is undefined
+  
+VCALL(SD_NVIC_SETPRIORITY, uint32_t, sd_nvic_SetPriority(IRQn_Type IRQn, nrf_app_irq_priority_t priority));
+..\..\..\..\..\..\components\softdevice\s130\headers\nrf_soc.h(483): error:  #1502: arguments for __svc or __svc_indirect function must have integral type
+  
+VCALL(SD_NVIC_SETPRIORITY, uint32_t, sd_nvic_SetPriority(IRQn_Type IRQn, nrf_app_irq_priority_t priority));
+..\..\..\..\..\..\components\softdevice\s130\headers\nrf_soc.h(496): error:  #20: identifier "IRQn_Type" is undefined
+  
+VCALL(SD_NVIC_GETPRIORITY, uint32_t, sd_nvic_GetPriority(IRQn_Type IRQn, nrf_app_irq_priority_t * p_priority));
+..\..\..\..\..\..\components\softdevice\s130\headers\nrf_soc.h(496): error:  #1502: arguments for __svc or __svc_indirect function must have integral type
+  
+VCALL(SD_NVIC_GETPRIORITY, uint32_t, sd_nvic_GetPriority(IRQn_Type IRQn, nrf_app_irq_priority_t * p_priority));
+..\..\..\..\..\..\components\libraries\util\app_util_platform.h(115): error:  #20: identifier "SCB_Type" is undefined
+      uint32_t isr_vector_num = (
+CB->ICSR & SCB_ICSR_VECTACTIVE_Msk);
+..\..\..\..\..\..\components\libraries\util\app_util_platform.h(115): error:  #29: expected an expression
+      uint32_t isr_vector_num = (
+CB->ICSR & SCB_ICSR_VECTACTIVE_Msk);
+..\..\..\..\..\..\components\libraries\util\app_util_platform.h(119): warning:  #223-D: function "NVIC_GetPriority" declared implicitly
+          return (NVIC_GetPriority((IRQn_Type)irq_type) & 0xFF);
+..\..\..\..\..\..\components\libraries\util\app_util_platform.h(119): error:  #20: identifier "IRQn_Type" is undefined
+          return (NVIC_GetPriority((IRQn_Type)irq_type) & 0xFF);
+..\..\..\..\..\..\components\libraries\util\app_util_platform.h(119): error:  #18: expected a ")"
+          return (NVIC_GetPriority((IRQn_Type)irq_type) & 0xFF);
+..\..\..\..\..\..\components\libraries\util\app_util_platform.h(118): warning:  #177-D: variable "irq_type" was declared but never referenced
+          int32_t irq_type = ((int32_t)isr_vector_num - EXTERNAL_INT_VECTOR_OFFSET);
+..\..\..\..\..\..\components\drivers_nrf\common\nrf_drv_common.c(166): error:  #20: identifier "IRQn_Type" is undefined
+  void nrf_drv_common_irq_enable(IRQn_Type IRQn, uint8_t priority)
+..\..\..\..\..\..\components\drivers_nrf\common\nrf_drv_common.c(173): warning:  #223-D: function "NVIC_SetPriority" declared implicitly
+      NVIC_SetPriority(IRQn, priority);
+..\..\..\..\..\..\components\drivers_nrf\common\nrf_drv_common.c(174): warning:  #223-D: function "NVIC_ClearPendingIRQ" declared implicitly
+      NVIC_ClearPendingIRQ(IRQn);
+..\..\..\..\..\..\components\drivers_nrf\common\nrf_drv_common.c(175): warning:  #223-D: function "NVIC_EnableIRQ" declared implicitly
+      NVIC_EnableIRQ(IRQn);
+..\..\..\..\..\..\components\drivers_nrf\common\nrf_drv_common.c: 7 warnings, 26 errors
+compiling nrf_drv_gpiote.c...
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpiote.h(61): error:  #20: identifier "NRF_GPIOTE_Type" is undefined
+      NRF_GPIOTE_TASKS_OUT_0     = 
+ffsetof(NRF_GPIOTE_Type, TASKS_OUT[0]), /**< Out task 0.*/
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpiote.h(61): error:  #29: expected an expression
+      NRF_GPIOTE_TASKS_OUT_0     = 
+ffsetof(NRF_GPIOTE_Type, TASKS_OUT[0]), /**< Out task 0.*/
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpiote.h(61): error:  #18: expected a ")"
+      NRF_GPIOTE_TASKS_OUT_0     = 
+ffsetof(NRF_GPIOTE_Type, TASKS_OUT[0]), /**< Out task 0.*/
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpiote.h(62): error:  #29: expected an expression
+      NRF_GPIOTE_TASKS_OUT_1     = 
+ffsetof(NRF_GPIOTE_Type, TASKS_OUT[1]), /**< Out task 1.*/
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpiote.h(62): error:  #18: expected a ")"
+      NRF_GPIOTE_TASKS_OUT_1     = 
+ffsetof(NRF_GPIOTE_Type, TASKS_OUT[1]), /**< Out task 1.*/
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpiote.h(63): error:  #29: expected an expression
+      NRF_GPIOTE_TASKS_OUT_2     = 
+ffsetof(NRF_GPIOTE_Type, TASKS_OUT[2]), /**< Out task 2.*/
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpiote.h(63): error:  #18: expected a ")"
+      NRF_GPIOTE_TASKS_OUT_2     = 
+ffsetof(NRF_GPIOTE_Type, TASKS_OUT[2]), /**< Out task 2.*/
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpiote.h(64): error:  #29: expected an expression
+      NRF_GPIOTE_TASKS_OUT_3     = 
+ffsetof(NRF_GPIOTE_Type, TASKS_OUT[3]), /**< Out task 3.*/
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpiote.h(64): error:  #18: expected a ")"
+      NRF_GPIOTE_TASKS_OUT_3     = 
+ffsetof(NRF_GPIOTE_Type, TASKS_OUT[3]), /**< Out task 3.*/
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpiote.h(97): error:  #29: expected an expression
+      NRF_GPIOTE_EVENTS_IN_0     = 
+ffsetof(NRF_GPIOTE_Type, EVENTS_IN[0]), /**< In event 0.*/
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpiote.h(97): error:  #18: expected a ")"
+      NRF_GPIOTE_EVENTS_IN_0     = 
+ffsetof(NRF_GPIOTE_Type, EVENTS_IN[0]), /**< In event 0.*/
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpiote.h(98): error:  #29: expected an expression
+      NRF_GPIOTE_EVENTS_IN_1     = 
+ffsetof(NRF_GPIOTE_Type, EVENTS_IN[1]), /**< In event 1.*/
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpiote.h(98): error:  #18: expected a ")"
+      NRF_GPIOTE_EVENTS_IN_1     = 
+ffsetof(NRF_GPIOTE_Type, EVENTS_IN[1]), /**< In event 1.*/
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpiote.h(99): error:  #29: expected an expression
+      NRF_GPIOTE_EVENTS_IN_2     = 
+ffsetof(NRF_GPIOTE_Type, EVENTS_IN[2]), /**< In event 2.*/
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpiote.h(99): error:  #18: expected a ")"
+      NRF_GPIOTE_EVENTS_IN_2     = 
+ffsetof(NRF_GPIOTE_Type, EVENTS_IN[2]), /**< In event 2.*/
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpiote.h(100): error:  #29: expected an expression
+      NRF_GPIOTE_EVENTS_IN_3     = 
+ffsetof(NRF_GPIOTE_Type, EVENTS_IN[3]), /**< In event 3.*/
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpiote.h(100): error:  #18: expected a ")"
+      NRF_GPIOTE_EVENTS_IN_3     = 
+ffsetof(NRF_GPIOTE_Type, EVENTS_IN[3]), /**< In event 3.*/
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpiote.h(107): error:  #29: expected an expression
+      NRF_GPIOTE_EVENTS_PORT     = 
+ffsetof(NRF_GPIOTE_Type, EVENTS_PORT), /**<  Port event.*/
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpiote.h(107): error:  #18: expected a ")"
+      NRF_GPIOTE_EVENTS_PORT     = 
+ffsetof(NRF_GPIOTE_Type, EVENTS_PORT), /**<  Port event.*/
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpiote.h(277): error:  #29: expected an expression
+      *(
+_IO uint32_t *)((uint32_t)
+RF_GPIOTE + task) = 0x1UL;
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpiote.h(277): error:  #18: expected a ")"
+      *(
+_IO uint32_t *)((uint32_t)
+RF_GPIOTE + task) = 0x1UL;
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpiote.h(282): error:  #29: expected an expression
+      return ((uint32_t)
+RF_GPIOTE + task);
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpiote.h(282): error:  #18: expected a ")"
+      return ((uint32_t)
+RF_GPIOTE + task);
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpiote.h(301): error:  #29: expected an expression
+      return ((uint32_t)
+RF_GPIOTE + event);
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpiote.h(301): error:  #18: expected a ")"
+      return ((uint32_t)
+RF_GPIOTE + event);
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpiote.h(306): error:  #29: expected an expression
+      
+RF_GPIOTE->INTENSET = mask;
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpiote.h(306): error:  #18: expected a ")"
+      
+RF_GPIOTE->INTENSET = mask;
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpiote.h(311): error:  #29: expected an expression
+      
+RF_GPIOTE->INTENCLR = mask;
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpiote.h(311): error:  #18: expected a ")"
+      
+RF_GPIOTE->INTENCLR = mask;
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpiote.h(316): error:  #29: expected an expression
+      return (
+RF_GPIOTE->INTENSET & mask);
+..\..\..\..\..\..\components\drivers_nrf\gpiote\nrf_drv_gpiote.c: 0 warnings, 30 errors
+compiling nrf_drv_uart.c...
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_uart.h(37): error:  #20: identifier "NRF_UART_Type" is undefined
+      NRF_UART_TASK_STARTRX = 
+ffsetof(NRF_UART_Type, TASKS_STARTRX), /**< Task for starting reception. */
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_uart.h(37): error:  #29: expected an expression
+      NRF_UART_TASK_STARTRX = 
+ffsetof(NRF_UART_Type, TASKS_STARTRX), /**< Task for starting reception. */
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_uart.h(37): error:  #18: expected a ")"
+      NRF_UART_TASK_STARTRX = 
+ffsetof(NRF_UART_Type, TASKS_STARTRX), /**< Task for starting reception. */
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_uart.h(38): error:  #29: expected an expression
+      NRF_UART_TASK_STOPRX  = 
+ffsetof(NRF_UART_Type, TASKS_STOPRX),  /**< Task for stopping reception. */
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_uart.h(38): error:  #18: expected a ")"
+      NRF_UART_TASK_STOPRX  = 
+ffsetof(NRF_UART_Type, TASKS_STOPRX),  /**< Task for stopping reception. */
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_uart.h(39): error:  #29: expected an expression
+      NRF_UART_TASK_STARTTX = 
+ffsetof(NRF_UART_Type, TASKS_STARTTX), /**< Task for starting transmission. */
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_uart.h(39): error:  #18: expected a ")"
+      NRF_UART_TASK_STARTTX = 
+ffsetof(NRF_UART_Type, TASKS_STARTTX), /**< Task for starting transmission. */
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_uart.h(40): error:  #29: expected an expression
+      NRF_UART_TASK_STOPTX  = 
+ffsetof(NRF_UART_Type, TASKS_STOPTX),  /**< Task for stopping transmission. */
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_uart.h(40): error:  #18: expected a ")"
+      NRF_UART_TASK_STOPTX  = 
+ffsetof(NRF_UART_Type, TASKS_STOPTX),  /**< Task for stopping transmission. */
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_uart.h(41): error:  #29: expected an expression
+      NRF_UART_TASK_SUSPEND = 
+ffsetof(NRF_UART_Type, TASKS_SUSPEND), /**< Task for suspending UART. */
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_uart.h(41): error:  #18: expected a ")"
+      NRF_UART_TASK_SUSPEND = 
+ffsetof(NRF_UART_Type, TASKS_SUSPEND), /**< Task for suspending UART. */
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_uart.h(52): error:  #29: expected an expression
+      NRF_UART_EVENT_CTS    = 
+ffsetof(NRF_UART_Type, EVENTS_CTS),   /**< Event from CTS line activation. */
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_uart.h(52): error:  #18: expected a ")"
+      NRF_UART_EVENT_CTS    = 
+ffsetof(NRF_UART_Type, EVENTS_CTS),   /**< Event from CTS line activation. */
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_uart.h(53): error:  #29: expected an expression
+      NRF_UART_EVENT_NCTS   = 
+ffsetof(NRF_UART_Type, EVENTS_NCTS),  /**< Event from CTS line deactivation. */
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_uart.h(53): error:  #18: expected a ")"
+      NRF_UART_EVENT_NCTS   = 
+ffsetof(NRF_UART_Type, EVENTS_NCTS),  /**< Event from CTS line deactivation. */
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_uart.h(54): error:  #29: expected an expression
+      NRF_UART_EVENT_RXDRDY = 
+ffsetof(NRF_UART_Type, EVENTS_RXDRDY),/**< Event from data ready in RXD. */
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_uart.h(54): error:  #18: expected a ")"
+      NRF_UART_EVENT_RXDRDY = 
+ffsetof(NRF_UART_Type, EVENTS_RXDRDY),/**< Event from data ready in RXD. */
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_uart.h(55): error:  #29: expected an expression
+      NRF_UART_EVENT_TXDRDY = 
+ffsetof(NRF_UART_Type, EVENTS_TXDRDY),/**< Event from data sent from TXD. */
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_uart.h(55): error:  #18: expected a ")"
+      NRF_UART_EVENT_TXDRDY = 
+ffsetof(NRF_UART_Type, EVENTS_TXDRDY),/**< Event from data sent from TXD. */
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_uart.h(56): error:  #29: expected an expression
+      NRF_UART_EVENT_ERROR  = 
+ffsetof(NRF_UART_Type, EVENTS_ERROR), /**< Event from error detection. */
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_uart.h(56): error:  #18: expected a ")"
+      NRF_UART_EVENT_ERROR  = 
+ffsetof(NRF_UART_Type, EVENTS_ERROR), /**< Event from error detection. */
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_uart.h(57): error:  #29: expected an expression
+      NRF_UART_EVENT_RXTO   = 
+ffsetof(NRF_UART_Type, EVENTS_RXTO)   /**< Event from receiver timeout. */
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_uart.h(57): error:  #18: expected a ")"
+      NRF_UART_EVENT_RXTO   = 
+ffsetof(NRF_UART_Type, EVENTS_RXTO)   /**< Event from receiver timeout. */
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_uart.h(158): error:  #757: "NRF_UART_Type" is not a type name
+  
+_STATIC_INLINE void nrf_uart_event_clear(NRF_UART_Type * p_reg, nrf_uart_event_t event);
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_uart.h(168): error:  #757: "NRF_UART_Type" is not a type name
+  
+_STATIC_INLINE 
+ool nrf_uart_event_check(NRF_UART_Type * p_reg, nrf_uart_event_t event);
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_uart.h(178): error:  #757: "NRF_UART_Type" is not a type name
+  
+_STATIC_INLINE uint32_t nrf_uart_event_address_get(NRF_UART_Type  * p_reg,
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_uart.h(187): error:  #757: "NRF_UART_Type" is not a type name
+  
+_STATIC_INLINE void nrf_uart_int_enable(NRF_UART_Type * p_reg, uint32_t int_mask);
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_uart.h(198): error:  #757: "NRF_UART_Type" is not a type name
+  
+_STATIC_INLINE 
+ool nrf_uart_int_enable_check(NRF_UART_Type * p_reg, uint32_t int_mask);
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_uart.h(206): error:  #757: "NRF_UART_Type" is not a type name
+  
+_STATIC_INLINE void nrf_uart_int_disable(NRF_UART_Type * p_reg, uint32_t int_mask);
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_uart.h(214): error:  #757: "NRF_UART_Type" is not a type name
+  
+_STATIC_INLINE uint32_t nrf_uart_errorsrc_get_and_clear(NRF_UART_Type * p_reg);
+..\..\..\..\..\..\components\drivers_nrf\uart\nrf_drv_uart.c: 0 warnings, 30 errors
+compiling RTT_Syscalls_KEIL.c...
+compiling SEGGER_RTT_printf.c...
+compiling pstorage.c...
+..\..\..\config\pstorage_platform.h(27): error:  #20: identifier "NRF_FICR_Type" is undefined
+    return (uint16_t)
+RF_FICR->CODEPAGESIZE;
+..\..\..\config\pstorage_platform.h(27): error:  #29: expected an expression
+    return (uint16_t)
+RF_FICR->CODEPAGESIZE;
+..\..\..\config\pstorage_platform.h(27): error:  #18: expected a ")"
+    return (uint16_t)
+RF_FICR->CODEPAGESIZE;
+..\..\..\config\pstorage_platform.h(35): error:  #20: identifier "NRF_UICR_Type" is undefined
+     uint32_t bootloader_addr = 
+RF_UICR->NRFFW[0];
+..\..\..\config\pstorage_platform.h(35): error:  #29: expected an expression
+     uint32_t bootloader_addr = 
+RF_UICR->NRFFW[0];
+..\..\..\config\pstorage_platform.h(35): error:  #18: expected a ")"
+     uint32_t bootloader_addr = 
+RF_UICR->NRFFW[0];
+..\..\..\config\pstorage_platform.h(38): error:  #20: identifier "NRF_FICR_Type" is undefined
+             (bootloader_addr/ 
+STORAGE_FLASH_PAGE_SIZE) : 
+RF_FICR->CODESIZE);
+..\..\..\config\pstorage_platform.h(38): error:  #29: expected an expression
+             (bootloader_addr/ 
+STORAGE_FLASH_PAGE_SIZE) : 
+RF_FICR->CODESIZE);
+..\..\..\config\pstorage_platform.h(38): error:  #18: expected a ")"
+             (bootloader_addr/ 
+STORAGE_FLASH_PAGE_SIZE) : 
+RF_FICR->CODESIZE);
+..\..\..\..\..\..\components\softdevice\s130\headers\nrf_soc.h(419): error:  #20: identifier "IRQn_Type" is undefined
+  
+VCALL(SD_NVIC_ENABLEIRQ, uint32_t, sd_nvic_EnableIRQ(IRQn_Type IRQn));
+..\..\..\..\..\..\components\softdevice\s130\headers\nrf_soc.h(419): error:  #1502: arguments for __svc or __svc_indirect function must have integral type
+  
+VCALL(SD_NVIC_ENABLEIRQ, uint32_t, sd_nvic_EnableIRQ(IRQn_Type IRQn));
+..\..\..\..\..\..\components\softdevice\s130\headers\nrf_soc.h(431): error:  #20: identifier "IRQn_Type" is undefined
+  
+VCALL(SD_NVIC_DISABLEIRQ, uint32_t, sd_nvic_DisableIRQ(IRQn_Type IRQn));
+..\..\..\..\..\..\components\softdevice\s130\headers\nrf_soc.h(431): error:  #1502: arguments for __svc or __svc_indirect function must have integral type
+  
+VCALL(SD_NVIC_DISABLEIRQ, uint32_t, sd_nvic_DisableIRQ(IRQn_Type IRQn));
+..\..\..\..\..\..\components\softdevice\s130\headers\nrf_soc.h(444): error:  #20: identifier "IRQn_Type" is undefined
+  
+VCALL(SD_NVIC_GETPENDINGIRQ, uint32_t, sd_nvic_GetPendingIRQ(IRQn_Type IRQn, uint32_t * p_pending_irq));
+..\..\..\..\..\..\components\softdevice\s130\headers\nrf_soc.h(444): error:  #1502: arguments for __svc or __svc_indirect function must have integral type
+  
+VCALL(SD_NVIC_GETPENDINGIRQ, uint32_t, sd_nvic_GetPendingIRQ(IRQn_Type IRQn, uint32_t * p_pending_irq));
+..\..\..\..\..\..\components\softdevice\s130\headers\nrf_soc.h(456): error:  #20: identifier "IRQn_Type" is undefined
+  
+VCALL(SD_NVIC_SETPENDINGIRQ, uint32_t, sd_nvic_SetPendingIRQ(IRQn_Type IRQn));
+..\..\..\..\..\..\components\softdevice\s130\headers\nrf_soc.h(456): error:  #1502: arguments for __svc or __svc_indirect function must have integral type
+  
+VCALL(SD_NVIC_SETPENDINGIRQ, uint32_t, sd_nvic_SetPendingIRQ(IRQn_Type IRQn));
+..\..\..\..\..\..\components\softdevice\s130\headers\nrf_soc.h(468): error:  #20: identifier "IRQn_Type" is undefined
+  
+VCALL(SD_NVIC_CLEARPENDINGIRQ, uint32_t, sd_nvic_ClearPendingIRQ(IRQn_Type IRQn));
+..\..\..\..\..\..\components\softdevice\s130\headers\nrf_soc.h(468): error:  #1502: arguments for __svc or __svc_indirect function must have integral type
+  
+VCALL(SD_NVIC_CLEARPENDINGIRQ, uint32_t, sd_nvic_ClearPendingIRQ(IRQn_Type IRQn));
+..\..\..\..\..\..\components\softdevice\s130\headers\nrf_soc.h(483): error:  #20: identifier "IRQn_Type" is undefined
+  
+VCALL(SD_NVIC_SETPRIORITY, uint32_t, sd_nvic_SetPriority(IRQn_Type IRQn, nrf_app_irq_priority_t priority));
+..\..\..\..\..\..\components\softdevice\s130\headers\nrf_soc.h(483): error:  #1502: arguments for __svc or __svc_indirect function must have integral type
+  
+VCALL(SD_NVIC_SETPRIORITY, uint32_t, sd_nvic_SetPriority(IRQn_Type IRQn, nrf_app_irq_priority_t priority));
+..\..\..\..\..\..\components\softdevice\s130\headers\nrf_soc.h(496): error:  #20: identifier "IRQn_Type" is undefined
+  
+VCALL(SD_NVIC_GETPRIORITY, uint32_t, sd_nvic_GetPriority(IRQn_Type IRQn, nrf_app_irq_priority_t * p_priority));
+..\..\..\..\..\..\components\softdevice\s130\headers\nrf_soc.h(496): error:  #1502: arguments for __svc or __svc_indirect function must have integral type
+  
+VCALL(SD_NVIC_GETPRIORITY, uint32_t, sd_nvic_GetPriority(IRQn_Type IRQn, nrf_app_irq_priority_t * p_priority));
+..\..\..\..\..\..\components\drivers_nrf\pstorage\pstorage.c: 0 warnings, 23 errors
+compiling SEGGER_RTT.c...
+compiling app_button.c...
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h(453): error:  #20: identifier "NRF_GPIO_Type" is undefined
+      
+RF_GPIO->PIN_CNF[pin_number] = ((uint32_t)dir   << GPIO_PIN_CNF_DIR_Pos)
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h(453): error:  #29: expected an expression
+      
+RF_GPIO->PIN_CNF[pin_number] = ((uint32_t)dir   << GPIO_PIN_CNF_DIR_Pos)
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h(453): error:  #18: expected a ")"
+      
+RF_GPIO->PIN_CNF[pin_number] = ((uint32_t)dir   << GPIO_PIN_CNF_DIR_Pos)
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h(496): error:  #20: identifier "NRF_GPIO_Type" is undefined
+      uint32_t cnf = 
+RF_GPIO->PIN_CNF[pin_number] & ~GPIO_PIN_CNF_INPUT_Msk;
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h(496): error:  #29: expected an expression
+      uint32_t cnf = 
+RF_GPIO->PIN_CNF[pin_number] & ~GPIO_PIN_CNF_INPUT_Msk;
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h(496): error:  #18: expected a ")"
+      uint32_t cnf = 
+RF_GPIO->PIN_CNF[pin_number] & ~GPIO_PIN_CNF_INPUT_Msk;
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h(497): error:  #29: expected an expression
+      
+RF_GPIO->PIN_CNF[pin_number] = cnf | (GPIO_PIN_CNF_INPUT_Connect << GPIO_PIN_CNF_INPUT_Pos);
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h(497): error:  #18: expected a ")"
+      
+RF_GPIO->PIN_CNF[pin_number] = cnf | (GPIO_PIN_CNF_INPUT_Connect << GPIO_PIN_CNF_INPUT_Pos);
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h(503): error:  #20: identifier "NRF_GPIO_Type" is undefined
+      uint32_t cnf = 
+RF_GPIO->PIN_CNF[pin_number] & ~GPIO_PIN_CNF_INPUT_Msk;
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h(503): error:  #29: expected an expression
+      uint32_t cnf = 
+RF_GPIO->PIN_CNF[pin_number] & ~GPIO_PIN_CNF_INPUT_Msk;
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h(503): error:  #18: expected a ")"
+      uint32_t cnf = 
+RF_GPIO->PIN_CNF[pin_number] & ~GPIO_PIN_CNF_INPUT_Msk;
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h(504): error:  #29: expected an expression
+      
+RF_GPIO->PIN_CNF[pin_number] = cnf | (GPIO_PIN_CNF_INPUT_Disconnect << GPIO_PIN_CNF_INPUT_Pos);
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h(504): error:  #18: expected a ")"
+      
+RF_GPIO->PIN_CNF[pin_number] = cnf | (GPIO_PIN_CNF_INPUT_Disconnect << GPIO_PIN_CNF_INPUT_Pos);
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h(522): error:  #20: identifier "NRF_GPIO_Type" is undefined
+      
+RF_GPIO->PIN_CNF[pin_number] &= ~GPIO_PIN_CNF_SENSE_Msk;
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h(522): error:  #29: expected an expression
+      
+RF_GPIO->PIN_CNF[pin_number] &= ~GPIO_PIN_CNF_SENSE_Msk;
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h(522): error:  #18: expected a ")"
+      
+RF_GPIO->PIN_CNF[pin_number] &= ~GPIO_PIN_CNF_SENSE_Msk;
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h(523): error:  #29: expected an expression
+      
+RF_GPIO->PIN_CNF[pin_number] |= (sense_config << GPIO_PIN_CNF_SENSE_Pos);
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h(523): error:  #18: expected a ")"
+      
+RF_GPIO->PIN_CNF[pin_number] |= (sense_config << GPIO_PIN_CNF_SENSE_Pos);
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h(540): error:  #20: identifier "NRF_GPIO_Type" is undefined
+          
+RF_GPIO->DIRSET = (1UL << pin_number);
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h(540): error:  #29: expected an expression
+          
+RF_GPIO->DIRSET = (1UL << pin_number);
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h(540): error:  #18: expected a ")"
+          
+RF_GPIO->DIRSET = (1UL << pin_number);
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h(546): error:  #20: identifier "NRF_GPIO_Type" is undefined
+      
+RF_GPIO->OUTSET = (1UL << pin_number);
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h(546): error:  #29: expected an expression
+      
+RF_GPIO->OUTSET = (1UL << pin_number);
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h(546): error:  #18: expected a ")"
+      
+RF_GPIO->OUTSET = (1UL << pin_number);
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h(551): error:  #20: identifier "NRF_GPIO_Type" is undefined
+      
+RF_GPIO->OUTSET = pin_mask;
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h(551): error:  #29: expected an expression
+      
+RF_GPIO->OUTSET = pin_mask;
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h(551): error:  #18: expected a ")"
+      
+RF_GPIO->OUTSET = pin_mask;
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h(556): error:  #20: identifier "NRF_GPIO_Type" is undefined
+      
+RF_GPIO->OUTCLR = (1UL << pin_number);
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h(556): error:  #29: expected an expression
+      
+RF_GPIO->OUTCLR = (1UL << pin_number);
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h(556): error:  #18: expected a ")"
+      
+RF_GPIO->OUTCLR = (1UL << pin_number);
+..\..\..\..\..\..\components\libraries\button\app_button.c: 0 warnings, 30 errors
+compiling app_trace.c...
+compiling app_timer.c...
+..\..\..\..\..\..\components\softdevice\s130\headers\nrf_soc.h(419): error:  #20: identifier "IRQn_Type" is undefined
+  
+VCALL(SD_NVIC_ENABLEIRQ, uint32_t, sd_nvic_EnableIRQ(IRQn_Type IRQn));
+..\..\..\..\..\..\components\softdevice\s130\headers\nrf_soc.h(419): error:  #1502: arguments for __svc or __svc_indirect function must have integral type
+  
+VCALL(SD_NVIC_ENABLEIRQ, uint32_t, sd_nvic_EnableIRQ(IRQn_Type IRQn));
+..\..\..\..\..\..\components\softdevice\s130\headers\nrf_soc.h(431): error:  #20: identifier "IRQn_Type" is undefined
+  
+VCALL(SD_NVIC_DISABLEIRQ, uint32_t, sd_nvic_DisableIRQ(IRQn_Type IRQn));
+..\..\..\..\..\..\components\softdevice\s130\headers\nrf_soc.h(431): error:  #1502: arguments for __svc or __svc_indirect function must have integral type
+  
+VCALL(SD_NVIC_DISABLEIRQ, uint32_t, sd_nvic_DisableIRQ(IRQn_Type IRQn));
+..\..\..\..\..\..\components\softdevice\s130\headers\nrf_soc.h(444): error:  #20: identifier "IRQn_Type" is undefined
+  
+VCALL(SD_NVIC_GETPENDINGIRQ, uint32_t, sd_nvic_GetPendingIRQ(IRQn_Type IRQn, uint32_t * p_pending_irq));
+..\..\..\..\..\..\components\softdevice\s130\headers\nrf_soc.h(444): error:  #1502: arguments for __svc or __svc_indirect function must have integral type
+  
+VCALL(SD_NVIC_GETPENDINGIRQ, uint32_t, sd_nvic_GetPendingIRQ(IRQn_Type IRQn, uint32_t * p_pending_irq));
+..\..\..\..\..\..\components\softdevice\s130\headers\nrf_soc.h(456): error:  #20: identifier "IRQn_Type" is undefined
+  
+VCALL(SD_NVIC_SETPENDINGIRQ, uint32_t, sd_nvic_SetPendingIRQ(IRQn_Type IRQn));
+..\..\..\..\..\..\components\softdevice\s130\headers\nrf_soc.h(456): error:  #1502: arguments for __svc or __svc_indirect function must have integral type
+  
+VCALL(SD_NVIC_SETPENDINGIRQ, uint32_t, sd_nvic_SetPendingIRQ(IRQn_Type IRQn));
+..\..\..\..\..\..\components\softdevice\s130\headers\nrf_soc.h(468): error:  #20: identifier "IRQn_Type" is undefined
+  
+VCALL(SD_NVIC_CLEARPENDINGIRQ, uint32_t, sd_nvic_ClearPendingIRQ(IRQn_Type IRQn));
+..\..\..\..\..\..\components\softdevice\s130\headers\nrf_soc.h(468): error:  #1502: arguments for __svc or __svc_indirect function must have integral type
+  
+VCALL(SD_NVIC_CLEARPENDINGIRQ, uint32_t, sd_nvic_ClearPendingIRQ(IRQn_Type IRQn));
+..\..\..\..\..\..\components\softdevice\s130\headers\nrf_soc.h(483): error:  #20: identifier "IRQn_Type" is undefined
+  
+VCALL(SD_NVIC_SETPRIORITY, uint32_t, sd_nvic_SetPriority(IRQn_Type IRQn, nrf_app_irq_priority_t priority));
+..\..\..\..\..\..\components\softdevice\s130\headers\nrf_soc.h(483): error:  #1502: arguments for __svc or __svc_indirect function must have integral type
+  
+VCALL(SD_NVIC_SETPRIORITY, uint32_t, sd_nvic_SetPriority(IRQn_Type IRQn, nrf_app_irq_priority_t priority));
+..\..\..\..\..\..\components\softdevice\s130\headers\nrf_soc.h(496): error:  #20: identifier "IRQn_Type" is undefined
+  
+VCALL(SD_NVIC_GETPRIORITY, uint32_t, sd_nvic_GetPriority(IRQn_Type IRQn, nrf_app_irq_priority_t * p_priority));
+..\..\..\..\..\..\components\softdevice\s130\headers\nrf_soc.h(496): error:  #1502: arguments for __svc or __svc_indirect function must have integral type
+  
+VCALL(SD_NVIC_GETPRIORITY, uint32_t, sd_nvic_GetPriority(IRQn_Type IRQn, nrf_app_irq_priority_t * p_priority));
+..\..\..\..\..\..\components\libraries\util\app_util_platform.h(115): error:  #20: identifier "SCB_Type" is undefined
+      uint32_t isr_vector_num = (
+CB->ICSR & SCB_ICSR_VECTACTIVE_Msk);
+..\..\..\..\..\..\components\libraries\util\app_util_platform.h(115): error:  #29: expected an expression
+      uint32_t isr_vector_num = (
+CB->ICSR & SCB_ICSR_VECTACTIVE_Msk);
+..\..\..\..\..\..\components\libraries\util\app_util_platform.h(119): warning:  #223-D: function "NVIC_GetPriority" declared implicitly
+          return (NVIC_GetPriority((IRQn_Type)irq_type) & 0xFF);
+..\..\..\..\..\..\components\libraries\util\app_util_platform.h(119): error:  #20: identifier "IRQn_Type" is undefined
+          return (NVIC_GetPriority((IRQn_Type)irq_type) & 0xFF);
+..\..\..\..\..\..\components\libraries\util\app_util_platform.h(119): error:  #18: expected a ")"
+          return (NVIC_GetPriority((IRQn_Type)irq_type) & 0xFF);
+..\..\..\..\..\..\components\libraries\util\app_util_platform.h(118): warning:  #177-D: variable "irq_type" was declared but never referenced
+          int32_t irq_type = ((int32_t)isr_vector_num - EXTERNAL_INT_VECTOR_OFFSET);
+..\..\..\..\..\..\components\libraries\timer\app_timer.c(146): error:  #20: identifier "NRF_RTC_Type" is undefined
+      
+RF_RTC1->PRESCALER = prescaler;
+..\..\..\..\..\..\components\libraries\timer\app_timer.c(146): error:  #29: expected an expression
+      
+RF_RTC1->PRESCALER = prescaler;
+..\..\..\..\..\..\components\libraries\timer\app_timer.c(146): error:  #18: expected a ")"
+      
+RF_RTC1->PRESCALER = prescaler;
+..\..\..\..\..\..\components\libraries\timer\app_timer.c(147): warning:  #223-D: function "NVIC_SetPriority" declared implicitly
+      NVIC_SetPriority(RTC1_IRQn, RTC1_IRQ_PRI);
+..\..\..\..\..\..\components\libraries\timer\app_timer.c(147): error:  #20: identifier "RTC1_IRQn" is undefined
+      NVIC_SetPriority(RTC1_IRQn, RTC1_IRQ_PRI);
+..\..\..\..\..\..\components\libraries\timer\app_timer.c(155): error:  #20: identifier "NRF_RTC_Type" is undefined
+      
+RF_RTC1->EVTENSET = RTC_EVTEN_COMPARE0_Msk;
+..\..\..\..\..\..\components\libraries\timer\app_timer.c(155): error:  #29: expected an expression
+      
+RF_RTC1->EVTENSET = RTC_EVTEN_COMPARE0_Msk;
+..\..\..\..\..\..\components\libraries\timer\app_timer.c(155): error:  #18: expected a ")"
+      
+RF_RTC1->EVTENSET = RTC_EVTEN_COMPARE0_Msk;
+..\..\..\..\..\..\components\libraries\timer\app_timer.c(156): error:  #29: expected an expression
+      
+RF_RTC1->INTENSET = RTC_INTENSET_COMPARE0_Msk;
+..\..\..\..\..\..\components\libraries\timer\app_timer.c(156): error:  #18: expected a ")"
+      
+RF_RTC1->INTENSET = RTC_INTENSET_COMPARE0_Msk;
+..\..\..\..\..\..\components\libraries\timer\app_timer.c(158): warning:  #223-D: function "NVIC_ClearPendingIRQ" declared implicitly
+      NVIC_ClearPendingIRQ(RTC1_IRQn);
+..\..\..\..\..\..\components\libraries\timer\app_timer.c(158): error:  #20: identifier "RTC1_IRQn" is undefined
+      NVIC_ClearPendingIRQ(RTC1_IRQn);
+..\..\..\..\..\..\components\libraries\timer\app_timer.c(159): warning:  #223-D: function "NVIC_EnableIRQ" declared implicitly
+      NVIC_EnableIRQ(RTC1_IRQn);
+..\..\..\..\..\..\components\libraries\timer\app_timer.c(161): error:  #29: expected an expression
+      
+RF_RTC1->TASKS_START = 1;
+..\..\..\..\..\..\components\libraries\timer\app_timer.c(161): error:  #18: expected a ")"
+      
+RF_RTC1->TASKS_START = 1;
+..\..\..\..\..\..\components\libraries\timer\app_timer.c: 5 warnings, 30 errors
+compiling app_error.c...
+..\..\..\..\..\..\components\libraries\util\app_error.c(81): warning:  #223-D: function "NVIC_SystemReset" declared implicitly
+      NVIC_SystemReset();
+..\..\..\..\..\..\components\libraries\util\app_error.c: 1 warning, 0 errors
+compiling nrf_assert.c...
+compiling nrf_log.c...
+..\..\..\..\..\..\components\softdevice\s130\headers\nrf_soc.h(419): error:  #20: identifier "IRQn_Type" is undefined
+  
+VCALL(SD_NVIC_ENABLEIRQ, uint32_t, sd_nvic_EnableIRQ(IRQn_Type IRQn));
+..\..\..\..\..\..\components\softdevice\s130\headers\nrf_soc.h(419): error:  #1502: arguments for __svc or __svc_indirect function must have integral type
+  
+VCALL(SD_NVIC_ENABLEIRQ, uint32_t, sd_nvic_EnableIRQ(IRQn_Type IRQn));
+..\..\..\..\..\..\components\softdevice\s130\headers\nrf_soc.h(431): error:  #20: identifier "IRQn_Type" is undefined
+  
+VCALL(SD_NVIC_DISABLEIRQ, uint32_t, sd_nvic_DisableIRQ(IRQn_Type IRQn));
+..\..\..\..\..\..\components\softdevice\s130\headers\nrf_soc.h(431): error:  #1502: arguments for __svc or __svc_indirect function must have integral type
+  
+VCALL(SD_NVIC_DISABLEIRQ, uint32_t, sd_nvic_DisableIRQ(IRQn_Type IRQn));
+..\..\..\..\..\..\components\softdevice\s130\headers\nrf_soc.h(444): error:  #20: identifier "IRQn_Type" is undefined
+  
+VCALL(SD_NVIC_GETPENDINGIRQ, uint32_t, sd_nvic_GetPendingIRQ(IRQn_Type IRQn, uint32_t * p_pending_irq));
+..\..\..\..\..\..\components\softdevice\s130\headers\nrf_soc.h(444): error:  #1502: arguments for __svc or __svc_indirect function must have integral type
+  
+VCALL(SD_NVIC_GETPENDINGIRQ, uint32_t, sd_nvic_GetPendingIRQ(IRQn_Type IRQn, uint32_t * p_pending_irq));
+..\..\..\..\..\..\components\softdevice\s130\headers\nrf_soc.h(456): error:  #20: identifier "IRQn_Type" is undefined
+  
+VCALL(SD_NVIC_SETPENDINGIRQ, uint32_t, sd_nvic_SetPendingIRQ(IRQn_Type IRQn));
+..\..\..\..\..\..\components\softdevice\s130\headers\nrf_soc.h(456): error:  #1502: arguments for __svc or __svc_indirect function must have integral type
+  
+VCALL(SD_NVIC_SETPENDINGIRQ, uint32_t, sd_nvic_SetPendingIRQ(IRQn_Type IRQn));
+..\..\..\..\..\..\components\softdevice\s130\headers\nrf_soc.h(468): error:  #20: identifier "IRQn_Type" is undefined
+  
+VCALL(SD_NVIC_CLEARPENDINGIRQ, uint32_t, sd_nvic_ClearPendingIRQ(IRQn_Type IRQn));
+..\..\..\..\..\..\components\softdevice\s130\headers\nrf_soc.h(468): error:  #1502: arguments for __svc or __svc_indirect function must have integral type
+  
+VCALL(SD_NVIC_CLEARPENDINGIRQ, uint32_t, sd_nvic_ClearPendingIRQ(IRQn_Type IRQn));
+..\..\..\..\..\..\components\softdevice\s130\headers\nrf_soc.h(483): error:  #20: identifier "IRQn_Type" is undefined
+  
+VCALL(SD_NVIC_SETPRIORITY, uint32_t, sd_nvic_SetPriority(IRQn_Type IRQn, nrf_app_irq_priority_t priority));
+..\..\..\..\..\..\components\softdevice\s130\headers\nrf_soc.h(483): error:  #1502: arguments for __svc or __svc_indirect function must have integral type
+  
+VCALL(SD_NVIC_SETPRIORITY, uint32_t, sd_nvic_SetPriority(IRQn_Type IRQn, nrf_app_irq_priority_t priority));
+..\..\..\..\..\..\components\softdevice\s130\headers\nrf_soc.h(496): error:  #20: identifier "IRQn_Type" is undefined
+  
+VCALL(SD_NVIC_GETPRIORITY, uint32_t, sd_nvic_GetPriority(IRQn_Type IRQn, nrf_app_irq_priority_t * p_priority));
+..\..\..\..\..\..\components\softdevice\s130\headers\nrf_soc.h(496): error:  #1502: arguments for __svc or __svc_indirect function must have integral type
+  
+VCALL(SD_NVIC_GETPRIORITY, uint32_t, sd_nvic_GetPriority(IRQn_Type IRQn, nrf_app_irq_priority_t * p_priority));
+..\..\..\..\..\..\components\libraries\util\app_util_platform.h(115): error:  #20: identifier "SCB_Type" is undefined
+      uint32_t isr_vector_num = (
+CB->ICSR & SCB_ICSR_VECTACTIVE_Msk);
+..\..\..\..\..\..\components\libraries\util\app_util_platform.h(115): error:  #29: expected an expression
+      uint32_t isr_vector_num = (
+CB->ICSR & SCB_ICSR_VECTACTIVE_Msk);
+..\..\..\..\..\..\components\libraries\util\app_util_platform.h(119): warning:  #223-D: function "NVIC_GetPriority" declared implicitly
+          return (NVIC_GetPriority((IRQn_Type)irq_type) & 0xFF);
+..\..\..\..\..\..\components\libraries\util\app_util_platform.h(119): error:  #20: identifier "IRQn_Type" is undefined
+          return (NVIC_GetPriority((IRQn_Type)irq_type) & 0xFF);
+..\..\..\..\..\..\components\libraries\util\app_util_platform.h(119): error:  #18: expected a ")"
+          return (NVIC_GetPriority((IRQn_Type)irq_type) & 0xFF);
+..\..\..\..\..\..\components\libraries\util\app_util_platform.h(118): warning:  #177-D: variable "irq_type" was declared but never referenced
+          int32_t irq_type = ((int32_t)isr_vector_num - EXTERNAL_INT_VECTOR_OFFSET);
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h(453): error:  #20: identifier "NRF_GPIO_Type" is undefined
+      
+RF_GPIO->PIN_CNF[pin_number] = ((uint32_t)dir   << GPIO_PIN_CNF_DIR_Pos)
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h(453): error:  #29: expected an expression
+      
+RF_GPIO->PIN_CNF[pin_number] = ((uint32_t)dir   << GPIO_PIN_CNF_DIR_Pos)
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h(453): error:  #18: expected a ")"
+      
+RF_GPIO->PIN_CNF[pin_number] = ((uint32_t)dir   << GPIO_PIN_CNF_DIR_Pos)
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h(496): error:  #20: identifier "NRF_GPIO_Type" is undefined
+      uint32_t cnf = 
+RF_GPIO->PIN_CNF[pin_number] & ~GPIO_PIN_CNF_INPUT_Msk;
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h(496): error:  #29: expected an expression
+      uint32_t cnf = 
+RF_GPIO->PIN_CNF[pin_number] & ~GPIO_PIN_CNF_INPUT_Msk;
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h(496): error:  #18: expected a ")"
+      uint32_t cnf = 
+RF_GPIO->PIN_CNF[pin_number] & ~GPIO_PIN_CNF_INPUT_Msk;
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h(497): error:  #29: expected an expression
+      
+RF_GPIO->PIN_CNF[pin_number] = cnf | (GPIO_PIN_CNF_INPUT_Connect << GPIO_PIN_CNF_INPUT_Pos);
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h(497): error:  #18: expected a ")"
+      
+RF_GPIO->PIN_CNF[pin_number] = cnf | (GPIO_PIN_CNF_INPUT_Connect << GPIO_PIN_CNF_INPUT_Pos);
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h(503): error:  #20: identifier "NRF_GPIO_Type" is undefined
+      uint32_t cnf = 
+RF_GPIO->PIN_CNF[pin_number] & ~GPIO_PIN_CNF_INPUT_Msk;
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h(503): error:  #29: expected an expression
+      uint32_t cnf = 
+RF_GPIO->PIN_CNF[pin_number] & ~GPIO_PIN_CNF_INPUT_Msk;
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h(503): error:  #18: expected a ")"
+      uint32_t cnf = 
+RF_GPIO->PIN_CNF[pin_number] & ~GPIO_PIN_CNF_INPUT_Msk;
+..\..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h(504): error:  #29: expected an expression
+      
+RF_GPIO->PIN_CNF[pin_number] = cnf | (GPIO_PIN_CNF_INPUT_Disconnect << GPIO_PIN_CNF_INPUT_Pos);
+..\..\..\..\..\..\components\libraries\util\nrf_log.c: 2 warnings, 30 errors
+compiling retarget.c...
+..\..\..\..\..\..\components\softdevice\s130\headers\nrf_soc.h(419): error:  #20: identifier "IRQn_Type" is undefined
+  
+VCALL(SD_NVIC_ENABLEIRQ, uint32_t, sd_nvic_EnableIRQ(IRQn_Type IRQn));
+..\..\..\..\..\..\components\softdevice\s130\headers\nrf_soc.h(419): error:  #1502: arguments for __svc or __svc_indirect function must have integral type
+  
+VCALL(SD_NVIC_ENABLEIRQ, uint32_t, sd_nvic_EnableIRQ(IRQn_Type IRQn));
+..\..\..\..\..\..\components\softdevice\s130\headers\nrf_soc.h(431): error:  #20: identifier "IRQn_Type" is undefined
+  
+VCALL(SD_NVIC_DISABLEIRQ, uint32_t, sd_nvic_DisableIRQ(IRQn_Type IRQn));
+..\..\..\..\..\..\components\softdevice\s130\headers\nrf_soc.h(431): error:  #1502: arguments for __svc or __svc_indirect function must have integral type
+  
+VCALL(SD_NVIC_DISABLEIRQ, uint32_t, sd_nvic_DisableIRQ(IRQn_Type IRQn));
+..\..\..\..\..\..\components\softdevice\s130\headers\nrf_soc.h(444): error:  #20: identifier "IRQn_Type" is undefined
+  
+VCALL(SD_NVIC_GETPENDINGIRQ, uint32_t, sd_nvic_GetPendingIRQ(IRQn_Type IRQn, uint32_t * p_pending_irq));
+..\..\..\..\..\..\components\softdevice\s130\headers\nrf_soc.h(444): error:  #1502: arguments for __svc or __svc_indirect function must have integral type
+  
+VCALL(SD_NVIC_GETPENDINGIRQ, uint32_t, sd_nvic_GetPendingIRQ(IRQn_Type IRQn, uint32_t * p_pending_irq));
+..\..\..\..\..\..\components\softdevice\s130\headers\nrf_soc.h(456): error:  #20: identifier "IRQn_Type" is undefined
+  
+VCALL(SD_NVIC_SETPENDINGIRQ, uint32_t, sd_nvic_SetPendingIRQ(IRQn_Type IRQn));
+..\..\..\..\..\..\components\softdevice\s130\headers\nrf_soc.h(456): error:  #1502: arguments for __svc or __svc_indirect function must have integral type
+  
+VCALL(SD_NVIC_SETPENDINGIRQ, uint32_t, sd_nvic_SetPendingIRQ(IRQn_Type IRQn));
+..\..\..\..\..\..\components\softdevice\s130\headers\nrf_soc.h(468): error:  #20: identifier "IRQn_Type" is undefined
+  
+VCALL(SD_NVIC_CLEARPENDINGIRQ, uint32_t, sd_nvic_ClearPendingIRQ(IRQn_Type IRQn));
+..\..\..\..\..\..\components\softdevice\s130\headers\nrf_soc.h(468): error:  #1502: arguments for __svc or __svc_indirect function must have integral type
+  
+VCALL(SD_NVIC_CLEARPENDINGIRQ, uint32_t, sd_nvic_ClearPendingIRQ(IRQn_Type IRQn));
+..\..\..\..\..\..\components\softdevice\s130\headers\nrf_soc.h(483): error:  #20: identifier "IRQn_Type" is undefined
+  
+VCALL(SD_NVIC_SETPRIORITY, uint32_t, sd_nvic_SetPriority(IRQn_Type IRQn, nrf_app_irq_priority_t priority));
+..\..\..\..\..\..\components\softdevice\s130\headers\nrf_soc.h(483): error:  #1502: arguments for __svc or __svc_indirect function must have integral type
+  
+VCALL(SD_NVIC_SETPRIORITY, uint32_t, sd_nvic_SetPriority(IRQn_Type IRQn, nrf_app_irq_priority_t priority));
+..\..\..\..\..\..\components\softdevice\s130\headers\nrf_soc.h(496): error:  #20: identifier "IRQn_Type" is undefined
+  
+VCALL(SD_NVIC_GETPRIORITY, uint32_t, sd_nvic_GetPriority(IRQn_Type IRQn, nrf_app_irq_priority_t * p_priority));
+..\..\..\..\..\..\components\softdevice\s130\headers\nrf_soc.h(496): error:  #1502: arguments for __svc or __svc_indirect function must have integral type
+  
+VCALL(SD_NVIC_GETPRIORITY, uint32_t, sd_nvic_GetPriority(IRQn_Type IRQn, nrf_app_irq_priority_t * p_priority));
+..\..\..\..\..\..\components\libraries\util\app_util_platform.h(115): error:  #20: identifier "SCB_Type" is undefined
+      uint32_t isr_vector_num = (
+CB->ICSR & SCB_ICSR_VECTACTIVE_Msk);
+..\..\..\..\..\..\components\libraries\util\app_util_platform.h(115): error:  #29: expected an expression
+      uint32_t isr_vector_num = (
+CB->ICSR & SCB_ICSR_VECTACTIVE_Msk);
+..\..\..\..\..\..\components\libraries\util\app_util_platform.h(119): warning:  #223-D: function "NVIC_GetPriority" declared implicitly
+          return (NVIC_GetPriority((IRQn_Type)irq_type) & 0xFF);
+..\..\..\..\..\..\components\libraries\util\app_util_platform.h(119): error:  #20: identifier "IRQn_Type" is undefined
+          return (NVIC_GetPriority((IRQn_Type)irq_type) & 0xFF);
+..\..\..\..\..\..\components\libraries\util\app_util_platform.h(119): error:  #18: expected a ")"
+          return (NVIC_GetPriority((IRQn_Type)irq_type) & 0xFF);
+..\..\..\..\..\..\components\libraries\util\app_util_platform.h(118): warning:  #177-D: variable "irq_type" was declared but never referenced
+          int32_t irq_type = ((int32_t)isr_vector_num - EXTERNAL_INT_VECTOR_OFFSET);
+..\..\..\..\..\..\components\libraries\uart\retarget.c: 2 warnings, 18 errors
+assembling arm_startup_nrf51.s...
+compiling softdevice_handler.c...
+..\..\..\..\..\..\components\softdevice\s130\headers\nrf_soc.h(419): error:  #20: identifier "IRQn_Type" is undefined
+  
+VCALL(SD_NVIC_ENABLEIRQ, uint32_t, sd_nvic_EnableIRQ(IRQn_Type IRQn));
+..\..\..\..\..\..\components\softdevice\s130\headers\nrf_soc.h(419): error:  #1502: arguments for __svc or __svc_indirect function must have integral type
+  
+VCALL(SD_NVIC_ENABLEIRQ, uint32_t, sd_nvic_EnableIRQ(IRQn_Type IRQn));
+..\..\..\..\..\..\components\softdevice\s130\headers\nrf_soc.h(431): error:  #20: identifier "IRQn_Type" is undefined
+  
+VCALL(SD_NVIC_DISABLEIRQ, uint32_t, sd_nvic_DisableIRQ(IRQn_Type IRQn));
+..\..\..\..\..\..\components\softdevice\s130\headers\nrf_soc.h(431): error:  #1502: arguments for __svc or __svc_indirect function must have integral type
+  
+VCALL(SD_NVIC_DISABLEIRQ, uint32_t, sd_nvic_DisableIRQ(IRQn_Type IRQn));
+..\..\..\..\..\..\components\softdevice\s130\headers\nrf_soc.h(444): error:  #20: identifier "IRQn_Type" is undefined
+  
+VCALL(SD_NVIC_GETPENDINGIRQ, uint32_t, sd_nvic_GetPendingIRQ(IRQn_Type IRQn, uint32_t * p_pending_irq));
+..\..\..\..\..\..\components\softdevice\s130\headers\nrf_soc.h(444): error:  #1502: arguments for __svc or __svc_indirect function must have integral type
+  
+VCALL(SD_NVIC_GETPENDINGIRQ, uint32_t, sd_nvic_GetPendingIRQ(IRQn_Type IRQn, uint32_t * p_pending_irq));
+..\..\..\..\..\..\components\softdevice\s130\headers\nrf_soc.h(456): error:  #20: identifier "IRQn_Type" is undefined
+  
+VCALL(SD_NVIC_SETPENDINGIRQ, uint32_t, sd_nvic_SetPendingIRQ(IRQn_Type IRQn));
+..\..\..\..\..\..\components\softdevice\s130\headers\nrf_soc.h(456): error:  #1502: arguments for __svc or __svc_indirect function must have integral type
+  
+VCALL(SD_NVIC_SETPENDINGIRQ, uint32_t, sd_nvic_SetPendingIRQ(IRQn_Type IRQn));
+..\..\..\..\..\..\components\softdevice\s130\headers\nrf_soc.h(468): error:  #20: identifier "IRQn_Type" is undefined
+  
+VCALL(SD_NVIC_CLEARPENDINGIRQ, uint32_t, sd_nvic_ClearPendingIRQ(IRQn_Type IRQn));
+..\..\..\..\..\..\components\softdevice\s130\headers\nrf_soc.h(468): error:  #1502: arguments for __svc or __svc_indirect function must have integral type
+  
+VCALL(SD_NVIC_CLEARPENDINGIRQ, uint32_t, sd_nvic_ClearPendingIRQ(IRQn_Type IRQn));
+..\..\..\..\..\..\components\softdevice\s130\headers\nrf_soc.h(483): error:  #20: identifier "IRQn_Type" is undefined
+  
+VCALL(SD_NVIC_SETPRIORITY, uint32_t, sd_nvic_SetPriority(IRQn_Type IRQn, nrf_app_irq_priority_t priority));
+..\..\..\..\..\..\components\softdevice\s130\headers\nrf_soc.h(483): error:  #1502: arguments for __svc or __svc_indirect function must have integral type
+  
+VCALL(SD_NVIC_SETPRIORITY, uint32_t, sd_nvic_SetPriority(IRQn_Type IRQn, nrf_app_irq_priority_t priority));
+..\..\..\..\..\..\components\softdevice\s130\headers\nrf_soc.h(496): error:  #20: identifier "IRQn_Type" is undefined
+  
+VCALL(SD_NVIC_GETPRIORITY, uint32_t, sd_nvic_GetPriority(IRQn_Type IRQn, nrf_app_irq_priority_t * p_priority));
+..\..\..\..\..\..\components\softdevice\s130\headers\nrf_soc.h(496): error:  #1502: arguments for __svc or __svc_indirect function must have integral type
+  
+VCALL(SD_NVIC_GETPRIORITY, uint32_t, sd_nvic_GetPriority(IRQn_Type IRQn, nrf_app_irq_priority_t * p_priority));
+..\..\..\..\..\..\components\softdevice\common\softdevice_handler\softdevice_handler.c(317): error:  #20: identifier "SWI2_IRQn" is undefined
+      return sd_nvic_EnableIRQ(
+OFTDEVICE_EVT_IRQ);
+..\..\..\..\..\..\components\softdevice\common\softdevice_handler\softdevice_handler.c: 0 warnings, 15 errors
+compiling system_nrf51.c...
+RTE\Device\nRF51422_xxAC\system_nrf51.c(82): error:  #20: identifier "NRF_MPU_Type" is undefined
+          
+RF_MPU->DISABLEINDEBUG = MPU_DISABLEINDEBUG_DISABLEINDEBUG_Disabled << MPU_DISABLEINDEBUG_DISABLEINDEBUG_Pos;
+RTE\Device\nRF51422_xxAC\system_nrf51.c(82): error:  #29: expected an expression
+          
+RF_MPU->DISABLEINDEBUG = MPU_DISABLEINDEBUG_DISABLEINDEBUG_Disabled << MPU_DISABLEINDEBUG_DISABLEINDEBUG_Pos;
+RTE\Device\nRF51422_xxAC\system_nrf51.c(82): error:  #18: expected a ")"
+          
+RF_MPU->DISABLEINDEBUG = MPU_DISABLEINDEBUG_DISABLEINDEBUG_Disabled << MPU_DISABLEINDEBUG_DISABLEINDEBUG_Pos;
+RTE\Device\nRF51422_xxAC\system_nrf51.c: 0 warnings, 3 errors
+".\_build\nrf51422_xxac_s130.axf" - 387 Error(s), 19 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: ARM
+                http://www.keil.com/pack/ARM.CMSIS.4.5.0.pack
+                ARM::CMSIS:CORE:4.3.0
+                CMSIS (Cortex Microcontroller Software Interface Standard)
+   * Component: CORE Version: 4.3.0
+
+Package Vendor: NordicSemiconductor
+                http://developer.nordicsemi.com/nRF51_SDK/pieces/nRF_DeviceFamilyPack/NordicSemiconductor.nRF_DeviceFamilyPack.8.3.1.pack
+                NordicSemiconductor::Device:Startup:8.3.1
+                Nordic Semiconductor nRF ARM devices Device Family Pack.
+   * Component: Startup Version: 8.3.1
+
+<h2>Collection of Component include folders:</h2>
+  E:\ELEC 494\WNR\nRF5_comp_spi\examples\ble_central\complete_peripheral\pca10028\s130\arm5_no_packs\RTE
+  C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include
+  C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.1\Device\Include
+  C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.2\Device\Include
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: ARM::CMSIS:CORE:4.3.0
+
+   * Component: NordicSemiconductor::Device:Startup:8.3.1
+      Source file:   Device\Source\arm\arm_startup_nrf51.s
+      Source file:   Device\Source\system_nrf51.c
+      Include file:  Device\Include\system_nrf51.h
+Target not created.
+Build Time Elapsed:  00:00:04
+</pre>
+</body>
+</html>
