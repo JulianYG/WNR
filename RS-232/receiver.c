@@ -26,11 +26,14 @@ compile with the command: gcc demo_rx.c rs232.c -Wall -Wextra -o2 -o test_rx
 #include "heatshrink_config.h"
 #define MAX_DATA_SIZE 2048
 static heatshrink_decoder hsd;
-void decompress(uint8_t *input, uint32_t input_size);
+static void decompress(uint8_t *input, uint32_t input_size);
 static int arr_search(uint8_t *toSearch, int lenSearch, uint8_t *arr, int lenArr);
+static FILE *csv;
+//static uint32_t cnt = 0;
 
 int main(void)
 {
+
     int n,
         cport_nr = 4,        /* /dev/ttyS0 (COM1 on windows) */
         bdrate = 38400;       /* 9600 baud */
@@ -95,7 +98,6 @@ int main(void)
 		    usleep(100000);  /* sleep for 100 milliSeconds */
 		#endif
 	}
-
     return (0);
 }
 
@@ -124,10 +126,14 @@ int main(void)
             heatshrink_decoder_finish(&hsd);
         }
     }
+
+    csv = fopen("data.csv", "a");
     for (int i = 0; i < polled; ++i) {
-    	printf("%hhu, ", decomp[i]);
+    	fprintf(csv, "%hhu\n", decomp[i]);
+  //  	cnt += 1;
+    //	printf("%hhu", 1, decomp[i]);
     }
-    printf("\n");
+	fclose(csv);
 	free(decomp);
  }
 
