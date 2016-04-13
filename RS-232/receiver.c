@@ -25,13 +25,12 @@ compile with the command: gcc demo_rx.c rs232.c -Wall -Wextra -o2 -o test_rx
 #include "heatshrink_common.h"
 #include "heatshrink_config.h"
 #define MAX_DATA_SIZE 2048
-#define BUF_SIZE 1//20
+#define BUF_SIZE 20
 #define DELIMITER_LEN 18
 static heatshrink_decoder hsd;
 static void decompress(uint8_t *input, uint32_t input_size);
 static int arr_search(uint8_t *toSearch, int lenSearch, uint8_t *arr, int lenArr);
 static FILE *csv;
-//static uint32_t cnt = 0;
 
 int main(void)
 {
@@ -66,9 +65,9 @@ int main(void)
 		    }
 
 		    else {
-	
 			    int pos = -1;
-			    if ((pos = arr_search("TKENDTKENDTKENDTKE", DELIMITER_LEN, buf, n)) >= 0) {	/* If receiving the end of current compressed buffer, send & reinitialize */
+			    /* If receiving the end of current compressed buffer, send & reinitialize */
+			    if ((pos = arr_search("TKENDTKENDTKENDTKE", DELIMITER_LEN, buf, n)) >= 0) {	
 			    	int eff_len = pos - DELIMITER_LEN + 1;
 			    	uint8_t temp[eff_len];
 			    	memcpy(temp, buf, eff_len);
@@ -82,8 +81,6 @@ int main(void)
 
 			    	uint8_t comp[size];
 			    	memcpy(comp, data, size);
-
-
 			    	decompress(comp, size);
 
 			    	/* Clean up */
@@ -97,10 +94,6 @@ int main(void)
 			    } else {	/* If regular data packets, store it*/
 			    	memcpy(data + received_cnt, buf, n);
 			    	received_cnt = received_cnt + n;
-			    	if (received_cnt == 131) {
-
-			    		decompress(data, 131);
-			    	}
 			    }
 			}
     	}
@@ -117,7 +110,7 @@ int main(void)
  {
  	printf("Decompressing data...\n");
  	heatshrink_decoder_reset(&hsd);
- 	size_t decomp_sz = 2048;
+ 	size_t decomp_sz = 2048; /* Maximum buffer size before compression */
 	uint8_t *decomp = malloc(decomp_sz);
 	memset(decomp, 0, decomp_sz);
 	size_t count;
@@ -126,7 +119,6 @@ int main(void)
 
     while (sunk < compressed_size) {
         heatshrink_decoder_sink(&hsd, &input[sunk], compressed_size - sunk, &count);
-     
         sunk += count;
         if (sunk == compressed_size) {
             heatshrink_decoder_finish(&hsd);
@@ -141,12 +133,9 @@ int main(void)
             heatshrink_decoder_finish(&hsd);
         }
     }
-
     csv = fopen("data.csv", "a");
     for (int i = 0; i < polled; ++i) {
     	fprintf(csv, "%hhu\n", decomp[i]);
-  //  	cnt += 1;
-    //	printf("%hhu", 1, decomp[i]);
     }
 	fclose(csv);
 	free(decomp);
