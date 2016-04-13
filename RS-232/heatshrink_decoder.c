@@ -100,8 +100,8 @@ HSD_sink_res heatshrink_decoder_sink(heatshrink_decoder *hsd,
     }
     // fprintf(stdout, "%d\n", hsd->input_buffer_size);
     // fflush(stdout);
- //   size_t rem = HEATSHRINK_DECODER_INPUT_BUFFER_SIZE(hsd) - hsd->input_size;
-        size_t rem = 32 - hsd->input_size;
+    size_t rem = HEATSHRINK_DECODER_INPUT_BUFFER_SIZE(hsd) - hsd->input_size;
+  //      size_t rem = 32 - hsd->input_size;
 
     if (rem == 0) {
         *input_size = 0;

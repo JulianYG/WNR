@@ -3,7 +3,7 @@
 
 /* Should functionality assuming dynamic allocation be used? */
 #ifndef HEATSHRINK_DYNAMIC_ALLOC
-#define HEATSHRINK_DYNAMIC_ALLOC 1
+#define HEATSHRINK_DYNAMIC_ALLOC 0
 #endif
 
 #if HEATSHRINK_DYNAMIC_ALLOC
