@@ -26,12 +26,12 @@ compile with the command: gcc demo_rx.c rs232.c -Wall -Wextra -o2 -o test_rx
 #include "heatshrink_config.h"
 #define MAX_DATA_SIZE 2048
 static heatshrink_decoder hsd;
-static void decompress(uint8_t *input, uint32_t input_size);
+void decompress(uint8_t *input, uint32_t input_size);
 static int arr_search(uint8_t *toSearch, int lenSearch, uint8_t *arr, int lenArr);
 
 int main(void)
 {
-    int i, n,
+    int n,
         cport_nr = 4,        /* /dev/ttyS0 (COM1 on windows) */
         bdrate = 38400;       /* 9600 baud */
 
@@ -51,46 +51,43 @@ int main(void)
 
 	    if (n > 0) {
 		    buf[n] = 0;   /* always put a "null" at the end of a string! */
-		    for (i = 0; i < n; ++i) {
-		        if (buf[i] < 32) {  /* replace unreadable control-codes by dots */
-		            buf[i] = '.';
-		        }
-		    }
-
+		    printf("Received %i bytes: %s\n", n, (char *) buf);
 		    if (arr_search("TKENDTKENDTKENDTKEND", 20, buf, n) > 0) {
 		    	printf("%s\n", "Starting reception...");
 		    	memset(data, 0, MAX_DATA_SIZE);	/* Initialize the array */
 		    }
 
-		    printf("Received %i bytes: %s\n", n, (char *) buf);
+		    else {
 	
-		    int pos = -1;
-		    if ((pos = arr_search("TKENDTKENDTKENDTKE", 18, buf, n)) >= 0) {	/* If receiving the end of current compressed buffer, send & reinitialize */
-		    	int eff_len = pos - 18 + 1;
-		    	uint8_t temp[eff_len];
-		    	memcpy(temp, buf, eff_len);
-		    	memcpy(data + received_cnt, temp, eff_len);
-		    	received_cnt += eff_len;
-		    	/* Discard the last five bytes of indicators*/
-		    	char size_num[2];
-		    	memcpy(size_num, buf + pos + 1, 2);
-		    	printf("%d ", size_num[0]);
-		    	printf("%d ", size_num[1]);
-		    	int size = (int) strtol(size_num, NULL, 16);
-		    	printf("%d\n", size);
-		    	decompress(data, size);
-		    	/* Clean up */
-		    	memset(data, 0, MAX_DATA_SIZE);
-		    	received_cnt = 0;	
-		    	/* Also need to store rest of the data to avoid loss */
-		    	// uint8_t lost[n - eff_len - 5];
-		    	// memcpy(lost, buf + pos + 1, n - pos - 1);
-		    	// memcpy(data, lost, n - pos - 1);
-		    	// received_cnt += n - pos - 1;
-		    } else {	/* If regular data packets, store it*/
-		    	memcpy(data + received_cnt, buf, n);
-		    	received_cnt = received_cnt + n;
-		    }
+			    int pos = -1;
+			    if ((pos = arr_search("TKENDTKENDTKENDTKE", 18, buf, n)) >= 0) {	/* If receiving the end of current compressed buffer, send & reinitialize */
+			    	int eff_len = pos - 18 + 1;
+			    	uint8_t temp[eff_len];
+			    	memcpy(temp, buf, eff_len);
+			    	memcpy(data + received_cnt, temp, eff_len);
+			    	received_cnt += eff_len;
+			    	/* Discard the last five bytes of indicators*/
+			    	char size_buf[2];
+			    	memcpy(size_buf, buf + pos + 1, 2);
+			    	int size = size_buf[1] + (size_buf[0] << 4);
+			    	printf("Received data total size: %d\n", size);
+
+			    	uint8_t comp[size];
+			    	memcpy(comp, data, size);
+			    	decompress(comp, size);
+			    	/* Clean up */
+			    	memset(data, 0, MAX_DATA_SIZE);
+			    	received_cnt = 0;	
+			    	/* Also need to store rest of the data to avoid loss */
+			    	// uint8_t lost[n - eff_len - 5];
+			    	// memcpy(lost, buf + pos + 1, n - pos - 1);
+			    	// memcpy(data, lost, n - pos - 1);
+			    	// received_cnt += n - pos - 1;
+			    } else {	/* If regular data packets, store it*/
+			    	memcpy(data + received_cnt, buf, n);
+			    	received_cnt = received_cnt + n;
+			    }
+			}
     	}
 		#ifdef _WIN32
 		    Sleep(100);
@@ -104,32 +101,33 @@ int main(void)
 
  void decompress(uint8_t *input, uint32_t compressed_size)
  {
+ 	heatshrink_decoder_reset(&hsd);
  	size_t decomp_sz = 2048;
 	uint8_t *decomp = malloc(decomp_sz);
-
 	memset(decomp, 0, decomp_sz);
-	size_t count = 0;
+	size_t count;
 	uint32_t sunk = 0;
     uint32_t polled = 0;
 
     while (sunk < compressed_size) {
         heatshrink_decoder_sink(&hsd, &input[sunk], compressed_size - sunk, &count);
+     
         sunk += count;
-
         HSD_poll_res pres;
         do {
             pres = heatshrink_decoder_poll(&hsd, &decomp[polled],
                 decomp_sz - polled, &count);
             polled += count;
-        //   printf("%d", count);
+        //    printf("%d", count);
         } while (pres == HSDR_POLL_MORE);
         if (sunk == compressed_size) {
-            HSD_finish_res fres = heatshrink_decoder_finish(&hsd);
+            heatshrink_decoder_finish(&hsd);
         }
     }
     for (int i = 0; i < polled; ++i) {
-    	printf("%hhu", decomp[i]);
+    	printf("%hhu, ", decomp[i]);
     }
+    printf("\n");
 	free(decomp);
  }
 

@@ -86,6 +86,7 @@ static int compress_and_expand_and_check(uint8_t *input, uint32_t input_size, in
     while (sunk < compressed_size) {
         ASSERT(heatshrink_decoder_sink(&hsd, &comp[sunk], compressed_size - sunk, &count) >= 0);
         sunk += count;
+        
         if (log_lvl > 1) printf("^^ sunk %zd\n", count);
         if (sunk == compressed_size) {
             ASSERT_EQ(HSDR_FINISH_MORE, heatshrink_decoder_finish(&hsd));

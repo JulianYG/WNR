@@ -99,6 +99,7 @@ HSD_sink_res heatshrink_decoder_sink(heatshrink_decoder *hsd,
     }
 
     size_t rem = HEATSHRINK_DECODER_INPUT_BUFFER_SIZE(hsd) - hsd->input_size;
+    
     if (rem == 0) {
         *input_size = 0;
         return HSDR_SINK_FULL;
