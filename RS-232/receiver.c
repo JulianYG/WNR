@@ -25,7 +25,7 @@ compile with the command: gcc demo_rx.c rs232.c -Wall -Wextra -o2 -o test_rx
 #include "heatshrink_common.h"
 #include "heatshrink_config.h"
 #define MAX_DATA_SIZE 2048
-#define BUF_SIZE 20
+#define BUF_SIZE 21
 #define DELIMITER_LEN 18
 
 static heatshrink_decoder hsd;
@@ -41,7 +41,8 @@ int main(void)
         bdrate = 38400;       /* 9600 baud */
 
     uint8_t buf[BUF_SIZE + 1];
-    uint8_t data[MAX_DATA_SIZE];
+    uint8_t data_0[MAX_DATA_SIZE];
+    uint8_t data_1[MAX_DATA_SIZE];
 
     char mode[] = {'8','N','1',0};
 
@@ -60,45 +61,92 @@ int main(void)
 		    buf[n] = 0;   
 		
 		    printf("Received %i bytes: %s\n", n, (char *) buf);
+		    switch(buf[n - 1]) {
+		    	case 48:
+				    if (arr_search("TKENDTKENDTKENDTKEND", BUF_SIZE, buf, n) > 0) {
+				    	printf("%s\n", "Starting reception on device 0...");
+				    	memset(data_0, 0, MAX_DATA_SIZE);	/* Initialize the array */
+				    	received_cnt = 0;
+				    }
 
-		    if (arr_search("TKENDTKENDTKENDTKEND", BUF_SIZE, buf, n) > 0) {
-		    	printf("%s\n", "Starting reception...");
-		    	memset(data, 0, MAX_DATA_SIZE);	/* Initialize the array */
-		    	received_cnt = 0;
-		    }
+				    else {
+					    int pos = -1;
+					    /* If receiving the end of current compressed buffer, send & reinitialize */
+					    if ((pos = arr_search("TKENDTKENDTKENDTKE", DELIMITER_LEN, buf, n)) >= 0) {	
+					    	int eff_len = pos - DELIMITER_LEN + 1;
+					    	uint8_t temp[eff_len];
+					    	memcpy(temp, buf, eff_len);
+					    	memcpy(data_0 + received_cnt, temp, eff_len);
+					    	received_cnt += eff_len;
+					    	/* Discard the last five bytes of indicators*/
+					    	char size_buf[2];
+					    	memcpy(size_buf, buf + pos + 1, 2);
+					    	int size = size_buf[1] + (size_buf[0] << 4);
+					    	printf("Received data from device 0 total size: %d\n", size);
 
-		    else {
-			    int pos = -1;
-			    /* If receiving the end of current compressed buffer, send & reinitialize */
-			    if ((pos = arr_search("TKENDTKENDTKENDTKE", DELIMITER_LEN, buf, n)) >= 0) {	
-			    	int eff_len = pos - DELIMITER_LEN + 1;
-			    	uint8_t temp[eff_len];
-			    	memcpy(temp, buf, eff_len);
-			    	memcpy(data + received_cnt, temp, eff_len);
-			    	received_cnt += eff_len;
-			    	/* Discard the last five bytes of indicators*/
-			    	char size_buf[2];
-			    	memcpy(size_buf, buf + pos + 1, 2);
-			    	int size = size_buf[1] + (size_buf[0] << 4);
-			    	printf("Received data total size: %d\n", size);
+					    	uint8_t comp[size];
+					    	memcpy(comp, data_0, size);
+					    	decompress(comp, size);
 
-			    	uint8_t comp[size];
-			    	memcpy(comp, data, size);
-			    	decompress(comp, size);
+					    	/* Clean up */
+					    	memset(data_0, 0, MAX_DATA_SIZE);
+					    	received_cnt = 0;	
+					    	/* Also need to store rest of the data to avoid loss */
+					    	// uint8_t lost[n - eff_len - 5];
+					    	// memcpy(lost, buf + pos + 1, n - pos - 1);
+					    	// memcpy(data, lost, n - pos - 1);
+					    	// received_cnt += n - pos - 1;
+					    } else {	/* If regular data packets, store it*/
+					    	memcpy(data_0 + received_cnt, buf, n - 1);
+					    	received_cnt = received_cnt + n - 1;
+					    	/* The extra 1 byte indicating device number */
+					    }
+					}
+					break;
+				case 49:
+					if (arr_search("TKENDTKENDTKENDTKEND", BUF_SIZE, buf, n) > 0) {
+				    	printf("%s\n", "Starting reception on device 1...");
+				    	memset(data_1, 0, MAX_DATA_SIZE);	/* Initialize the array */
+				    	received_cnt = 0;
+				    }
 
-			    	/* Clean up */
-			    	memset(data, 0, MAX_DATA_SIZE);
-			    	received_cnt = 0;	
-			    	/* Also need to store rest of the data to avoid loss */
-			    	// uint8_t lost[n - eff_len - 5];
-			    	// memcpy(lost, buf + pos + 1, n - pos - 1);
-			    	// memcpy(data, lost, n - pos - 1);
-			    	// received_cnt += n - pos - 1;
-			    } else {	/* If regular data packets, store it*/
-			    	memcpy(data + received_cnt, buf, n);
-			    	received_cnt = received_cnt + n;
-			    }
-			}
+				    else {
+					    int pos = -1;
+					    /* If receiving the end of current compressed buffer, send & reinitialize */
+					    if ((pos = arr_search("TKENDTKENDTKENDTKE", DELIMITER_LEN, buf, n)) >= 0) {	
+					    	int eff_len = pos - DELIMITER_LEN + 1;
+					    	uint8_t temp[eff_len];
+					    	memcpy(temp, buf, eff_len);
+					    	memcpy(data_1 + received_cnt, temp, eff_len);
+					    	received_cnt += eff_len;
+					    	/* Discard the last five bytes of indicators*/
+					    	char size_buf[2];
+					    	memcpy(size_buf, buf + pos + 1, 2);
+					    	int size = size_buf[1] + (size_buf[0] << 4);
+					    	printf("Received data from device 1 total size: %d\n", size);
+
+					    	uint8_t comp[size];
+					    	memcpy(comp, data_1, size);
+					    	decompress(comp, size);
+
+					    	/* Clean up */
+					    	memset(data_1, 0, MAX_DATA_SIZE);
+					    	received_cnt = 0;	
+					    	/* Also need to store rest of the data to avoid loss */
+					    	// uint8_t lost[n - eff_len - 5];
+					    	// memcpy(lost, buf + pos + 1, n - pos - 1);
+					    	// memcpy(data, lost, n - pos - 1);
+					    	// received_cnt += n - pos - 1;
+					    } else {	/* If regular data packets, store it*/
+					    	memcpy(data_1 + received_cnt, buf, n - 1);
+					    	received_cnt = received_cnt + n - 1;
+					    	/* The extra 1 byte indicating device number */
+					    }
+					}
+					break;
+				default:
+					break;
+	    	}
     	}
 		#ifdef _WIN32
 		    Sleep(100);
