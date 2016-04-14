@@ -81,9 +81,9 @@ int main(void)
 					    	/* Discard the last five bytes of indicators*/
 					    	char size_buf[2];
 					    	memcpy(size_buf, buf + pos + 1, 2);
-					    	int size = size_buf[1] + (size_buf[0] << 4);
+					    	uint8_t size = size_buf[1];// + (size_buf[0] << 8);
 					    	printf("Received data from device 0 total size: %d\n", size);
-
+					    	
 					    	uint8_t comp[size];
 					    	memcpy(comp, data_0, size);
 					    	decompress(comp, size, 0);
