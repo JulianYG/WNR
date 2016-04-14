@@ -1,0 +1,137 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: µVision V5.17.0.0
+Copyright (C) 2015 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: Stephen Xia, student, LIC=----
+ 
+Tool Versions:
+Toolchain:       MDK-Lite  Version: 5.17
+Toolchain Path:  C:\Keil_v5\ARM\ARMCC\Bin
+C Compiler:      Armcc.exe V5.06 update 1 (build 61)
+Assembler:       Armasm.exe V5.06 update 1 (build 61)
+Linker/Locator:  ArmLink.exe V5.06 update 1 (build 61)
+Library Manager: ArmAr.exe V5.06 update 1 (build 61)
+Hex Converter:   FromElf.exe V5.06 update 1 (build 61)
+CPU DLL:         
+Dialog DLL:      
+Target DLL:      Segger\JL2CM3.dll V2.99.16.0
+Dialog DLL:      TCM.DLL V1.14.6.0
+ 
+<h2>Project:</h2>
+C:\Users\stephen\Desktop\spring_2016\senior_design\ble\nRF5_comp_spi\examples\peripheral\comp_spi_freertos\pca10040\arm5_no_packs\blinky_FreeRTOS_pca10040.uvprojx
+Project File Date:  03/28/2016
+
+<h2>Output:</h2>
+*** Using Compiler 'V5.06 update 1 (build 61)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
+Rebuild target 'nrf52832_xxaa'
+compiling croutine.c...
+compiling event_groups.c...
+compiling main.c...
+..\..\main.c(290): warning:  #177-D: variable "err_code" was declared but never referenced
+      uint32_t err_code = NRF_SUCCESS;
+..\..\main.c(385): warning:  #177-D: variable "err_code" was declared but never referenced
+      uint32_t err_code = NRF_SUCCESS;
+..\..\main.c(502): warning:  #167-D: argument of type "void (*)(nrf_drv_spi_evt_type_t *)" is incompatible with parameter of type "nrf_drv_spi_handler_t"
+  				spi_intan_id_read_handler);           // EDIT: INTAN ID spi handler
+..\..\main.c(547): warning:  #177-D: variable "err_code" was declared but never referenced
+      uint32_t err_code = NRF_SUCCESS;
+..\..\main.c(601): warning:  #1294-D: Old-style function ASSERTC
+  int ASSERTC(COND){
+..\..\main.c(601): warning:  #1079-D: standard requires that parameter "COND" be given a type by a subsequent declaration ("int" assumed)
+  int ASSERTC(COND){
+..\..\main.c(603): warning:  #940-D: missing return statement at end of non-void function "ASSERTC"
+  }
+..\..\main.c(605): warning:  #1294-D: Old-style function ASSERT_EQ
+  int ASSERT_EQ(COND1,COND2){
+..\..\main.c(605): warning:  #1079-D: standard requires that parameter "COND1" be given a type by a subsequent declaration ("int" assumed)
+  int ASSERT_EQ(COND1,COND2){
+..\..\main.c(605): warning:  #1079-D: standard requires that parameter "COND2" be given a type by a subsequent declaration ("int" assumed)
+  int ASSERT_EQ(COND1,COND2){
+..\..\main.c(607): warning:  #940-D: missing return statement at end of non-void function "ASSERT_EQ"
+  }
+..\..\main.c(842): warning:  #188-D: enumerated type mixed with another type
+  		config.init_state = 
+rue;
+..\..\main.c(97): warning:  #550-D: variable "m_intan_function" was set but never used
+  static intan_function m_intan_function = DUMMY; //initialize state for DUMMY
+..\..\main.c(104): warning:  #177-D: variable "m_spi_master_ex_state" was declared but never referenced
+  static spi_master_ex_state_t m_spi_master_ex_state = (spi_master_ex_state_t)0;
+..\..\main.c(193): warning:  #177-D: function "intan_calibrate" was declared but never referenced
+  static void intan_calibrate(uint8_t * const p_tx_buf,
+..\..\main.c(204): warning:  #177-D: function "intan_clear" was declared but never referenced
+  static void intan_clear(uint8_t * const p_tx_buf,
+..\..\main.c(697): warning:  #177-D: function "spi_data_collection_evt_handler" was declared but never referenced
+  static void spi_data_collection_evt_handler(void *pvParameter)
+..\..\main.c(798): warning:  #177-D: function "test_callback" was declared but never referenced
+  static void test_callback (void *pvParameter)
+..\..\main.c: 18 warnings, 0 errors
+compiling heap_1.c...
+compiling list.c...
+compiling port.c...
+compiling port_cmsis.c...
+compiling port_cmsis_systick.c...
+compiling queue.c...
+compiling timers.c...
+compiling nrf_drv_clock.c...
+compiling tasks.c...
+compiling nrf_drv_common.c...
+compiling nrf_soc.c...
+compiling app_uart_fifo.c...
+compiling nrf_drv_uart.c...
+compiling nrf_drv_spi.c...
+compiling nrf_drv_gpiote.c...
+compiling nrf_delay.c...
+compiling app_error.c...
+compiling app_util_platform.c...
+compiling nrf_assert.c...
+compiling retarget.c...
+compiling app_fifo.c...
+compiling heatshrink_decoder.c...
+assembling arm_startup_nrf52.s...
+compiling heatshrink_encoder.c...
+..\..\heatshrink\heatshrink_encoder.c(394): warning:  #111-D: statement is unreachable
+      (void)hse;
+..\..\heatshrink\heatshrink_encoder.c(399): warning:  #111-D: statement is unreachable
+      (void)hse;
+..\..\heatshrink\heatshrink_encoder.c: 2 warnings, 0 errors
+compiling system_nrf52.c...
+linking...
+Program Size: Code=12712 RO-data=1284 RW-data=192 ZI-data=22952  
+FromELF: creating hex file...
+".\_build\nrf52832_xxaa.axf" - 0 Error(s), 20 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: ARM
+                http://www.keil.com/pack/ARM.CMSIS.4.5.0.pack
+                ARM::CMSIS:CORE:4.3.0
+                CMSIS (Cortex Microcontroller Software Interface Standard)
+   * Component: CORE Version: 4.3.0
+
+Package Vendor: NordicSemiconductor
+                http://developer.nordicsemi.com/nRF51_SDK/pieces/nRF_DeviceFamilyPack/NordicSemiconductor.nRF_DeviceFamilyPack.8.3.1.pack
+                NordicSemiconductor::Device:Startup:8.3.1
+                Nordic Semiconductor nRF ARM devices Device Family Pack.
+   * Component: Startup Version: 8.3.1
+
+<h2>Collection of Component include folders:</h2>
+  C:\Users\stephen\Desktop\spring_2016\senior_design\ble\nRF5_comp_spi\examples\peripheral\comp_spi_freertos\pca10040\arm5_no_packs\RTE
+  C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include
+  C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.1\Device\Include
+  C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.2\Device\Include
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: ARM::CMSIS:CORE:4.3.0
+
+   * Component: NordicSemiconductor::Device:Startup:8.3.1
+      Source file:   Device\Source\arm\arm_startup_nrf52.s
+      Source file:   Device\Source\system_nrf52.c
+      Include file:  Device\Include\system_nrf52.h
+Build Time Elapsed:  00:00:32
+</pre>
+</body>
+</html>
