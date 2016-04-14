@@ -27,6 +27,7 @@ compile with the command: gcc demo_rx.c rs232.c -Wall -Wextra -o2 -o test_rx
 #define MAX_DATA_SIZE 2048
 #define BUF_SIZE 20
 #define DELIMITER_LEN 18
+
 static heatshrink_decoder hsd;
 static void decompress(uint8_t *input, uint32_t input_size);
 static int arr_search(uint8_t *toSearch, int lenSearch, uint8_t *arr, int lenArr);
@@ -51,6 +52,7 @@ int main(void)
     int received_cnt = 0;
 
     while (1) {
+
       	n = RS232_PollComport(cport_nr, buf, BUF_SIZE);
 
 	    if (n > 0) {
@@ -62,6 +64,7 @@ int main(void)
 		    if (arr_search("TKENDTKENDTKENDTKEND", BUF_SIZE, buf, n) > 0) {
 		    	printf("%s\n", "Starting reception...");
 		    	memset(data, 0, MAX_DATA_SIZE);	/* Initialize the array */
+		    	received_cnt = 0;
 		    }
 
 		    else {
