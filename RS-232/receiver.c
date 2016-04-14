@@ -36,7 +36,7 @@ int main(void)
 {
 
     int n,
-        cport_nr = 6,        /* 4 (COM5 on windows) */
+        cport_nr = 4,        /* 6 (COM5 on windows) */
         bdrate = 38400;       /* 9600 baud */
 
     uint8_t buf[BUF_SIZE + 1];
@@ -133,6 +133,7 @@ int main(void)
             heatshrink_decoder_finish(&hsd);
         }
     }
+    printf("Size after decompression: %d\n", polled);
     csv = fopen("data.csv", "a");
     for (int i = 0; i < polled; ++i) {
     	fprintf(csv, "%hhu\n", decomp[i]);
