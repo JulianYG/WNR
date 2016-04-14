@@ -1,48 +1,0 @@
-Dependencies for Project 'micro_esb_ptx', Target 'nrf51822_xxaa_s110 (256K)': (DO NOT MODIFY !)
-F (..\main.c)(0x56FC2B9C)(-c --cpu Cortex-M0 -D__EVAL -D__MICROLIB --li -g -O0 --apcs=interwork --split_sections -I..\..\..\..\Include -I..\..\..\..\components\drivers_nrf\delay -I..\..\..\..\components\drivers_nrf\gpiote -I..\..\..\..\components\libraries\esb -IC:\Keil_v5\ARM\Pack\ARM\CMSIS\4.2.0\CMSIS\Include --c99-I "E:\ELEC 494\WNR\nRF52_SDK_0.9.2_dbc28c9\examples\peripheral\ptx\arm\RTE"-I C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.2\Device\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="517" -DNRF51 -DNRF51-o .\_build\main.o --omf_browse .\_build\main.crf --depend .\_build\main.d)
-I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x55DBF056)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55DBF060)
-I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x55DBF058)
-I (C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.2\Device\Include\nrf.h)(0x5671E84C)
-I (C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.2\Device\Include\nrf51.h)(0x5671E848)
-I (C:\Keil_v5\ARM\Pack\ARM\CMSIS\4.2.0\CMSIS\Include\core_cm0.h)(0x53FCF6BA)
-I (C:\Keil_v5\ARM\Pack\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmInstr.h)(0x53FFB78A)
-I (C:\Keil_v5\ARM\Pack\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmFunc.h)(0x53FFB78A)
-I (C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.2\Device\Include\system_nrf51.h)(0x5671E84C)
-I (C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.2\Device\Include\nrf51_bitfields.h)(0x5671E848)
-I (C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.2\Device\Include\nrf51_deprecated.h)(0x5671E84C)
-I (C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.2\Device\Include\compiler_abstraction.h)(0x5671E84C)
-I (..\..\..\..\components\libraries\esb\micro_esb.h)(0x56FB68B8)
-I (..\..\..\..\components\libraries\esb\uesb_error_codes.h)(0x56FB68B8)
-I (..\..\..\..\components\drivers_nrf\delay\nrf_delay.h)(0x56C166C8)
-I (..\..\..\..\components\drivers_nrf\gpiote\nrf_gpio.h)(0x56FC2BB2)
-F (..\..\..\..\components\libraries\esb\micro_esb.c)(0x56FB68B8)(-c --cpu Cortex-M0 -D__EVAL -D__MICROLIB --li -g -O0 --apcs=interwork --split_sections -I..\..\..\..\Include -I..\..\..\..\components\drivers_nrf\delay -I..\..\..\..\components\drivers_nrf\gpiote -I..\..\..\..\components\libraries\esb -IC:\Keil_v5\ARM\Pack\ARM\CMSIS\4.2.0\CMSIS\Include --c99-I "E:\ELEC 494\WNR\nRF52_SDK_0.9.2_dbc28c9\examples\peripheral\ptx\arm\RTE"-I C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.2\Device\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="517" -DNRF51 -DNRF51-o .\_build\micro_esb.o --omf_browse .\_build\micro_esb.crf --depend .\_build\micro_esb.d)
-I (..\..\..\..\components\libraries\esb\micro_esb.h)(0x56FB68B8)
-I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x55DBF056)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55DBF060)
-I (C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.2\Device\Include\nrf.h)(0x5671E84C)
-I (C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.2\Device\Include\nrf51.h)(0x5671E848)
-I (C:\Keil_v5\ARM\Pack\ARM\CMSIS\4.2.0\CMSIS\Include\core_cm0.h)(0x53FCF6BA)
-I (C:\Keil_v5\ARM\Pack\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmInstr.h)(0x53FFB78A)
-I (C:\Keil_v5\ARM\Pack\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmFunc.h)(0x53FFB78A)
-I (C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.2\Device\Include\system_nrf51.h)(0x5671E84C)
-I (C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.2\Device\Include\nrf51_bitfields.h)(0x5671E848)
-I (C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.2\Device\Include\nrf51_deprecated.h)(0x5671E84C)
-I (C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.2\Device\Include\compiler_abstraction.h)(0x5671E84C)
-I (..\..\..\..\components\libraries\esb\uesb_error_codes.h)(0x56FB68B8)
-I (..\..\..\..\components\drivers_nrf\gpiote\nrf_gpio.h)(0x56FC2BB2)
-I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x55DBF058)
-F (..\..\..\..\components\toolchain\system_nrf51.c)(0x56C166CE)(-c --cpu Cortex-M0 -D__EVAL -D__MICROLIB --li -g -O0 --apcs=interwork --split_sections -I..\..\..\..\Include -I..\..\..\..\components\drivers_nrf\delay -I..\..\..\..\components\drivers_nrf\gpiote -I..\..\..\..\components\libraries\esb -IC:\Keil_v5\ARM\Pack\ARM\CMSIS\4.2.0\CMSIS\Include --c99-I "E:\ELEC 494\WNR\nRF52_SDK_0.9.2_dbc28c9\examples\peripheral\ptx\arm\RTE"-I C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.2\Device\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="517" -DNRF51 -DNRF51-o .\_build\system_nrf51.o --omf_browse .\_build\system_nrf51.crf --depend .\_build\system_nrf51.d)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55DBF060)
-I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x55DBF056)
-I (C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.2\Device\Include\nrf.h)(0x5671E84C)
-I (C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.2\Device\Include\nrf51.h)(0x5671E848)
-I (C:\Keil_v5\ARM\Pack\ARM\CMSIS\4.2.0\CMSIS\Include\core_cm0.h)(0x53FCF6BA)
-I (C:\Keil_v5\ARM\Pack\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmInstr.h)(0x53FFB78A)
-I (C:\Keil_v5\ARM\Pack\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmFunc.h)(0x53FFB78A)
-I (C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.2\Device\Include\system_nrf51.h)(0x5671E84C)
-I (C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.2\Device\Include\nrf51_bitfields.h)(0x5671E848)
-I (C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.2\Device\Include\nrf51_deprecated.h)(0x5671E84C)
-I (C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.2\Device\Include\compiler_abstraction.h)(0x5671E84C)
-I (..\..\..\..\components\toolchain\system_nrf51.h)(0x56C166CE)
-F (..\..\..\..\components\toolchain\arm\arm_startup_nrf51.s)(0x56C166CE)(--cpu Cortex-M0 --li --pd "__EVAL SETA 1" -g --apcs=interwork --pd "__MICROLIB SETA 1"-I "E:\ELEC 494\WNR\nRF52_SDK_0.9.2_dbc28c9\examples\peripheral\ptx\arm\RTE"-I C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.2\Device\Include-I C:\Keil_v5\ARM\CMSIS\Include--pd "__UVISION_VERSION SETA 517" --pd "NRF51 SETA 1"--list .\_build\arm_startup_nrf51.lst --xref -o .\_build\arm_startup_nrf51.o --depend .\_build\arm_startup_nrf51.d)

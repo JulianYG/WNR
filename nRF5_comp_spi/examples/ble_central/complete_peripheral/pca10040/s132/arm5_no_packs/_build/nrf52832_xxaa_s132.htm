@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\_build\nrf52832_xxaa_s132.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\_build\nrf52832_xxaa_s132.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060061: Last Updated: Wed Apr 13 00:21:05 2016
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060061: Last Updated: Wed Apr 13 15:15:37 2016
 <BR><P>
 <H3>Maximum Stack Usage =        660 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -340,6 +340,7 @@ Global Symbols
 <P><STRONG><a name="[5d]"></a>__aeabi_memset</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, memseta.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[e9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskGenericCreate
 <LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;heatshrink_encoder_poll
+<LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;buffers_init
 <LI><a href="#[5c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr
 <LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_memset$wrapper
 </UL>
@@ -728,17 +729,18 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;dm_ble_evt_handler
 </UL>
 
-<P><STRONG><a name="[b5]"></a>buffers_init</STRONG> (Thumb, 124 bytes, Stack size 40 bytes, main.o(i.buffers_init))
+<P><STRONG><a name="[b5]"></a>buffers_init</STRONG> (Thumb, 128 bytes, Stack size 40 bytes, main.o(i.buffers_init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 64<LI>Call Chain = buffers_init &rArr; __2printf
 </UL>
 <BR>[Calls]<UL><LI><a href="#[5c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr
+<LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memset
 <LI><a href="#[b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;malloc
 <LI><a href="#[b7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
 </UL>
 <BR>[Called By]<UL><LI><a href="#[2d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[bf]"></a>compress</STRONG> (Thumb, 146 bytes, Stack size 40 bytes, main.o(i.compress))
+<P><STRONG><a name="[bf]"></a>compress</STRONG> (Thumb, 144 bytes, Stack size 40 bytes, main.o(i.compress))
 <BR><BR>[Stack]<UL><LI>Max Depth = 660<LI>Call Chain = compress &rArr; heatshrink_encoder_poll &rArr; st_step_search &rArr; find_longest_match
 </UL>
 <BR>[Calls]<UL><LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;heatshrink_encoder_sink
@@ -857,7 +859,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[1f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SWI2_EGU2_IRQHandler
 </UL>
 
-<P><STRONG><a name="[2d]"></a>main</STRONG> (Thumb, 476 bytes, Stack size 104 bytes, main.o(i.main))
+<P><STRONG><a name="[2d]"></a>main</STRONG> (Thumb, 496 bytes, Stack size 104 bytes, main.o(i.main))
 <BR><BR>[Stack]<UL><LI>Max Depth = 392<LI>Call Chain = main &rArr; ble_advertising_start &rArr; ble_advdata_set &rArr; adv_data_encode &rArr; uuid_list_encode &rArr; uuid_list_sized_encode
 </UL>
 <BR>[Calls]<UL><LI><a href="#[ec]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTimerGenericCommand
@@ -1137,7 +1139,7 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ble_stack_init
 </UL>
 
-<P><STRONG><a name="[3f]"></a>spi_master_0_event_handler</STRONG> (Thumb, 120 bytes, Stack size 24 bytes, main.o(i.spi_master_0_event_handler))
+<P><STRONG><a name="[3f]"></a>spi_master_0_event_handler</STRONG> (Thumb, 114 bytes, Stack size 24 bytes, main.o(i.spi_master_0_event_handler))
 <BR><BR>[Stack]<UL><LI>Max Depth = 144<LI>Call Chain = spi_master_0_event_handler &rArr; sample_data &rArr; switch_state &rArr; nrf_drv_spi_transfer &rArr; nrf_drv_spi_xfer &rArr; spi_xfer &rArr; transfer_byte
 </UL>
 <BR>[Calls]<UL><LI><a href="#[121]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_drv_spi_uninit
@@ -1561,7 +1563,7 @@ Local Symbols
 <BR>[Called By]<UL><LI><a href="#[2d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[3b]"></a>compress_task</STRONG> (Thumb, 76 bytes, Stack size 0 bytes, main.o(i.compress_task))
+<P><STRONG><a name="[3b]"></a>compress_task</STRONG> (Thumb, 82 bytes, Stack size 0 bytes, main.o(i.compress_task))
 <BR><BR>[Stack]<UL><LI>Max Depth = 660<LI>Call Chain = compress_task &rArr; compress &rArr; heatshrink_encoder_poll &rArr; st_step_search &rArr; find_longest_match
 </UL>
 <BR>[Calls]<UL><LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;compress
@@ -1599,8 +1601,8 @@ Local Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> main.o(i.main)
 </UL>
-<P><STRONG><a name="[aa]"></a>on_ble_evt</STRONG> (Thumb, 186 bytes, Stack size 16 bytes, main.o(i.on_ble_evt))
-<BR><BR>[Stack]<UL><LI>Max Depth = 80<LI>Call Chain = on_ble_evt &rArr; data_send &rArr; ble_multi_data_send
+<P><STRONG><a name="[aa]"></a>on_ble_evt</STRONG> (Thumb, 194 bytes, Stack size 24 bytes, main.o(i.on_ble_evt))
+<BR><BR>[Stack]<UL><LI>Max Depth = 88<LI>Call Chain = on_ble_evt &rArr; data_send &rArr; ble_multi_data_send
 </UL>
 <BR>[Calls]<UL><LI><a href="#[ff]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskSuspendAll
 <LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ble_multi_data_send

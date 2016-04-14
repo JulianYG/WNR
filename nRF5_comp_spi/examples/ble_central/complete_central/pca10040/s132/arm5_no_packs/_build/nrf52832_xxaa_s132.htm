@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\_build\nrf52832_xxaa_s132.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\_build\nrf52832_xxaa_s132.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060061: Last Updated: Wed Apr 06 03:12:34 2016
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060061: Last Updated: Wed Apr 13 15:03:04 2016
 <BR><P>
 <H3>Maximum Stack Usage =        208 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -502,8 +502,7 @@ Global Symbols
 <P><STRONG><a name="[a3]"></a>__2printf</STRONG> (Thumb, 0 bytes, Stack size 24 bytes, printfa.o(i.__0printf))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = __2printf
 </UL>
-<BR>[Called By]<UL><LI><a href="#[2d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
-<LI><a href="#[38]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;device_manager_event_handler
+<BR>[Called By]<UL><LI><a href="#[38]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;device_manager_event_handler
 <LI><a href="#[93]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;client_handling_ble_evt_handler
 </UL>
 
@@ -758,7 +757,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[1f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SWI2_EGU2_IRQHandler
 </UL>
 
-<P><STRONG><a name="[2d]"></a>main</STRONG> (Thumb, 202 bytes, Stack size 32 bytes, main.o(i.main))
+<P><STRONG><a name="[2d]"></a>main</STRONG> (Thumb, 160 bytes, Stack size 32 bytes, main.o(i.main))
 <BR><BR>[Stack]<UL><LI>Max Depth = 208<LI>Call Chain = main &rArr; device_manager_init &rArr; dm_init &rArr; pstorage_clear &rArr; cmd_queue_enqueue &rArr; cmd_process &rArr; clear_operation_execute &rArr; sm_state_change &rArr;  cmd_process (Cycle)
 </UL>
 <BR>[Calls]<UL><LI><a href="#[81]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_uart_init
@@ -769,7 +768,6 @@ Global Symbols
 <LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ble_stack_init
 <LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_error_handler_bare
 <LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;client_handling_init
-<LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> entry9a.o(.ARM.Collect$$$$0000000B)
 </UL>

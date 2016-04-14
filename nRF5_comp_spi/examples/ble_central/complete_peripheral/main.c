@@ -87,7 +87,7 @@
 #define MAX_DATA_LENGTH 20 /**<Maximum number of bytes in one transmission>*/
 
 #define BLE_INIT_PERIOD APP_TIMER_TICKS(10, APP_TIMER_PRESCALER) // Initializing ble connection in the beginning attempt rate: 10 ms
-																					 
+	 
 static uint16_t                  m_conn_handle = BLE_CONN_HANDLE_INVALID;             /**< Connection handle. */
 static ble_gatts_char_handles_t  m_char_handles;                                      /**< GATT characteristic definition handles. */
 static uint8_t                   m_base_uuid_type;                                    /**< UUID type. */
@@ -95,7 +95,8 @@ static dm_application_instance_t m_app_handle;                                  
 static bool clear_to_send = false;
 static bool connected = false;                           /**<State of BLE connection>*/
 static bool rtos_running = false;                           /**<Used to determine if rtos has been started or not (whether to resume or start scheduler)>*/
-static bool ble_initialized = false;      /**<In the beginning, transmission will error.  Once we sort this out, this flag will be set true.>*/					
+static bool ble_initialized = false;      /**<In the beginning, transmission will error.  Once we sort this out, this flag will be set true.>*/	
+static bool first_tx_successful = false;  /**<Used to determine when to stop testing connection when first connected.>**/
 app_timer_id_t ble_init_timer_id;
 
 /********************************** DATA ACQUISITION DEFINITIONS ************************************************/
@@ -123,7 +124,7 @@ int RL_DAC3 = 1;    //reg 13 - bit 6
  * number of bytes to transmit and receive. This amount of bytes will also be tested to see that
  * the received bytes from slave are the same as the transmitted bytes from the master */
 #define TX_MSG_LENGTH         2  // 16-bits command words
-#define RX_MSG_LENGTH 		  2  // 16-bits echo
+#define RX_MSG_LENGTH 	  2  // 16-bits echo
 
 typedef enum
 {
@@ -160,6 +161,7 @@ static int intan_convert_channel = 0;          // Channel on Intan currently con
 #define TRANSMISSION_BUF_SIZE 	(DATA_BUF_SIZE + (DATA_BUF_SIZE/2) + 4)          /**<buffer size for the transmission buffer.> */
 #define COMP_DELAY 1                                        /** <Delay compression by 1 ms each time> */
 #define SEND_DELIMETER 0xFFFFFFFF    /**<Write this to the corresponding tx_buffers_pending index to denote that the delimeter packet will be sent>*/
+#define EMPTY_TX_BUFF_VAL -1
 
 static uint8_t *transmission_buffers[NUM_DATA_BUFFERS];                        /**<Buffer for storing and sending the compressed data>*/
 static uint8_t *data_buffers[NUM_DATA_BUFFERS];                                /**<Buffers for storing data>*/
@@ -181,6 +183,7 @@ static uint8_t zeroes_packet[MAX_DATA_LENGTH] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
 	
 /**<Delimiter packet to be sent in between buffers. Set to "TKENDTKENDTKENDTKEND>*/
 static uint8_t buf_delimiter[MAX_DATA_LENGTH] = {84, 75, 69, 78, 68, 84, 75, 69, 78, 68, 84, 75, 69, 78, 68, 84, 75, 69, 78, 68};
+static char t_length[4];
 
 /********************************** TRANSMISSION PROTOTYPE ************************************************/
 static void data_send(uint8_t buf, uint32_t size);
@@ -351,82 +354,84 @@ void spi_master_0_event_handler(nrf_drv_spi_evt_type_t* event)
 
     switch (*event)
     {
-			  //while(app_uart_put(73) != NRF_SUCCESS);
-			  // Transfer complete; store in buffer.
+	  //while(app_uart_put(73) != NRF_SUCCESS);
+	  // Transfer complete; store in buffer.
         case NRF_DRV_SPI_EVENT_DONE:
-					
+	
             nrf_drv_spi_uninit(&m_spi_master_0);
-				
-				    // Transfer done after this point
-						m_transfer_completed = true;
-				
-				    //printf("Data received\r\n");
-				    //while(app_uart_put(69) != NRF_SUCCESS);
-				    //printf("%d\r\n", ++counter);
+	
+	    // Transfer done after this point
+	m_transfer_completed = true;
+	
+	    //printf("Data received\r\n");
+	    //while(app_uart_put(69) != NRF_SUCCESS);
+	    //printf("%d\r\n", ++counter);
 
             //err_code = bsp_indication_set(BSP_INDICATE_RCV_OK);
             //APP_ERROR_CHECK(err_code);*/
-				
-				    // All buffers are in use; The just acquired data will be lost.
-				    if(comp_buffers_ready[active_buffer])
-						{
-							while(app_uart_put(70) != NRF_SUCCESS);
-							//while(app_uart_put(70) != NRF_SUCCESS);
-							//printf("All buffers in use. Data lost\r\n");
-						}
-						
-						// Still have space to store data.
-						else
-						{
-							// Current buffer still has space
-							if(ab_capacity > 0)
-							{
-								*(data_buffers[active_buffer] + DATA_BUF_SIZE - ab_capacity) = m_rx_data_spi[0];
-								
-								// Buffer is filled after this storage.  Set the next buffer as active.  Call compression, if compression is not in progress.
-								if(--ab_capacity == 0)
-								{
-									comp_buffers_ready[active_buffer] = true;
-									ab_capacity = DATA_BUF_SIZE;
-									if(active_buffer == NUM_DATA_BUFFERS - 1)
-									{
-										active_buffer = 0;
-									}
-									
-									else
-									{
-										active_buffer++;
-									}
-									
-									// Compress
-									//if(!compression_in_progress)
-									//{
-										//printf("Compressing\r\n");
-										//while(app_uart_put(73) != NRF_SUCCESS);
-										//compression_in_progress = true;
-										//err_code = app_timer_start(comp_timer, 5, &c_buff);
-										//while(app_uart_put(74) != NRF_SUCCESS);
-										//printf("%d\r\n", err_code);
-										//while(1);
-										//APP_ERROR_CHECK(err_code);
-										//while(app_uart_put(75) != NRF_SUCCESS);
-										//compress(c_buff, DATA_BUF_SIZE);
-										//printf("Compress is done\r\n");
-										//while(app_uart_put(71) != NRF_SUCCESS);
-									//}
-								}
-							}
-						}
-						
-						// If not all channels have been sampled, continue sampling from the other channels.
-						if(intan_convert_channel == NUM_CHANNELS)
-						{
-							intan_convert_channel = 0;
-						}
-						else
-						{
-							sample_data();
-						}
+	
+	    // All buffers are in use; The just acquired data will be lost.
+	    if(comp_buffers_ready[active_buffer])
+	{
+	while(app_uart_put(70) != NRF_SUCCESS);
+	//while(app_uart_put(70) != NRF_SUCCESS);
+	//printf("All buffers in use. Data lost\r\n");
+	}
+	
+	// Still have space to store data.
+	else
+	{
+	// Current buffer still has space
+	if(ab_capacity > 0)
+	{
+	//*(data_buffers[active_buffer] + DATA_BUF_SIZE - ab_capacity) = m_rx_data_spi[0];
+	//*(data_buffers[active_buffer] + DATA_BUF_SIZE - ab_capacity) = 1;
+	data_buffers[active_buffer][DATA_BUF_SIZE - ab_capacity] = 1;
+	
+	// Buffer is filled after this storage.  Set the next buffer as active.  Call compression, if compression is not in progress.
+	if(--ab_capacity == 0)
+	{
+	comp_buffers_ready[active_buffer] = true;
+	ab_capacity = DATA_BUF_SIZE;
+	if(active_buffer == NUM_DATA_BUFFERS - 1)
+	{
+	active_buffer = 0;
+	}
+	
+	else
+	{
+	active_buffer++;
+	}
+	
+	// Compress
+	//if(!compression_in_progress)
+	//{
+	//printf("Compressing\r\n");
+	//while(app_uart_put(73) != NRF_SUCCESS);
+	//compression_in_progress = true;
+	//err_code = app_timer_start(comp_timer, 5, &c_buff);
+	//while(app_uart_put(74) != NRF_SUCCESS);
+	//printf("%d\r\n", err_code);
+	//while(1);
+	//APP_ERROR_CHECK(err_code);
+	//while(app_uart_put(75) != NRF_SUCCESS);
+	//compress(c_buff, DATA_BUF_SIZE);
+	//printf("Compress is done\r\n");
+	//while(app_uart_put(71) != NRF_SUCCESS);
+	//}
+	}
+	}
+	}
+	
+	// If not all channels have been sampled, continue sampling from the other channels.
+	if(intan_convert_channel == NUM_CHANNELS)
+	{
+	intan_convert_channel = 0;
+	}
+	else
+	{
+	sample_data();
+	}
             break;
 
         default:
@@ -446,83 +451,83 @@ void spi_intan_id_read_handler(nrf_drv_spi_evt_type_t* event)
 
     switch (*event)
     {
-			  //while(app_uart_put(73) != NRF_SUCCESS);
-			  // Transfer complete; store in buffer.
+	  //while(app_uart_put(73) != NRF_SUCCESS);
+	  // Transfer complete; store in buffer.
         case NRF_DRV_SPI_EVENT_DONE:
-					
+	
             nrf_drv_spi_uninit(&m_spi_master_0);
-				
-						//printf("%c\r\n",m_rx_data_spi[1]);
-				    // Transfer done after this point
-						m_transfer_completed = true;
-				
-				    //printf("Data received\r\n");
-				    //while(app_uart_put(69) != NRF_SUCCESS);
-				    //printf("%d\r\n", ++counter);
+	
+	//printf("%c\r\n",m_rx_data_spi[1]);
+	    // Transfer done after this point
+	m_transfer_completed = true;
+	
+	    //printf("Data received\r\n");
+	    //while(app_uart_put(69) != NRF_SUCCESS);
+	    //printf("%d\r\n", ++counter);
 
             //err_code = bsp_indication_set(BSP_INDICATE_RCV_OK);
             //APP_ERROR_CHECK(err_code);*/
-				
-				    // All buffers are in use; The just acquired data will be lost.
-				    /*if(buffers_ready[active_buffer])
-						{
-							while(app_uart_put(70) != NRF_SUCCESS);
-							//while(app_uart_put(70) != NRF_SUCCESS);
-							//printf("All buffers in use. Data lost\r\n");
-						}
-						
-						// Still have space to store data.
-						else
-						{
-							// Current buffer still has space
-							if(ab_capacity > 0)
-							{
-								*(data_buffers[active_buffer] + DATA_BUF_SIZE - ab_capacity) = m_rx_data_spi[0];
-								
-								// Buffer is filled after this storage.  Set the next buffer as active.  Call compression, if compression is not in progress.
-								if(--ab_capacity == 0)
-								{
-									buffers_ready[active_buffer] = true;
-									ab_capacity = DATA_BUF_SIZE;
-									if(active_buffer == NUM_DATA_BUFFERS - 1)
-									{
-										active_buffer = 0;
-									}
-									
-									else
-									{
-										active_buffer++;
-									}
-									
-									// Compress
-									//if(!compression_in_progress)
-									//{
-										//printf("Compressing\r\n");
-										//while(app_uart_put(73) != NRF_SUCCESS);
-										//compression_in_progress = true;
-										//err_code = app_timer_start(comp_timer, 5, &c_buff);
-										//while(app_uart_put(74) != NRF_SUCCESS);
-										//printf("%d\r\n", err_code);
-										//while(1);
-										//APP_ERROR_CHECK(err_code);
-										//while(app_uart_put(75) != NRF_SUCCESS);
-										//compress(c_buff, DATA_BUF_SIZE);
-										//printf("Compress is done\r\n");
-										//while(app_uart_put(71) != NRF_SUCCESS);
-									//}
-								}
-							}
-						}
-						
-						// If not all channels have been sampled, continue sampling from the other channels.
-						if(intan_convert_channel == NUM_CHANNELS)
-						{
-							intan_convert_channel = 0;
-						}
-						else
-						{
-							sample_data();
-						}*/
+	
+	    // All buffers are in use; The just acquired data will be lost.
+	    /*if(buffers_ready[active_buffer])
+	{
+	while(app_uart_put(70) != NRF_SUCCESS);
+	//while(app_uart_put(70) != NRF_SUCCESS);
+	//printf("All buffers in use. Data lost\r\n");
+	}
+	
+	// Still have space to store data.
+	else
+	{
+	// Current buffer still has space
+	if(ab_capacity > 0)
+	{
+	*(data_buffers[active_buffer] + DATA_BUF_SIZE - ab_capacity) = m_rx_data_spi[0];
+	
+	// Buffer is filled after this storage.  Set the next buffer as active.  Call compression, if compression is not in progress.
+	if(--ab_capacity == 0)
+	{
+	buffers_ready[active_buffer] = true;
+	ab_capacity = DATA_BUF_SIZE;
+	if(active_buffer == NUM_DATA_BUFFERS - 1)
+	{
+	active_buffer = 0;
+	}
+	
+	else
+	{
+	active_buffer++;
+	}
+	
+	// Compress
+	//if(!compression_in_progress)
+	//{
+	//printf("Compressing\r\n");
+	//while(app_uart_put(73) != NRF_SUCCESS);
+	//compression_in_progress = true;
+	//err_code = app_timer_start(comp_timer, 5, &c_buff);
+	//while(app_uart_put(74) != NRF_SUCCESS);
+	//printf("%d\r\n", err_code);
+	//while(1);
+	//APP_ERROR_CHECK(err_code);
+	//while(app_uart_put(75) != NRF_SUCCESS);
+	//compress(c_buff, DATA_BUF_SIZE);
+	//printf("Compress is done\r\n");
+	//while(app_uart_put(71) != NRF_SUCCESS);
+	//}
+	}
+	}
+	}
+	
+	// If not all channels have been sampled, continue sampling from the other channels.
+	if(intan_convert_channel == NUM_CHANNELS)
+	{
+	intan_convert_channel = 0;
+	}
+	else
+	{
+	sample_data();
+	}*/
             break;
 
         default:
@@ -556,10 +561,10 @@ static void spi_master_init(nrf_drv_spi_t const * p_instance, bool lsb)
         config.sck_pin  = SPIM0_SCK_PIN;
         config.mosi_pin = SPIM0_MOSI_PIN;
         config.miso_pin = SPIM0_MISO_PIN; // SS not initialized
-				config.ss_pin 	= SPIM0_SS_PIN;
-			  err_code = nrf_drv_spi_init(p_instance, &config,
-				//spi_intan_id_read_handler);           // EDIT: INTAN ID spi handler
-				spi_master_0_event_handler);    // EDIT: data collection spi handler
+	config.ss_pin 	= SPIM0_SS_PIN;
+	  err_code = nrf_drv_spi_init(p_instance, &config,
+	//spi_intan_id_read_handler);           // EDIT: INTAN ID spi handler
+	spi_master_0_event_handler);    // EDIT: data collection spi handler
     }
 
     APP_ERROR_CHECK(err_code);
@@ -615,10 +620,10 @@ void bsp_configuration()
     {
         // Do nothing.
     }
-		
+	
 	  // Set the external high frequency clock source to 32 MHz
     /*NRF_CLOCK->EVENTS_LFCLKSTARTED = 0;
-		NRF_CLOCK->EVENTS_HFCLKSTARTED = 0;
+	NRF_CLOCK->EVENTS_HFCLKSTARTED = 0;
     NRF_CLOCK->TASKS_HFCLKSTART    = 1;
 
     while (NRF_CLOCK->EVENTS_HFCLKSTARTED == 0)
@@ -636,7 +641,7 @@ void intan_setup(void){
 	int setup_data[13] = {ADC_bias & 0x3F, MUX_bias, ADC_twoscomp, RH1_DAC1,RH1_DAC2,RH2_DAC1,RH2_DAC2,RL_DAC1,((RL_DAC3 << 6) + RL_DAC2),0xFF,0xFF,0xFF,0xFF};
 
 	for (int i =0; i<13; i++){
-		while (!m_transfer_completed){};
+	while (!m_transfer_completed){};
 
     	m_transfer_completed = false;
     	intan_write(m_tx_data_spi, m_rx_data_spi,setup_reg[i],setup_data[i]);
@@ -645,7 +650,7 @@ void intan_setup(void){
     	
     }
     for (int j =0; j<2; j++){
-		while (!m_transfer_completed){};
+	while (!m_transfer_completed){};
     	        
     	m_transfer_completed = false;
     	intan_dummy(m_tx_data_spi, m_rx_data_spi);
@@ -670,23 +675,23 @@ void buffers_init(void)
 {
 	for(int i = 0; i < NUM_DATA_BUFFERS; i++)
 	{
-		data_buffers[i] = malloc(DATA_BUF_SIZE);
-		if(data_buffers[i] == NULL)
-		{
-			//while(app_uart_put(67) != NRF_SUCCESS);
-			printf("Data buffer %d Alloc failed\r\n", i);
-		}
-		memset(data_buffers[i], 0, DATA_BUF_SIZE);
-		comp_buffers_ready[i] = false;
-		
-		transmission_buffers[i] = malloc(TRANSMISSION_BUF_SIZE);
-		if(transmission_buffers[i] == NULL)
-		{
-			printf("Transmission buffer %d Alloc failed\r\n", i);
-		}
-		memset(transmission_buffers[i], 0, TRANSMISSION_BUF_SIZE);
-		tx_buffers_pending[i] = 0;
-		printf("txs:%d\r\n", tx_buffers_pending[i]);
+	data_buffers[i] = malloc(DATA_BUF_SIZE);
+	if(data_buffers[i] == NULL)
+	{
+	//while(app_uart_put(67) != NRF_SUCCESS);
+	printf("Data buffer %d Alloc failed\r\n", i);
+	}
+	memset(data_buffers[i], 1, DATA_BUF_SIZE);
+	comp_buffers_ready[i] = false;
+	
+	transmission_buffers[i] = malloc(TRANSMISSION_BUF_SIZE);
+	if(transmission_buffers[i] == NULL)
+	{
+	printf("Transmission buffer %d Alloc failed\r\n", i);
+	}
+	memset(transmission_buffers[i], 0, TRANSMISSION_BUF_SIZE);
+	tx_buffers_pending[i] = EMPTY_TX_BUFF_VAL;
+	printf("txs:%d\r\n", tx_buffers_pending[i]);
 	}
 }
 
@@ -718,16 +723,16 @@ void compress(uint32_t buf, uint32_t size)
         } while (pres == HSER_POLL_MORE);
         ASSERT_EQ(HSER_POLL_EMPTY, pres);
         if (polled >= TRANSMISSION_BUF_SIZE) {
-					printf("compression should never expand that muchr\r\n"); 
-				}
+	printf("compression should never expand that muchr\r\n"); 
+	}
         if (sunk == size) {
             ASSERT_EQ(HSER_FINISH_DONE, heatshrink_encoder_finish(&hse));
         }
     }
-		
+	
 	// Finished compression.
 	comp_buffers_ready[buf] = false;
-	tx_buffers_pending[buf] = 2048;//polled;
+	tx_buffers_pending[buf] = polled;
 	//printf("txs1:%d\r\n", tx_buffers_pending[buf]);
 	//printf("Buf %d compression done\r\n", buf);
 }
@@ -736,20 +741,20 @@ void sample_data(void)
 {
 	if(m_transfer_completed)
 	{
-		//if(intan_convert_channel < NUM_CHANNELS) {
-		//	printf("%d\r\n", intan_convert_channel);
-		//}
-		m_transfer_completed = false;
-		intan_convert(m_tx_data_spi, m_rx_data_spi,intan_convert_channel);
-		intan_convert_channel++;
+	//if(intan_convert_channel < NUM_CHANNELS) {
+	//	printf("%d\r\n", intan_convert_channel);
+	//}
+	m_transfer_completed = false;
+	intan_convert(m_tx_data_spi, m_rx_data_spi,intan_convert_channel);
+	intan_convert_channel++;
          
-		switch_state();
+	switch_state();
 	}
 	
 	// Previous transfer still in progress. Data lost
 	else
 	{
-		while(app_uart_put(69) != NRF_SUCCESS);
+	while(app_uart_put(69) != NRF_SUCCESS);
 	}
 }
 
@@ -778,21 +783,21 @@ static void spi_intan_id_handler(void *pvParameter)
 	UNUSED_PARAMETER(pvParameter);
 	if(m_transfer_completed)
 	{
-		//if(intan_convert_channel < NUM_CHANNELS) {
-		//	printf("%d\r\n", intan_convert_channel);
-		//}
-		m_transfer_completed = false;
-		intan_read(m_tx_data_spi, m_rx_data_spi,company_title + 40);
-		company_title++;
-		company_title = company_title % 5;
+	//if(intan_convert_channel < NUM_CHANNELS) {
+	//	printf("%d\r\n", intan_convert_channel);
+	//}
+	m_transfer_completed = false;
+	intan_read(m_tx_data_spi, m_rx_data_spi,company_title + 40);
+	company_title++;
+	company_title = company_title % 5;
          
-		switch_state();
+	switch_state();
 	}
 	
 	// Previous transfer still in progress. Data lost
 	else
 	{
-		while(app_uart_put(69) != NRF_SUCCESS);
+	while(app_uart_put(69) != NRF_SUCCESS);
 	}
 }
 
@@ -802,34 +807,34 @@ static void compress_task (void *pvParameter)
 	UNUSED_PARAMETER(pvParameter);
 	for(;;)
 	{
-		
-		//while(app_uart_put(70) != NRF_SUCCESS);
-		//printf("compress task\r\n");
-		if(comp_buffers_ready[comp_index])
-		{
-			//printf("cready%d\r\n", comp_index);
-			
-			// Check whether transmission buffer that the compressed data will be placed directly into is full or not.
-			if(tx_buffers_pending[comp_index] == 0)
-			{
-				compress(comp_index++, DATA_BUF_SIZE);
-				comp_index = comp_index % NUM_DATA_BUFFERS;
-			}
-			else
-			{
-				//printf("Still Txing, data lost.\r\n");
-			}
-		}
-		
-		// Transmit if transmission buffer has received a full set of data.
-		if(tx_buffers_pending[tx_index] > 0 && !comp_buffers_ready[tx_index] && !tx_in_progress)
-		{
-			//printf("tready%d\r\n%d\r\n%d\r\n%d\r\n%d\r\n", tx_index, comp_buffers_ready[tx_index], comp_index, comp_buffers_ready[comp_index], tx_buffers_pending[tx_index]);
-			tx_in_progress = true;
-			curr_tx_size = tx_buffers_pending[tx_index];
-			data_send(tx_index, tx_buffers_pending[tx_index]);
-		}
-		//vTaskDelay(COMP_DELAY);
+	
+	//while(app_uart_put(70) != NRF_SUCCESS);
+	//printf("compress task\r\n");
+	if(comp_buffers_ready[comp_index])
+	{
+	//printf("cready%d\r\n", comp_index);
+	
+	// Check whether transmission buffer that the compressed data will be placed directly into is full or not.
+	if(tx_buffers_pending[comp_index] == EMPTY_TX_BUFF_VAL)
+	{
+	compress(comp_index++, DATA_BUF_SIZE);
+	comp_index = comp_index % NUM_DATA_BUFFERS;
+	}
+	else
+	{
+	//printf("Still Txing, data lost.\r\n");
+	}
+	}
+	
+	// Transmit if transmission buffer has received a full set of data.
+	if(tx_buffers_pending[tx_index] > 0 && !comp_buffers_ready[tx_index] && !tx_in_progress)
+	{
+	//printf("tready%d\r\n%d\r\n%d\r\n%d\r\n%d\r\n", tx_index, comp_buffers_ready[tx_index], comp_index, comp_buffers_ready[comp_index], tx_buffers_pending[tx_index]);
+	tx_in_progress = true;
+	curr_tx_size = tx_buffers_pending[tx_index];
+	data_send(tx_index, tx_buffers_pending[tx_index]);
+	}
+	//vTaskDelay(COMP_DELAY);
 	}
 }
 /*
@@ -877,8 +882,8 @@ static void test_callback (void *pvParameter)
 {
     static uint32_t counter = 0;
 	  if(!(++counter%1000)) {
-			printf("counter: %d\r\n", counter);
-		}
+	printf("counter: %d\r\n", counter);
+	}
 }
 
 /********************************** BLE TRANSMIT FUNCTIONS ************************************************/
@@ -965,7 +970,7 @@ static void services_init(void)
     attr.p_uuid    = &uuid;
     attr.p_attr_md = &attr_md;
     attr.max_len = MAX_DATA_LENGTH; //attr.max_len   = 1;
-		attr.init_offs = 0;
+	attr.init_offs = 0;
     attr.p_value   = &multilink_peripheral_data;
     attr.init_len  = sizeof(multilink_peripheral_data);
 
@@ -981,14 +986,14 @@ static void services_init(void)
     cccd_md.vloc = BLE_GATTS_VLOC_STACK;
 
     memset(&char_md, 0, sizeof(ble_gatts_char_md_t));
-		//char_md.p_sccd_md         = NULL;
-		//char_md.p_char_pf         = NULL;
+	//char_md.p_sccd_md         = NULL;
+	//char_md.p_char_pf         = NULL;
     char_md.p_cccd_md               = &cccd_md;
     char_md.char_props.notify       = 1;
     char_md.char_props.indicate     = 1;
     char_md.char_props.read         = 1;
     char_md.char_props.write        = 1;
-		char_md.char_props.write_wo_resp = 1;
+	char_md.char_props.write_wo_resp = 1;
     char_md.char_ext_props.wr_aux   = 1;
     char_md.p_user_desc_md          = &char_ud_md;
     char_md.p_char_user_desc        = multilink_peripheral_ud;
@@ -1030,13 +1035,13 @@ void uart_event_handle(app_uart_evt_t * p_event)
 /*
             if ((data_array[index - 1] == '\n') || (index >= (BLE_NUS_MAX_DATA_LEN)))
             {
-                while (ble_nus_c_string_send(&m_ble_nus_c, data_array, index) != NRF_SUCCESS)			
+                while (ble_nus_c_string_send(&m_ble_nus_c, data_array, index) != NRF_SUCCESS)	
                 {
                     // repeat until sent
                 }
                 index = 0;
             }
-				*/
+	*/
             break;
         /**@snippet [Handling data from UART] */ 
         case APP_UART_COMMUNICATION_ERROR:
@@ -1095,11 +1100,11 @@ uint32_t ble_multi_data_send(uint16_t conn_handle, ble_gatts_char_handles_t* cha
 	VERIFY_PARAM_NOT_NULL(char_handles);
 	if(conn_handle == BLE_CONN_HANDLE_INVALID)
 	{
-		return NRF_ERROR_INVALID_STATE;
+	return NRF_ERROR_INVALID_STATE;
 	}
 	if(length > MAX_DATA_LENGTH)
 	{
-		return NRF_ERROR_INVALID_PARAM;
+	return NRF_ERROR_INVALID_PARAM;
 	}
 	
 	// Send data
@@ -1122,11 +1127,11 @@ uint32_t ble_multi_data_send(uint16_t conn_handle, ble_gatts_char_handles_t* cha
 	VERIFY_PARAM_NOT_NULL(char_handles);
 	if(conn_handle == BLE_CONN_HANDLE_INVALID)
 	{
-		return NRF_ERROR_INVALID_STATE;
+	return NRF_ERROR_INVALID_STATE;
 	}
 	if(length > MAX_DATA_LENGTH)
 	{
-		return NRF_ERROR_INVALID_PARAM;
+	return NRF_ERROR_INVALID_PARAM;
 	}
 	
 	// Send data
@@ -1147,10 +1152,20 @@ uint32_t ble_multi_data_send(uint16_t conn_handle, ble_gatts_char_handles_t* cha
 static void send_delimeter(uint8_t buf, uint32_t size)
 {
 	// Last two bits have the size of the buffer just sent over in Big Endian order
-	buf_delimiter[MAX_DATA_LENGTH - 2] = (curr_tx_size >> 8) & 0xFF;
-	buf_delimiter[MAX_DATA_LENGTH - 1] = (curr_tx_size) & 0xFF;
+	buf_delimiter[MAX_DATA_LENGTH - 2] = (size >> 8) & 0xFF;
+	buf_delimiter[MAX_DATA_LENGTH - 1] = (size) & 0xFF;
+	printf("%d\r\n", size);
+	
+	//sprintf(t_length, "%04d", curr_tx_size);
+	//printf("hi");
+	//buf_delimiter[MAX_DATA_LENGTH - 5] = 0;
+  //buf_delimiter[MAX_DATA_LENGTH - 4] = 1;
+	//buf_delimiter[MAX_DATA_LENGTH - 3] = 0;
+	//buf_delimiter[MAX_DATA_LENGTH - 2] = 0;
+	//buf_delimiter[MAX_DATA_LENGTH - 1] = 0;
 	tx_buffers_pending[buf] = SEND_DELIMETER;
 	//printf("sd1\r\n");
+	//printf("1\r\n");
 	while(ble_multi_data_send(m_conn_handle, &m_char_handles, buf_delimiter, MAX_DATA_LENGTH) != NRF_SUCCESS);
 	//printf("sd2\r\n");
 }
@@ -1166,50 +1181,50 @@ static void data_send(uint8_t buf, uint32_t size)
 	
 	if(size < MAX_DATA_LENGTH)
 	{
-		while(ble_multi_data_send(m_conn_handle, &m_char_handles, &transmission_buffers[buf][curr_tx_size - size], size) != NRF_SUCCESS);
-		while(ble_multi_data_send(m_conn_handle, &m_char_handles, zeroes_packet, MAX_DATA_LENGTH - size) != NRF_SUCCESS);
-		tx_buffers_pending[buf] = 0;
+	while(ble_multi_data_send(m_conn_handle, &m_char_handles, &(transmission_buffers[buf][curr_tx_size - size]), size) != NRF_SUCCESS);
+	while(ble_multi_data_send(m_conn_handle, &m_char_handles, zeroes_packet, MAX_DATA_LENGTH - size) != NRF_SUCCESS);
+	tx_buffers_pending[buf] = 0;
 	}
 	else
 	{
-		while(ble_multi_data_send(m_conn_handle, &m_char_handles, &transmission_buffers[buf][curr_tx_size - size], MAX_DATA_LENGTH) != NRF_SUCCESS);
-		tx_buffers_pending[buf] = tx_buffers_pending[buf] - MAX_DATA_LENGTH;
+	while(ble_multi_data_send(m_conn_handle, &m_char_handles, &(transmission_buffers[buf][curr_tx_size - size]), MAX_DATA_LENGTH) != NRF_SUCCESS);
+	tx_buffers_pending[buf] = tx_buffers_pending[buf] - MAX_DATA_LENGTH;
 	}
 	
 	/*while(1)
 	{
-		err_code = ble_multi_data_send(m_conn_handle, &m_char_handles, data, 20);
-		//printf("err_code dec: %d\r\n", err_code);
-		//printf("%x\r\n", err_code);
-		
-		// Check for errors
-		if(err_code != NRF_SUCCESS && 
-			 err_code != BLE_ERROR_INVALID_CONN_HANDLE && 
-		   err_code != NRF_ERROR_INVALID_STATE && 
-		   err_code != BLE_ERROR_NO_TX_PACKETS &&
-		   err_code != BLE_ERROR_GATTS_SYS_ATTR_MISSING)
-		{
-			printf("err_code dec: %d\r\n", err_code);
-			printf("err_code hex: %x\r\n", err_code);
-			APP_ERROR_CHECK(err_code);
-		}
-		
-		// Transmission failed, usually meaning no more packets in this connection interval, so we exit and wait for the next interval
-		if(err_code != NRF_SUCCESS)
-		{
-			if(err_code != BLE_ERROR_GATTS_SYS_ATTR_MISSING)
-			{
-				if(err_code == BLE_ERROR_NO_TX_PACKETS)
-				{
-					clear_to_send = false;
-				}
-				else
-				{
-					printf("%x\r\n", err_code);
-				}
-			}
-			break;
-		}
+	err_code = ble_multi_data_send(m_conn_handle, &m_char_handles, data, 20);
+	//printf("err_code dec: %d\r\n", err_code);
+	//printf("%x\r\n", err_code);
+	
+	// Check for errors
+	if(err_code != NRF_SUCCESS && 
+	 err_code != BLE_ERROR_INVALID_CONN_HANDLE && 
+	   err_code != NRF_ERROR_INVALID_STATE && 
+	   err_code != BLE_ERROR_NO_TX_PACKETS &&
+	   err_code != BLE_ERROR_GATTS_SYS_ATTR_MISSING)
+	{
+	printf("err_code dec: %d\r\n", err_code);
+	printf("err_code hex: %x\r\n", err_code);
+	APP_ERROR_CHECK(err_code);
+	}
+	
+	// Transmission failed, usually meaning no more packets in this connection interval, so we exit and wait for the next interval
+	if(err_code != NRF_SUCCESS)
+	{
+	if(err_code != BLE_ERROR_GATTS_SYS_ATTR_MISSING)
+	{
+	if(err_code == BLE_ERROR_NO_TX_PACKETS)
+	{
+	clear_to_send = false;
+	}
+	else
+	{
+	printf("%x\r\n", err_code);
+	}
+	}
+	break;
+	}
 	}*/
 }
 
@@ -1270,59 +1285,59 @@ static void on_ble_evt(ble_evt_t * p_ble_evt)
 
     switch (p_ble_evt->header.evt_id)
     {
-			  // Send more data once previous data is sent
-			  case BLE_EVT_TX_COMPLETE:
-					  //printf("txcomp\r\n");
-				    if(ble_initialized)
-						{
-							// One transmission buffer and delimeter successfully completely sent.
-							if(tx_buffers_pending[tx_index] == SEND_DELIMETER)
-							{
-								tx_buffers_pending[tx_index] = 0;
-								buf_delimiter[MAX_DATA_LENGTH - 2] = 78;
-								buf_delimiter[MAX_DATA_LENGTH - 1] = 68;
-								tx_in_progress = false;
-								tx_index++;
-								tx_index = tx_index % NUM_DATA_BUFFERS;
-								//printf("Datasent\r\n");
-							}
-						
-							// Transmission buffer completely sent; must still send the delimeter
-							else if(tx_buffers_pending[tx_index] == 0)
-							{
-								send_delimeter(tx_index, curr_tx_size);
-							}
-						
-							// Otherwise keep sending
-							else
-							{
-								data_send(tx_index, tx_buffers_pending[tx_index]);
-							}
-						
-							clear_to_send = true;
-						}
-						else
-						{
-							ble_initialized = true;
-						}
-				    break;
-					  
+	  // Send more data once previous data is sent
+	  case BLE_EVT_TX_COMPLETE:
+	  //printf("txcomp\r\n");
+	    if(ble_initialized)
+	{
+	// One transmission buffer and delimeter successfully completely sent.
+	if(tx_buffers_pending[tx_index] == SEND_DELIMETER)
+	{
+	tx_buffers_pending[tx_index] = EMPTY_TX_BUFF_VAL;
+	buf_delimiter[MAX_DATA_LENGTH - 2] = 78;
+	buf_delimiter[MAX_DATA_LENGTH - 1] = 68;
+	tx_in_progress = false;
+	tx_index++;
+	tx_index = tx_index % NUM_DATA_BUFFERS;
+	//printf("Datasent\r\n");
+	}
+	
+	// Transmission buffer completely sent; must still send the delimeter
+	else if(tx_buffers_pending[tx_index] == 0)
+	{
+	send_delimeter(tx_index, curr_tx_size);
+	}
+	
+	// Otherwise keep sending
+	else
+	{
+	data_send(tx_index, tx_buffers_pending[tx_index]);
+	}
+	
+	clear_to_send = true;
+	}
+	else
+	{
+	ble_initialized = true;
+	}
+	    break;
+	  
         case BLE_GAP_EVT_CONNECTED:
             m_conn_handle = p_ble_evt->evt.gap_evt.conn_handle;
             //err_code = bsp_indication_set(BSP_INDICATE_CONNECTED);
             //APP_ERROR_CHECK(err_code);
-				
-				    // Missing gatt sys attributes
-				    //err_code = sd_ble_gatts_sys_attr_set(m_conn_handle, NULL, 0, BLE_GATTS_SYS_ATTR_FLAG_SYS_SRVCS | BLE_GATTS_SYS_ATTR_FLAG_USR_SRVCS);
-				    //APP_ERROR_CHECK(err_code);
-				    
-				    // Start sending data once connected
-				    printf("Central Connected \r\n");
-						//err_code = app_timer_start(ble_init_timer_id, BLE_INIT_PERIOD, NULL);
-				    //APP_ERROR_CHECK(err_code);
-				    //while(ble_multi_data_send(m_conn_handle, &m_char_handles, zeroes_packet, MAX_DATA_LENGTH) != NRF_SUCCESS);
-				    clear_to_send = true;
-				    connected = true;
+	
+	    // Missing gatt sys attributes
+	    //err_code = sd_ble_gatts_sys_attr_set(m_conn_handle, NULL, 0, BLE_GATTS_SYS_ATTR_FLAG_SYS_SRVCS | BLE_GATTS_SYS_ATTR_FLAG_USR_SRVCS);
+	    //APP_ERROR_CHECK(err_code);
+	    
+	    // Start sending data once connected
+	    printf("Central Connected \r\n");
+	//err_code = app_timer_start(ble_init_timer_id, BLE_INIT_PERIOD, NULL);
+	    //APP_ERROR_CHECK(err_code);
+	    //while(ble_multi_data_send(m_conn_handle, &m_char_handles, zeroes_packet, MAX_DATA_LENGTH) != NRF_SUCCESS);
+	    clear_to_send = true;
+	    connected = true;
             break;
 
         case BLE_GAP_EVT_DISCONNECTED:
@@ -1332,7 +1347,7 @@ static void on_ble_evt(ble_evt_t * p_ble_evt)
 
             //err_code = bsp_indication_set(BSP_INDICATE_ALERT_OFF);
             //APP_ERROR_CHECK(err_code);
-				    vTaskSuspendAll();   // After disconnecting, we just want to pause and retain the timers.
+	    vTaskSuspendAll();   // After disconnecting, we just want to pause and retain the timers.
             break;
 
         case BLE_GATTS_EVT_WRITE:
@@ -1343,13 +1358,13 @@ static void on_ble_evt(ble_evt_t * p_ble_evt)
                 //APP_ERROR_CHECK(err_code);
             }
             break;
-						
-				case BLE_GATTS_EVT_SYS_ATTR_MISSING:
-						// Deal with missing gatt system attributes
-				    err_code = sd_ble_gatts_sys_attr_set(m_conn_handle, NULL, 0, 0);
-				    printf("SYS attr missing error: %d\r\n", err_code);
-				    //APP_ERROR_CHECK(err_code);
-				    break;
+	
+	case BLE_GATTS_EVT_SYS_ATTR_MISSING:
+	// Deal with missing gatt system attributes
+	    err_code = sd_ble_gatts_sys_attr_set(m_conn_handle, NULL, 0, 0);
+	    printf("SYS attr missing error: %d\r\n", err_code);
+	    //APP_ERROR_CHECK(err_code);
+	    break;
 
         default:
             // No implementation needed.
@@ -1627,41 +1642,41 @@ int main(void)
     services_init();
 	  printf("services init\r\n");
 
-		intan_setup();
-		while(app_uart_put(65) != NRF_SUCCESS);
-			
-		buffers_init();
-		while(app_uart_put(66) != NRF_SUCCESS);
-			
+	intan_setup();
+	while(app_uart_put(65) != NRF_SUCCESS);
+	
+	buffers_init();
+	while(app_uart_put(66) != NRF_SUCCESS);
+	
 	  //printf("yo\n");
-		UNUSED_VARIABLE(xTaskCreate(compress_task, "c_task", configMINIMAL_STACK_SIZE + 200, NULL, 1, &compress_task_handle));
-			
-		if(compress_task_handle == NULL)
-		{
-			printf("compression task init messed up\r\n");
-		}
-		while(app_uart_put(67) != NRF_SUCCESS);
-		
-		//Test read intan company ID timer
-		//spi_timer_handle = xTimerCreate("s_timer", 1, pdTRUE, NULL, spi_intan_id_handler);
-		
-		// Sample timer
-    spi_timer_handle = xTimerCreate("s_timer", 5, pdTRUE, NULL, spi_data_collection_evt_handler);                                 // LED1 timer creation
+	UNUSED_VARIABLE(xTaskCreate(compress_task, "c_task", configMINIMAL_STACK_SIZE + 200, NULL, 1, &compress_task_handle));
+	
+	if(compress_task_handle == NULL)
+	{
+	printf("compression task init messed up\r\n");
+	}
+	while(app_uart_put(67) != NRF_SUCCESS);
+	
+	//Test read intan company ID timer
+	//spi_timer_handle = xTimerCreate("s_timer", 1, pdTRUE, NULL, spi_intan_id_handler);
+	
+	// Sample timer
+    spi_timer_handle = xTimerCreate("s_timer", 10, pdTRUE, NULL, spi_data_collection_evt_handler);                                 // LED1 timer creation
     
-		if(spi_timer_handle == NULL)
-		{
-			printf("SPI timer init messed up\r\n");
-		}
-		while(app_uart_put(68) != NRF_SUCCESS);
-		
-		if(xTimerStart(spi_timer_handle, 0) != pdPASS)
-		{
-			printf("Timer could not be started\r\n");
-		}
-		while(app_uart_put(69) != NRF_SUCCESS);
-		
-		//err_code = app_timer_create(&ble_init_timer_id, APP_TIMER_MODE_REPEATED, ble_init_handler);
-		//APP_ERROR_CHECK(err_code);
+	if(spi_timer_handle == NULL)
+	{
+	printf("SPI timer init messed up\r\n");
+	}
+	while(app_uart_put(68) != NRF_SUCCESS);
+	
+	if(xTimerStart(spi_timer_handle, 0) != pdPASS)
+	{
+	printf("Timer could not be started\r\n");
+	}
+	while(app_uart_put(69) != NRF_SUCCESS);
+	
+	//err_code = app_timer_create(&ble_init_timer_id, APP_TIMER_MODE_REPEATED, ble_init_handler);
+	//APP_ERROR_CHECK(err_code);
 
     err_code = ble_advertising_start(BLE_ADV_MODE_FAST);
 	  printf("main_advertising start init\r\n");
@@ -1669,35 +1684,43 @@ int main(void)
 
     for (;;)
     {
-			if(connected && !ble_initialized)
-			{
-				ble_multi_data_send(m_conn_handle, &m_char_handles, zeroes_packet, MAX_DATA_LENGTH);
-				nrf_delay_ms(DELAY_MS);
-			}
-			else
-			{
-				if(connected && !rtos_running)
-				{
-					printf("begin meas\r\n");
-					//ble_multi_data_send(m_conn_handle, &m_char_handles, "TK_SMELLS BAD!!!!!\r\n", 20);
-					//data_send();
-					//clear_to_send = false;
-					//printf("Data sent \r\n");
-					// Activate deep sleep mode
-					rtos_running = true;
-					SCB->SCR |= SCB_SCR_SLEEPDEEP_Msk;
+	if(connected && !ble_initialized && !first_tx_successful)
+	{
+	err_code = ble_multi_data_send(m_conn_handle, &m_char_handles, buf_delimiter, MAX_DATA_LENGTH);
+	if(err_code == NRF_SUCCESS)
+	{
+	first_tx_successful = true;
+	nrf_delay_ms(5000);
+	}
+	else
+	{
+	nrf_delay_ms(DELAY_MS);
+	}
+	}
+	else
+	{
+	if(connected && !rtos_running)
+	{
+	printf("begin meas\r\n");
+	//ble_multi_data_send(m_conn_handle, &m_char_handles, "TK_SMELLS BAD!!!!!\r\n", 20);
+	//data_send();
+	//clear_to_send = false;
+	//printf("Data sent \r\n");
+	// Activate deep sleep mode
+	rtos_running = true;
+	SCB->SCR |= SCB_SCR_SLEEPDEEP_Msk;
 
-					// Start FreeRTOS scheduler. This case is where a connection has not been established previously, so rtos and the timers are started.
-					vTaskStartScheduler();
-				}
-				else if(connected)
-				{
-					// Resume task if it has only been suspended (a connection has been established previously, so we are just resuming the timers.)
-					xTaskResumeAll();
-				}
-			}
-		}
-		power_manage();
+	// Start FreeRTOS scheduler. This case is where a connection has not been established previously, so rtos and the timers are started.
+	vTaskStartScheduler();
+	}
+	else if(connected)
+	{
+	// Resume task if it has only been suspended (a connection has been established previously, so we are just resuming the timers.)
+	xTaskResumeAll();
+	}
+	}
+	}
+	power_manage();
 }
 
 
@@ -1734,80 +1757,80 @@ int main(void)
                          err_code);
 
     APP_ERROR_CHECK(err_code);
-			
-		//nrf_drv_gpiote_out_config_t config = GPIOTE_CONFIG_OUT_TASK_HIGH;
-		//config.init_state = true;
-		//err_code = nrf_drv_gpiote_out_init(20, &config);
+	
+	//nrf_drv_gpiote_out_config_t config = GPIOTE_CONFIG_OUT_TASK_HIGH;
+	//config.init_state = true;
+	//err_code = nrf_drv_gpiote_out_init(20, &config);
 
-		//while(app_uart_put(65) != NRF_SUCCESS);
-		//printf("1 ms = %d\n", pdMS_TO_TICKS(1));
-		intan_setup();
-		//while(app_uart_put(65) != NRF_SUCCESS);
-			
-		compression_init();
-		while(app_uart_put(66) != NRF_SUCCESS);
-			
+	//while(app_uart_put(65) != NRF_SUCCESS);
+	//printf("1 ms = %d\n", pdMS_TO_TICKS(1));
+	intan_setup();
+	//while(app_uart_put(65) != NRF_SUCCESS);
+	
+	compression_init();
+	while(app_uart_put(66) != NRF_SUCCESS);
+	
 	  //printf("yo\n");
-		UNUSED_VARIABLE(xTaskCreate(compress_task, "c_task", configMINIMAL_STACK_SIZE + 200, NULL, 1, &compress_task_handle));
-			
-		if(compress_task_handle == NULL)
-		{
-			printf("compression task init messed up\r\n");
-		}
-		while(app_uart_put(67) != NRF_SUCCESS);
-		
-		//Test read intan company ID timer
-		//spi_timer_handle = xTimerCreate("s_timer", 1, pdTRUE, NULL, spi_intan_id_handler);
-		
-		// Sample timer
+	UNUSED_VARIABLE(xTaskCreate(compress_task, "c_task", configMINIMAL_STACK_SIZE + 200, NULL, 1, &compress_task_handle));
+	
+	if(compress_task_handle == NULL)
+	{
+	printf("compression task init messed up\r\n");
+	}
+	while(app_uart_put(67) != NRF_SUCCESS);
+	
+	//Test read intan company ID timer
+	//spi_timer_handle = xTimerCreate("s_timer", 1, pdTRUE, NULL, spi_intan_id_handler);
+	
+	// Sample timer
     spi_timer_handle = xTimerCreate("s_timer", 1, pdTRUE, NULL, spi_data_collection_evt_handler);                                 // LED1 timer creation
     
-		if(spi_timer_handle == NULL)
-		{
-			printf("SPI timer init messed up\r\n");
-		}
-		while(app_uart_put(68) != NRF_SUCCESS);
-		
-		if(xTimerStart(spi_timer_handle, 0) != pdPASS)
-		{
-			printf("Timer could not be started\r\n");
-		}
-		while(app_uart_put(69) != NRF_SUCCESS);
-			
-		//Activate deep sleep mode
+	if(spi_timer_handle == NULL)
+	{
+	printf("SPI timer init messed up\r\n");
+	}
+	while(app_uart_put(68) != NRF_SUCCESS);
+	
+	if(xTimerStart(spi_timer_handle, 0) != pdPASS)
+	{
+	printf("Timer could not be started\r\n");
+	}
+	while(app_uart_put(69) != NRF_SUCCESS);
+	
+	//Activate deep sleep mode
     SCB->SCR |= SCB_SCR_SLEEPDEEP_Msk;
 
     // Start FreeRTOS scheduler.
     vTaskStartScheduler();
-			
-		//timers_init();
-		//while(app_uart_put(67) != NRF_SUCCESS);
-			
-		//data_collection_timers_start();
-		//while(app_uart_put(68) != NRF_SUCCESS);
+	
+	//timers_init();
+	//while(app_uart_put(67) != NRF_SUCCESS);
+	
+	//data_collection_timers_start();
+	//while(app_uart_put(68) != NRF_SUCCESS);
 
     for (;;)
     {
-			  printf("Messed up\r\n");
-			  //power_manage();*/
+	  printf("Messed up\r\n");
+	  //power_manage();*/
         /*if (m_transfer_completed)
         {
-					  //while(app_uart_put(72) != NRF_SUCCESS);
+	  //while(app_uart_put(72) != NRF_SUCCESS);
             m_transfer_completed = false;
 
             intan_convert(m_tx_data_spi, m_rx_data_spi,intan_convert_channel);
-					  //while(app_uart_put(73) != NRF_SUCCESS);
+	  //while(app_uart_put(73) != NRF_SUCCESS);
             intan_convert_channel ++;
             intan_convert_channel = intan_convert_channel % 32;
             //print m_rx_data_spi results
             switch_state();
-					  //while(app_uart_put(74) != NRF_SUCCESS);
-					  //for (int i; i< RX_MSG_LENGTH; i++){
-						//	while(app_uart_put(m_rx_data_spi[i]) != NRF_SUCCESS);
-						//}
+	  //while(app_uart_put(74) != NRF_SUCCESS);
+	  //for (int i; i< RX_MSG_LENGTH; i++){
+	//	while(app_uart_put(m_rx_data_spi[i]) != NRF_SUCCESS);
+	//}
             nrf_delay_ms(DELAY_MS);
-						//while(app_uart_put(75) != NRF_SUCCESS);
+	//while(app_uart_put(75) != NRF_SUCCESS);
         }*/
-				//while(app_uart_put(76) != NRF_SUCCESS);
+	//while(app_uart_put(76) != NRF_SUCCESS);
     //}
 //}

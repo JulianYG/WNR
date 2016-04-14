@@ -1,9 +1,0 @@
---cpu Cortex-M4.fp
-".\_build\main.o"
-".\_build\micro_esb.o"
-".\_build\system_nrf51.o"
-".\_build\arm_startup_nrf51.o"
---library_type=microlib --strict --scatter ".\_build\tiny_esb_ptx.sct"
---summary_stderr --info summarysizes --map --xref --callgraph --symbols
---info sizes --info totals --info unused --info veneers
---list ".\_build\tiny_esb_ptx.map" -o .\_build\tiny_esb_ptx.axf

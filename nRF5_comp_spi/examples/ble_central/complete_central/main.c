@@ -604,23 +604,23 @@ int main(void)
     // Initialization of various modules.
     app_trace_init();
 	  uart_init();
-	  printf("uart init \r\n");
+//	  printf("uart init \r\n");
 	  timers_init();
-	  printf("timers init\r\n");
+//	  printf("timers init\r\n");
     LEDS_CONFIGURE(LEDS_MASK);
     LEDS_OFF(LEDS_MASK);
     buttons_init();
-	  printf("buttons init\r\n");
+//	  printf("buttons init\r\n");
     ble_stack_init();
-	  printf("ble init\r\n");
+//	  printf("ble init\r\n");
     client_handling_init();
-	  printf("client handling init\r\n");
+//	  printf("client handling init\r\n");
     device_manager_init();
-	  printf("device_manager init\r\n");
+//	  printf("device_manager init\r\n");
 
     // Start scanning for devices.
     scan_start();
-	  printf("main scan started\r\n");
+//	  printf("main scan started\r\n");
 
     for (;;)
     {

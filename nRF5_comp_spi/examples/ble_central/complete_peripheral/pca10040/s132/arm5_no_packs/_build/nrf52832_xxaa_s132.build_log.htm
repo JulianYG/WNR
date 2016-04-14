@@ -27,58 +27,60 @@ Project File Date:  04/13/2016
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 1 (build 61)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
 Rebuild target 'nrf52832_xxaa_s132'
-compiling ble_advdata.c...
 compiling ble_advertising.c...
+compiling ble_advdata.c...
 compiling main.c...
-..\..\..\main.c(349): warning:  #177-D: variable "err_code" was declared but never referenced
+..\..\..\main.c(352): warning:  #177-D: variable "err_code" was declared but never referenced
       uint32_t err_code = NRF_SUCCESS;
-..\..\..\main.c(444): warning:  #177-D: variable "err_code" was declared but never referenced
+..\..\..\main.c(449): warning:  #177-D: variable "err_code" was declared but never referenced
       uint32_t err_code = NRF_SUCCESS;
-..\..\..\main.c(562): warning:  #167-D: argument of type "void (*)(nrf_drv_spi_evt_type_t *)" is incompatible with parameter of type "nrf_drv_spi_handler_t"
-  				spi_master_0_event_handler);    // EDIT: data collection spi handler
-..\..\..\main.c(606): warning:  #177-D: variable "err_code" was declared but never referenced
+..\..\..\main.c(567): warning:  #167-D: argument of type "void (*)(nrf_drv_spi_evt_type_t *)" is incompatible with parameter of type "nrf_drv_spi_handler_t"
+  	spi_master_0_event_handler);    // EDIT: data collection spi handler
+..\..\..\main.c(611): warning:  #177-D: variable "err_code" was declared but never referenced
       uint32_t err_code = NRF_SUCCESS;
-..\..\..\main.c(660): warning:  #1294-D: Old-style function ASSERTC
+..\..\..\main.c(665): warning:  #1294-D: Old-style function ASSERTC
   int ASSERTC(COND){
-..\..\..\main.c(660): warning:  #1079-D: standard requires that parameter "COND" be given a type by a subsequent declaration ("int" assumed)
+..\..\..\main.c(665): warning:  #1079-D: standard requires that parameter "COND" be given a type by a subsequent declaration ("int" assumed)
   int ASSERTC(COND){
-..\..\..\main.c(662): warning:  #940-D: missing return statement at end of non-void function "ASSERTC"
+..\..\..\main.c(667): warning:  #940-D: missing return statement at end of non-void function "ASSERTC"
   }
-..\..\..\main.c(664): warning:  #1294-D: Old-style function ASSERT_EQ
+..\..\..\main.c(669): warning:  #1294-D: Old-style function ASSERT_EQ
   int ASSERT_EQ(COND1,COND2){
-..\..\..\main.c(664): warning:  #1079-D: standard requires that parameter "COND1" be given a type by a subsequent declaration ("int" assumed)
+..\..\..\main.c(669): warning:  #1079-D: standard requires that parameter "COND1" be given a type by a subsequent declaration ("int" assumed)
   int ASSERT_EQ(COND1,COND2){
-..\..\..\main.c(664): warning:  #1079-D: standard requires that parameter "COND2" be given a type by a subsequent declaration ("int" assumed)
+..\..\..\main.c(669): warning:  #1079-D: standard requires that parameter "COND2" be given a type by a subsequent declaration ("int" assumed)
   int ASSERT_EQ(COND1,COND2){
-..\..\..\main.c(666): warning:  #940-D: missing return statement at end of non-void function "ASSERT_EQ"
+..\..\..\main.c(671): warning:  #940-D: missing return statement at end of non-void function "ASSERT_EQ"
   }
-..\..\..\main.c(1163): warning:  #177-D: variable "err_code" was declared but never referenced
+..\..\..\main.c(1178): warning:  #177-D: variable "err_code" was declared but never referenced
   	uint32_t err_code;
-..\..\..\main.c(1164): warning:  #177-D: variable "counter" was declared but never referenced
+..\..\..\main.c(1179): warning:  #177-D: variable "counter" was declared but never referenced
   	uint32_t counter = 0;
-..\..\..\main.c(1244): warning:  #177-D: variable "err_code" was declared but never referenced
+..\..\..\main.c(1259): warning:  #177-D: variable "err_code" was declared but never referenced
       uint32_t err_code;
-..\..\..\main.c(1518): warning:  #177-D: variable "err_code" was declared but never referenced
+..\..\..\main.c(1533): warning:  #177-D: variable "err_code" was declared but never referenced
   {   uint32_t err_code;
-..\..\..\main.c(1700): warning:  #111-D: statement is unreachable
-  		power_manage();
+..\..\..\main.c(1723): warning:  #111-D: statement is unreachable
+  	power_manage();
 ..\..\..\main.c(95): warning:  #550-D: variable "clear_to_send" was set but never used
   static bool clear_to_send = false;
-..\..\..\main.c(144): warning:  #550-D: variable "m_intan_function" was set but never used
+..\..\..\main.c(145): warning:  #550-D: variable "m_intan_function" was set but never used
   static intan_function m_intan_function = DUMMY; //initialize state for DUMMY
-..\..\..\main.c(151): warning:  #177-D: variable "m_spi_master_ex_state" was declared but never referenced
+..\..\..\main.c(152): warning:  #177-D: variable "m_spi_master_ex_state" was declared but never referenced
   static spi_master_ex_state_t m_spi_master_ex_state = (spi_master_ex_state_t)0;
-..\..\..\main.c(252): warning:  #177-D: function "intan_calibrate" was declared but never referenced
+..\..\..\main.c(186): warning:  #177-D: variable "t_length" was declared but never referenced
+  static char t_length[4];
+..\..\..\main.c(255): warning:  #177-D: function "intan_calibrate" was declared but never referenced
   static void intan_calibrate(uint8_t * const p_tx_buf,
-..\..\..\main.c(263): warning:  #177-D: function "intan_clear" was declared but never referenced
+..\..\..\main.c(266): warning:  #177-D: function "intan_clear" was declared but never referenced
   static void intan_clear(uint8_t * const p_tx_buf,
-..\..\..\main.c(775): warning:  #177-D: function "spi_intan_id_handler" was declared but never referenced
+..\..\..\main.c(780): warning:  #177-D: function "spi_intan_id_handler" was declared but never referenced
   static void spi_intan_id_handler(void *pvParameter)
-..\..\..\main.c(876): warning:  #177-D: function "test_callback" was declared but never referenced
+..\..\..\main.c(881): warning:  #177-D: function "test_callback" was declared but never referenced
   static void test_callback (void *pvParameter)
-..\..\..\main.c(1589): warning:  #177-D: function "ble_init_handler" was declared but never referenced
+..\..\..\main.c(1604): warning:  #177-D: function "ble_init_handler" was declared but never referenced
   static void ble_init_handler(void* p_context)
-..\..\..\main.c: 24 warnings, 0 errors
+..\..\..\main.c: 25 warnings, 0 errors
 compiling ble_conn_params.c...
 compiling ble_srv_common.c...
 compiling nrf_delay.c...
@@ -91,8 +93,8 @@ compiling pstorage.c...
 compiling nrf_drv_clock.c...
 compiling RTT_Syscalls_KEIL.c...
 compiling nrf_soc.c...
-compiling SEGGER_RTT_printf.c...
 compiling SEGGER_RTT.c...
+compiling SEGGER_RTT_printf.c...
 compiling nrf_drv_spi.c...
 compiling app_trace.c...
 compiling app_error.c...
@@ -111,21 +113,21 @@ compiling heatshrink_encoder.c...
 compiling app_timer_freertos.c...
 compiling softdevice_handler.c...
 compiling croutine.c...
-compiling event_groups.c...
 compiling list.c...
+compiling event_groups.c...
 compiling queue.c...
+compiling heap_1.c...
 compiling timers.c...
 compiling tasks.c...
-compiling heap_1.c...
 compiling port_cmsis.c...
-compiling port_cmsis_systick.c...
 assembling arm_startup_nrf52.s...
+compiling port_cmsis_systick.c...
 compiling port.c...
 compiling system_nrf52.c...
 linking...
-Program Size: Code=25392 RO-data=1384 RW-data=368 ZI-data=31904  
+Program Size: Code=25432 RO-data=1384 RW-data=372 ZI-data=31900  
 FromELF: creating hex file...
-".\_build\nrf52832_xxaa_s132.axf" - 0 Error(s), 26 Warning(s).
+".\_build\nrf52832_xxaa_s132.axf" - 0 Error(s), 27 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -155,7 +157,7 @@ Package Vendor: NordicSemiconductor
       Source file:   Device\Source\arm\arm_startup_nrf52.s
       Source file:   Device\Source\system_nrf52.c
       Include file:  Device\Include\system_nrf52.h
-Build Time Elapsed:  00:00:25
+Build Time Elapsed:  00:00:23
 </pre>
 </body>
 </html>
