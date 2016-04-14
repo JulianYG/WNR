@@ -1,0 +1,508 @@
+Dependencies for Project 'blinky_FreeRTOS_pca10028', Target 'nrf51422_xxac': (DO NOT MODIFY !)
+F (..\..\main.c)(0x56F73DE3)(-c --cpu Cortex-M0 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I..\..\config\blinky_FreeRTOS_pca10028 -I..\..\config -I..\..\..\..\..\components\drivers_nrf\clock -I..\..\..\..\..\components\drivers_nrf\common -I..\..\..\..\..\components\drivers_nrf\config -I..\..\..\..\..\components\drivers_nrf\hal -I..\..\..\..\..\components\drivers_nrf\nrf_soc_nosd -I..\..\..\..\..\components\libraries\util -I..\..\..\..\..\components\toolchain -I..\..\..\..\bsp -I..\.. -I..\..\..\..\..\external\freertos\config -I..\..\..\..\..\external\freertos\portable\ARM\nrf51 -I..\..\..\..\..\external\freertos\portable\CMSIS\nrf51 -I..\..\..\..\..\external\freertos\source\include --c99-I C:\Users\stephen\Desktop\spring_2016\senior_design\ble\nRF5_complete\examples\peripheral\blinky_freertos\pca10028\arm5_no_packs\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.1\Device\Include-I C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.2\Device\Include-D__UVISION_VERSION="517" -D_RTE_ -DNRF51 -DBSP_DEFINES_ONLY -DBOARD_PCA10028 -DNRF51 -DFREERTOS-o .\_build\main.o --omf_browse .\_build\main.crf --depend .\_build\main.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x55DBF056)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55DBF060)
+I (..\..\..\..\..\external\freertos\source\include\FreeRTOS.h)(0x5673F55B)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x55DBF05E)
+I (..\..\config\blinky_FreeRTOS_pca10028\FreeRTOSConfig.h)(0x5673F5EE)
+I (C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.1\Device\Include\nrf.h)(0x56461612)
+I (C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.1\Device\Include\nrf51.h)(0x5646160E)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cm0.h)(0x56267BEC)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmInstr.h)(0x56266830)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\cmsis_armcc.h)(0x56266830)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmFunc.h)(0x56266830)
+I (C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.1\Device\Include\system_nrf51.h)(0x56461610)
+I (C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.1\Device\Include\nrf51_bitfields.h)(0x5646160E)
+I (C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.1\Device\Include\nrf51_deprecated.h)(0x56461612)
+I (C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.1\Device\Include\compiler_abstraction.h)(0x56461612)
+I (..\..\..\..\..\components\libraries\util\nrf_assert.h)(0x5673F559)
+I (..\..\..\..\..\components\libraries\util\app_error.h)(0x5673F559)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x55DBF056)
+I (..\..\..\..\..\components\libraries\util\sdk_errors.h)(0x5673F559)
+I (..\..\..\..\..\components\drivers_nrf\nrf_soc_nosd\nrf_error.h)(0x5673F558)
+I (..\..\..\..\..\components\libraries\util\nordic_common.h)(0x5673F559)
+I (..\..\..\..\..\external\freertos\source\include\projdefs.h)(0x5673F55B)
+I (..\..\..\..\..\external\freertos\source\include\portable.h)(0x5673F55B)
+I (..\..\..\..\..\external\freertos\source\include\deprecated_definitions.h)(0x5673F55B)
+I (..\..\..\..\..\external\freertos\portable\ARM\nrf51\portmacro.h)(0x5673F55B)
+I (..\..\..\..\..\external\freertos\portable\CMSIS\nrf51\portmacro_cmsis.h)(0x5673F55B)
+I (..\..\..\..\..\components\libraries\util\app_util.h)(0x5673F559)
+I (..\..\..\..\..\external\freertos\source\include\mpu_wrappers.h)(0x5673F55B)
+I (..\..\..\..\..\external\freertos\source\include\task.h)(0x5673F55B)
+I (..\..\..\..\..\external\freertos\source\include\list.h)(0x5673F55B)
+I (..\..\..\..\..\external\freertos\source\include\timers.h)(0x5673F55B)
+I (..\..\..\..\bsp\bsp.h)(0x5673F55A)
+I (..\..\..\..\bsp\boards.h)(0x5673F55A)
+I (..\..\..\..\..\components\drivers_nrf\hal\nrf_gpio.h)(0x5673F558)
+I (..\..\..\..\bsp\pca10028.h)(0x5673F55A)
+I (..\..\..\..\..\components\drivers_nrf\clock\nrf_drv_clock.h)(0x5673F558)
+I (..\..\..\..\..\components\drivers_nrf\hal\nrf_clock.h)(0x5673F558)
+I (..\..\config\blinky_FreeRTOS_pca10028\nrf_drv_config.h)(0x5673F5EE)
+I (..\..\..\..\..\components\drivers_nrf\config\nrf_drv_config_validation.h)(0x5673F558)
+I (..\..\..\..\..\components\drivers_nrf\common\nrf_drv_common.h)(0x5673F558)
+F (..\..\Abstract.txt)(0x5673F57D)()
+F (..\..\license.txt)(0x5673F57D)()
+F (..\..\..\..\..\external\freertos\source\croutine.c)(0x5673F55B)(-c --cpu Cortex-M0 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I..\..\config\blinky_FreeRTOS_pca10028 -I..\..\config -I..\..\..\..\..\components\drivers_nrf\clock -I..\..\..\..\..\components\drivers_nrf\common -I..\..\..\..\..\components\drivers_nrf\config -I..\..\..\..\..\components\drivers_nrf\hal -I..\..\..\..\..\components\drivers_nrf\nrf_soc_nosd -I..\..\..\..\..\components\libraries\util -I..\..\..\..\..\components\toolchain -I..\..\..\..\bsp -I..\.. -I..\..\..\..\..\external\freertos\config -I..\..\..\..\..\external\freertos\portable\ARM\nrf51 -I..\..\..\..\..\external\freertos\portable\CMSIS\nrf51 -I..\..\..\..\..\external\freertos\source\include --c99-I C:\Users\stephen\Desktop\spring_2016\senior_design\ble\nRF5_complete\examples\peripheral\blinky_freertos\pca10028\arm5_no_packs\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.1\Device\Include-I C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.2\Device\Include-D__UVISION_VERSION="517" -D_RTE_ -DNRF51 -DBSP_DEFINES_ONLY -DBOARD_PCA10028 -DNRF51 -DFREERTOS-o .\_build\croutine.o --omf_browse .\_build\croutine.crf --depend .\_build\croutine.d)
+I (..\..\..\..\..\external\freertos\source\include\FreeRTOS.h)(0x5673F55B)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x55DBF05E)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55DBF060)
+I (..\..\config\blinky_FreeRTOS_pca10028\FreeRTOSConfig.h)(0x5673F5EE)
+I (C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.1\Device\Include\nrf.h)(0x56461612)
+I (C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.1\Device\Include\nrf51.h)(0x5646160E)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cm0.h)(0x56267BEC)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmInstr.h)(0x56266830)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\cmsis_armcc.h)(0x56266830)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmFunc.h)(0x56266830)
+I (C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.1\Device\Include\system_nrf51.h)(0x56461610)
+I (C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.1\Device\Include\nrf51_bitfields.h)(0x5646160E)
+I (C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.1\Device\Include\nrf51_deprecated.h)(0x56461612)
+I (C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.1\Device\Include\compiler_abstraction.h)(0x56461612)
+I (..\..\..\..\..\components\libraries\util\nrf_assert.h)(0x5673F559)
+I (..\..\..\..\..\components\libraries\util\app_error.h)(0x5673F559)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x55DBF056)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x55DBF056)
+I (..\..\..\..\..\components\libraries\util\sdk_errors.h)(0x5673F559)
+I (..\..\..\..\..\components\drivers_nrf\nrf_soc_nosd\nrf_error.h)(0x5673F558)
+I (..\..\..\..\..\components\libraries\util\nordic_common.h)(0x5673F559)
+I (..\..\..\..\..\external\freertos\source\include\projdefs.h)(0x5673F55B)
+I (..\..\..\..\..\external\freertos\source\include\portable.h)(0x5673F55B)
+I (..\..\..\..\..\external\freertos\source\include\deprecated_definitions.h)(0x5673F55B)
+I (..\..\..\..\..\external\freertos\portable\ARM\nrf51\portmacro.h)(0x5673F55B)
+I (..\..\..\..\..\external\freertos\portable\CMSIS\nrf51\portmacro_cmsis.h)(0x5673F55B)
+I (..\..\..\..\..\components\libraries\util\app_util.h)(0x5673F559)
+I (..\..\..\..\..\external\freertos\source\include\mpu_wrappers.h)(0x5673F55B)
+I (..\..\..\..\..\external\freertos\source\include\task.h)(0x5673F55B)
+I (..\..\..\..\..\external\freertos\source\include\list.h)(0x5673F55B)
+I (..\..\..\..\..\external\freertos\source\include\croutine.h)(0x5673F55B)
+F (..\..\..\..\..\external\freertos\source\event_groups.c)(0x5673F55B)(-c --cpu Cortex-M0 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I..\..\config\blinky_FreeRTOS_pca10028 -I..\..\config -I..\..\..\..\..\components\drivers_nrf\clock -I..\..\..\..\..\components\drivers_nrf\common -I..\..\..\..\..\components\drivers_nrf\config -I..\..\..\..\..\components\drivers_nrf\hal -I..\..\..\..\..\components\drivers_nrf\nrf_soc_nosd -I..\..\..\..\..\components\libraries\util -I..\..\..\..\..\components\toolchain -I..\..\..\..\bsp -I..\.. -I..\..\..\..\..\external\freertos\config -I..\..\..\..\..\external\freertos\portable\ARM\nrf51 -I..\..\..\..\..\external\freertos\portable\CMSIS\nrf51 -I..\..\..\..\..\external\freertos\source\include --c99-I C:\Users\stephen\Desktop\spring_2016\senior_design\ble\nRF5_complete\examples\peripheral\blinky_freertos\pca10028\arm5_no_packs\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.1\Device\Include-I C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.2\Device\Include-D__UVISION_VERSION="517" -D_RTE_ -DNRF51 -DBSP_DEFINES_ONLY -DBOARD_PCA10028 -DNRF51 -DFREERTOS-o .\_build\event_groups.o --omf_browse .\_build\event_groups.crf --depend .\_build\event_groups.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x55DBF058)
+I (..\..\..\..\..\external\freertos\source\include\FreeRTOS.h)(0x5673F55B)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x55DBF05E)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55DBF060)
+I (..\..\config\blinky_FreeRTOS_pca10028\FreeRTOSConfig.h)(0x5673F5EE)
+I (C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.1\Device\Include\nrf.h)(0x56461612)
+I (C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.1\Device\Include\nrf51.h)(0x5646160E)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cm0.h)(0x56267BEC)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmInstr.h)(0x56266830)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\cmsis_armcc.h)(0x56266830)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmFunc.h)(0x56266830)
+I (C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.1\Device\Include\system_nrf51.h)(0x56461610)
+I (C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.1\Device\Include\nrf51_bitfields.h)(0x5646160E)
+I (C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.1\Device\Include\nrf51_deprecated.h)(0x56461612)
+I (C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.1\Device\Include\compiler_abstraction.h)(0x56461612)
+I (..\..\..\..\..\components\libraries\util\nrf_assert.h)(0x5673F559)
+I (..\..\..\..\..\components\libraries\util\app_error.h)(0x5673F559)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x55DBF056)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x55DBF056)
+I (..\..\..\..\..\components\libraries\util\sdk_errors.h)(0x5673F559)
+I (..\..\..\..\..\components\drivers_nrf\nrf_soc_nosd\nrf_error.h)(0x5673F558)
+I (..\..\..\..\..\components\libraries\util\nordic_common.h)(0x5673F559)
+I (..\..\..\..\..\external\freertos\source\include\projdefs.h)(0x5673F55B)
+I (..\..\..\..\..\external\freertos\source\include\portable.h)(0x5673F55B)
+I (..\..\..\..\..\external\freertos\source\include\deprecated_definitions.h)(0x5673F55B)
+I (..\..\..\..\..\external\freertos\portable\ARM\nrf51\portmacro.h)(0x5673F55B)
+I (..\..\..\..\..\external\freertos\portable\CMSIS\nrf51\portmacro_cmsis.h)(0x5673F55B)
+I (..\..\..\..\..\components\libraries\util\app_util.h)(0x5673F559)
+I (..\..\..\..\..\external\freertos\source\include\mpu_wrappers.h)(0x5673F55B)
+I (..\..\..\..\..\external\freertos\source\include\task.h)(0x5673F55B)
+I (..\..\..\..\..\external\freertos\source\include\list.h)(0x5673F55B)
+I (..\..\..\..\..\external\freertos\source\include\timers.h)(0x5673F55B)
+I (..\..\..\..\..\external\freertos\source\include\event_groups.h)(0x5673F55B)
+F (..\..\..\..\..\external\freertos\source\portable\MemMang\heap_1.c)(0x5673F55B)(-c --cpu Cortex-M0 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I..\..\config\blinky_FreeRTOS_pca10028 -I..\..\config -I..\..\..\..\..\components\drivers_nrf\clock -I..\..\..\..\..\components\drivers_nrf\common -I..\..\..\..\..\components\drivers_nrf\config -I..\..\..\..\..\components\drivers_nrf\hal -I..\..\..\..\..\components\drivers_nrf\nrf_soc_nosd -I..\..\..\..\..\components\libraries\util -I..\..\..\..\..\components\toolchain -I..\..\..\..\bsp -I..\.. -I..\..\..\..\..\external\freertos\config -I..\..\..\..\..\external\freertos\portable\ARM\nrf51 -I..\..\..\..\..\external\freertos\portable\CMSIS\nrf51 -I..\..\..\..\..\external\freertos\source\include --c99-I C:\Users\stephen\Desktop\spring_2016\senior_design\ble\nRF5_complete\examples\peripheral\blinky_freertos\pca10028\arm5_no_packs\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.1\Device\Include-I C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.2\Device\Include-D__UVISION_VERSION="517" -D_RTE_ -DNRF51 -DBSP_DEFINES_ONLY -DBOARD_PCA10028 -DNRF51 -DFREERTOS-o .\_build\heap_1.o --omf_browse .\_build\heap_1.crf --depend .\_build\heap_1.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x55DBF058)
+I (..\..\..\..\..\external\freertos\source\include\FreeRTOS.h)(0x5673F55B)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x55DBF05E)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55DBF060)
+I (..\..\config\blinky_FreeRTOS_pca10028\FreeRTOSConfig.h)(0x5673F5EE)
+I (C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.1\Device\Include\nrf.h)(0x56461612)
+I (C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.1\Device\Include\nrf51.h)(0x5646160E)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cm0.h)(0x56267BEC)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmInstr.h)(0x56266830)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\cmsis_armcc.h)(0x56266830)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmFunc.h)(0x56266830)
+I (C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.1\Device\Include\system_nrf51.h)(0x56461610)
+I (C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.1\Device\Include\nrf51_bitfields.h)(0x5646160E)
+I (C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.1\Device\Include\nrf51_deprecated.h)(0x56461612)
+I (C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.1\Device\Include\compiler_abstraction.h)(0x56461612)
+I (..\..\..\..\..\components\libraries\util\nrf_assert.h)(0x5673F559)
+I (..\..\..\..\..\components\libraries\util\app_error.h)(0x5673F559)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x55DBF056)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x55DBF056)
+I (..\..\..\..\..\components\libraries\util\sdk_errors.h)(0x5673F559)
+I (..\..\..\..\..\components\drivers_nrf\nrf_soc_nosd\nrf_error.h)(0x5673F558)
+I (..\..\..\..\..\components\libraries\util\nordic_common.h)(0x5673F559)
+I (..\..\..\..\..\external\freertos\source\include\projdefs.h)(0x5673F55B)
+I (..\..\..\..\..\external\freertos\source\include\portable.h)(0x5673F55B)
+I (..\..\..\..\..\external\freertos\source\include\deprecated_definitions.h)(0x5673F55B)
+I (..\..\..\..\..\external\freertos\portable\ARM\nrf51\portmacro.h)(0x5673F55B)
+I (..\..\..\..\..\external\freertos\portable\CMSIS\nrf51\portmacro_cmsis.h)(0x5673F55B)
+I (..\..\..\..\..\components\libraries\util\app_util.h)(0x5673F559)
+I (..\..\..\..\..\external\freertos\source\include\mpu_wrappers.h)(0x5673F55B)
+I (..\..\..\..\..\external\freertos\source\include\task.h)(0x5673F55B)
+I (..\..\..\..\..\external\freertos\source\include\list.h)(0x5673F55B)
+F (..\..\..\..\..\external\freertos\source\list.c)(0x5673F55B)(-c --cpu Cortex-M0 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I..\..\config\blinky_FreeRTOS_pca10028 -I..\..\config -I..\..\..\..\..\components\drivers_nrf\clock -I..\..\..\..\..\components\drivers_nrf\common -I..\..\..\..\..\components\drivers_nrf\config -I..\..\..\..\..\components\drivers_nrf\hal -I..\..\..\..\..\components\drivers_nrf\nrf_soc_nosd -I..\..\..\..\..\components\libraries\util -I..\..\..\..\..\components\toolchain -I..\..\..\..\bsp -I..\.. -I..\..\..\..\..\external\freertos\config -I..\..\..\..\..\external\freertos\portable\ARM\nrf51 -I..\..\..\..\..\external\freertos\portable\CMSIS\nrf51 -I..\..\..\..\..\external\freertos\source\include --c99-I C:\Users\stephen\Desktop\spring_2016\senior_design\ble\nRF5_complete\examples\peripheral\blinky_freertos\pca10028\arm5_no_packs\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.1\Device\Include-I C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.2\Device\Include-D__UVISION_VERSION="517" -D_RTE_ -DNRF51 -DBSP_DEFINES_ONLY -DBOARD_PCA10028 -DNRF51 -DFREERTOS-o .\_build\list.o --omf_browse .\_build\list.crf --depend .\_build\list.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x55DBF058)
+I (..\..\..\..\..\external\freertos\source\include\FreeRTOS.h)(0x5673F55B)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x55DBF05E)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55DBF060)
+I (..\..\config\blinky_FreeRTOS_pca10028\FreeRTOSConfig.h)(0x5673F5EE)
+I (C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.1\Device\Include\nrf.h)(0x56461612)
+I (C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.1\Device\Include\nrf51.h)(0x5646160E)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cm0.h)(0x56267BEC)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmInstr.h)(0x56266830)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\cmsis_armcc.h)(0x56266830)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmFunc.h)(0x56266830)
+I (C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.1\Device\Include\system_nrf51.h)(0x56461610)
+I (C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.1\Device\Include\nrf51_bitfields.h)(0x5646160E)
+I (C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.1\Device\Include\nrf51_deprecated.h)(0x56461612)
+I (C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.1\Device\Include\compiler_abstraction.h)(0x56461612)
+I (..\..\..\..\..\components\libraries\util\nrf_assert.h)(0x5673F559)
+I (..\..\..\..\..\components\libraries\util\app_error.h)(0x5673F559)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x55DBF056)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x55DBF056)
+I (..\..\..\..\..\components\libraries\util\sdk_errors.h)(0x5673F559)
+I (..\..\..\..\..\components\drivers_nrf\nrf_soc_nosd\nrf_error.h)(0x5673F558)
+I (..\..\..\..\..\components\libraries\util\nordic_common.h)(0x5673F559)
+I (..\..\..\..\..\external\freertos\source\include\projdefs.h)(0x5673F55B)
+I (..\..\..\..\..\external\freertos\source\include\portable.h)(0x5673F55B)
+I (..\..\..\..\..\external\freertos\source\include\deprecated_definitions.h)(0x5673F55B)
+I (..\..\..\..\..\external\freertos\portable\ARM\nrf51\portmacro.h)(0x5673F55B)
+I (..\..\..\..\..\external\freertos\portable\CMSIS\nrf51\portmacro_cmsis.h)(0x5673F55B)
+I (..\..\..\..\..\components\libraries\util\app_util.h)(0x5673F559)
+I (..\..\..\..\..\external\freertos\source\include\mpu_wrappers.h)(0x5673F55B)
+I (..\..\..\..\..\external\freertos\source\include\list.h)(0x5673F55B)
+F (..\..\..\..\..\external\freertos\portable\ARM\nrf51\port.c)(0x5673F55B)(-c --cpu Cortex-M0 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I..\..\config\blinky_FreeRTOS_pca10028 -I..\..\config -I..\..\..\..\..\components\drivers_nrf\clock -I..\..\..\..\..\components\drivers_nrf\common -I..\..\..\..\..\components\drivers_nrf\config -I..\..\..\..\..\components\drivers_nrf\hal -I..\..\..\..\..\components\drivers_nrf\nrf_soc_nosd -I..\..\..\..\..\components\libraries\util -I..\..\..\..\..\components\toolchain -I..\..\..\..\bsp -I..\.. -I..\..\..\..\..\external\freertos\config -I..\..\..\..\..\external\freertos\portable\ARM\nrf51 -I..\..\..\..\..\external\freertos\portable\CMSIS\nrf51 -I..\..\..\..\..\external\freertos\source\include --c99-I C:\Users\stephen\Desktop\spring_2016\senior_design\ble\nRF5_complete\examples\peripheral\blinky_freertos\pca10028\arm5_no_packs\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.1\Device\Include-I C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.2\Device\Include-D__UVISION_VERSION="517" -D_RTE_ -DNRF51 -DBSP_DEFINES_ONLY -DBOARD_PCA10028 -DNRF51 -DFREERTOS-o .\_build\port.o --omf_browse .\_build\port.crf --depend .\_build\port.d)
+I (..\..\..\..\..\external\freertos\source\include\FreeRTOS.h)(0x5673F55B)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x55DBF05E)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55DBF060)
+I (..\..\config\blinky_FreeRTOS_pca10028\FreeRTOSConfig.h)(0x5673F5EE)
+I (C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.1\Device\Include\nrf.h)(0x56461612)
+I (C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.1\Device\Include\nrf51.h)(0x5646160E)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cm0.h)(0x56267BEC)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmInstr.h)(0x56266830)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\cmsis_armcc.h)(0x56266830)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmFunc.h)(0x56266830)
+I (C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.1\Device\Include\system_nrf51.h)(0x56461610)
+I (C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.1\Device\Include\nrf51_bitfields.h)(0x5646160E)
+I (C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.1\Device\Include\nrf51_deprecated.h)(0x56461612)
+I (C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.1\Device\Include\compiler_abstraction.h)(0x56461612)
+I (..\..\..\..\..\components\libraries\util\nrf_assert.h)(0x5673F559)
+I (..\..\..\..\..\components\libraries\util\app_error.h)(0x5673F559)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x55DBF056)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x55DBF056)
+I (..\..\..\..\..\components\libraries\util\sdk_errors.h)(0x5673F559)
+I (..\..\..\..\..\components\drivers_nrf\nrf_soc_nosd\nrf_error.h)(0x5673F558)
+I (..\..\..\..\..\components\libraries\util\nordic_common.h)(0x5673F559)
+I (..\..\..\..\..\external\freertos\source\include\projdefs.h)(0x5673F55B)
+I (..\..\..\..\..\external\freertos\source\include\portable.h)(0x5673F55B)
+I (..\..\..\..\..\external\freertos\source\include\deprecated_definitions.h)(0x5673F55B)
+I (..\..\..\..\..\external\freertos\portable\ARM\nrf51\portmacro.h)(0x5673F55B)
+I (..\..\..\..\..\external\freertos\portable\CMSIS\nrf51\portmacro_cmsis.h)(0x5673F55B)
+I (..\..\..\..\..\components\libraries\util\app_util.h)(0x5673F559)
+I (..\..\..\..\..\external\freertos\source\include\mpu_wrappers.h)(0x5673F55B)
+I (..\..\..\..\..\external\freertos\source\include\task.h)(0x5673F55B)
+I (..\..\..\..\..\external\freertos\source\include\list.h)(0x5673F55B)
+F (..\..\..\..\..\external\freertos\portable\CMSIS\nrf51\port_cmsis.c)(0x5673F55B)(-c --cpu Cortex-M0 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I..\..\config\blinky_FreeRTOS_pca10028 -I..\..\config -I..\..\..\..\..\components\drivers_nrf\clock -I..\..\..\..\..\components\drivers_nrf\common -I..\..\..\..\..\components\drivers_nrf\config -I..\..\..\..\..\components\drivers_nrf\hal -I..\..\..\..\..\components\drivers_nrf\nrf_soc_nosd -I..\..\..\..\..\components\libraries\util -I..\..\..\..\..\components\toolchain -I..\..\..\..\bsp -I..\.. -I..\..\..\..\..\external\freertos\config -I..\..\..\..\..\external\freertos\portable\ARM\nrf51 -I..\..\..\..\..\external\freertos\portable\CMSIS\nrf51 -I..\..\..\..\..\external\freertos\source\include --c99-I C:\Users\stephen\Desktop\spring_2016\senior_design\ble\nRF5_complete\examples\peripheral\blinky_freertos\pca10028\arm5_no_packs\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.1\Device\Include-I C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.2\Device\Include-D__UVISION_VERSION="517" -D_RTE_ -DNRF51 -DBSP_DEFINES_ONLY -DBOARD_PCA10028 -DNRF51 -DFREERTOS-o .\_build\port_cmsis.o --omf_browse .\_build\port_cmsis.crf --depend .\_build\port_cmsis.d)
+I (..\..\..\..\..\external\freertos\source\include\FreeRTOS.h)(0x5673F55B)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x55DBF05E)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55DBF060)
+I (..\..\config\blinky_FreeRTOS_pca10028\FreeRTOSConfig.h)(0x5673F5EE)
+I (C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.1\Device\Include\nrf.h)(0x56461612)
+I (C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.1\Device\Include\nrf51.h)(0x5646160E)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cm0.h)(0x56267BEC)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmInstr.h)(0x56266830)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\cmsis_armcc.h)(0x56266830)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmFunc.h)(0x56266830)
+I (C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.1\Device\Include\system_nrf51.h)(0x56461610)
+I (C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.1\Device\Include\nrf51_bitfields.h)(0x5646160E)
+I (C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.1\Device\Include\nrf51_deprecated.h)(0x56461612)
+I (C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.1\Device\Include\compiler_abstraction.h)(0x56461612)
+I (..\..\..\..\..\components\libraries\util\nrf_assert.h)(0x5673F559)
+I (..\..\..\..\..\components\libraries\util\app_error.h)(0x5673F559)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x55DBF056)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x55DBF056)
+I (..\..\..\..\..\components\libraries\util\sdk_errors.h)(0x5673F559)
+I (..\..\..\..\..\components\drivers_nrf\nrf_soc_nosd\nrf_error.h)(0x5673F558)
+I (..\..\..\..\..\components\libraries\util\nordic_common.h)(0x5673F559)
+I (..\..\..\..\..\external\freertos\source\include\projdefs.h)(0x5673F55B)
+I (..\..\..\..\..\external\freertos\source\include\portable.h)(0x5673F55B)
+I (..\..\..\..\..\external\freertos\source\include\deprecated_definitions.h)(0x5673F55B)
+I (..\..\..\..\..\external\freertos\portable\ARM\nrf51\portmacro.h)(0x5673F55B)
+I (..\..\..\..\..\external\freertos\portable\CMSIS\nrf51\portmacro_cmsis.h)(0x5673F55B)
+I (..\..\..\..\..\components\libraries\util\app_util.h)(0x5673F559)
+I (..\..\..\..\..\external\freertos\source\include\mpu_wrappers.h)(0x5673F55B)
+I (..\..\..\..\..\external\freertos\source\include\task.h)(0x5673F55B)
+I (..\..\..\..\..\external\freertos\source\include\list.h)(0x5673F55B)
+F (..\..\..\..\..\external\freertos\portable\CMSIS\nrf51\port_cmsis_systick.c)(0x5673F55B)(-c --cpu Cortex-M0 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I..\..\config\blinky_FreeRTOS_pca10028 -I..\..\config -I..\..\..\..\..\components\drivers_nrf\clock -I..\..\..\..\..\components\drivers_nrf\common -I..\..\..\..\..\components\drivers_nrf\config -I..\..\..\..\..\components\drivers_nrf\hal -I..\..\..\..\..\components\drivers_nrf\nrf_soc_nosd -I..\..\..\..\..\components\libraries\util -I..\..\..\..\..\components\toolchain -I..\..\..\..\bsp -I..\.. -I..\..\..\..\..\external\freertos\config -I..\..\..\..\..\external\freertos\portable\ARM\nrf51 -I..\..\..\..\..\external\freertos\portable\CMSIS\nrf51 -I..\..\..\..\..\external\freertos\source\include --c99-I C:\Users\stephen\Desktop\spring_2016\senior_design\ble\nRF5_complete\examples\peripheral\blinky_freertos\pca10028\arm5_no_packs\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.1\Device\Include-I C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.2\Device\Include-D__UVISION_VERSION="517" -D_RTE_ -DNRF51 -DBSP_DEFINES_ONLY -DBOARD_PCA10028 -DNRF51 -DFREERTOS-o .\_build\port_cmsis_systick.o --omf_browse .\_build\port_cmsis_systick.crf --depend .\_build\port_cmsis_systick.d)
+I (..\..\..\..\..\external\freertos\source\include\FreeRTOS.h)(0x5673F55B)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x55DBF05E)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55DBF060)
+I (..\..\config\blinky_FreeRTOS_pca10028\FreeRTOSConfig.h)(0x5673F5EE)
+I (C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.1\Device\Include\nrf.h)(0x56461612)
+I (C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.1\Device\Include\nrf51.h)(0x5646160E)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cm0.h)(0x56267BEC)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmInstr.h)(0x56266830)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\cmsis_armcc.h)(0x56266830)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmFunc.h)(0x56266830)
+I (C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.1\Device\Include\system_nrf51.h)(0x56461610)
+I (C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.1\Device\Include\nrf51_bitfields.h)(0x5646160E)
+I (C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.1\Device\Include\nrf51_deprecated.h)(0x56461612)
+I (C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.1\Device\Include\compiler_abstraction.h)(0x56461612)
+I (..\..\..\..\..\components\libraries\util\nrf_assert.h)(0x5673F559)
+I (..\..\..\..\..\components\libraries\util\app_error.h)(0x5673F559)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x55DBF056)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x55DBF056)
+I (..\..\..\..\..\components\libraries\util\sdk_errors.h)(0x5673F559)
+I (..\..\..\..\..\components\drivers_nrf\nrf_soc_nosd\nrf_error.h)(0x5673F558)
+I (..\..\..\..\..\components\libraries\util\nordic_common.h)(0x5673F559)
+I (..\..\..\..\..\external\freertos\source\include\projdefs.h)(0x5673F55B)
+I (..\..\..\..\..\external\freertos\source\include\portable.h)(0x5673F55B)
+I (..\..\..\..\..\external\freertos\source\include\deprecated_definitions.h)(0x5673F55B)
+I (..\..\..\..\..\external\freertos\portable\ARM\nrf51\portmacro.h)(0x5673F55B)
+I (..\..\..\..\..\external\freertos\portable\CMSIS\nrf51\portmacro_cmsis.h)(0x5673F55B)
+I (..\..\..\..\..\components\libraries\util\app_util.h)(0x5673F559)
+I (..\..\..\..\..\external\freertos\source\include\mpu_wrappers.h)(0x5673F55B)
+I (..\..\..\..\..\external\freertos\source\include\task.h)(0x5673F55B)
+I (..\..\..\..\..\external\freertos\source\include\list.h)(0x5673F55B)
+I (..\..\..\..\..\components\drivers_nrf\hal\nrf_rtc.h)(0x5673F558)
+I (..\..\..\..\..\components\drivers_nrf\clock\nrf_drv_clock.h)(0x5673F558)
+I (..\..\..\..\..\components\drivers_nrf\hal\nrf_clock.h)(0x5673F558)
+I (..\..\config\blinky_FreeRTOS_pca10028\nrf_drv_config.h)(0x5673F5EE)
+I (..\..\..\..\..\components\drivers_nrf\config\nrf_drv_config_validation.h)(0x5673F558)
+I (..\..\..\..\..\components\drivers_nrf\common\nrf_drv_common.h)(0x5673F558)
+F (..\..\..\..\..\external\freertos\source\queue.c)(0x5673F55B)(-c --cpu Cortex-M0 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I..\..\config\blinky_FreeRTOS_pca10028 -I..\..\config -I..\..\..\..\..\components\drivers_nrf\clock -I..\..\..\..\..\components\drivers_nrf\common -I..\..\..\..\..\components\drivers_nrf\config -I..\..\..\..\..\components\drivers_nrf\hal -I..\..\..\..\..\components\drivers_nrf\nrf_soc_nosd -I..\..\..\..\..\components\libraries\util -I..\..\..\..\..\components\toolchain -I..\..\..\..\bsp -I..\.. -I..\..\..\..\..\external\freertos\config -I..\..\..\..\..\external\freertos\portable\ARM\nrf51 -I..\..\..\..\..\external\freertos\portable\CMSIS\nrf51 -I..\..\..\..\..\external\freertos\source\include --c99-I C:\Users\stephen\Desktop\spring_2016\senior_design\ble\nRF5_complete\examples\peripheral\blinky_freertos\pca10028\arm5_no_packs\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.1\Device\Include-I C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.2\Device\Include-D__UVISION_VERSION="517" -D_RTE_ -DNRF51 -DBSP_DEFINES_ONLY -DBOARD_PCA10028 -DNRF51 -DFREERTOS-o .\_build\queue.o --omf_browse .\_build\queue.crf --depend .\_build\queue.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x55DBF058)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x55DBF058)
+I (..\..\..\..\..\external\freertos\source\include\FreeRTOS.h)(0x5673F55B)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x55DBF05E)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55DBF060)
+I (..\..\config\blinky_FreeRTOS_pca10028\FreeRTOSConfig.h)(0x5673F5EE)
+I (C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.1\Device\Include\nrf.h)(0x56461612)
+I (C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.1\Device\Include\nrf51.h)(0x5646160E)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cm0.h)(0x56267BEC)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmInstr.h)(0x56266830)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\cmsis_armcc.h)(0x56266830)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmFunc.h)(0x56266830)
+I (C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.1\Device\Include\system_nrf51.h)(0x56461610)
+I (C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.1\Device\Include\nrf51_bitfields.h)(0x5646160E)
+I (C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.1\Device\Include\nrf51_deprecated.h)(0x56461612)
+I (C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.1\Device\Include\compiler_abstraction.h)(0x56461612)
+I (..\..\..\..\..\components\libraries\util\nrf_assert.h)(0x5673F559)
+I (..\..\..\..\..\components\libraries\util\app_error.h)(0x5673F559)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x55DBF056)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x55DBF056)
+I (..\..\..\..\..\components\libraries\util\sdk_errors.h)(0x5673F559)
+I (..\..\..\..\..\components\drivers_nrf\nrf_soc_nosd\nrf_error.h)(0x5673F558)
+I (..\..\..\..\..\components\libraries\util\nordic_common.h)(0x5673F559)
+I (..\..\..\..\..\external\freertos\source\include\projdefs.h)(0x5673F55B)
+I (..\..\..\..\..\external\freertos\source\include\portable.h)(0x5673F55B)
+I (..\..\..\..\..\external\freertos\source\include\deprecated_definitions.h)(0x5673F55B)
+I (..\..\..\..\..\external\freertos\portable\ARM\nrf51\portmacro.h)(0x5673F55B)
+I (..\..\..\..\..\external\freertos\portable\CMSIS\nrf51\portmacro_cmsis.h)(0x5673F55B)
+I (..\..\..\..\..\components\libraries\util\app_util.h)(0x5673F559)
+I (..\..\..\..\..\external\freertos\source\include\mpu_wrappers.h)(0x5673F55B)
+I (..\..\..\..\..\external\freertos\source\include\task.h)(0x5673F55B)
+I (..\..\..\..\..\external\freertos\source\include\list.h)(0x5673F55B)
+I (..\..\..\..\..\external\freertos\source\include\queue.h)(0x5673F55B)
+F (..\..\..\..\..\external\freertos\source\tasks.c)(0x5673F55B)(-c --cpu Cortex-M0 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I..\..\config\blinky_FreeRTOS_pca10028 -I..\..\config -I..\..\..\..\..\components\drivers_nrf\clock -I..\..\..\..\..\components\drivers_nrf\common -I..\..\..\..\..\components\drivers_nrf\config -I..\..\..\..\..\components\drivers_nrf\hal -I..\..\..\..\..\components\drivers_nrf\nrf_soc_nosd -I..\..\..\..\..\components\libraries\util -I..\..\..\..\..\components\toolchain -I..\..\..\..\bsp -I..\.. -I..\..\..\..\..\external\freertos\config -I..\..\..\..\..\external\freertos\portable\ARM\nrf51 -I..\..\..\..\..\external\freertos\portable\CMSIS\nrf51 -I..\..\..\..\..\external\freertos\source\include --c99-I C:\Users\stephen\Desktop\spring_2016\senior_design\ble\nRF5_complete\examples\peripheral\blinky_freertos\pca10028\arm5_no_packs\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.1\Device\Include-I C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.2\Device\Include-D__UVISION_VERSION="517" -D_RTE_ -DNRF51 -DBSP_DEFINES_ONLY -DBOARD_PCA10028 -DNRF51 -DFREERTOS-o .\_build\tasks.o --omf_browse .\_build\tasks.crf --depend .\_build\tasks.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x55DBF058)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x55DBF058)
+I (..\..\..\..\..\external\freertos\source\include\FreeRTOS.h)(0x5673F55B)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x55DBF05E)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55DBF060)
+I (..\..\config\blinky_FreeRTOS_pca10028\FreeRTOSConfig.h)(0x5673F5EE)
+I (C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.1\Device\Include\nrf.h)(0x56461612)
+I (C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.1\Device\Include\nrf51.h)(0x5646160E)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cm0.h)(0x56267BEC)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmInstr.h)(0x56266830)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\cmsis_armcc.h)(0x56266830)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmFunc.h)(0x56266830)
+I (C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.1\Device\Include\system_nrf51.h)(0x56461610)
+I (C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.1\Device\Include\nrf51_bitfields.h)(0x5646160E)
+I (C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.1\Device\Include\nrf51_deprecated.h)(0x56461612)
+I (C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.1\Device\Include\compiler_abstraction.h)(0x56461612)
+I (..\..\..\..\..\components\libraries\util\nrf_assert.h)(0x5673F559)
+I (..\..\..\..\..\components\libraries\util\app_error.h)(0x5673F559)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x55DBF056)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x55DBF056)
+I (..\..\..\..\..\components\libraries\util\sdk_errors.h)(0x5673F559)
+I (..\..\..\..\..\components\drivers_nrf\nrf_soc_nosd\nrf_error.h)(0x5673F558)
+I (..\..\..\..\..\components\libraries\util\nordic_common.h)(0x5673F559)
+I (..\..\..\..\..\external\freertos\source\include\projdefs.h)(0x5673F55B)
+I (..\..\..\..\..\external\freertos\source\include\portable.h)(0x5673F55B)
+I (..\..\..\..\..\external\freertos\source\include\deprecated_definitions.h)(0x5673F55B)
+I (..\..\..\..\..\external\freertos\portable\ARM\nrf51\portmacro.h)(0x5673F55B)
+I (..\..\..\..\..\external\freertos\portable\CMSIS\nrf51\portmacro_cmsis.h)(0x5673F55B)
+I (..\..\..\..\..\components\libraries\util\app_util.h)(0x5673F559)
+I (..\..\..\..\..\external\freertos\source\include\mpu_wrappers.h)(0x5673F55B)
+I (..\..\..\..\..\external\freertos\source\include\task.h)(0x5673F55B)
+I (..\..\..\..\..\external\freertos\source\include\list.h)(0x5673F55B)
+I (..\..\..\..\..\external\freertos\source\include\timers.h)(0x5673F55B)
+I (..\..\..\..\..\external\freertos\source\include\StackMacros.h)(0x5673F55B)
+F (..\..\..\..\..\external\freertos\source\timers.c)(0x5673F55B)(-c --cpu Cortex-M0 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I..\..\config\blinky_FreeRTOS_pca10028 -I..\..\config -I..\..\..\..\..\components\drivers_nrf\clock -I..\..\..\..\..\components\drivers_nrf\common -I..\..\..\..\..\components\drivers_nrf\config -I..\..\..\..\..\components\drivers_nrf\hal -I..\..\..\..\..\components\drivers_nrf\nrf_soc_nosd -I..\..\..\..\..\components\libraries\util -I..\..\..\..\..\components\toolchain -I..\..\..\..\bsp -I..\.. -I..\..\..\..\..\external\freertos\config -I..\..\..\..\..\external\freertos\portable\ARM\nrf51 -I..\..\..\..\..\external\freertos\portable\CMSIS\nrf51 -I..\..\..\..\..\external\freertos\source\include --c99-I C:\Users\stephen\Desktop\spring_2016\senior_design\ble\nRF5_complete\examples\peripheral\blinky_freertos\pca10028\arm5_no_packs\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.1\Device\Include-I C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.2\Device\Include-D__UVISION_VERSION="517" -D_RTE_ -DNRF51 -DBSP_DEFINES_ONLY -DBOARD_PCA10028 -DNRF51 -DFREERTOS-o .\_build\timers.o --omf_browse .\_build\timers.crf --depend .\_build\timers.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x55DBF058)
+I (..\..\..\..\..\external\freertos\source\include\FreeRTOS.h)(0x5673F55B)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x55DBF05E)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55DBF060)
+I (..\..\config\blinky_FreeRTOS_pca10028\FreeRTOSConfig.h)(0x5673F5EE)
+I (C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.1\Device\Include\nrf.h)(0x56461612)
+I (C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.1\Device\Include\nrf51.h)(0x5646160E)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cm0.h)(0x56267BEC)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmInstr.h)(0x56266830)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\cmsis_armcc.h)(0x56266830)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmFunc.h)(0x56266830)
+I (C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.1\Device\Include\system_nrf51.h)(0x56461610)
+I (C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.1\Device\Include\nrf51_bitfields.h)(0x5646160E)
+I (C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.1\Device\Include\nrf51_deprecated.h)(0x56461612)
+I (C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.1\Device\Include\compiler_abstraction.h)(0x56461612)
+I (..\..\..\..\..\components\libraries\util\nrf_assert.h)(0x5673F559)
+I (..\..\..\..\..\components\libraries\util\app_error.h)(0x5673F559)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x55DBF056)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x55DBF056)
+I (..\..\..\..\..\components\libraries\util\sdk_errors.h)(0x5673F559)
+I (..\..\..\..\..\components\drivers_nrf\nrf_soc_nosd\nrf_error.h)(0x5673F558)
+I (..\..\..\..\..\components\libraries\util\nordic_common.h)(0x5673F559)
+I (..\..\..\..\..\external\freertos\source\include\projdefs.h)(0x5673F55B)
+I (..\..\..\..\..\external\freertos\source\include\portable.h)(0x5673F55B)
+I (..\..\..\..\..\external\freertos\source\include\deprecated_definitions.h)(0x5673F55B)
+I (..\..\..\..\..\external\freertos\portable\ARM\nrf51\portmacro.h)(0x5673F55B)
+I (..\..\..\..\..\external\freertos\portable\CMSIS\nrf51\portmacro_cmsis.h)(0x5673F55B)
+I (..\..\..\..\..\components\libraries\util\app_util.h)(0x5673F559)
+I (..\..\..\..\..\external\freertos\source\include\mpu_wrappers.h)(0x5673F55B)
+I (..\..\..\..\..\external\freertos\source\include\task.h)(0x5673F55B)
+I (..\..\..\..\..\external\freertos\source\include\list.h)(0x5673F55B)
+I (..\..\..\..\..\external\freertos\source\include\queue.h)(0x5673F55B)
+I (..\..\..\..\..\external\freertos\source\include\timers.h)(0x5673F55B)
+F (..\..\..\..\..\components\drivers_nrf\clock\nrf_drv_clock.c)(0x5673F558)(-c --cpu Cortex-M0 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I..\..\config\blinky_FreeRTOS_pca10028 -I..\..\config -I..\..\..\..\..\components\drivers_nrf\clock -I..\..\..\..\..\components\drivers_nrf\common -I..\..\..\..\..\components\drivers_nrf\config -I..\..\..\..\..\components\drivers_nrf\hal -I..\..\..\..\..\components\drivers_nrf\nrf_soc_nosd -I..\..\..\..\..\components\libraries\util -I..\..\..\..\..\components\toolchain -I..\..\..\..\bsp -I..\.. -I..\..\..\..\..\external\freertos\config -I..\..\..\..\..\external\freertos\portable\ARM\nrf51 -I..\..\..\..\..\external\freertos\portable\CMSIS\nrf51 -I..\..\..\..\..\external\freertos\source\include --c99-I C:\Users\stephen\Desktop\spring_2016\senior_design\ble\nRF5_complete\examples\peripheral\blinky_freertos\pca10028\arm5_no_packs\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.1\Device\Include-I C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.2\Device\Include-D__UVISION_VERSION="517" -D_RTE_ -DNRF51 -DBSP_DEFINES_ONLY -DBOARD_PCA10028 -DNRF51 -DFREERTOS-o .\_build\nrf_drv_clock.o --omf_browse .\_build\nrf_drv_clock.crf --depend .\_build\nrf_drv_clock.d)
+I (..\..\..\..\..\components\drivers_nrf\clock\nrf_drv_clock.h)(0x5673F558)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x55DBF056)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55DBF060)
+I (..\..\..\..\..\components\libraries\util\sdk_errors.h)(0x5673F559)
+I (..\..\..\..\..\components\drivers_nrf\nrf_soc_nosd\nrf_error.h)(0x5673F558)
+I (..\..\..\..\..\components\libraries\util\nrf_assert.h)(0x5673F559)
+I (C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.1\Device\Include\nrf.h)(0x56461612)
+I (C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.1\Device\Include\nrf51.h)(0x5646160E)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cm0.h)(0x56267BEC)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmInstr.h)(0x56266830)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\cmsis_armcc.h)(0x56266830)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmFunc.h)(0x56266830)
+I (C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.1\Device\Include\system_nrf51.h)(0x56461610)
+I (C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.1\Device\Include\nrf51_bitfields.h)(0x5646160E)
+I (C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.1\Device\Include\nrf51_deprecated.h)(0x56461612)
+I (C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.1\Device\Include\compiler_abstraction.h)(0x56461612)
+I (..\..\..\..\..\components\libraries\util\app_error.h)(0x5673F559)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x55DBF056)
+I (..\..\..\..\..\components\libraries\util\nordic_common.h)(0x5673F559)
+I (..\..\..\..\..\components\drivers_nrf\hal\nrf_clock.h)(0x5673F558)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x55DBF05E)
+I (..\..\config\blinky_FreeRTOS_pca10028\nrf_drv_config.h)(0x5673F5EE)
+I (..\..\..\..\..\components\drivers_nrf\config\nrf_drv_config_validation.h)(0x5673F558)
+I (..\..\..\..\..\components\drivers_nrf\common\nrf_drv_common.h)(0x5673F558)
+I (..\..\..\..\..\components\libraries\util\app_util_platform.h)(0x5673F559)
+F (..\..\..\..\..\components\drivers_nrf\common\nrf_drv_common.c)(0x5673F558)(-c --cpu Cortex-M0 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I..\..\config\blinky_FreeRTOS_pca10028 -I..\..\config -I..\..\..\..\..\components\drivers_nrf\clock -I..\..\..\..\..\components\drivers_nrf\common -I..\..\..\..\..\components\drivers_nrf\config -I..\..\..\..\..\components\drivers_nrf\hal -I..\..\..\..\..\components\drivers_nrf\nrf_soc_nosd -I..\..\..\..\..\components\libraries\util -I..\..\..\..\..\components\toolchain -I..\..\..\..\bsp -I..\.. -I..\..\..\..\..\external\freertos\config -I..\..\..\..\..\external\freertos\portable\ARM\nrf51 -I..\..\..\..\..\external\freertos\portable\CMSIS\nrf51 -I..\..\..\..\..\external\freertos\source\include --c99-I C:\Users\stephen\Desktop\spring_2016\senior_design\ble\nRF5_complete\examples\peripheral\blinky_freertos\pca10028\arm5_no_packs\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.1\Device\Include-I C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.2\Device\Include-D__UVISION_VERSION="517" -D_RTE_ -DNRF51 -DBSP_DEFINES_ONLY -DBOARD_PCA10028 -DNRF51 -DFREERTOS-o .\_build\nrf_drv_common.o --omf_browse .\_build\nrf_drv_common.crf --depend .\_build\nrf_drv_common.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x55DBF05E)
+I (..\..\..\..\..\components\drivers_nrf\common\nrf_drv_common.h)(0x5673F558)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55DBF060)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x55DBF056)
+I (C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.1\Device\Include\nrf.h)(0x56461612)
+I (C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.1\Device\Include\nrf51.h)(0x5646160E)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cm0.h)(0x56267BEC)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmInstr.h)(0x56266830)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\cmsis_armcc.h)(0x56266830)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmFunc.h)(0x56266830)
+I (C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.1\Device\Include\system_nrf51.h)(0x56461610)
+I (C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.1\Device\Include\nrf51_bitfields.h)(0x5646160E)
+I (C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.1\Device\Include\nrf51_deprecated.h)(0x56461612)
+I (C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.1\Device\Include\compiler_abstraction.h)(0x56461612)
+I (..\..\..\..\..\components\libraries\util\sdk_errors.h)(0x5673F559)
+I (..\..\..\..\..\components\drivers_nrf\nrf_soc_nosd\nrf_error.h)(0x5673F558)
+I (..\..\config\blinky_FreeRTOS_pca10028\nrf_drv_config.h)(0x5673F5EE)
+I (..\..\..\..\..\components\drivers_nrf\config\nrf_drv_config_validation.h)(0x5673F558)
+I (..\..\..\..\..\components\libraries\util\nrf_assert.h)(0x5673F559)
+I (..\..\..\..\..\components\libraries\util\app_error.h)(0x5673F559)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x55DBF056)
+I (..\..\..\..\..\components\libraries\util\nordic_common.h)(0x5673F559)
+I (..\..\..\..\..\components\libraries\util\app_util_platform.h)(0x5673F559)
+F (..\..\..\..\..\components\drivers_nrf\nrf_soc_nosd\nrf_soc.c)(0x570C6CD5)(-c --cpu Cortex-M0 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I..\..\config\blinky_FreeRTOS_pca10028 -I..\..\config -I..\..\..\..\..\components\drivers_nrf\clock -I..\..\..\..\..\components\drivers_nrf\common -I..\..\..\..\..\components\drivers_nrf\config -I..\..\..\..\..\components\drivers_nrf\hal -I..\..\..\..\..\components\drivers_nrf\nrf_soc_nosd -I..\..\..\..\..\components\libraries\util -I..\..\..\..\..\components\toolchain -I..\..\..\..\bsp -I..\.. -I..\..\..\..\..\external\freertos\config -I..\..\..\..\..\external\freertos\portable\ARM\nrf51 -I..\..\..\..\..\external\freertos\portable\CMSIS\nrf51 -I..\..\..\..\..\external\freertos\source\include --c99-I C:\Users\stephen\Desktop\spring_2016\senior_design\ble\nRF5_complete\examples\peripheral\blinky_freertos\pca10028\arm5_no_packs\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.1\Device\Include-I C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.2\Device\Include-D__UVISION_VERSION="517" -D_RTE_ -DNRF51 -DBSP_DEFINES_ONLY -DBOARD_PCA10028 -DNRF51 -DFREERTOS-o .\_build\nrf_soc.o --omf_browse .\_build\nrf_soc.crf --depend .\_build\nrf_soc.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x55DBF058)
+I (..\..\..\..\..\components\drivers_nrf\nrf_soc_nosd\nrf_soc.h)(0x5673F558)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55DBF060)
+I (C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.1\Device\Include\nrf.h)(0x56461612)
+I (C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.1\Device\Include\nrf51.h)(0x5646160E)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cm0.h)(0x56267BEC)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmInstr.h)(0x56266830)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\cmsis_armcc.h)(0x56266830)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmFunc.h)(0x56266830)
+I (C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.1\Device\Include\system_nrf51.h)(0x56461610)
+I (C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.1\Device\Include\nrf51_bitfields.h)(0x5646160E)
+I (C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.1\Device\Include\nrf51_deprecated.h)(0x56461612)
+I (C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.1\Device\Include\compiler_abstraction.h)(0x56461612)
+I (..\..\..\..\..\components\drivers_nrf\nrf_soc_nosd\nrf_error.h)(0x5673F558)
+F (..\..\..\..\..\components\libraries\util\app_error.c)(0x5673F559)(-c --cpu Cortex-M0 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I..\..\config\blinky_FreeRTOS_pca10028 -I..\..\config -I..\..\..\..\..\components\drivers_nrf\clock -I..\..\..\..\..\components\drivers_nrf\common -I..\..\..\..\..\components\drivers_nrf\config -I..\..\..\..\..\components\drivers_nrf\hal -I..\..\..\..\..\components\drivers_nrf\nrf_soc_nosd -I..\..\..\..\..\components\libraries\util -I..\..\..\..\..\components\toolchain -I..\..\..\..\bsp -I..\.. -I..\..\..\..\..\external\freertos\config -I..\..\..\..\..\external\freertos\portable\ARM\nrf51 -I..\..\..\..\..\external\freertos\portable\CMSIS\nrf51 -I..\..\..\..\..\external\freertos\source\include --c99-I C:\Users\stephen\Desktop\spring_2016\senior_design\ble\nRF5_complete\examples\peripheral\blinky_freertos\pca10028\arm5_no_packs\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.1\Device\Include-I C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.2\Device\Include-D__UVISION_VERSION="517" -D_RTE_ -DNRF51 -DBSP_DEFINES_ONLY -DBOARD_PCA10028 -DNRF51 -DFREERTOS-o .\_build\app_error.o --omf_browse .\_build\app_error.crf --depend .\_build\app_error.d)
+I (C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.1\Device\Include\nrf.h)(0x56461612)
+I (C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.1\Device\Include\nrf51.h)(0x5646160E)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cm0.h)(0x56267BEC)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55DBF060)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmInstr.h)(0x56266830)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\cmsis_armcc.h)(0x56266830)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmFunc.h)(0x56266830)
+I (C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.1\Device\Include\system_nrf51.h)(0x56461610)
+I (C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.1\Device\Include\nrf51_bitfields.h)(0x5646160E)
+I (C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.1\Device\Include\nrf51_deprecated.h)(0x56461612)
+I (C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.1\Device\Include\compiler_abstraction.h)(0x56461612)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x55DBF056)
+I (..\..\..\..\..\components\libraries\util\app_error.h)(0x5673F559)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x55DBF056)
+I (..\..\..\..\..\components\libraries\util\sdk_errors.h)(0x5673F559)
+I (..\..\..\..\..\components\drivers_nrf\nrf_soc_nosd\nrf_error.h)(0x5673F558)
+I (..\..\..\..\..\components\libraries\util\nordic_common.h)(0x5673F559)
+I (..\..\..\..\..\components\libraries\util\nrf_log.h)(0x5673F559)
+I (C:\Keil_v5\ARM\ARMCC\include\stdarg.h)(0x55DBF05E)
+I (..\..\..\..\..\components\libraries\util\app_util.h)(0x5673F559)
+F (..\..\..\..\..\components\libraries\util\app_util_platform.c)(0x5673F559)(-c --cpu Cortex-M0 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I..\..\config\blinky_FreeRTOS_pca10028 -I..\..\config -I..\..\..\..\..\components\drivers_nrf\clock -I..\..\..\..\..\components\drivers_nrf\common -I..\..\..\..\..\components\drivers_nrf\config -I..\..\..\..\..\components\drivers_nrf\hal -I..\..\..\..\..\components\drivers_nrf\nrf_soc_nosd -I..\..\..\..\..\components\libraries\util -I..\..\..\..\..\components\toolchain -I..\..\..\..\bsp -I..\.. -I..\..\..\..\..\external\freertos\config -I..\..\..\..\..\external\freertos\portable\ARM\nrf51 -I..\..\..\..\..\external\freertos\portable\CMSIS\nrf51 -I..\..\..\..\..\external\freertos\source\include --c99-I C:\Users\stephen\Desktop\spring_2016\senior_design\ble\nRF5_complete\examples\peripheral\blinky_freertos\pca10028\arm5_no_packs\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.1\Device\Include-I C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.2\Device\Include-D__UVISION_VERSION="517" -D_RTE_ -DNRF51 -DBSP_DEFINES_ONLY -DBOARD_PCA10028 -DNRF51 -DFREERTOS-o .\_build\app_util_platform.o --omf_browse .\_build\app_util_platform.crf --depend .\_build\app_util_platform.d)
+I (..\..\..\..\..\components\libraries\util\app_util_platform.h)(0x5673F559)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55DBF060)
+I (C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.1\Device\Include\compiler_abstraction.h)(0x56461612)
+I (C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.1\Device\Include\nrf.h)(0x56461612)
+I (C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.1\Device\Include\nrf51.h)(0x5646160E)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cm0.h)(0x56267BEC)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmInstr.h)(0x56266830)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\cmsis_armcc.h)(0x56266830)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmFunc.h)(0x56266830)
+I (C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.1\Device\Include\system_nrf51.h)(0x56461610)
+I (C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.1\Device\Include\nrf51_bitfields.h)(0x5646160E)
+I (C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.1\Device\Include\nrf51_deprecated.h)(0x56461612)
+F (..\..\..\..\..\components\libraries\util\nrf_assert.c)(0x5673F559)(-c --cpu Cortex-M0 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I..\..\config\blinky_FreeRTOS_pca10028 -I..\..\config -I..\..\..\..\..\components\drivers_nrf\clock -I..\..\..\..\..\components\drivers_nrf\common -I..\..\..\..\..\components\drivers_nrf\config -I..\..\..\..\..\components\drivers_nrf\hal -I..\..\..\..\..\components\drivers_nrf\nrf_soc_nosd -I..\..\..\..\..\components\libraries\util -I..\..\..\..\..\components\toolchain -I..\..\..\..\bsp -I..\.. -I..\..\..\..\..\external\freertos\config -I..\..\..\..\..\external\freertos\portable\ARM\nrf51 -I..\..\..\..\..\external\freertos\portable\CMSIS\nrf51 -I..\..\..\..\..\external\freertos\source\include --c99-I C:\Users\stephen\Desktop\spring_2016\senior_design\ble\nRF5_complete\examples\peripheral\blinky_freertos\pca10028\arm5_no_packs\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.1\Device\Include-I C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.2\Device\Include-D__UVISION_VERSION="517" -D_RTE_ -DNRF51 -DBSP_DEFINES_ONLY -DBOARD_PCA10028 -DNRF51 -DFREERTOS-o .\_build\nrf_assert.o --omf_browse .\_build\nrf_assert.crf --depend .\_build\nrf_assert.d)
+I (..\..\..\..\..\components\libraries\util\nrf_assert.h)(0x5673F559)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55DBF060)
+I (C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.1\Device\Include\nrf.h)(0x56461612)
+I (C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.1\Device\Include\nrf51.h)(0x5646160E)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cm0.h)(0x56267BEC)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmInstr.h)(0x56266830)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\cmsis_armcc.h)(0x56266830)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmFunc.h)(0x56266830)
+I (C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.1\Device\Include\system_nrf51.h)(0x56461610)
+I (C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.1\Device\Include\nrf51_bitfields.h)(0x5646160E)
+I (C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.1\Device\Include\nrf51_deprecated.h)(0x56461612)
+I (C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.1\Device\Include\compiler_abstraction.h)(0x56461612)
+I (..\..\..\..\..\components\libraries\util\app_error.h)(0x5673F559)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x55DBF056)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x55DBF056)
+I (..\..\..\..\..\components\libraries\util\sdk_errors.h)(0x5673F559)
+I (..\..\..\..\..\components\drivers_nrf\nrf_soc_nosd\nrf_error.h)(0x5673F558)
+I (..\..\..\..\..\components\libraries\util\nordic_common.h)(0x5673F559)
+F (RTE\Device\nRF51422_xxAC\arm_startup_nrf51.s)(0x5645B3A2)(--cpu Cortex-M0 --pd "__EVAL SETA 1" -g --apcs=interwork --pd "__MICROLIB SETA 1"-I C:\Users\stephen\Desktop\spring_2016\senior_design\ble\nRF5_complete\examples\peripheral\blinky_freertos\pca10028\arm5_no_packs\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.1\Device\Include-I C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.2\Device\Include--pd "__UVISION_VERSION SETA 517" --pd "_RTE_ SETA 1" --pd "NRF51 SETA 1" --pd "BSP_DEFINES_ONLY SETA 1" --pd "BOARD_PCA10028 SETA 1" --pd "NRF51 SETA 1" --pd "FREERTOS SETA 1"--list .\_build\arm_startup_nrf51.lst --xref -o .\_build\arm_startup_nrf51.o --depend .\_build\arm_startup_nrf51.d)
+F (RTE\Device\nRF51422_xxAC\system_nrf51.c)(0x5645B3A2)(-c --cpu Cortex-M0 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I..\..\config\blinky_FreeRTOS_pca10028 -I..\..\config -I..\..\..\..\..\components\drivers_nrf\clock -I..\..\..\..\..\components\drivers_nrf\common -I..\..\..\..\..\components\drivers_nrf\config -I..\..\..\..\..\components\drivers_nrf\hal -I..\..\..\..\..\components\drivers_nrf\nrf_soc_nosd -I..\..\..\..\..\components\libraries\util -I..\..\..\..\..\components\toolchain -I..\..\..\..\bsp -I..\.. -I..\..\..\..\..\external\freertos\config -I..\..\..\..\..\external\freertos\portable\ARM\nrf51 -I..\..\..\..\..\external\freertos\portable\CMSIS\nrf51 -I..\..\..\..\..\external\freertos\source\include --c99-I C:\Users\stephen\Desktop\spring_2016\senior_design\ble\nRF5_complete\examples\peripheral\blinky_freertos\pca10028\arm5_no_packs\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.1\Device\Include-I C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.2\Device\Include-D__UVISION_VERSION="517" -D_RTE_ -DNRF51 -DBSP_DEFINES_ONLY -DBOARD_PCA10028 -DNRF51 -DFREERTOS-o .\_build\system_nrf51.o --omf_browse .\_build\system_nrf51.crf --depend .\_build\system_nrf51.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55DBF060)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x55DBF056)
+I (C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.1\Device\Include\nrf.h)(0x56461612)
+I (C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.1\Device\Include\nrf51.h)(0x5646160E)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cm0.h)(0x56267BEC)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmInstr.h)(0x56266830)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\cmsis_armcc.h)(0x56266830)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmFunc.h)(0x56266830)
+I (C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.1\Device\Include\system_nrf51.h)(0x56461610)
+I (C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.1\Device\Include\nrf51_bitfields.h)(0x5646160E)
+I (C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.1\Device\Include\nrf51_deprecated.h)(0x56461612)
+I (C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.1\Device\Include\compiler_abstraction.h)(0x56461612)
+I (..\..\..\..\..\components\toolchain\system_nrf51.h)(0x5673F565)
