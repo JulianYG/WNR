@@ -29,7 +29,7 @@ compile with the command: gcc demo_rx.c rs232.c -Wall -Wextra -o2 -o test_rx
 #define DELIMITER_LEN 18
 
 static heatshrink_decoder hsd;
-static void decompress(uint8_t *input, uint32_t input_size);
+static void decompress(uint8_t *input, uint32_t input_size, int device_num);
 static int arr_search(uint8_t *toSearch, int lenSearch, uint8_t *arr, int lenArr);
 static FILE *csv;
 
@@ -63,7 +63,7 @@ int main(void)
 		    printf("Received %i bytes: %s\n", n, (char *) buf);
 		    switch(buf[n - 1]) {
 		    	case 48:
-				    if (arr_search("TKENDTKENDTKENDTKEND", BUF_SIZE, buf, n) > 0) {
+				    if (arr_search("TKENDTKENDTKENDTKEND", BUF_SIZE - 1, buf, n) >= 0) {
 				    	printf("%s\n", "Starting reception on device 0...");
 				    	memset(data_0, 0, MAX_DATA_SIZE);	/* Initialize the array */
 				    	received_cnt = 0;
@@ -86,7 +86,7 @@ int main(void)
 
 					    	uint8_t comp[size];
 					    	memcpy(comp, data_0, size);
-					    	decompress(comp, size);
+					    	decompress(comp, size, 0);
 
 					    	/* Clean up */
 					    	memset(data_0, 0, MAX_DATA_SIZE);
@@ -104,7 +104,7 @@ int main(void)
 					}
 					break;
 				case 49:
-					if (arr_search("TKENDTKENDTKENDTKEND", BUF_SIZE, buf, n) > 0) {
+					if (arr_search("TKENDTKENDTKENDTKEND", BUF_SIZE - 1, buf, n) > 0) {
 				    	printf("%s\n", "Starting reception on device 1...");
 				    	memset(data_1, 0, MAX_DATA_SIZE);	/* Initialize the array */
 				    	received_cnt = 0;
@@ -127,7 +127,7 @@ int main(void)
 
 					    	uint8_t comp[size];
 					    	memcpy(comp, data_1, size);
-					    	decompress(comp, size);
+					    	decompress(comp, size, 1);
 
 					    	/* Clean up */
 					    	memset(data_1, 0, MAX_DATA_SIZE);
@@ -157,7 +157,7 @@ int main(void)
     return (0);
 }
 
- void decompress(uint8_t *input, uint32_t compressed_size)
+ void decompress(uint8_t *input, uint32_t compressed_size, int device_num)
  {
  	printf("Decompressing data...\n");
  	heatshrink_decoder_reset(&hsd);
@@ -184,12 +184,26 @@ int main(void)
             heatshrink_decoder_finish(&hsd);
         }
     }
-    printf("Size after decompression: %d\n", polled);
-    csv = fopen("data.csv", "a");
-    for (int i = 0; i < polled; ++i) {
-    	fprintf(csv, "%hhu\n", decomp[i]);
-    }
-	fclose(csv);
+    switch(device_num) {
+    	case 0:
+		    printf("Size after decompression device 0 data: %d\n", polled);
+		    csv = fopen("data_0.csv", "a");
+		    for (int i = 0; i < polled; ++i) {
+		    	fprintf(csv, "%hhu\n", decomp[i]);
+		    }
+			fclose(csv);
+			break;
+		case 1:
+			printf("Size after decompression device 1 data: %d\n", polled);
+		    csv = fopen("data_1.csv", "a");
+		    for (int i = 0; i < polled; ++i) {
+		    	fprintf(csv, "%hhu\n", decomp[i]);
+		    }
+			fclose(csv);
+			break;
+		default:
+			break;
+	}
 	free(decomp);
  }
 
