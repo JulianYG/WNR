@@ -3,34 +3,19 @@ Wireless Neural Recorder
 
 About 10% of the world’s population suffers from epilepsy, a brain function disorder that causes neurons in patients’ brain to fire at an abnormal rate with unregulated patterns. Diagnosis of this condition often involves a medical procedure called electroencephalogram (EEG), which detects the electric pulses created by the neurons.
 
-Figure 1. A person demonstrating a particular scalp EEG device[1]
-
 For most patients, it usually suffices to use scalp EEG to confirm diagnosis. Scalp EEG, also known as Extracranial EEG, uses non-invasive electrodes which are stuck to the surface of the patient’s scalp to detect brain wave signal. For these patients, which account for 70% of the total epilepsy patients, their illness can be controlled through therapy and drugs. However, for the rest 30% of epilepsy patients, the drugs do not work and surgical procedures must be done to remove certain problem sections of the brain to control the epilepsies. If a patient with epilepsy is being considered for epilepsy surgery, it is often necessary to localize the source of the epileptic brain activity with a resolution greater than what is provided by scalp EEG.
 
-
-Figure 2. (left) Illustration for Intracranial EEG operation; (right) X-ray of implanted Intracranial EEG electrodes[2]
 Scalp EEG does not provide the resolution of brain activity data required for neurosurgeons to operate on as the cerebrospinal fluid, skull and scalp smear the electrical potentials from the scalp electrodes. To perform the epilepsy surgery, neurosurgeons typically first implant grid of electrodes or penetrating depth electrodes under the dura (brain) mater, through either a craniotomy or a burr hole. The recording of these signals is referred to as electrocorticography (ECoG), subdural EEG (sdEEG) or intracranial EEG (icEEG)--all terms for the same thing. The signal recorded from the intracranial EEG is on a different scale of activity than the brain activity recorded from scalp EEG. Because signals are collected by directly contact with electrodes, Low voltage, high frequency components that cannot be seen easily or at all in scalp EEG can be seen clearly in EEG.
  
 The current method of collecting intracranial EEG data from a patient’s brain is through a tethered cord to a monitoring and recording device on premise at a clinic or hospital. The intracranial EEG records the spontaneous electrical activity of the brain measuring voltage fluctuations resulting from ionic current within the neurons of the brain as recorded from multiple electrodes. This tethered EEG procedure is high invasive and disruptive to patients’ lives as they are confined to a hospital bed for several days to a week while doctors wait for very small windows of epileptic episodes to occur to gather a limited amount of useful information.
  
 Wireless Neural Recorder’s (WNR) objective is to create a wireless monitoring solution to the problem of neural recording, allowing users the freedom and mobility to return to their normal lives at home while also enabling doctors to obtain sufficient neural data required to treat their patients’ conditions effectively.
  
-
-
- 
- 
-Figure 3. Illustration of a wireless neural electrode to be implanted in the brain
 The figure above provides an illustration about the position of the final device in relation to the brain after it is implanted.  Before we look into our proposed system for a wireless neural recording device, we will provide an overview of the components of the more common wired equivalent.  The general system diagram flow of wired neural recording machines is shown below.
-
-
-Figure 4. System block diagram of a wired neural recorder
 
 Data from the electrodes (fig. 4a) is digitized by the analog front end (fig. 4b) and can be sent directly to the server (fig. 4c).  Generally, the server will be running continuously from a inexhaustive power supply, and thus, will not have any power constraints.  Since transmission is not through an intermediary medium, like air or water, that separates the where the data obtained and where the data needs to be transmitted, the data can be sent directly to the server for storage and analysis, without any need for preprocessing or any additional overhead.
 
 However since the goal of our design is to provide a wireless solution to neural recording and data storage, our system design becomes more complicated.
-
-
-Figure 5. System block diagram of a wireless neural recorder
 
 The figure above shows the proposed design of our entire system.  The front-end remains relatively the same.  Electrode data is sampled by the analog front-end, which accounts for low-noise signal amplification and DC offset rejection that arises from the nature of brain signals and the electric potential difference that forms at the contact point between the electrode and the brain[3].  Once the data is digitized, it is passed into a CPU or microprocessor (fig. 5c) where the data is preprocessed for transmission.  When the data has been processed for transmission, it is passed to the wireless transmitter (fig. 5d) and transmitted across the air medium (fig. 5e) to a server (fig. 5f), which can be a module near or on the patient’s body.  In the server, the data can be stored, viewed, and analyzed for deviations from standard brain activities.  It was specified by Dr. Nitin Tandon, our sponsor from UTHealth, that the device should ideally fit within a 5 x 5 x 10 mm container (maximum dimensions was specified to be 8 x 8 x 10 mm), which is an extremely aggressive size constraint and limiting factor.
 
@@ -39,9 +24,7 @@ Raw pulses observed from electrodes are generally in the microvolt range and req
 Beginning from the microprocessor preprocessing section of the system block diagram (fig. 5c), there are deviations from the wired neural recorder system (fig. 4).  At this stage, the data will be processed based on the precision of the sampled data points as well as the limitations of the wireless transmission protocol we decide to use.  For instance, one viable transmission protocol that we are considering is Bluetooth Low Energy.  Bluetooth Low energy has a maximum data transfer rate of 260 kb/s[7].  If we decide to sample each contact point with a precision of eight bits, then the channel can support a data point transfer rate of 32,500 data points per second.  This means if we have more than 32 channels or contact points sampled at 1 kHz, all collecting and transferring data to the same server, then the channel capacity for bluetooth low energy will be incapable of supporting the entire offered load from the electrodes, and the system will incur data loss.  Then in order for the transmission rate to keep up with the sampling rate from all nodes in the array, the data coming in for transmission has to be downsampled or compressed in some other way in order to reduce the amount of bits transmitted across the channel.
 
 Given our system design requirements, we have identified three main challenges that we will face in designing our device: wireless data transmission, power, and safety regulations. Our wireless data transmission protocol must be power efficient while having enough bandwidth and transmission speed to send 128kb/s. Five potential wireless options were considered but we decided to go with Bluetooth Low Energy as it provides adequate communication security and power efficiency[8]. It has high range, medium bandwidth and medium data transfer rate but high power efficiency. It is the best tradeoff in terms of performance to power, while also being secured via encryption and other privacy protocols. Power is another major concern as we will be sampling and sending data very frequently at the detriment of our battery life. Given our small form factor, the batteries for our application will be limited in size, hence batteries need to be high density, high efficiency batteries similar to ones found in pacemakers.  Each electrode and wireless control unit should have the capability of sampling and transmitting data for at least 24 hours.  However, there are very few batteries that fit within the size of 5 x 5 x 10 or 8 x 8 x 10 mm that provides significant amounts of power, so the battery will be one of the major limiting factors of the project.  If power consumption goes above what the batteries can provide, then a method for reducing the system’s power, most likely by decreasing the rate at which data is transmitted to the receiver, must be implemented. Lastly our device has to conform to multiple standards and guidelines set by the FCC, FDA, and HIPPA. Our medical device has a communications link, so it not only has to conform to extensive safety testing perform by the Food and Drug Administration (FDA)[9] but also compatibility testing by the Federal Communication Commission (FCC)[10]. We are working with patient data so we also have to ensure that we are HIPPA compliant and securing our data with no unauthorized access outside of patients and approved medical professionals[11].
-.
  
-
 In order to best prepare ourselves for marketing our product to professional health-care providers, research has been done on the procedure with which hospitals purchase medical devices. Hospitals generally have a well established pipeline for acquiring new equipments[13]. First, hospitals’ directors undergo a strategic planning phase during which the they decide which type of medical devices that the hospital needs. After strategic planning, a rigorous assessment procedure is performed on multiple competing existing technologies with cost-benefit assessments. After the technology has been assessed and the final decision of purchase has been made, the technology acquisition phase of the purchasing process is engaged and final contracts are signed with medical device manufacturers.
 
 With the knowledge of how our customers will assess our products, we look at our competitors against whom our product will compete for the final contract. For our wireless neural recorder, we found that are very few existing commercial EEGs rated for wireless human brain wave test data recording and monitoring. This is because prevalent EEG technology is generally wired and limiting in terms of the freedom and dignity of epilepsy patients, and wireless intracranial EEG recording is a very new field with very few competitors. We identified our two main competitors to be DEUTRON and NEUROPACE, but both their technologies have limitations that make their options less than ideal. We will discuss our competitors’ options more in depth in our market analysis sections.
@@ -51,3 +34,18 @@ WNR envisions a future where epilepsy patients no longer have to spend days pain
 
 
 
+REFERENCES
+
+[1]   "Method of the Month: EEG." Brain In A Vat. 4 Sept. 2007. Web. 25 Sept. 2015. 
+[2]   한양대학교 Jang’s Lab." 한양대학교 Jang’s Lab. Web. 25 Sept. 2015.
+[3]   Bharucha, Eric, Hassan Sepehrian, and Benoit Gosselin. "A Survey of Neural Front       End Amplifiers and Their Requirements toward Practical Neural Interfaces." Journal of Low Power Electronics and Applications JLPEA (2014): 268-91. Print.
+[4]   Harrison, R.r., and C. Charles. "A Low-power Low-noise Cmos for Amplifier Neural Recording Applications." IEEE J. Solid-State Circuits IEEE Journal of Solid-State Circuits: 958-65. Print.
+[5]   Harrison, Reid R. "Wireless Neural Recording With Single Low-Power Integrated Circuit." IEEE TRANSACTIONS ON NEURAL SYSTEMS AND REHABILITATION ENGINEERING 17.4 (2009): 322-29. Print.
+[6]   Harrison, R.r. "The Design of Integrated Circuits to Observe Brain Activity." Proceedings of the IEEE Proc. IEEE: 1203-216. Print.
+[7]   "Bluetooth 4.2 Core Specifications Finalized." RSS. Web. 25 Sept. 2015.
+[8]   Smith, P. (2011, August 8). Comparing Low-Power Wireless Technologies. Retrieved September 25, 2015. 
+[9]   Guidance Documents (Medical Devices and Radiation-Emitting Products). (n.d.). Retrieved September 25, 2015. 
+[10] Radio Frequency Wireless Technology in Medical Devices - Guidance for Industry and Food and Drug Administration Staff. (n.d.). Retrieved September 25, 2015. 
+[11] HHS.gov. (n.d.). Retrieved September 25, 2015. 
+[12] Alpert, Alec. "Understanding How Hospitals Buy Medical Technology." 2009. Web. 25 Sept. 2015.
+[13] "Fast Facts on US Hospitals." Fast Facts on US Hospitals. Web. 25 Sept. 2015.
