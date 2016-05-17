@@ -57,7 +57,7 @@
 
 #define SEND_NOTIFICATION_BUTTON_ID        0                                          /**< Id for button used for sending notification button. */
 
-#define DEVICE_NAME                        "Multilink"                                /**< Name of device. Will be included in the advertising data. */
+#define DEVICE_NAME                        "Multilink_SX"                                /**< Name of device. Will be included in the advertising data. */
 
 #define APP_TIMER_PRESCALER                0                                          /**< Value of the RTC1 PRESCALER register. */
 #define APP_TIMER_OP_QUEUE_SIZE            4                                          /**< Size of timer operation queues. */
@@ -98,12 +98,13 @@ static bool rtos_running = false;                           /**<Used to determin
 static bool ble_initialized = false;      /**<In the beginning, transmission will error.  Once we sort this out, this flag will be set true.>*/					
 static bool first_tx_successful = false;  /**<Used to determine when to stop testing connection when first connected.>**/
 app_timer_id_t ble_init_timer_id;
+static uint8_t last_tx_buf = -1;
 
 /********************************** DATA ACQUISITION DEFINITIONS ************************************************/
 
 //#define APP_TIMER_MAX_TIMERS     BSP_APP_TIMERS_NUMBER  ///< Maximum number of simultaneously created timers.
 #define SAMPLE_DELAY APP_TIMER_TICKS(1, APP_TIMER_PRESCALER) // Sample rate in MS
-#define NUM_CHANNELS 2                                         // Number of channels to sample from
+#define NUM_CHANNELS 1                                         // Number of channels to sample from
 
 #define DELAY_MS                 10 /*1000*/                   ///< Timer Delay in milli-seconds.
 
@@ -154,10 +155,13 @@ static spi_master_ex_state_t m_spi_master_ex_state = (spi_master_ex_state_t)0;
 static const nrf_drv_spi_t m_spi_master_0 = NRF_DRV_SPI_INSTANCE(0);
 static int intan_convert_channel = 0;          // Channel on Intan currently converting.
 //static uint32_t counter = 0;
+
+static uint8_t sine_wave[100] = {22,36,24,26,36,29,44,45,45,34,45,44,54,48,52,45,46,54,40,41,42,47,56,56,41,47,50,47,52,51,44,46,37,56,39,37,42,37,42,38,49,48,29,42,31,33,34,41,29,39,24,31,29,25,27,25,15,12,29,11,7,17,23,17,7,10,11,21,4,18,13,7,3,8,9,2,11,4,8,12,6,7,14,8,20,24,20,13,18,10,27,27,27,17,25,15,24,23,21,23};
+static uint8_t square_wave[100] = {50,47,55,58,60,41,42,44,49,50,50,50,50,50,51,50,52,50,50,48,47,50,50,50,51,53,55,50,58,46,50,49,50,50,50,49,50,44,47,50,48,50,50,49,52,53,51,50,50,50,0,0,0,0,1,0,0,2,0,0,1,1,0,0,0,0,0,3,0,3,0,0,0,0,0,0,0,0,0,0,0,3,0,1,0,0,0,0,2,0,0,0,3,0,0,0,1,0,2,0};
 /********************************** COMPRESSION DEFINITIONS ************************************************/
 
 #define NUM_DATA_BUFFERS 2                                                     /**<Number of data buffers to use> */
-#define DATA_BUF_SIZE 	(256U)                                                /**<buffer size for each data buffer.> */
+#define DATA_BUF_SIZE 	(200U)                                                /**<buffer size for each data buffer.> */
 #define TRANSMISSION_BUF_SIZE 	(DATA_BUF_SIZE + (DATA_BUF_SIZE/2) + 4)          /**<buffer size for the transmission buffer.> */
 #define COMP_DELAY 1                                        /** <Delay compression by 1 ms each time> */
 #define SEND_DELIMETER 0xFFFFFFFF    /**<Write this to the corresponding tx_buffers_pending index to denote that the delimeter packet will be sent>*/
@@ -386,6 +390,7 @@ void spi_master_0_event_handler(nrf_drv_spi_evt_type_t* event)
 							if(ab_capacity > 0)
 							{
 								//*(data_buffers[active_buffer] + DATA_BUF_SIZE - ab_capacity) = m_rx_data_spi[0];
+								//data_buffers[active_buffer][DATA_BUF_SIZE - ab_capacity] = m_rx_data_spi[0];
 								//*(data_buffers[active_buffer] + DATA_BUF_SIZE - ab_capacity) = 1;
 								//data_buffers[active_buffer][DATA_BUF_SIZE - ab_capacity] = data_to_send;
 								
@@ -683,7 +688,11 @@ void buffers_init(void)
 			//while(app_uart_put(67) != NRF_SUCCESS);
 			printf("Data buffer %d Alloc failed\r\n", i);
 		}
-		memset(data_buffers[i], i+1, DATA_BUF_SIZE);
+		//memset(data_buffers[i], 0, DATA_BUF_SIZE);
+		for(int j = 0; j < DATA_BUF_SIZE; j++)
+		{
+			data_buffers[i][j] = square_wave[j % 100];
+		}
 		comp_buffers_ready[i] = false;
 		
 		transmission_buffers[i] = (uint8_t *) malloc(TRANSMISSION_BUF_SIZE);
@@ -839,10 +848,19 @@ static void compress_task (void *pvParameter)
 		// Transmit if transmission buffer has received a full set of data.
 		if(tx_buffers_pending[tx_index] > 0 && !comp_buffers_ready[tx_index] && !tx_in_progress)
 		{
-			//printf("tready%d\r\n%d\r\n%d\r\n%d\r\n%d\r\n", tx_index, comp_buffers_ready[tx_index], comp_index, comp_buffers_ready[comp_index], tx_buffers_pending[tx_index]);
-			tx_in_progress = true;
-			curr_tx_size = tx_buffers_pending[tx_index];
-			data_send(tx_index, tx_buffers_pending[tx_index]);
+			if(last_tx_buf != tx_index)
+			{
+				printf("tready%d\r\n%d\r\n%d\r\n%d\r\n%d\r\n", tx_index, comp_buffers_ready[tx_index], comp_index, comp_buffers_ready[comp_index], tx_buffers_pending[tx_index]);
+				tx_in_progress = true;
+				curr_tx_size = tx_buffers_pending[tx_index];
+				last_tx_buf = tx_index;
+				data_send(tx_index, tx_buffers_pending[tx_index]);
+			}
+			else
+			{
+				tx_index++;
+				tx_index = tx_index % NUM_DATA_BUFFERS;
+			}
 		}
 		//vTaskDelay(COMP_DELAY);
 	}
@@ -1162,7 +1180,7 @@ uint32_t ble_multi_data_send(uint16_t conn_handle, ble_gatts_char_handles_t* cha
 static void send_delimeter(uint8_t buf, uint32_t size)
 {
 	// Last two bits have the size of the buffer just sent over in Big Endian order
-	buf_delimiter[MAX_DATA_LENGTH - 2] = (size >> 8) & 0xFF;
+	buf_delimiter[MAX_DATA_LENGTH - 2] = (size >> 8) & 0x0F;
 	buf_delimiter[MAX_DATA_LENGTH - 1] = (size) & 0xFF;
 	printf("%d\r\n", size);
 	
@@ -1671,7 +1689,7 @@ int main(void)
 		//spi_timer_handle = xTimerCreate("s_timer", 1, pdTRUE, NULL, spi_intan_id_handler);
 		
 		// Sample timer
-    spi_timer_handle = xTimerCreate("s_timer", 50, pdTRUE, NULL, spi_data_collection_evt_handler);                                 // LED1 timer creation
+    spi_timer_handle = xTimerCreate("s_timer", 10, pdTRUE, NULL, spi_data_collection_evt_handler);                                 // LED1 timer creation
     
 		if(spi_timer_handle == NULL)
 		{

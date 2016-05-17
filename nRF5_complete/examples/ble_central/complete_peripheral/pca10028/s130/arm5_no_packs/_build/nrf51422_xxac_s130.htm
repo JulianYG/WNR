@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\_build\nrf51422_xxac_s130.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\_build\nrf51422_xxac_s130.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060061: Last Updated: Wed Apr 13 19:28:20 2016
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060061: Last Updated: Thu Apr 14 00:46:06 2016
 <BR><P>
 <H3>Maximum Stack Usage =        656 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -303,7 +303,6 @@ Global Symbols
 <P><STRONG><a name="[51]"></a>__aeabi_memset</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, memseta.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[dd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskGenericCreate
 <LI><a href="#[b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;heatshrink_encoder_poll
-<LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;buffers_init
 <LI><a href="#[52]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_memset$wrapper
 <LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr
 </UL>
@@ -709,11 +708,10 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[9c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;dm_ble_evt_handler
 </UL>
 
-<P><STRONG><a name="[a8]"></a>buffers_init</STRONG> (Thumb, 110 bytes, Stack size 24 bytes, main.o(i.buffers_init))
+<P><STRONG><a name="[a8]"></a>buffers_init</STRONG> (Thumb, 108 bytes, Stack size 24 bytes, main.o(i.buffers_init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = buffers_init &rArr; __2printf
 </UL>
 <BR>[Calls]<UL><LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr
-<LI><a href="#[51]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memset
 <LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;malloc
 <LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
 </UL>
@@ -1138,8 +1136,8 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ble_stack_init
 </UL>
 
-<P><STRONG><a name="[31]"></a>spi_master_0_event_handler</STRONG> (Thumb, 98 bytes, Stack size 16 bytes, main.o(i.spi_master_0_event_handler))
-<BR><BR>[Stack]<UL><LI>Max Depth = 144<LI>Call Chain = spi_master_0_event_handler &rArr; sample_data &rArr; switch_state &rArr; nrf_drv_spi_transfer &rArr; nrf_drv_spi_xfer &rArr; spi_xfer &rArr; transfer_byte
+<P><STRONG><a name="[31]"></a>spi_master_0_event_handler</STRONG> (Thumb, 120 bytes, Stack size 24 bytes, main.o(i.spi_master_0_event_handler))
+<BR><BR>[Stack]<UL><LI>Max Depth = 152<LI>Call Chain = spi_master_0_event_handler &rArr; sample_data &rArr; switch_state &rArr; nrf_drv_spi_transfer &rArr; nrf_drv_spi_xfer &rArr; spi_xfer &rArr; transfer_byte
 </UL>
 <BR>[Calls]<UL><LI><a href="#[117]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_drv_spi_uninit
 <LI><a href="#[8f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_uart_put
@@ -1603,7 +1601,7 @@ Local Symbols
 <BR>[Called By]<UL><LI><a href="#[1f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[2d]"></a>compress_task</STRONG> (Thumb, 78 bytes, Stack size 0 bytes, main.o(i.compress_task))
+<P><STRONG><a name="[2d]"></a>compress_task</STRONG> (Thumb, 96 bytes, Stack size 0 bytes, main.o(i.compress_task))
 <BR><BR>[Stack]<UL><LI>Max Depth = 656<LI>Call Chain = compress_task &rArr; compress &rArr; heatshrink_encoder_poll &rArr; st_step_search &rArr; find_longest_match
 </UL>
 <BR>[Calls]<UL><LI><a href="#[b2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;compress

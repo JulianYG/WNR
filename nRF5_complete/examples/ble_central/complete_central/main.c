@@ -67,7 +67,7 @@
 #define SLAVE_LATENCY                    0                                              /**< Determines slave latency in counts of connection events. */
 #define SUPERVISION_TIMEOUT              MSEC_TO_UNITS(4000, UNIT_10_MS)                /**< Determines supervision time-out in units of 10 millisecond. */
 
-#define TARGET_DEV_NAME                  "Multilink"                                    /**< Target device name that application is looking for. */
+#define TARGET_DEV_NAME                  "Multilink_SX"                                    /**< Target device name that application is looking for. */
 
 #define BLE_NUS_MAX_DATA_LEN 20  /** max number of bytes in one packet.  Temporarily defined; should use definition in ble_nus_c.h */
 
